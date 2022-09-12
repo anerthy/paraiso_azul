@@ -39,13 +39,6 @@
                 <span class="app-menu__label">Productos</span>
             </a>
         </li>
-        <li>
-            <a class="app-menu__item" href="<?= base_url(); ?>/pedidos">
-            
-                <i class="app-menu__icon fa fa-list" aria-hidden="true"></i>
-                <span class="app-menu__label">Categoria</span>
-            </a>
-        </li>
           <li>
             <a class="app-menu__item" href="<?= base_url(); ?>/grupos">
           
