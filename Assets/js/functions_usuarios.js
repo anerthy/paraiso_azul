@@ -12,13 +12,11 @@ document.addEventListener('DOMContentLoaded', function(){
             "dataSrc":""
         },
         "columns":[
-            {"data":"idpersona"},
-            {"data":"nombres"},
-            {"data":"apellidos"},
-            {"data":"email_user"},
-            {"data":"telefono"},
+            {"data":"id_usuario"},
+            {"data":"nombre"},
+            {"data":"correo"},
             {"data":"nombrerol"},
-            {"data":"status"},
+            {"data":"estado"},
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -54,15 +52,12 @@ document.addEventListener('DOMContentLoaded', function(){
     var formUsuario = document.querySelector("#formUsuario");
     formUsuario.onsubmit = function(e) {
         e.preventDefault();
-        var strIdentificacion = document.querySelector('#txtIdentificacion').value;
         var strNombre = document.querySelector('#txtNombre').value;
-        var strApellido = document.querySelector('#txtApellido').value;
-        var strEmail = document.querySelector('#txtEmail').value;
-        var intTelefono = document.querySelector('#txtTelefono').value;
-        var intTipousuario = document.querySelector('#listRolid').value;
-        var strPassword = document.querySelector('#txtPassword').value;
+        var strCorreo = document.querySelector('#txtCorreo').value;
+        var intRol = document.querySelector('#listRol_id').value;
+        var strContraseña = document.querySelector('#txtContraseña').value;
 
-        if(strIdentificacion == '' || strApellido == '' || strNombre == '' || strEmail == '' || intTelefono == '' || intTipousuario == '')
+        if( strNombre == '' || strCorreo == '' || intRol == '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -102,9 +97,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 window.addEventListener('load', function() {
         fntRolesUsuario();
-        /*fntViewUsuario();
+        fntViewUsuario();
         fntEditUsuario();
-        fntDelUsuario();*/
+        fntDelUsuario();
 }, false);
 
 function fntRolesUsuario(){
@@ -115,18 +110,18 @@ function fntRolesUsuario(){
 
     request.onreadystatechange = function(){
         if(request.readyState == 4 && request.status == 200){
-            document.querySelector('#listRolid').innerHTML = request.responseText;
-            document.querySelector('#listRolid').value = 1;
-            $('#listRolid').selectpicker('render');
+            document.querySelector('#listRol_id').innerHTML = request.responseText;
+            document.querySelector('#listRol_id').value = 1;
+            $('#listRol_id').selectpicker('render');
         }
     }
     
 }
 
-function fntViewUsuario(idpersona){
-    var idpersona = idpersona;
+function fntViewUsuario(id_usuario){
+    var id_usuario = id_usuario;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+'/Usuarios/getUsuario/'+idpersona;
+    var ajaxUrl = base_url+'/Usuarios/getUsuario/'+id_usuario;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -135,18 +130,14 @@ function fntViewUsuario(idpersona){
 
             if(objData.status)
             {
-               var estadoUsuario = objData.data.status == 1 ? 
+               var estadoUsuario = objData.data.estado == 1 ? 
                 '<span class="badge badge-success">Activo</span>' : 
                 '<span class="badge badge-danger">Inactivo</span>';
 
-                document.querySelector("#celIdentificacion").innerHTML = objData.data.identificacion;
-                document.querySelector("#celNombre").innerHTML = objData.data.nombres;
-                document.querySelector("#celApellido").innerHTML = objData.data.apellidos;
-                document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
-                document.querySelector("#celEmail").innerHTML = objData.data.email_user;
+                document.querySelector("#celNombre").innerHTML = objData.data.nombre;
+                document.querySelector("#celCorreo").innerHTML = objData.data.correo;
                 document.querySelector("#celTipoUsuario").innerHTML = objData.data.nombrerol;
                 document.querySelector("#celEstado").innerHTML = estadoUsuario;
-                document.querySelector("#celFechaRegistro").innerHTML = objData.data.fechaRegistro; 
                 $('#modalViewUser').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
@@ -155,15 +146,15 @@ function fntViewUsuario(idpersona){
     }
 }
 
-function fntEditUsuario(idpersona){
+function fntEditUsuario(id_usuario){
     document.querySelector('#titleModal').innerHTML ="Actualizar Usuario";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var idpersona =idpersona;
+    var id_usuario =id_usuario;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl = base_url+'/Usuarios/getUsuario/'+idpersona;
+    var ajaxUrl = base_url+'/Usuarios/getUsuario/'+id_usuario;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -173,21 +164,18 @@ function fntEditUsuario(idpersona){
 
             if(objData.status)
             {
-                document.querySelector("#idUsuario").value = objData.data.idpersona;
-                document.querySelector("#txtIdentificacion").value = objData.data.identificacion;
-                document.querySelector("#txtNombre").value = objData.data.nombres;
-                document.querySelector("#txtApellido").value = objData.data.apellidos;
-                document.querySelector("#txtTelefono").value = objData.data.telefono;
-                document.querySelector("#txtEmail").value = objData.data.email_user;
-                document.querySelector("#listRolid").value =objData.data.idrol;
-                $('#listRolid').selectpicker('render');
+                document.querySelector("#id_usuario").value = objData.data.id_usuario;
+                document.querySelector("#txtNombre").value = objData.data.nombre;
+                document.querySelector("#txtCorreo").value = objData.data.correo;
+                document.querySelector("#listRol_id").value =objData.data.id_rol;
+                $('#listRol_id').selectpicker('render');
 
                 if(objData.data.status == 1){
-                    document.querySelector("#listStatus").value = 1;
+                    document.querySelector("#listEstado").value = 1;
                 }else{
-                    document.querySelector("#listStatus").value = 2;
+                    document.querySelector("#listEstado").value = 2;
                 }
-                $('#listStatus').selectpicker('render');
+                $('#listEstado').selectpicker('render');
             }
         }
     
@@ -195,9 +183,9 @@ function fntEditUsuario(idpersona){
     }
 }
 
-function fntDelUsuario(idpersona){
+function fntDelUsuario(id_usuario){
 
-    var idUsuario = idpersona;
+    var id_usuario = id_usuario;
     swal({
         title: "Eliminar Usuario",
         text: "¿Realmente quiere eliminar el Usuario?",
@@ -213,7 +201,7 @@ function fntDelUsuario(idpersona){
         {
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             var ajaxUrl = base_url+'/Usuarios/delUsuario';
-            var strData = "idUsuario="+idUsuario;
+            var strData = "id_usuario="+id_usuario;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
@@ -243,7 +231,7 @@ function fntDelUsuario(idpersona){
 
 function openModal()
 {
-    document.querySelector('#idUsuario').value ="";
+    document.querySelector('#id_usuario').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
