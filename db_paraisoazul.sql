@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 11-09-2022 a las 23:04:21
+-- Tiempo de generación: 16-09-2022 a las 02:15:57
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_paraisoazul`
+-- Base de datos: `db_paraiso_azul`
 --
 
 -- --------------------------------------------------------
@@ -39,20 +39,6 @@ CREATE TABLE IF NOT EXISTS `alimentacion` (
   `estado` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_alimentacion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `categoria`
---
-
-DROP TABLE IF EXISTS `categoria`;
-CREATE TABLE IF NOT EXISTS `categoria` (
-  `id_categoria` tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(35) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  PRIMARY KEY (`id_categoria`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 -- --------------------------------------------------------
@@ -79,8 +65,9 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
 
 DROP TABLE IF EXISTS `grupo_organizado`;
 CREATE TABLE IF NOT EXISTS `grupo_organizado` (
-  `id_grupo_organizado` tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id_grupo` tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `representante` varchar(100) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `ubicacion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -88,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
   `numero_integrantes` tinyint NOT NULL,
   `logo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `comunidad_id` tinyint UNSIGNED NOT NULL,
-  PRIMARY KEY (`id_grupo_organizado`),
+  PRIMARY KEY (`id_grupo`),
   KEY `IdComunidad` (`comunidad_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -103,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `hospedaje` (
   `id_hospedaje` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `tipo` enum('Posada','Camping') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `tipo` enum('Cabina','Camping') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `direccion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(8,2) NOT NULL,
@@ -166,43 +153,6 @@ CREATE TABLE IF NOT EXISTS `permisos` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `producto`
---
-
-DROP TABLE IF EXISTS `producto`;
-CREATE TABLE IF NOT EXISTS `producto` (
-  `id_producto` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `precio` decimal(8,2) NOT NULL,
-  `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `estado` int NOT NULL DEFAULT '1',
-  `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `proveedor` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
-  `categoria_id` tinyint UNSIGNED NOT NULL,
-  PRIMARY KEY (`id_producto`),
-  KEY `categoria_id` (`categoria_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `producto_grupo`
---
-
-DROP TABLE IF EXISTS `producto_grupo`;
-CREATE TABLE IF NOT EXISTS `producto_grupo` (
-  `id_producto_grupo` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `producto_id` smallint UNSIGNED NOT NULL,
-  `grupo_id` tinyint UNSIGNED NOT NULL,
-  PRIMARY KEY (`id_producto_grupo`),
-  KEY `producto_id` (`producto_id`),
-  KEY `grupo_id` (`grupo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `registro_alimentacion`
 --
 
@@ -230,22 +180,6 @@ CREATE TABLE IF NOT EXISTS `registro_hospedaje` (
   PRIMARY KEY (`hospedaje_id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `hospedaje_id` (`hospedaje_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `registro_producto`
---
-
-DROP TABLE IF EXISTS `registro_producto`;
-CREATE TABLE IF NOT EXISTS `registro_producto` (
-  `producto_id` smallint UNSIGNED NOT NULL,
-  `fecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_id` smallint UNSIGNED NOT NULL,
-  PRIMARY KEY (`producto_id`),
-  KEY `usuario_id` (`usuario_id`),
-  KEY `producto_id` (`producto_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 -- --------------------------------------------------------
@@ -308,9 +242,8 @@ CREATE TABLE IF NOT EXISTS `tour` (
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `lugar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `disponibilidad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `hora_inicio` time NOT NULL,
-  `hora_fin` time NOT NULL,
-  `cupos` tinyint NOT NULL,
+  `duracion` time NOT NULL,
+  `cupo_minimo` tinyint NOT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(8,2) NOT NULL,
   `estado` int NOT NULL DEFAULT '1',
@@ -332,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `transporte` (
   `clase` enum('Publico','Privado') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `tipo` enum('Terrestre','Maritimo') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `disponibilidad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `precio` decimal(8,2) NOT NULL,
+  `precio` decimal(8,2) DEFAULT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `estado` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -354,7 +287,24 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `estado` int NOT NULL DEFAULT '1',
   `rol_id` smallint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `nombre` (`nombre`),
+  UNIQUE KEY `nombre_2` (`nombre`),
   KEY `rol_id` (`rol_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario_grupo`
+--
+
+DROP TABLE IF EXISTS `usuario_grupo`;
+CREATE TABLE IF NOT EXISTS `usuario_grupo` (
+  `usuario_id` smallint UNSIGNED NOT NULL,
+  `grupo_id` tinyint UNSIGNED NOT NULL,
+  PRIMARY KEY (`usuario_id`),
+  KEY `usuario_id` (`usuario_id`),
+  KEY `grupo_id` (`grupo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 -- --------------------------------------------------------
@@ -403,19 +353,6 @@ ALTER TABLE `permisos`
   ADD CONSTRAINT `permisos_ibfk_2` FOREIGN KEY (`rol_id`) REFERENCES `rol` (`id_rol`);
 
 --
--- Filtros para la tabla `producto`
---
-ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`categoria_id`) REFERENCES `categoria` (`id_categoria`);
-
---
--- Filtros para la tabla `producto_grupo`
---
-ALTER TABLE `producto_grupo`
-  ADD CONSTRAINT `producto_grupo_ibfk_1` FOREIGN KEY (`grupo_id`) REFERENCES `grupo_organizado` (`id_grupo_organizado`),
-  ADD CONSTRAINT `producto_grupo_ibfk_2` FOREIGN KEY (`producto_id`) REFERENCES `producto` (`id_producto`);
-
---
 -- Filtros para la tabla `registro_alimentacion`
 --
 ALTER TABLE `registro_alimentacion`
@@ -428,13 +365,6 @@ ALTER TABLE `registro_alimentacion`
 ALTER TABLE `registro_hospedaje`
   ADD CONSTRAINT `registro_hospedaje_ibfk_1` FOREIGN KEY (`hospedaje_id`) REFERENCES `hospedaje` (`id_hospedaje`),
   ADD CONSTRAINT `registro_hospedaje_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id_usuario`);
-
---
--- Filtros para la tabla `registro_producto`
---
-ALTER TABLE `registro_producto`
-  ADD CONSTRAINT `registro_producto_ibfk_1` FOREIGN KEY (`producto_id`) REFERENCES `producto` (`id_producto`),
-  ADD CONSTRAINT `registro_producto_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id_usuario`);
 
 --
 -- Filtros para la tabla `registro_tour`
@@ -455,6 +385,13 @@ ALTER TABLE `registro_transporte`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`rol_id`) REFERENCES `rol` (`id_rol`);
+
+--
+-- Filtros para la tabla `usuario_grupo`
+--
+ALTER TABLE `usuario_grupo`
+  ADD CONSTRAINT `usuario_grupo_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id_usuario`),
+  ADD CONSTRAINT `usuario_grupo_ibfk_2` FOREIGN KEY (`grupo_id`) REFERENCES `grupo_organizado` (`id_grupo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
