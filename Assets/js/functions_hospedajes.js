@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function(){
     formHospedaje.onsubmit = function(e) {
         e.preventDefault();
 
-        var intId_hospedaje = document.querySelector('#id_Hospedaje').value;
+        var intId_hospedaje = document.querySelector('#id_hospedaje').value;
         var strNombre = document.querySelector('#txtNombre').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
         var strTipo = document.querySelector('#txtTipo').value;
@@ -142,10 +142,10 @@ document.addEventListener('DOMContentLoaded', function(){
                         rowTable.cells[1].textContent = strNombre;
                         rowTable.cells[2].textContent = strDescripcion;
                         rowTable.cells[3].innerHTML = strTipo;
-                        rowTable.cells[5].innerHTML = strDireccion;
-                        rowTable.cells[6].innerHTML = strTelefono;
-                        rowTable.cells[7].innerHTML = intPrecio;
-                        rowTable.cells[8].innerHTML = htmlStatus;
+                        rowTable.cells[4].innerHTML = strDireccion;
+                        rowTable.cells[5].innerHTML = strTelefono;
+                        rowTable.cells[6].innerHTML = intPrecio;
+                        rowTable.cells[7].innerHTML = htmlStatus;
                      
                         rowTable = "";
                         
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function(){
 function openModal(){
     
     rowTable = "";
-    document.querySelector('#id_Hospedaje').value ="";
+    document.querySelector('#id_hospedaje').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
@@ -246,7 +246,7 @@ function fntEditHospedaje(id_hospedaje){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#id_Hospedaje").value = objData.data.id_hospedaje;
+                document.querySelector("#id_hospedaje").value = objData.data.id_hospedaje;
                 document.querySelector("#txtNombre").value = objData.data.nombre;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
                 document.querySelector("#txtTipo").value = objData.data.tipo;

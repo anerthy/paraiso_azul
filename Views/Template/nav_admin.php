@@ -34,6 +34,13 @@
                 </a>
             </li>
             <li>
+                <a class="app-menu__item" href="<?= base_url(); ?>/hospedajes">
+
+                    <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
+                    <span class="app-menu__label">Hospedajes</span>
+                </a>
+            </li>
+            <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/logout">
                     <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
                     <span class="app-menu__label">Logout</span>
