@@ -31,12 +31,25 @@
                           <th>Direccion</th>
                           <th>Telefono</th>
                           <th>Precio</th>
-                          <th>Imagen</th>
+                 
                           <th>Status</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
+                      <tr>
+                          <td>1</td>
+                          <td>Patitos</td>
+                          <td>PatitosDescripcion</td>
+                          <td>camping</td>
+                          <td>al lado del bcr</td>
+                          <td>78542155</td>
+                          <td>20</td>
+               
+                          <td>Activo</td>
+                        
+                          <td></td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>

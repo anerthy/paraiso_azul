@@ -12,7 +12,7 @@
           <div class="tile">
             <div class="tile-body">
               <form id="formHospedaje" name="formHospedaje">
-                <input type="hidden" id="id_hospedaje" name="id_hospedaje" value="">
+                <input type="hidden" id="id_Hospedaje" name="id_Hospedaje" value="">
                 <input type="hidden" id="foto_actual" name="foto_actual" value="">
               <input type="hidden" id="foto_remove" name="foto_remove" value="0">
                 <div class="form-group">
@@ -34,11 +34,11 @@
     
                 <div class="form-group">
                   <label class="control-label">Telefono</label>
-                  <textarea class="form-control" id="txTelefono" name="txtTelefono" rows="2" placeholder="Descripción del hospedaje" required=""></textarea>
+                  <textarea class="form-control" id="txtTelefono" name="txtTelefono" rows="2" placeholder="Descripción del hospedaje" required=""></textarea>
                 </div>
                 <div class="form-group">
                   <label class="control-label">Precio</label>
-                  <textarea class="form-control" id="txPrecio" name="txtPrecio" rows="2" placeholder="Descripción del hospedaje" required=""></textarea>
+                  <textarea class="form-control" id="txtPrecio" name="txtPrecio" rows="2" placeholder="Descripción del hospedaje" required=""></textarea>
                 </div>
                 
                 <div class="form-group">

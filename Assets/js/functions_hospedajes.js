@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function(){
     formHospedaje.onsubmit = function(e) {
         e.preventDefault();
 
-        var intId_hospedaje = document.querySelector('#id_hospedaje').value;
+        var intId_hospedaje = document.querySelector('#id_Hospedaje').value;
         var strNombre = document.querySelector('#txtNombre').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
         var strTipo = document.querySelector('#txtTipo').value;
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function(){
 function openModal(){
     
     rowTable = "";
-    document.querySelector('#id_hospedaje').value ="";
+    document.querySelector('#id_Hospedaje').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
@@ -246,7 +246,7 @@ function fntEditHospedaje(id_hospedaje){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#id_hospedaje").value = objData.data.id_hospedaje;
+                document.querySelector("#id_Hospedaje").value = objData.data.id_hospedaje;
                 document.querySelector("#txtNombre").value = objData.data.nombre;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
                 document.querySelector("#txtTipo").value = objData.data.tipo;
@@ -283,7 +283,7 @@ function fntEditHospedaje(id_hospedaje){
                     document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objData.data.url_imagen+">";
                 }
 
-                if(objData.data.portada == 'portada_categoria.png'){
+                if(objData.data.imagen == 'portada_categoria.png'){
                     document.querySelector('.delPhoto').classList.add("notBlock");
                 }else{
                     document.querySelector('.delPhoto').classList.remove("notBlock");

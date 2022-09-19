@@ -69,7 +69,7 @@ class Hospedajes extends Controllers
 			if (empty($arrData)) {
 				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 			} else {
-				$arrData['url_portada'] = media() . '/images/uploads/' . $arrData['imagen'];
+				$arrData['url_imagen'] = media() . '/images/uploads/' . $arrData['imagen'];
 				$arrResponse = array('status' => true, 'data' => $arrData);
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
@@ -82,7 +82,7 @@ class Hospedajes extends Controllers
 
 
 
-		$intId_hospedaje = intval($_POST['id_hospedaje']);
+		$intId_hospedaje = intval($_POST['id_Hospedaje']);
 		$strHospedaje =  strClean($_POST['txtNombre']);
 		$strDescripcion = strClean($_POST['txtDescripcion']);
 		$strTipo = strClean($_POST['txtTipo']);
@@ -90,7 +90,7 @@ class Hospedajes extends Controllers
 		$strTelefono = strClean($_POST['txtTelefono']);
 		$intPrecio = intval($_POST['txtPrecio']);
 		$intStatus = intval($_POST['listStatus']);
-		$strImagen = strClean($_POST['txtImagen']);
+		//$strImagen = strClean($_POST['txtImagen']);
 
 
 
