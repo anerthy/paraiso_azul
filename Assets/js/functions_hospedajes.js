@@ -216,7 +216,7 @@ function fntViewInfo(id_hospedaje){
                 document.querySelector("#celDireccion").innerHTML =  objData.data.direccion;
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
                 document.querySelector("#celPrecio").innerHTML = objData.data.precio;
-                document.querySelector("#celEstado").innerHTML = objData.data.estado;
+                document.querySelector("#celStatus").innerHTML = objData.data.status;
                 document.querySelector("#imgHospedaje").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
                 $('#modalViewHospedaje').modal('show');
             }else{

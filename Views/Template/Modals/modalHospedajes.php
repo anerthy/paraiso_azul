@@ -120,9 +120,10 @@ Modal
               <td>Precio:</td>
               <td id="celPrecio">Larry</td>
             </tr>
+            
             <tr>
               <td>Estado:</td>
-              <td id="celEstado">Larry</td>
+              <td id="celStatus">Larry</td>
             </tr>
             
             <tr>
