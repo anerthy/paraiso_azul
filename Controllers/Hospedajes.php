@@ -39,7 +39,7 @@ class Hospedajes extends Controllers
 				
 				<button class="btn btn-primary btn-sm btnEditHospedaje" onClick="fntEditHospedaje(' . $arrData[$i]['id_hospedaje'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
 				<button class="btn btn-danger btn-sm btnDelHospedaje" onClick="fntDelHospedaje(' . $arrData[$i]['id_hospedaje'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-				<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_hospedaje'] . ')" title="Ver grupo"><i class="far fa-eye"></i></button>
+				<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_hospedaje'] . ')" title="Ver hospedaje"><i class="far fa-eye"></i></button>
 				</div>';
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);

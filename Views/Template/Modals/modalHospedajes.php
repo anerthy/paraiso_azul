@@ -78,3 +78,65 @@
     </div>
   </div>
 </div>
+
+Modal
+<div class="modal fade" id="modalViewHospedaje" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog " >
+    <div class="modal-content  ">
+      <div class="modal-header header-primary">
+        <h5 class="modal-title" id="titleModal">Datos de hospedaje</h5>
+        <button type="button" class="close" data-dismiss="modal" data-toggle="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body " >
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>Id:</td>
+              <td id="celId">654654654</td>
+            </tr>
+            <tr>
+              <td>Nombres:</td>
+              <td id="celNombre">Jacob</td>
+            </tr>
+            <tr>
+              <td>Descripcion:</td>
+              <td id="celDescripcion">Jacob</td>
+            </tr>
+            <tr>
+              <td>Tipo:</td>
+              <td id="celTipo">Larry</td>
+            </tr>
+            <tr>
+              <td>Direccion:</td>
+              <td id="celDireccion">Larry</td>
+            </tr>
+            <tr>
+              <td>Telefono:</td>
+              <td id="celTelefono">Larry</td>
+            </tr>
+            <tr>
+              <td>Precio:</td>
+              <td id="celPrecio">Larry</td>
+            </tr>
+            <tr>
+              <td>Estado:</td>
+              <td id="celEstado">Larry</td>
+            </tr>
+            
+            <tr>
+              <td>Foto:</td>
+              <td id="imgHospedaje"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
