@@ -27,7 +27,7 @@
                           <th>Nombre</th>
                           <th>Descripcion</th>
                           <th>Ubicacion</th>
-                          <th></th>
+                          <!-- <th></th> -->
                           <th>Acciones</th>                                          
                         </tr>
                       </thead>
@@ -37,7 +37,7 @@
                           <td>Patitos</td>
                           <td>PatitosDescripcion</td>
                           <td>Al lado del bnc</td>
-                          <td></td>
+                          <!-- <td></td> -->
                           <td></td>                         
                         </tr>
                       </tbody>

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"nombre"},
             {"data":"descripcion"},
             {"data":"ubicacion"},
-            {"data":"status"},
+            //{"data":"status"},
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
