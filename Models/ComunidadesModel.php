@@ -18,7 +18,7 @@
 		public function selectComunidades()
 		{
 			//EXTRAE COMUNIDADES NOC
-			$sql = "SELECT * FROM comunidad WHERE status != 0";
+			$sql = "SELECT * FROM comunidad ";
 			$request = $this->select_all($sql);
 			return $request;
 		}
@@ -112,9 +112,10 @@
 
 
 			$this->intId_comunidad = $id_comunidad;
-			$sql = "UPDATE comunidad SET status = ? WHERE id_comunidad = $this->intId_comunidad ";
+			$sql = "DELETE from comunidad  WHERE id_comunidad = $this->intId_comunidad ";
+			//$sql = "UPDATE comunidad SET status = ? WHERE id_comunidad = $this->intId_comunidad ";
 			$arrData = array(0);
-			$request = $this->update($sql,$arrData);
+			$request = $this->delete($sql,$arrData);
 			return $request;
 			die();
 		}

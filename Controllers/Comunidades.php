@@ -27,12 +27,12 @@
 				$btnEdit = '';
 				$btnDelete = '';
 
-				if($arrData[$i]['status'] == 1)
-				{
-					$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
-				}else{
-					$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
-				}
+				// if($arrData[$i]['status'] == 1)
+				// {
+				// 	$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+				// }else{
+				// 	$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+				// }
 
 				$arrData[$i]['options'] = '<div class="text-center">
 				
@@ -48,13 +48,13 @@
 		{
 			$htmlOptions = "";
 			$arrData = $this->model->selectComunidades();
-			if(count($arrData) > 0 ){
-				for ($i=0; $i < count($arrData); $i++) { 
-					if($arrData[$i]['status'] == 1 ){
-					$htmlOptions .= '<option value="'.$arrData[$i]['id_comunidad'].'">'.$arrData[$i]['nombrecomunidad'].'</option>';
-					}
-				}
-			}
+			// if(count($arrData) > 0 ){
+			// 	for ($i=0; $i < count($arrData); $i++) { 
+			// 		// if($arrData[$i]['status'] == 1 ){
+			// 		// $htmlOptions .= '<option value="'.$arrData[$i]['id_comunidad'].'">'.$arrData[$i]['nombrecomunidad'].'</option>';
+			// 		// }
+			// 	}
+			// }
 			echo $htmlOptions;
 			die();		
 		}
