@@ -186,6 +186,35 @@ function openModal(){
 //     fntPermisos();*/
 // }, false);
 
+
+
+function fntViewInfo(id_comunidad){
+    let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    let ajaxUrl = base_url+'/Comunidades/getComunidad/'+id_comunidad;
+    request.open("GET",ajaxUrl,true);
+    request.send();
+    request.onreadystatechange = function(){
+        if(request.readyState == 4 && request.status == 200){
+            let objData = JSON.parse(request.responseText);
+            if(objData.status)
+            {
+                // let estado = objData.data.status == 1 ? 
+                // '<span class="badge badge-success">Activo</span>' : 
+                // '<span class="badge badge-danger">Inactivo</span>';
+                document.querySelector("#celId").innerHTML = objData.data.id_comunidad;
+                document.querySelector("#celNombre").innerHTML = objData.data.nombre;
+                document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
+                document.querySelector("#celUbicacion").innerHTML = objData.data.ubicacion;
+                document.querySelector("#imgComunidad").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
+                $('#modalViewComunidad').modal('show');
+            }else{
+                swal("Error", objData.msg , "error");
+            }
+        }
+    }
+}
+
+
 function fntEditComunidad(id_comunidad){
     document.querySelector('#titleModal').innerHTML ="Actualizar Comunidad";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");

@@ -19,7 +19,7 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="txtNombre">Nombre</label>
-                  <input type="text" class="form-control valid validText" id="txtNombre" name="txtNombre" required="">
+                  <input type="text" class="form-control valid validText" placeholder="Ingrese el nombre" id="txtNombre" name="txtNombre" required="">
                 </div>
             
            
@@ -40,13 +40,13 @@
          
                 <div class="form-group col-md-6">
                   <label for="txtDescripcion">Descripcion</label>
-                  <textarea type="text" class="form-control valid validText" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
+                  <textarea type="text" class="form-control valid validText" placeholder="Ingrese la descripcion" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
                 </div>
 
               </div>
               <div class="form-group">
                   <label for="txtUbicacion">Ubicacion</label>
-                  <textarea type="text" class="form-control valid validText" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
+                  <textarea type="text" class="form-control valid validText" placeholder="Ingrese la ubicacion" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
                 </div>
 
 
@@ -77,6 +77,52 @@
                 <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
               </div>
             </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+Modal
+<div class="modal fade" id="modalViewComunidad" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog " >
+    <div class="modal-content  ">
+      <div class="modal-header header-primary">
+        <h5 class="modal-title" id="titleModal">Datos de la comunidad</h5>
+        <button type="button" class="close" data-dismiss="modal" data-toggle="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body " >
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>Id:</td>
+              <td id="celId">654654654</td>
+            </tr>
+            <tr>
+              <td>Nombre:</td>
+              <td id="celNombre">Jacob</td>
+            </tr>
+            <tr>
+              <td>Descripcion:</td>
+              <td id="celDescripcion">Jacob</td>
+            </tr>
+            <tr>
+              <td>Ubicacion:</td>
+              <td id="celUbicacion">Larry</td>
+            </tr>
+            
+            <tr>
+              <td>Foto:</td>
+              <td id="imgComunidad"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

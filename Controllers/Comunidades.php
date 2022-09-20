@@ -38,6 +38,7 @@
 				
 				<button class="btn btn-primary btn-sm btnEditComunidad" onClick="fntEditComunidad('.$arrData[$i]['id_comunidad'].')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
 				<button class="btn btn-danger btn-sm btnDelComunidad" onClick="fntDelComunidad('.$arrData[$i]['id_comunidad'].')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
+				<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['id_comunidad'].')" title="Ver comunidad"><i class="far fa-eye"></i></button>
 				</div>';
 			}
 			echo json_encode($arrData,JSON_UNESCAPED_UNICODE);
