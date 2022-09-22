@@ -80,9 +80,9 @@ function openModal(){
 }
 
 window.addEventListener('load', function() {
-    /*fntEditRol();
-    fntDelRol();
-    fntPermisos();*/
+    // fntEditRol();
+    // fntDelRol();
+    // fntPermisos();
 }, false);
 
 function fntEditRol(id_rol){
