@@ -83,7 +83,7 @@ class Hospedajes extends Controllers
 
 
 		$intId_hospedaje = intval($_POST['id_Hospedaje']);
-		$strHospedaje =  strClean($_POST['txtNombre_Hosp']);
+		$strHospedaje =  strClean($_POST['txtNombre_hosp']);
 		$strDescripcion = strClean($_POST['txtDescripcion']);
 		$strTipo = strClean($_POST['txtTipo']);
 		$strDireccion = strClean($_POST['txtDireccion']);
