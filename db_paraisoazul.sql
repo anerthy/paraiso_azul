@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 22-09-2022 a las 22:16:12
+-- Tiempo de generación: 22-09-2022 a las 22:23:50
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -117,6 +117,7 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
   `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `numero_integrantes` tinyint NOT NULL,
+  `status` int NOT NULL DEFAULT '1',
   `logo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `comunidad_id` tinyint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_grupo`),
