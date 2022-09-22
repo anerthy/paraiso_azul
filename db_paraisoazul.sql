@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 22-09-2022 a las 19:50:51
+-- Tiempo de generación: 22-09-2022 a las 22:23:50
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -117,6 +117,7 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
   `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `numero_integrantes` tinyint NOT NULL,
+  `status` int NOT NULL DEFAULT '1',
   `logo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `comunidad_id` tinyint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_grupo`),
@@ -165,7 +166,19 @@ CREATE TABLE IF NOT EXISTS `modulo` (
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_modulo`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `modulo`
+--
+
+INSERT INTO `modulo` (`id_modulo`, `titulo`, `descripcion`, `status`) VALUES
+(1, 'Comunidades', 'Modulo de comunidades', 1),
+(2, 'Hospedaje', 'Modulo de hospedaje', 1),
+(3, 'Transporte', 'Modulo de transporte', 1),
+(4, 'Usuario', 'Modulo de usuario', 1),
+(5, 'Roles', 'Modulo de roles', 1),
+(6, 'Grupos', 'Modulo de Grupos Organizados', 1);
 
 -- --------------------------------------------------------
 
@@ -192,8 +205,8 @@ CREATE TABLE IF NOT EXISTS `paquete_turistico` (
 DROP TABLE IF EXISTS `permisos`;
 CREATE TABLE IF NOT EXISTS `permisos` (
   `id_permiso` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `agregar` int NOT NULL DEFAULT '0',
   `ver` int NOT NULL DEFAULT '0',
+  `agregar` int NOT NULL DEFAULT '0',
   `actualizar` int NOT NULL DEFAULT '0',
   `eliminar` int NOT NULL DEFAULT '0',
   `rol_id` smallint UNSIGNED NOT NULL,
@@ -201,7 +214,25 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `permisos`
+--
+
+INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`, `rol_id`, `modulo_id`) VALUES
+(2, 1, 1, 1, 1, 8, 1),
+(3, 1, 1, 1, 1, 8, 2),
+(4, 1, 1, 1, 1, 8, 3),
+(5, 1, 1, 1, 1, 8, 4),
+(6, 1, 1, 1, 1, 8, 5),
+(7, 1, 1, 1, 1, 8, 6),
+(8, 1, 1, 1, 1, 9, 1),
+(9, 0, 0, 0, 0, 9, 2),
+(10, 0, 0, 0, 0, 9, 3),
+(11, 0, 0, 0, 0, 9, 4),
+(12, 0, 0, 0, 0, 9, 5),
+(13, 0, 0, 0, 0, 9, 6);
 
 -- --------------------------------------------------------
 
@@ -280,7 +311,15 @@ CREATE TABLE IF NOT EXISTS `rol` (
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_rol`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `rol`
+--
+
+INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
+(8, 'ADMIN', 'super administrador', 1),
+(9, 'rolt_est', 'sdsadaa', 2);
 
 -- --------------------------------------------------------
 
@@ -344,7 +383,14 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `nombre_2` (`nombre_usuario`),
   UNIQUE KEY `correo` (`correo`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `status`, `rol_id`) VALUES
+(1, 'Andres', 'andmejigo12@gmail.com', '12345678', 1, 8);
 
 -- --------------------------------------------------------
 
