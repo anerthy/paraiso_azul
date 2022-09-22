@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 20-09-2022 a las 05:04:02
+-- Tiempo de generación: 22-09-2022 a las 19:50:51
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -21,6 +21,50 @@ SET time_zone = "+00:00";
 -- Base de datos: `db_paraiso_azul`
 --
 
+DELIMITER $$
+--
+-- Procedimientos
+--
+DROP PROCEDURE IF EXISTS `sp_delete_hospedaje`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_hospedaje` (IN `id_hosp` SMALLINT)  BEGIN
+	DELETE from hospedaje where id_hospedaje = id_hosp; 
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_hospedaje`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_hospedaje` (IN `nombre_hosp` VARCHAR(100), IN `descripcion` TEXT, IN `tipo` ENUM('Cabina','Camping'), IN `direccion` TEXT, IN `telefono` VARCHAR(8), IN `precio` DECIMAL(8,2), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
+    INSERT INTO `hospedaje`(`nombre_hosp`,`descripcion`,`tipo`,`direccion`,`telefono`,`precio`,`status`,`imagen`) 
+    VALUES (nombre_hosp,descripcion,tipo, direccion,telefono,precio,status,imagen);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_hospedaje`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_hospedaje` (IN `id_hosp` SMALLINT)  BEGIN
+    SELECT id_hospedaje,nombre_hosp,descripcion,tipo,direccion,telefono,precio,estado,imagen 
+    from hospedaje 
+    WHERE id_hospedaje = id_hosp;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_hospedajes`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_hospedajes` ()  BEGIN
+SELECT id_hospedaje,nombre_hosp,descripcion,tipo,direccion,telefono,precio,status,imagen 
+from hospedaje;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_update_hospedaje`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_hospedaje` (IN `id_hosp` SMALLINT, IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `tipo` ENUM('Cabaña','Camping'), IN `direccion` TEXT, IN `tel` VARCHAR(8), IN `precio` DECIMAL(8,2), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
+	UPDATE `hospedaje` 
+    SET nombre_hosp = nombre, 
+    descripcion = descripcion, 
+    tipo = tipo, 
+    direccion = direccion,
+    telefono = tel,
+    precio = precio,
+    status = status,
+    imagen = imagen
+    WHERE id_hospedaje = id_hosp;
+END$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -36,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `alimentacion` (
   `hora_apertura` time NOT NULL,
   `hora_cierre` time NOT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `estado` int NOT NULL DEFAULT '1',
+  `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_alimentacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
@@ -94,10 +138,19 @@ CREATE TABLE IF NOT EXISTS `hospedaje` (
   `direccion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(8,2) NOT NULL,
-  `estado` int NOT NULL DEFAULT '1',
+  `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_hospedaje`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `hospedaje`
+--
+
+INSERT INTO `hospedaje` (`id_hospedaje`, `nombre_hosp`, `descripcion`, `tipo`, `direccion`, `telefono`, `precio`, `status`, `imagen`) VALUES
+(1, 'Mariposas', 'Se ofrece habitacion para dos personas', 'Camping', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
+(3, 'Mariposas', 'Se ofrece habitacion para dos personas', 'Cabina', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
+(6, 'Hotel la vida loca', 'jdskjssjdsaaaaaaaaaaaaaaaaaaaaaaadk', 'Camping', '222222222222222222ewd', '89320012', '21000.00', 1, 'imagen.png');
 
 -- --------------------------------------------------------
 
@@ -110,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `modulo` (
   `id_modulo` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
   `titulo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `estado` int NOT NULL DEFAULT '1',
+  `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_modulo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -225,7 +278,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
   `id_rol` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre_rol` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `estado` int NOT NULL DEFAULT '1',
+  `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_rol`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -246,7 +299,7 @@ CREATE TABLE IF NOT EXISTS `tour` (
   `cupo_minimo` tinyint NOT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(8,2) NOT NULL,
-  `estado` int NOT NULL DEFAULT '1',
+  `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_tour`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
@@ -267,7 +320,7 @@ CREATE TABLE IF NOT EXISTS `transporte` (
   `disponibilidad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(8,2) DEFAULT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `estado` int NOT NULL DEFAULT '1',
+  `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_transporte`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
@@ -284,7 +337,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nombre_usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `correo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `contraseña` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `estado` int NOT NULL DEFAULT '1',
+  `status` int NOT NULL DEFAULT '1',
   `rol_id` smallint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `nombre` (`nombre_usuario`),
