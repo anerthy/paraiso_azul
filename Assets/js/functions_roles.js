@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function(){
             "dataSrc":""
         },
         "columns":[
-            {"data":"idrol"},
-            {"data":"nombrerol"},
+            {"data":"id_rol"},
+            {"data":"nombre_rol"},
             {"data":"descripcion"},
             {"data":"status"},
             {"data":"options"}
@@ -85,13 +85,13 @@ window.addEventListener('load', function() {
     fntPermisos();*/
 }, false);
 
-function fntEditRol(idrol){
+function fntEditRol(id_rol){
     document.querySelector('#titleModal').innerHTML ="Actualizar Rol";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var idrol = idrol;
+    var idrol = id_rol;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl  = base_url+'/Roles/getRol/'+idrol;
     request.open("GET",ajaxUrl ,true);
@@ -103,8 +103,8 @@ function fntEditRol(idrol){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#idRol").value = objData.data.idrol;
-                document.querySelector("#txtNombre").value = objData.data.nombrerol;
+                document.querySelector("#idRol").value = objData.data.id_rol;
+                document.querySelector("#txtNombre").value = objData.data.nombre_rol;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
 
                 if(objData.data.status == 1)
@@ -127,8 +127,8 @@ function fntEditRol(idrol){
 
 }
 
-function fntDelRol(idrol){
-    var idrol = idrol;
+function fntDelRol(id_rol){
+    var idrol = id_rol;
     swal({
         title: "Eliminar Rol",
         text: "¿Realmente quiere eliminar el Rol?",
@@ -144,7 +144,7 @@ function fntDelRol(idrol){
         {
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             var ajaxUrl = base_url+'/Roles/delRol/';
-            var strData = "idrol="+idrol;
+            var strData = "id_rol="+idrol;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
@@ -169,8 +169,8 @@ function fntDelRol(idrol){
     });
 }
 
-function fntPermisos(idrol){
-    var idrol = idrol;
+function fntPermisos(id_rol){
+    var idrol = id_rol;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
     var ajaxUrl = base_url+'/Permisos/getPermisosRol/'+idrol;
     request.open("GET",ajaxUrl,true);
