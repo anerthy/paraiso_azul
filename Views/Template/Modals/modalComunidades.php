@@ -18,8 +18,8 @@
               <p class="text-primary">Todos los campos son obligatorios.</p>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="txtNombre">Nombre</label>
-                  <input type="text" class="form-control valid validText" placeholder="Ingrese el nombre" id="txtNombre" name="txtNombre" required="">
+                  <label for="txtNombre_com">Nombre</label>
+                  <input type="text" class="form-control valid validText" placeholder="Ingrese el nombre" id="txtNombre_com" name="txtNombre_com" required="">
                 </div>
             
            
@@ -102,7 +102,7 @@ Modal
             </tr>
             <tr>
               <td>Nombre:</td>
-              <td id="celNombre">Jacob</td>
+              <td id="celNombre_com">Jacob</td>
             </tr>
             <tr>
               <td>Descripcion:</td>

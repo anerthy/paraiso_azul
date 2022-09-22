@@ -47,12 +47,12 @@
 			
 
 
-			$sql = "SELECT * FROM comunidad WHERE nombre = '{$this->strComunidad}' ";
+			$sql = "SELECT * FROM comunidad WHERE nombre_com = '{$this->strComunidad}' ";
 			$request = $this->select_all($sql);
 
 			if(empty($request))
 			{
-				$query_insert  = "INSERT INTO comunidad(nombre,descripcion,ubicacion/*,status*/, imagen) VALUES(?,?,?/*,?*/,?)";
+				$query_insert  = "INSERT INTO comunidad(nombre_com,descripcion,ubicacion/*,status*/, imagen) VALUES(?,?,?/*,?*/,?)";
 			$arrData = array($this->strComunidad, $this->strDescripcion, $this->strUbicacion/*,$this->intStatus*/,$this->strImagen);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
@@ -70,12 +70,12 @@
 			//$this->intStatus = $status;
 			$this->strImagen = $imagen;
 
-			$sql = "SELECT * FROM comunidad WHERE nombre = '$this->strComunidad' AND id_comunidad != $this->intId_comunidad";
+			$sql = "SELECT * FROM comunidad WHERE nombre_com = '$this->strComunidad' AND id_comunidad != $this->intId_comunidad";
 			$request = $this->select_all($sql);
 
 			if(empty($request))
 			{
-				$sql = "UPDATE comunidad SET nombre = ?, descripcion = ?, ubicacion = ?/*,status = ?*/,imagen = ?WHERE id_comunidad = $this->intId_comunidad ";
+				$sql = "UPDATE comunidad SET nombre_com = ?, descripcion = ?, ubicacion = ?/*,status = ?*/,imagen = ?WHERE id_comunidad = $this->intId_comunidad ";
 			$arrData = array($this->strComunidad, $this->strDescripcion, $this->strUbicacion/*, $this->intStatus*/,$this->strImagen);
 				$request = $this->update($sql,$arrData);
 			}else{

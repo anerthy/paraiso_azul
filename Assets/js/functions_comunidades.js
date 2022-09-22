@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
         },
         "columns":[
             {"data":"id_comunidad"},
-            {"data":"nombre"},
+            {"data":"nombre_com"},
             {"data":"descripcion"},
             {"data":"ubicacion"},
             //{"data":"status"},
@@ -112,11 +112,11 @@ document.addEventListener('DOMContentLoaded', function(){
         e.preventDefault();
 
         var intId_Comunidad = document.querySelector('#id_Comunidad').value;
-        var strNombre = document.querySelector('#txtNombre').value;
+        var strNombre_com = document.querySelector('#txtNombre_com').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
         var strUbicacion = document.querySelector('#txtUbicacion').value;      
         //var intStatus = document.querySelector('#listStatus').value;  
-        if(strNombre == '' || strDescripcion == '' ||   strUbicacion== '' /*||   intStatus== ''*/)
+        if(strNombre_com == '' || strDescripcion == '' ||   strUbicacion== '' /*||   intStatus== ''*/)
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         // htmlStatus = intStatus == 1 ? 
                         //     '<span class="badge badge-success">Activo</span>' : 
                         //     '<span class="badge badge-danger">Inactivo</span>';
-                        rowTable.cells[1].textContent = strNombre;
+                        rowTable.cells[1].textContent = strNombre_com;
                         rowTable.cells[2].textContent = strDescripcion;
                         rowTable.cells[3].textContent = strUbicacion;
                        // rowTable.cells[4].innerHTML = htmlStatus;
@@ -202,7 +202,7 @@ function fntViewInfo(id_comunidad){
                 // '<span class="badge badge-success">Activo</span>' : 
                 // '<span class="badge badge-danger">Inactivo</span>';
                 document.querySelector("#celId").innerHTML = objData.data.id_comunidad;
-                document.querySelector("#celNombre").innerHTML = objData.data.nombre;
+                document.querySelector("#celNombre_com").innerHTML = objData.data.nombre_com;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
                 document.querySelector("#celUbicacion").innerHTML = objData.data.ubicacion;
                 document.querySelector("#imgComunidad").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
@@ -234,7 +234,7 @@ function fntEditComunidad(id_comunidad){
             if(objData.status)
             {
                 document.querySelector("#id_Comunidad").value = objData.data.id_comunidad;
-                document.querySelector("#txtNombre").value = objData.data.nombre;
+                document.querySelector("#txtNombre_com").value = objData.data.nombre_com;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
                 document.querySelector("#txtUbicacion").value = objData.data.ubicacion;
                 document.querySelector('#foto_actual').value = objData.data.imagen;

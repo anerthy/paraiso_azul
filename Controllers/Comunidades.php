@@ -81,7 +81,7 @@
 		public function setComunidad(){
 			
 			$intId_comunidad = intval($_POST['id_Comunidad']);
-			$strComunidad =  strClean($_POST['txtNombre']);
+			$strComunidad =  strClean($_POST['txtNombre_com']);
 			
 			$strDescripcion = strClean($_POST['txtDescripcion']);
 			$strUbicacion = strClean($_POST['txtUbicacion']);
