@@ -53,7 +53,7 @@ class Hospedajes extends Controllers
 		if (count($arrData) > 0) {
 			for ($i = 0; $i < count($arrData); $i++) {
 				if ($arrData[$i]['status'] == 1) {
-					$htmlOptions .= '<option value="' . $arrData[$i]['id_hospedaje'] . '">' . $arrData[$i]['nombre'] . '</option>';
+					$htmlOptions .= '<option value="' . $arrData[$i]['id_hospedaje'] . '">' . $arrData[$i]['nombre_hosp'] . '</option>';
 				}
 			}
 		}
@@ -83,7 +83,7 @@ class Hospedajes extends Controllers
 
 
 		$intId_hospedaje = intval($_POST['id_Hospedaje']);
-		$strHospedaje =  strClean($_POST['txtNombre']);
+		$strHospedaje =  strClean($_POST['txtNombre_Hosp']);
 		$strDescripcion = strClean($_POST['txtDescripcion']);
 		$strTipo = strClean($_POST['txtTipo']);
 		$strDireccion = strClean($_POST['txtDireccion']);
