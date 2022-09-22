@@ -17,7 +17,7 @@
               <input type="hidden" id="foto_remove" name="foto_remove" value="0">
                 <div class="form-group">
                   <label class="control-label">Nombre</label>
-                  <input class="form-control" id="txtNombre" name="txtNombre" type="text" placeholder="Nombre del hospedaje" required="">
+                  <input class="form-control" id="txtNombre_hosp" name="txtNombre_hosp" type="text" placeholder="Nombre del hospedaje" required="">
                 </div>
                 <div class="form-group">
                   <label class="control-label">Descripción</label>
@@ -25,20 +25,20 @@
                 </div>
                 <div class="form-group">
                   <label class="control-label">Tipo</label>
-                  <textarea class="form-control" id="txtTipo" name="txtTipo" rows="2" placeholder="Descripción del hospedaje" required=""></textarea>
+                  <textarea class="form-control" id="txtTipo" name="txtTipo" rows="2"  required=""></textarea>
                 </div>
                 <div class="form-group">
                   <label class="control-label">Direccion</label>
-                  <textarea class="form-control" id="txtDireccion" name="txtDireccion" rows="2" placeholder="Descripcion del tipo" required=""></textarea>
+                  <textarea class="form-control" id="txtDireccion" name="txtDireccion" rows="2" placeholder="Direccion del hospedaje" required=""></textarea>
                 </div>
     
                 <div class="form-group">
                   <label class="control-label">Telefono</label>
-                  <textarea class="form-control" id="txtTelefono" name="txtTelefono" rows="2" placeholder="Descripción del hospedaje" required=""></textarea>
+                  <textarea class="form-control" id="txtTelefono" name="txtTelefono" rows="2" placeholder="Telefono del hospedaje" required=""></textarea>
                 </div>
                 <div class="form-group">
                   <label class="control-label">Precio</label>
-                  <textarea class="form-control" id="txtPrecio" name="txtPrecio" rows="2" placeholder="Descripción del hospedaje" required=""></textarea>
+                  <textarea class="form-control" id="txtPrecio" name="txtPrecio" rows="2" placeholder="Precio" required=""></textarea>
                 </div>
                 
                 <div class="form-group">
@@ -98,7 +98,7 @@ Modal
             </tr>
             <tr>
               <td>Nombres:</td>
-              <td id="celNombre">Jacob</td>
+              <td id="celNombre_hosp">Jacob</td>
             </tr>
             <tr>
               <td>Descripcion:</td>
