@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
         },
         "columns":[
             {"data":"id_hospedaje"},
-            {"data":"nombre"},
+            {"data":"nombre_hosp"},
             {"data":"descripcion"},
             {"data":"tipo"},
             {"data":"direccion"},
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function(){
         e.preventDefault();
 
         var intId_hospedaje = document.querySelector('#id_Hospedaje').value;
-        var strNombre = document.querySelector('#txtNombre').value;
+        var strNombre_hosp = document.querySelector('#txtNombre_hosp').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
         var strTipo = document.querySelector('#txtTipo').value;
         var strDireccion = document.querySelector('#txtDireccion').value; 
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var intPrecio = document.querySelector('#txtPrecio').value;
         var intStatus = document.querySelector('#listStatus').value;
 
-        if(strNombre == '' || strDescripcion == '' || strTipo == '' || strDireccion == '' || strTelefono == '' || intPrecio == '' || intStatus == '' )
+        if(strNombre_hosp == '' || strDescripcion == '' || strTipo == '' || strDireccion == '' || strTelefono == '' || intPrecio == '' || intStatus == '' )
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         htmlStatus = intStatus == 1 ? 
                             '<span class="badge badge-success">Activo</span>' : 
                             '<span class="badge badge-danger">Inactivo</span>';
-                        rowTable.cells[1].textContent = strNombre;
+                        rowTable.cells[1].textContent = strNombre_hosp;
                         rowTable.cells[2].textContent = strDescripcion;
                         rowTable.cells[3].innerHTML = strTipo;
                         rowTable.cells[4].innerHTML = strDireccion;
@@ -210,7 +210,7 @@ function fntViewInfo(id_hospedaje){
                 '<span class="badge badge-success">Activo</span>' : 
                 '<span class="badge badge-danger">Inactivo</span>';
                 document.querySelector("#celId").innerHTML = objData.data.id_hospedaje;
-                document.querySelector("#celNombre").innerHTML = objData.data.nombre;
+                document.querySelector("#celNombre_hosp").innerHTML = objData.data.nombre_hosp;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
                 document.querySelector("#celTipo").innerHTML =  objData.data.tipo;
                 document.querySelector("#celDireccion").innerHTML =  objData.data.direccion;
@@ -247,7 +247,7 @@ function fntEditHospedaje(id_hospedaje){
             if(objData.status)
             {
                 document.querySelector("#id_Hospedaje").value = objData.data.id_hospedaje;
-                document.querySelector("#txtNombre").value = objData.data.nombre;
+                document.querySelector("#txtNombre_hosp").value = objData.data.nombre_hosp;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
                 document.querySelector("#txtTipo").value = objData.data.tipo;
                 document.querySelector("#txtDireccion").value = objData.data.direccion;
