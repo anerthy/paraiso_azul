@@ -51,11 +51,11 @@ class HospedajesModel extends Mysql
 
 
 
-		$sql = "SELECT * FROM hospedaje WHERE nombre = '{$this->strHospedaje}' ";
+		$sql = "SELECT * FROM hospedaje WHERE nombre_hosp = '{$this->strHospedaje}' ";
 		$request = $this->select_all($sql);
 
 		if (empty($request)) {
-			$query_insert  = "INSERT INTO hospedaje(nombre,descripcion,tipo,direccion,telefono,precio,status,imagen) VALUES(?,?,?,?,?,?,?,?)";
+			$query_insert  = "INSERT INTO hospedaje(nombre_hosp,descripcion,tipo,direccion,telefono,precio,status,imagen) VALUES(?,?,?,?,?,?,?,?)";
 			$arrData = array($this->strHospedaje, $this->strDescripcion, $this->strTipo, $this->strDireccion, $this->strTelefono, $this->intPrecio, $this->intStatus, $this->strImagen);
 			$request_insert = $this->insert($query_insert, $arrData);
 			$return = $request_insert;
@@ -78,11 +78,11 @@ class HospedajesModel extends Mysql
 		$this->strImagen = $imagen;
 
 
-		$sql = "SELECT * FROM hospedaje WHERE nombre = '$this->strHospedaje' AND id_hospedaje != $this->intId_hospedaje";
+		$sql = "SELECT * FROM hospedaje WHERE nombre_hosp = '$this->strHospedaje' AND id_hospedaje != $this->intId_hospedaje";
 		$request = $this->select_all($sql);
 
 		if (empty($request)) {
-			$sql = "UPDATE hospedaje SET nombre = ?, descripcion = ?, tipo = ?,direccion = ?,  telefono = ?, precio = ?, status= ?, imagen = ? WHERE id_hospedaje = $this->intId_hospedaje ";
+			$sql = "UPDATE hospedaje SET nombre_hosp = ?, descripcion = ?, tipo = ?,direccion = ?,  telefono = ?, precio = ?, status= ?, imagen = ? WHERE id_hospedaje = $this->intId_hospedaje ";
 			$arrData = array($this->strHospedaje, $this->strDescripcion, $this->strTipo, $this->strDireccion, $this->strTelefono, $this->intPrecio, $this->intStatus, $this->strImagen);
 			$request = $this->update($sql, $arrData);
 		} else {
