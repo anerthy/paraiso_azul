@@ -13,13 +13,6 @@
           <input type="hidden" id="idUsuario" name="idUsuario" value="">
           <p class="text-primary">Todos los campos son obligatorios.</p>
 
-          <!-- <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="txtIdentificacion">Identificación</label>
-                  <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" required="">
-                </div>
-              </div> -->
-
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="txtNombre">Nombre</label>
@@ -74,7 +67,7 @@
         <table class="table table-bordered">
           <tbody>
             <tr>
-              <td>Nombres:</td>
+              <td>Nombre:</td>
               <td id="celNombre">Jacob</td>
             </tr>
 
