@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function(){
     formTransporte.onsubmit = function(e) {
         e.preventDefault();
 
-        var intId_transporte = document.querySelector('#id_Transporte').value;
+        var intId_Transporte = document.querySelector('#id_Transporte').value;
         var strNombre_trans = document.querySelector('#txtNombre_trans').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
         var strClase = document.querySelector('#txtClase').value; 
@@ -144,11 +144,12 @@ document.addEventListener('DOMContentLoaded', function(){
                             '<span class="badge badge-danger">Inactivo</span>';
                         rowTable.cells[1].textContent = strNombre_trans;
                         rowTable.cells[2].textContent = strDescripcion;
+                        rowTable.cells[3].textContent = strTipo;
                         rowTable.cells[4].innerHTML = strClase;
                         rowTable.cells[5].innerHTML = strDisponibilidad;
                         rowTable.cells[6].innerHTML = intPrecio;
                         rowTable.cells[7].textContent = strTelefono;
-                        rowTable.cells[3].innerHTML = htmlStatus;
+                        rowTable.cells[8].innerHTML = htmlStatus;
                         rowTable = "";
                         
 

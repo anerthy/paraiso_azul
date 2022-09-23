@@ -87,9 +87,9 @@
 			$strTransporte =  strClean($_POST['txtNombre_trans']);
 			$strDescripcion = strClean($_POST['txtDescripcion']);
 			$strClase = strClean($_POST['txtClase']);
-			$strTipo = intval($_POST['txtTipo']);
-			$strDisponibilidad = intval($_POST['txtDisponibilidad']);
-			$intPrecio = strClean($_POST['txtPrecio']);
+			$strTipo = strClean($_POST['txtTipo']);
+			$strDisponibilidad = strClean($_POST['txtDisponibilidad']);
+			$intPrecio = intval($_POST['txtPrecio']);
             $strTelefono = strClean($_POST['txtTelefono']);
             $intStatus = intval($_POST['listStatus']);
 

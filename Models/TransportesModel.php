@@ -47,17 +47,17 @@
 			$this->intPrecio = $precio;
             $this->intTelefono = $telefono;
             $this->intStatus = $status;
-			$this->strIamgen = $imagen;
+			$this->strImagen = $imagen;
 			
 
 
-			$sql = "SELECT * FROM tranporte WHERE nombre_trans = '{$this->strTransporte}' ";
+			$sql = "SELECT * FROM transporte WHERE nombre_trans = '{$this->strTransporte}' ";
 			$request = $this->select_all($sql);
 
 			if(empty($request))
 			{
-				$query_insert  = "INSERT INTO transporte(nombre_trans,descripcion,clase,tipo,disponibilidad,precio,telefono,status,portada) VALUES(?,?,?,?,?,?,?,?,?)";
-	        	$arrData = array($this->strTransporte, $this->strDescripcion, $this->strClase,$this->strTipo,$this->strDisponibilidad,$this->intPrecio,$this->Telefono,$this->status,$this->strImagen);
+				$query_insert  = "INSERT INTO transporte(nombre_trans,descripcion,clase,tipo,disponibilidad,precio,telefono,status,imagen) VALUES(?,?,?,?,?,?,?,?,?)";
+	        	$arrData = array($this->strTransporte, $this->strDescripcion, $this->strClase,$this->strTipo,$this->strDisponibilidad,$this->intPrecio,$this->strTelefono,$this->intStatus,$this->strImagen);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
 			}else{
@@ -93,7 +93,7 @@
 		    return $request;			
 		}
 
-		public function deleteTrasnporte(int $id_transporte)
+		public function deleteTransporte(int $id_transporte)
 		{
 			
 			

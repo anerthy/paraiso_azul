@@ -26,12 +26,12 @@
                           <th>ID</th>
                           <th>Nombre</th>
                           <th>Descripcion</th>
-                          <th>Status</th>
-                          <th>Correo</th>
+                          <th>Clase</th>
+                          <th>Tipo</th>
+                          <th>Disponibilidad</th>
+                          <th>Precio</th>
                           <th>Telefono</th>
-                          <th>Integrantes</th>
-                          <th>Ubicacion</th>
-                          <th>Ubicacion</th>
+                          <th>Status</th>
                           <th>Acciones</th>
                         
                         </tr>
@@ -45,6 +45,7 @@
                           <td>patitos@info.com</td>
                           <td>78542155</td>
                           <td>20</td>
+                          <td>Al lado del bnc</td>
                           <td>Al lado del bnc</td>
                           <td></td>
                         </tr>
