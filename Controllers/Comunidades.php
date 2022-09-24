@@ -49,13 +49,13 @@
 		{
 			$htmlOptions = "";
 			$arrData = $this->model->selectComunidades();
-			// if(count($arrData) > 0 ){
-			// 	for ($i=0; $i < count($arrData); $i++) { 
-			// 		// if($arrData[$i]['status'] == 1 ){
-			// 		// $htmlOptions .= '<option value="'.$arrData[$i]['id_comunidad'].'">'.$arrData[$i]['nombrecomunidad'].'</option>';
-			// 		// }
-			// 	}
-			// }
+			if(count($arrData) > 0 ){
+				for ($i=0; $i < count($arrData); $i++) { 
+					if($arrData[$i]['status'] == 1 ){
+					$htmlOptions .= '<option value="'.$arrData[$i]['id_comunidad '].'">'.$arrData[$i]['nombre_com'].'</option>';
+					}
+				}
+			}
 			echo $htmlOptions;
 			die();		
 		}

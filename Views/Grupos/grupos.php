@@ -32,6 +32,7 @@
                           <!-- <th>Integrantes</th> -->
                           <!-- <th>Ubicacion</th> -->
                           <!-- <th>Representante</th> -->
+                          <th>Comunidad</th>
                           <th>Acciones</th>
                         
                         </tr>
@@ -47,6 +48,7 @@
                           <!-- <td>20</td>
                           <td>Al lado del bnc</td>
                           <td>PATO</td> -->
+                          <td>Caballlo</td>
                           <td></td>
                         </tr>
                       </tbody>

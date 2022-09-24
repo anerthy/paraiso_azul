@@ -11,6 +11,7 @@
 		public $intNumero_integrantes;
 		public $strUbicacion;
 		public $strRepresentante;
+		public $intTipoId;
 		public $strLogo;
 		
 
@@ -19,24 +20,51 @@
 			parent::__construct();
 		}
 
-		public function selectGrupos()
-		{
-			//EXTRAE GRUPOS
-			$sql = "SELECT * FROM grupo_organizado WHERE status != 0";
-			$request = $this->select_all($sql);
-			return $request;
-		}
+		// public function selectGrupos()
+		// {
+		// 	//EXTRAE GRUPOS
+		// 	$sql = "SELECT * FROM grupo_organizado ";
+		// 	$request = $this->select_all($sql);
+		// 	return $request;
+		// }
 
+		public function selectGrupos()
+	{
+		$sql = "SELECT g.id_grupo,g.nombre_grupo,g.representante,g.descripcion,g.ubicacion,g.correo,g.telefono,g.numero_integrantes,g.logo,g.status,c.nombre_com
+					FROM grupo_organizado g
+					INNER JOIN comunidad c
+					ON g.comunidad_id = c.id_comunidad
+					WHERE u.status != 0 ";
+		$request = $this->select_all($sql);
+		return $request;
+	}
+////// ????/
 		public function selectGrupo(int $id_grupo)
 		{
-			//BUSCAR GRUPO
+
+
 			$this->intId_grupo = $id_grupo;
-			$sql = "SELECT * FROM grupo_organizado WHERE id_grupo = $this->intId_grupo";
+			$sql = "SELECT g.id_grupo,g.nombre_grupo,g.representante,g.descripcion,g.ubicacion,g.correo,g.telefono,g.numero_integrantes,g.logo,g.status,c.nombre_com
+			FROM grupo_organizado g
+					INNER JOIN comunidad c
+					ON g.comunidad_id = c.id_comunidad
+					WHERE g.id_grupo = $this->intId_grupo";
+					
 			$request = $this->select($sql);
 			return $request;
+
+
+
+
+			// //BUSCAR GRUPO
+			// $this->intId_grupo = $id_grupo;
+			// $sql = "SELECT * FROM grupo_organizado WHERE id_grupo = $this->intId_grupo";
+			// $request = $this->select($sql);
+			// return $request;
+
 		}
 
-		public function insertGrupo(string $grupo, string $descripcion, int $status, string $correo, int $telefono, int $numero_integrantes,string $ubicacion, string $representante,string $logo){
+		public function insertGrupo(string $grupo, string $descripcion, int $status, string $correo, int $telefono, int $numero_integrantes,string $ubicacion, string $representante,int $tipoid,string $logo){
 
 			$return = "";
 			$this->strGrupo = $grupo;
@@ -47,6 +75,7 @@
 			$this->intNumero_integrantes = $numero_integrantes;
 			$this->strUbicacion = $ubicacion;
 			$this->strRepresentante = $representante;
+			$this->intTipoId = $tipoid;
 			$this->strLogo = $logo;
 			
 
@@ -56,8 +85,8 @@
 
 			if(empty($request))
 			{
-				$query_insert  = "INSERT INTO grupo_organizado(nombre_grupo,descripcion,status,correo,telefono,numero_integrantes,ubicacion,representante,logo) VALUES(?,?,?,?,?,?,?,?,?)";
-	        	$arrData = array($this->strGrupo, $this->strDescripcion, $this->intStatus,$this->strCorreo,$this->intTelefono,$this->intNumero_integrantes,$this->strUbicacion,$this->strRepresentante,$this->strLogo);
+				$query_insert  = "INSERT INTO grupo_organizado(nombre_grupo,descripcion,status,correo,telefono,numero_integrantes,ubicacion,representante,comunidad_id,logo) VALUES(?,?,?,?,?,?,?,?,?,?)";
+	        	$arrData = array($this->strGrupo, $this->strDescripcion, $this->intStatus,$this->strCorreo,$this->intTelefono,$this->intNumero_integrantes,$this->strUbicacion,$this->strRepresentante,$this->intTipoId,$this->strLogo);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
 			}else{
@@ -66,7 +95,7 @@
 			return $return;
 		}	
 
-		public function updateGrupo(int $id_grupo, string $grupo, string $descripcion, int $status, string $correo, int $telefono, int $numero_integrantes,string $ubicacion,string $representante, string $logo ){
+		public function updateGrupo(int $id_grupo, string $grupo, string $descripcion, int $status, string $correo, int $telefono, int $numero_integrantes,string $ubicacion,string $representante,int $tipoid, string $logo ){
 			$this->intId_grupo = $id_grupo;
 			$this->strGrupo = $grupo;
 			$this->strDescripcion = $descripcion;
@@ -76,9 +105,12 @@
 			$this->intNumero_integrantes = $numero_integrantes;
 			$this->strUbicacion = $ubicacion;
 			$this->strRepresentante = $representante;
+			$this->intTipoId = $tipoid;
 			$this->strLogo = $logo;
 			
 
+
+/////???????
 			$sql = "SELECT * FROM grupo_organizado WHERE nombre_grupo = '$this->strGrupo' AND id_grupo != $this->intId_grupo";
 			$request = $this->select_all($sql);
 

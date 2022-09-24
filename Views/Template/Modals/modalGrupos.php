@@ -65,6 +65,12 @@
                   <textarea type="text" class="form-control valid validText" id="txtRepresentante" name="txtRepresentante" required=""></textarea>
                 </div>
 
+                <div class="form-group">
+                    <label for="listComunidad_id">Comunidad</label>
+                    <select class="form-control" data-live-search="true" id="listComunidad_id" name="listComunidad_id"  >
+                    </select>
+                </div>
+
 
               <div class="form-row">
  

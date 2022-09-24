@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function(){
             // {"data":"numero_integrantes"},
             // {"data":"ubicacion"},
             // {"data":"representante"},
+            {"data":"nombre_com"},
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -117,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var intNumero_integrantes = document.querySelector('#txtNumero_integrantes').value;
         var strUbicacion = document.querySelector('#txtUbicacion').value;
         var strRepresentante = document.querySelector('#txtRepresentante').value;
+        var intTipocomunidad = document.querySelector('#listComunidad_id').value;
 
         if(strNombre_grupo == '' || strDescripcion == '' || intStatus == '' || strCorreo == '' || intTelefono == '' || intNumero_integrantes == '' || strUbicacion == ''|| strRepresentante == '' )
         {
@@ -149,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         rowTable.cells[6].innerHTML = intNumero_integrantes;
                         rowTable.cells[7].textContent = strUbicacion;
                         rowTable.cells[8].textContent = strRepresentante;
+                        rowTable.cells[9].innerHTML = intTipocomunidad
                         rowTable = "";
                         
 
@@ -174,6 +177,21 @@ document.addEventListener('DOMContentLoaded', function(){
 
 },false);
 
+function fntComunidadesGrupo(){
+    var ajaxUrl = base_url+'/Comunidades/getSelectComunidades';
+    var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    request.open("GET",ajaxUrl,true);
+    request.send();
+
+    request.onreadystatechange = function(){
+        if(request.readyState == 4 && request.status == 200){
+            document.querySelector('#listComunidad_id').innerHTML = request.responseText;
+            document.querySelector('#listComunidad_id').value = 1;
+            $('#listComunidad_id').selectpicker('render');
+        }
+    }
+    
+}
 //$('#tableGrupos').DataTable();
 
 function openModal(){
@@ -257,6 +275,7 @@ function fntEditGrupo(id_grupo){
                 document.querySelector("#txtNumero_integrantes").value = objData.data.numero_integrantes;
                 document.querySelector("#txtUbicacion").value = objData.data.ubicacion;
                 document.querySelector("#txtRepresentante").value = objData.data.representante;
+                //document.querySelector("#listComunidad_id").value =objData.data.idrol;
                 document.querySelector('#foto_actual').value = objData.data.logo;
                 document.querySelector("#foto_remove").value= 0;
           
