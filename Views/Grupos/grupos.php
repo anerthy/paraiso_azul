@@ -29,8 +29,9 @@
                           <th>Status</th>
                           <th>Correo</th>
                           <th>Telefono</th>
-                          <th>Integrantes</th>
-                          <th>Ubicacion</th>
+                          <!-- <th>Integrantes</th> -->
+                          <!-- <th>Ubicacion</th> -->
+                          <!-- <th>Representante</th> -->
                           <th>Acciones</th>
                         
                         </tr>
@@ -43,8 +44,9 @@
                           <td>Activo</td>
                           <td>patitos@info.com</td>
                           <td>78542155</td>
-                          <td>20</td>
+                          <!-- <td>20</td>
                           <td>Al lado del bnc</td>
+                          <td>PATO</td> -->
                           <td></td>
                         </tr>
                       </tbody>

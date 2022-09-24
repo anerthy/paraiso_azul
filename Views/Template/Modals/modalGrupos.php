@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
             <form id="formGrupo" name="formGrupo" class="form-horizontal">
-              <input type="hidden" id="idGrupo" name="idGrupo" value="">
+              <input type="hidden" id="id_Grupo" name="id_Grupo" value="">
               <input type="hidden" id="foto_actual" name="foto_actual" value="">
               <input type="hidden" id="foto_remove" name="foto_remove" value="0">
 
@@ -18,13 +18,13 @@
               <p class="text-primary">Todos los campos son obligatorios.</p>
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="txtNombre">Nombre</label>
-                  <input type="text" class="form-control valid validText" id="txtNombre" name="txtNombre" required="">
+                  <label for="txtNombre_grupo">Nombre</label>
+                  <input type="text" class="form-control valid validText" id="txtNombre_grupo" name="txtNombre_grupo" required="">
                 </div>
             
                 <div class="form-group col-md-3">
-                  <label for="txtIntegrantes">Integrantes</label>
-                  <input type="text" class="form-control valid validNumber" placeholder="Cantidad" id="txtIntegrantes" name="txtIntegrantes" required="" onkeypress="return controlTag(event);">
+                  <label for="txtNumero_integrantes">Integrantes</label>
+                  <input type="text" class="form-control valid validNumber" placeholder="Cantidad" id="txtNumero_integrantes" name="txtNumero_integrantes" required="" onkeypress="return controlTag(event);">
             </div>
 
 
@@ -59,6 +59,10 @@
               <div class="form-group">
                   <label for="txtUbicacion">Ubicacion</label>
                   <textarea type="text" class="form-control valid validText" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="txtRepresentante">Representante</label>
+                  <textarea type="text" class="form-control valid validText" id="txtRepresentante" name="txtRepresentante" required=""></textarea>
                 </div>
 
 
@@ -107,11 +111,11 @@ Modal
           <tbody>
             <tr>
               <td>Id:</td>
-              <td id="celId">654654654</td>
+              <td id="celId_grupo">654654654</td>
             </tr>
             <tr>
               <td>Nombres:</td>
-              <td id="celNombre">Jacob</td>
+              <td id="celNombre_grupo">Jacob</td>
             </tr>
             <tr>
               <td>Descripcion:</td>
@@ -131,11 +135,15 @@ Modal
             </tr>
             <tr>
               <td>Integrantes:</td>
-              <td id="celIntegrantes">Larry</td>
+              <td id="celNumero_integrantes">Larry</td>
             </tr>
             <tr>
               <td>Ubicacion:</td>
               <td id="celUbicacion">Larry</td>
+            </tr>
+            <tr>
+              <td>Representante:</td>
+              <td id="celRepresentante">Larry</td>
             </tr>
             
             <tr>

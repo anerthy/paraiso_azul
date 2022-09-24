@@ -3,7 +3,7 @@ var tableGrupos;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
-//document.addEventListener('DOMContentLoaded', function(){
+
 
     tableGrupos = $('#tableGrupos').dataTable( {
         "aProcessing":true,
@@ -16,14 +16,15 @@ document.addEventListener('DOMContentLoaded', function(){
             "dataSrc":""
         },
         "columns":[
-            {"data":"idgrupo"},
-            {"data":"nombre"},
+            {"data":"id_grupo"},
+            {"data":"nombre_grupo"},
             {"data":"descripcion"},
             {"data":"status"},
             {"data":"correo"},
             {"data":"telefono"},
-            {"data":"integrantes"},
-            {"data":"ubicacion"},
+            // {"data":"numero_integrantes"},
+            // {"data":"ubicacion"},
+            // {"data":"representante"},
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -107,16 +108,17 @@ document.addEventListener('DOMContentLoaded', function(){
     formGrupo.onsubmit = function(e) {
         e.preventDefault();
 
-        var intIdGrupo = document.querySelector('#idGrupo').value;
-        var strNombre = document.querySelector('#txtNombre').value;
+        var intId_Grupo = document.querySelector('#id_Grupo').value;
+        var strNombre_grupo = document.querySelector('#txtNombre_grupo').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
         var intStatus = document.querySelector('#listStatus').value;
         var strCorreo = document.querySelector('#txtCorreo').value; 
         var intTelefono = document.querySelector('#txtTelefono').value;
-        var intIntegrantes = document.querySelector('#txtIntegrantes').value;
+        var intNumero_integrantes = document.querySelector('#txtNumero_integrantes').value;
         var strUbicacion = document.querySelector('#txtUbicacion').value;
+        var strRepresentante = document.querySelector('#txtRepresentante').value;
 
-        if(strNombre == '' || strDescripcion == '' || intStatus == '' || strCorreo == '' || intTelefono == '' || intIntegrantes == '' || strUbicacion == '' )
+        if(strNombre_grupo == '' || strDescripcion == '' || intStatus == '' || strCorreo == '' || intTelefono == '' || intNumero_integrantes == '' || strUbicacion == ''|| strRepresentante == '' )
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -139,13 +141,14 @@ document.addEventListener('DOMContentLoaded', function(){
                         htmlStatus = intStatus == 1 ? 
                             '<span class="badge badge-success">Activo</span>' : 
                             '<span class="badge badge-danger">Inactivo</span>';
-                        rowTable.cells[1].textContent = strNombre;
+                        rowTable.cells[1].textContent = strNombre_grupo;
                         rowTable.cells[2].textContent = strDescripcion;
                         rowTable.cells[3].innerHTML = htmlStatus;
                         rowTable.cells[4].innerHTML = strCorreo;
                         rowTable.cells[5].innerHTML = intTelefono;
-                        rowTable.cells[6].innerHTML = intIntegrantes;
+                        rowTable.cells[6].innerHTML = intNumero_integrantes;
                         rowTable.cells[7].textContent = strUbicacion;
+                        rowTable.cells[8].textContent = strRepresentante;
                         rowTable = "";
                         
 
@@ -153,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
                     $('#modalFormGrupo').modal("hide");
                     formGrupo.reset();
-                    swal("Grupos de usuario", objData.msg ,"success");
+                    swal("Grupos organiazos", objData.msg ,"success");
                     removePhoto();
                     tableGrupos.api().ajax.reload();
                 }else{
@@ -176,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function(){
 function openModal(){
     
     rowTable = "";
-    document.querySelector('#idGrupo').value ="";
+    document.querySelector('#id_Grupo').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
@@ -195,9 +198,9 @@ function openModal(){
 
 
 
-function fntViewInfo(idgrupo){
+function fntViewInfo(id_grupo){
     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/Grupos/getGrupo/'+idgrupo;
+    let ajaxUrl = base_url+'/Grupos/getGrupo/'+id_grupo;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -208,15 +211,16 @@ function fntViewInfo(idgrupo){
                 let estado = objData.data.status == 1 ? 
                 '<span class="badge badge-success">Activo</span>' : 
                 '<span class="badge badge-danger">Inactivo</span>';
-                document.querySelector("#celId").innerHTML = objData.data.idgrupo;
-                document.querySelector("#celNombre").innerHTML = objData.data.nombre;
+                document.querySelector("#celId_grupo").innerHTML = objData.data.id_grupo;
+                document.querySelector("#celNombre_grupo").innerHTML = objData.data.nombre_grupo;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
                 document.querySelector("#celEstado").innerHTML = estado;
                 document.querySelector("#celCorreo").innerHTML =  objData.data.correo;
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
-                document.querySelector("#celIntegrantes").innerHTML = objData.data.integrantes;
+                document.querySelector("#celNumero_integrantes").innerHTML = objData.data.numero_integrantes;
                 document.querySelector("#celUbicacion").innerHTML = objData.data.ubicacion;
-                document.querySelector("#imgGrupo").innerHTML = '<img src="'+objData.data.url_portada+'"></img>';
+                document.querySelector("#celRepresentante").innerHTML = objData.data.representante;
+                document.querySelector("#imgGrupo").innerHTML = '<img src="'+objData.data.url_logo+'"></img>';
                 $('#modalViewGrupo').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
@@ -226,16 +230,16 @@ function fntViewInfo(idgrupo){
 }
 
 
-function fntEditGrupo(idgrupo){
+function fntEditGrupo(id_grupo){
    // rowTable = element.parentNode.parentNode.parentNode;
     document.querySelector('#titleModal').innerHTML ="Actualizar Grupo";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var idgrupo = idgrupo;
+    var id_grupo = id_grupo;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl  = base_url+'/Grupos/getGrupo/'+idgrupo;
+    var ajaxUrl  = base_url+'/Grupos/getGrupo/'+id_grupo;
     request.open("GET",ajaxUrl ,true);
     request.send();
 
@@ -245,14 +249,15 @@ function fntEditGrupo(idgrupo){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#idGrupo").value = objData.data.idgrupo;
-                document.querySelector("#txtNombre").value = objData.data.nombre;
+                document.querySelector("#id_Grupo").value = objData.data.id_grupo;
+                document.querySelector("#txtNombre_grupo").value = objData.data.nombre_grupo;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
                 document.querySelector("#txtCorreo").value = objData.data.correo;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
-                document.querySelector("#txtIntegrantes").value = objData.data.integrantes;
+                document.querySelector("#txtNumero_integrantes").value = objData.data.numero_integrantes;
                 document.querySelector("#txtUbicacion").value = objData.data.ubicacion;
-                document.querySelector('#foto_actual').value = objData.data.portada;
+                document.querySelector("#txtRepresentante").value = objData.data.representante;
+                document.querySelector('#foto_actual').value = objData.data.logo;
                 document.querySelector("#foto_remove").value= 0;
           
 
@@ -277,12 +282,12 @@ function fntEditGrupo(idgrupo){
                 $('#listStatus').selectpicker('render');
 
                 if(document.querySelector('#img')){
-                    document.querySelector('#img').src = objData.data.url_portada;
+                    document.querySelector('#img').src = objData.data.url_logo;
                 }else{
-                    document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objData.data.url_portada+">";
+                    document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objData.data.url_logo+">";
                 }
 
-                if(objData.data.portada == 'portada_categoria.png'){
+                if(objData.data.logo == 'portada_categoria.png'){
                     document.querySelector('.delPhoto').classList.add("notBlock");
                 }else{
                     document.querySelector('.delPhoto').classList.remove("notBlock");
@@ -304,8 +309,8 @@ function fntEditGrupo(idgrupo){
 
 }
 
-function fntDelGrupo(idgrupo){
-    var idgrupo = idgrupo;
+function fntDelGrupo(id_grupo){
+    var id_grupo = id_grupo;
     swal({
         title: "Eliminar Grupo",
         text: "¿Realmente quiere eliminar el Grupo?",
@@ -321,7 +326,7 @@ function fntDelGrupo(idgrupo){
         {
             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
             var ajaxUrl = base_url+'/Grupos/delGrupo/';
-            var strData = "idgrupo="+idgrupo;
+            var strData = "id_grupo="+id_grupo;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);

@@ -2,15 +2,16 @@
 
 	class GruposModel extends Mysql
 	{
-		public $intIdgrupo;
+		public $intId_grupo;
 		public $strGrupo;
 		public $strDescripcion;
 		public $intStatus;
 		public $strCorreo;
 		public $intTelefono;
-		public $intIntegrantes;
+		public $intNumero_integrantes;
 		public $strUbicacion;
-		public $strPortada;
+		public $strRepresentante;
+		public $strLogo;
 		
 
 		public function __construct()
@@ -21,21 +22,21 @@
 		public function selectGrupos()
 		{
 			//EXTRAE GRUPOS
-			$sql = "SELECT * FROM grupo WHERE status != 0";
+			$sql = "SELECT * FROM grupo_organizado WHERE status != 0";
 			$request = $this->select_all($sql);
 			return $request;
 		}
 
-		public function selectGrupo(int $idgrupo)
+		public function selectGrupo(int $id_grupo)
 		{
 			//BUSCAR GRUPO
-			$this->intIdgrupo = $idgrupo;
-			$sql = "SELECT * FROM grupo WHERE idgrupo = $this->intIdgrupo";
+			$this->intId_grupo = $id_grupo;
+			$sql = "SELECT * FROM grupo_organizado WHERE id_grupo = $this->intId_grupo";
 			$request = $this->select($sql);
 			return $request;
 		}
 
-		public function insertGrupo(string $grupo, string $descripcion, int $status, string $correo, int $telefono, int $integrantes,string $ubicacion, string $portada){
+		public function insertGrupo(string $grupo, string $descripcion, int $status, string $correo, int $telefono, int $numero_integrantes,string $ubicacion, string $representante,string $logo){
 
 			$return = "";
 			$this->strGrupo = $grupo;
@@ -43,19 +44,20 @@
 			$this->intStatus = $status;
 			$this->strCorreo = $correo;
 			$this->intTelefono = $telefono;
-			$this->intIntegrantes = $integrantes;
+			$this->intNumero_integrantes = $numero_integrantes;
 			$this->strUbicacion = $ubicacion;
-			$this->strPortada = $portada;
+			$this->strRepresentante = $representante;
+			$this->strLogo = $logo;
 			
 
 
-			$sql = "SELECT * FROM grupo WHERE nombre = '{$this->strGrupo}' ";
+			$sql = "SELECT * FROM grupo_organizado WHERE nombre_grupo = '{$this->strGrupo}' ";
 			$request = $this->select_all($sql);
 
 			if(empty($request))
 			{
-				$query_insert  = "INSERT INTO grupo(nombre,descripcion,status,correo,telefono,integrantes,ubicacion,portada) VALUES(?,?,?,?,?,?,?,?)";
-	        	$arrData = array($this->strGrupo, $this->strDescripcion, $this->intStatus,$this->strCorreo,$this->intTelefono,$this->intIntegrantes,$this->strUbicacion,$this->strPortada);
+				$query_insert  = "INSERT INTO grupo_organizado(nombre_grupo,descripcion,status,correo,telefono,numero_integrantes,ubicacion,representante,logo) VALUES(?,?,?,?,?,?,?,?,?)";
+	        	$arrData = array($this->strGrupo, $this->strDescripcion, $this->intStatus,$this->strCorreo,$this->intTelefono,$this->intNumero_integrantes,$this->strUbicacion,$this->strRepresentante,$this->strLogo);
 	        	$request_insert = $this->insert($query_insert,$arrData);
 	        	$return = $request_insert;
 			}else{
@@ -64,25 +66,26 @@
 			return $return;
 		}	
 
-		public function updateGrupo(int $idgrupo, string $grupo, string $descripcion, int $status, string $correo, int $telefono, int $integrantes,string $ubicacion, string $portada ){
-			$this->intIdgrupo = $idgrupo;
+		public function updateGrupo(int $id_grupo, string $grupo, string $descripcion, int $status, string $correo, int $telefono, int $numero_integrantes,string $ubicacion,string $representante, string $logo ){
+			$this->intId_grupo = $id_grupo;
 			$this->strGrupo = $grupo;
 			$this->strDescripcion = $descripcion;
 			$this->intStatus = $status;
 			$this->strCorreo = $correo;
 			$this->intTelefono = $telefono;
-			$this->intIntegrantes = $integrantes;
+			$this->intNumero_integrantes = $numero_integrantes;
 			$this->strUbicacion = $ubicacion;
-			$this->strPortada = $portada;
+			$this->strRepresentante = $representante;
+			$this->strLogo = $logo;
 			
 
-			$sql = "SELECT * FROM grupo WHERE nombre = '$this->strGrupo' AND idgrupo != $this->intIdgrupo";
+			$sql = "SELECT * FROM grupo_organizado WHERE nombre_grupo = '$this->strGrupo' AND id_grupo != $this->intId_grupo";
 			$request = $this->select_all($sql);
 
 			if(empty($request))
 			{
-				$sql = "UPDATE grupo SET nombre = ?, descripcion = ?, status = ?,correo = ?,  telefono = ?, integrantes = ?, ubicacion= ?, portada = ?WHERE idgrupo = $this->intIdgrupo ";
-				$arrData = array($this->strGrupo, $this->strDescripcion, $this->intStatus,$this->strCorreo, $this->intTelefono, $this->intIntegrantes,$this->strUbicacion, $this->strPortada);
+				$sql = "UPDATE grupo_organizado SET nombre_grupo = ?, descripcion = ?, status = ?,correo = ?,  telefono = ?, numero_integrantes = ?, ubicacion= ?, representante= ?, logo = ?WHERE id_grupo = $this->intId_grupo ";
+				$arrData = array($this->strGrupo, $this->strDescripcion, $this->intStatus,$this->strCorreo, $this->intTelefono, $this->intNumero_integrantes,$this->strUbicacion,$this->strRepresentante, $this->strLogo);
 				$request = $this->update($sql,$arrData);
 			}else{
 				$request = "exist";
@@ -90,12 +93,12 @@
 		    return $request;			
 		}
 
-		public function deleteGrupo(int $idgrupo)
+		public function deleteGrupo(int $id_grupo)
 		{
 			
 			
-			$this->intIdGrupo = $idgrupo;
-			$sql = "UPDATE grupo SET status = ? WHERE idgrupo = $this->intIdGrupo ";
+			$this->intId_Grupo = $id_grupo;
+			$sql = "UPDATE grupo_organizado SET status = ? WHERE id_grupo = $this->intId_Grupo ";
 			$arrData = array(0);
 			$request = $this->update($sql,$arrData);
 			return $request;
