@@ -55,6 +55,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_paquete` (IN `id` SMALLIN
     WHERE id_paquete = id;
 END$$
 
+DROP PROCEDURE IF EXISTS `sp_delete_rol`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_rol` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	DELETE FROM rol
+    WHERE id_rol = id;
+END$$
+
 DROP PROCEDURE IF EXISTS `sp_delete_tour`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_tour` (IN `id` SMALLINT UNSIGNED)  BEGIN
 	DELETE FROM tour 
@@ -65,6 +71,18 @@ DROP PROCEDURE IF EXISTS `sp_delete_transporte`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_transporte` (IN `id` SMALLINT)  BEGIN
 	DELETE FROM transporte 
     WHERE id_transporte = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_delete_usuario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_usuario` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	DELETE FROM usuario
+    WHERE id_usuario = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_delete_voluntario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_voluntario` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	DELETE FROM voluntario
+    where id_voluntario = id;
 END$$
 
 DROP PROCEDURE IF EXISTS `sp_insert_alimentacion`$$
@@ -97,6 +115,36 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_paquete` (IN `tipo` ENUM(
 	VALUES(tipo,detalles,tour_id);
 END$$
 
+DROP PROCEDURE IF EXISTS `sp_insert_reg_alimentacion`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_reg_alimentacion` (IN `alim` SMALLINT UNSIGNED, IN `usuario` SMALLINT UNSIGNED)  BEGIN
+	INSERT INTO registro_alimentacion (alimentacion_id,usuario_id) 
+    VALUES (alim,usuario);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_reg_hospedaje`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_reg_hospedaje` (IN `hospedaje` SMALLINT UNSIGNED, IN `usuario` SMALLINT UNSIGNED)  BEGIN
+	INSERT INTO registro_hospedaje (hospedaje_id,usuario_id)
+    VALUES (hospedaje,usuario);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_reg_tour`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_reg_tour` (IN `tour` SMALLINT UNSIGNED, IN `usuario` SMALLINT UNSIGNED)  BEGIN
+	INSERT INTO registro_tour (tour_id,usuario_id)
+    VALUES (tour,usuario);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_reg_transporte`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_reg_transporte` (IN `transporte` SMALLINT UNSIGNED, IN `usuario` SMALLINT UNSIGNED)  BEGIN
+	INSERT INTO registro_transporte (transporte_id,usuario_id)
+    VALUES (transporte,usuario);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_rol`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_rol` (IN `nombre` VARCHAR(50), IN `descrip` TEXT, IN `status` INT)  BEGIN
+	INSERT INTO rol(nombre_rol,descripcion,status) 
+    VALUES (nombre,descrip,status); 
+END$$
+
 DROP PROCEDURE IF EXISTS `sp_insert_tour`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_tour` (IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `lugar` TEXT, IN `disponibilidad` TEXT, IN `duracion` TIME, IN `cupo_min` TINYINT, IN `telefono` VARCHAR(8), IN `precio` DECIMAL(8,2), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
 	INSERT INTO tour(nombre_tour,descripcion,lugar,disponibilidad,duracion,cupo_minimo,telefono,precio,status,imagen)
@@ -107,6 +155,23 @@ DROP PROCEDURE IF EXISTS `sp_insert_transporte`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_transporte` (IN `nombre` VARCHAR(100), IN `descrip` TEXT, IN `clase` ENUM('Publico','Privado'), IN `tipo` ENUM('Terrestre','Maritimo'), IN `disp` TEXT, IN `precio` DECIMAL(8,2), IN `telefono` VARCHAR(8), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
 INSERT INTO  transporte (nombre_trans ,descripcion,clase,tipo ,disponibilidad,precio,telefono,status,imagen) 
 VALUES (nombre,descrip,clase,tipo,disp,precio,telefono,status,imagen);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_usuario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_usuario` (IN `nombre` VARCHAR(50), IN `correo` VARCHAR(50), IN `contraseña` VARCHAR(100), IN `status` INT, IN `rol` SMALLINT UNSIGNED)  BEGIN
+	INSERT INTO usuario(nombre_usuario,correo,contraseña,status,rol_id)
+	VALUES(nombre,correo,contraseña,status,rol);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_usuario_grupo`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_usuario_grupo` (IN `usuario` SMALLINT, IN `grupo` TINYINT)  BEGIN
+	INSERT INTO usuario_grupo (usuario_id, grupo_id) 			VALUES(usuario,grupo);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_voluntario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_voluntario` (IN `nombre` VARCHAR(35), IN `ape1` VARCHAR(40), IN `ape2` VARCHAR(40), IN `cedula` VARCHAR(9), IN `correo` VARCHAR(50), IN `telefono` VARCHAR(8), IN `fecha_nac` DATE, IN `genero` ENUM('Masculino','Feminino'), IN `residencia` TEXT)  BEGIN
+	INSERT INTO voluntario(nombre_vol,apellido1,apellido2,cedula,correo,telefono, fecha_nacimiento, genero,lugar_residencia)
+	VALUES(nombre,ape1,ape2,cedula,correo,telefono,fecha_nac,genero,residencia);
 END$$
 
 DROP PROCEDURE IF EXISTS `sp_select_alimentacion`$$
@@ -143,6 +208,17 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_paquete` ()  BEGIN
 	SELECT id_paquete,tipo,detalles,tour_id FROM paquete_turistico;
 END$$
 
+DROP PROCEDURE IF EXISTS `sp_select_all_reg_alimentacion`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_reg_alimentacion` ()  BEGIN
+	SELECT alimentacion_id, fecha_creacion, usuario_id 
+    FROM registro_alimentacion;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_rol`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_rol` ()  BEGIN
+	SELECT id_rol, nombre_rol, descripcion, status FROM rol;
+END$$
+
 DROP PROCEDURE IF EXISTS `sp_select_all_tour`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_tour` ()  BEGIN
 	SELECT id_tour,nombre_tour,descripcion,lugar,disponibilidad,duracion,cupo_minimo,telefono,precio,status,imagen 
@@ -153,6 +229,18 @@ DROP PROCEDURE IF EXISTS `sp_select_all_transporte`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_transporte` ()  BEGIN
 	SELECT id_transporte,nombre_trans,descripcion,clase,tipo,disponibilidad,precio,telefono,status,imagen 
   FROM transporte;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_usuario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_usuario` ()  BEGIN
+	SELECT id_usuario,nombre_usuario,correo,contraseña,status,rol_id
+	FROM usuario;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_voluntario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_voluntario` ()  BEGIN
+	SELECT id_voluntario,nombre_vol,apellido1,apellido2,cedula,correo,telefono,fecha_nacimiento,genero,lugar_residencia
+	FROM voluntario;
 END$$
 
 DROP PROCEDURE IF EXISTS `sp_select_comunidad`$$
@@ -182,6 +270,12 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_paquete` (IN `id` SMALLIN
     WHERE id_paquete = id;
 END$$
 
+DROP PROCEDURE IF EXISTS `sp_select_rol`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_rol` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	SELECT id_rol, nombre_rol, descripcion, status FROM rol 
+    WHERE id_rol = id;
+END$$
+
 DROP PROCEDURE IF EXISTS `sp_select_tour`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_tour` (IN `id` SMALLINT UNSIGNED)  BEGIN
 	SELECT id_tour,nombre_tour,descripcion,lugar,disponibilidad,duracion,cupo_minimo,telefono,precio,status,imagen 
@@ -195,6 +289,20 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_transporte` (IN `id` SMAL
     id_transporte,nombre_trans,descripcion,clase,tipo,disponibilidad,precio,telefono,status,imagen
 	FROM transporte
 	WHERE id_transporte = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_usuario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_usuario` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	SELECT id_usuario,nombre_usuario,correo,contraseña,status,rol_id
+	FROM usuario
+	WHERE id_usuario = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_voluntario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_voluntario` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	SELECT id_voluntario,nombre_vol,apellido1,apellido2,cedula,correo,telefono,fecha_nacimiento,genero,lugar_residencia
+	FROM voluntario
+	WHERE id_voluntario = id;
 END$$
 
 DROP PROCEDURE IF EXISTS `sp_update_alimentacion`$$
@@ -262,6 +370,15 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_paquete` (IN `id` SMALLIN
 	WHERE id_paquete = id;
 END$$
 
+DROP PROCEDURE IF EXISTS `sp_update_rol`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_rol` (IN `id` SMALLINT UNSIGNED, IN `nombre` VARCHAR(50), IN `des` TEXT, IN `status` INT)  BEGIN
+	UPDATE rol
+	SET nombre_rol = nombre,
+    descripcion = des,
+    status = status
+	WHERE id_rol = id;
+END$$
+
 DROP PROCEDURE IF EXISTS `sp_update_tour`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_tour` (IN `id` SMALLINT UNSIGNED, IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `lugar` TEXT, IN `disponibilidad` TEXT, IN `duracion` TIME, IN `cupo_min` TINYINT, IN `telefono` VARCHAR(8), IN `precio` DECIMAL(8,2), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
 	UPDATE tour
@@ -293,7 +410,34 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_transporte` (IN `id` SMAL
 	WHERE id_transporte = id;
 END$$
 
+DROP PROCEDURE IF EXISTS `sp_update_usuario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_usuario` (IN `id` SMALLINT UNSIGNED, IN `nombre` VARCHAR(50), IN `correo` VARCHAR(50), IN `contraseña` VARCHAR(100), IN `status` INT, IN `rol` SMALLINT UNSIGNED)  BEGIN
+	UPDATE usuario
+	SET nombre_usuario = nombre,
+    correo = correo,
+    contraseña = contraseña,
+    status = status,
+    rol_id = rol
+	WHERE id_usuario = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_update_voluntario`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_voluntario` (IN `id` SMALLINT, IN `nombre` VARCHAR(35), IN `ape1` VARCHAR(40), IN `ape2` VARCHAR(40), IN `ced` VARCHAR(9), IN `correo` VARCHAR(50), IN `tel` VARCHAR(8), IN `fecha` DATE, IN `gen` ENUM('Masculino','Feminino'), IN `residencia` TEXT)  BEGIN
+	UPDATE voluntario
+	SET nombre_vol = nombre,
+    apellido1 = ape1,
+    apellido2 = ape2,
+    cedula = ced,
+    correo = correo,
+    telefono = tel,
+    fecha_nacimiento = fecha,
+    genero = gen,
+    lugar_residencia = residencia
+	WHERE id_voluntario = id;
+END$$
+
 DELIMITER ;
+
 
 -- --------------------------------------------------------
 
