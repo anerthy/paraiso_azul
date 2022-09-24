@@ -225,6 +225,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 // },false);
 
+
+window.addEventListener('load', function() {
+    fntComunidadesGrupo();
+    /*fntViewUsuario();
+    fntEditUsuario();
+    fntDelUsuario();*/
+}, false);
+
 function fntComunidadesGrupo(){
     var ajaxUrl = base_url+'/Comunidades/getSelectComunidades';
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
