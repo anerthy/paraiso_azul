@@ -18,7 +18,7 @@
 		public function selectComunidades()
 		{
 			//EXTRAE COMUNIDADES NOC
-			$sql = "SELECT * FROM comunidad ";
+			$sql = "SELECT * FROM comunidad";
 			$request = $this->select_all($sql);
 			return $request;
 		}

@@ -48,7 +48,7 @@
                           <!-- <td>20</td>
                           <td>Al lado del bnc</td>
                           <td>PATO</td> -->
-                          <td>Caballlo</td>
+                          <td>Caballo</td>
                           <td></td>
                         </tr>
                       </tbody>

@@ -19,12 +19,13 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"id_grupo"},
             {"data":"nombre_grupo"},
             {"data":"descripcion"},
-            {"data":"status"},
+            
             {"data":"correo"},
             {"data":"telefono"},
             // {"data":"numero_integrantes"},
             // {"data":"ubicacion"},
             // {"data":"representante"},
+            {"data":"status"},
             {"data":"nombre_com"},
             {"data":"options"}
         ],
@@ -112,19 +113,31 @@ document.addEventListener('DOMContentLoaded', function(){
         var intId_Grupo = document.querySelector('#id_Grupo').value;
         var strNombre_grupo = document.querySelector('#txtNombre_grupo').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
-        var intStatus = document.querySelector('#listStatus').value;
+        
         var strCorreo = document.querySelector('#txtCorreo').value; 
         var intTelefono = document.querySelector('#txtTelefono').value;
         var intNumero_integrantes = document.querySelector('#txtNumero_integrantes').value;
         var strUbicacion = document.querySelector('#txtUbicacion').value;
         var strRepresentante = document.querySelector('#txtRepresentante').value;
-        var intTipocomunidad = document.querySelector('#listComunidad_id').value;
+        var intStatus = document.querySelector('#listStatus').value;
+        var intTipogrupo = document.querySelector('#listComunidad_id').value;
 
         if(strNombre_grupo == '' || strDescripcion == '' || intStatus == '' || strCorreo == '' || intTelefono == '' || intNumero_integrantes == '' || strUbicacion == ''|| strRepresentante == '' )
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
+
+
+        let elementsValid = document.getElementsByClassName("valid");
+        for (let i = 0; i < elementsValid.length; i++) { 
+            if(elementsValid[i].classList.contains('is-invalid')) { 
+                swal("Atención", "Por favor verifique los campos en rojo." , "error");
+                return false;
+            } 
+        } 
+
+
        //  divLoading.style.display = "flex";
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         var ajaxUrl = base_url+'/Grupos/setGrupo'; 
@@ -137,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 var objData = JSON.parse(request.responseText);
                 if(objData.status)
                 {
-                    if(rowTable == ""){
+                     if(rowTable == ""){
                         tableGrupos.api().ajax.reload();
                     }else{
                         htmlStatus = intStatus == 1 ? 
@@ -145,37 +158,72 @@ document.addEventListener('DOMContentLoaded', function(){
                             '<span class="badge badge-danger">Inactivo</span>';
                         rowTable.cells[1].textContent = strNombre_grupo;
                         rowTable.cells[2].textContent = strDescripcion;
-                        rowTable.cells[3].innerHTML = htmlStatus;
-                        rowTable.cells[4].innerHTML = strCorreo;
-                        rowTable.cells[5].innerHTML = intTelefono;
-                        rowTable.cells[6].innerHTML = intNumero_integrantes;
-                        rowTable.cells[7].textContent = strUbicacion;
-                        rowTable.cells[8].textContent = strRepresentante;
-                        rowTable.cells[9].innerHTML = intTipocomunidad
+                        rowTable.cells[3].innerHTML = strCorreo;
+                        rowTable.cells[4].innerHTML = intTelefono;
+                        rowTable.cells[5].innerHTML = intNumero_integrantes;
+                        rowTable.cells[6].textContent = strUbicacion;
+                        rowTable.cells[7].textContent = strRepresentante;
+                        rowTable.cells[8].innerHTML = htmlStatus;
+                        rowTable.cells[9].innerHTML = intTipogrupo
                         rowTable = "";
                         
 
                     }
 
+
+                    
                     $('#modalFormGrupo').modal("hide");
                     formGrupo.reset();
-                    swal("Grupos organiazos", objData.msg ,"success");
-                    removePhoto();
+                    swal("Grupos", objData.msg ,"success");
                     tableGrupos.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
-                }              
-            } 
-            //divLoading.style.display = "none";
+                }
+            }
             return false;
-
         }
+
+    }
+}, false);
+//                     if(rowTable == ""){
+//                         tableGrupos.api().ajax.reload();
+//                     }else{
+//                         htmlStatus = intStatus == 1 ? 
+//                             '<span class="badge badge-success">Activo</span>' : 
+//                             '<span class="badge badge-danger">Inactivo</span>';
+//                         rowTable.cells[1].textContent = strNombre_grupo;
+//                         rowTable.cells[2].textContent = strDescripcion;
+//                         rowTable.cells[3].innerHTML = htmlStatus;
+//                         rowTable.cells[4].innerHTML = strCorreo;
+//                         rowTable.cells[5].innerHTML = intTelefono;
+//                         rowTable.cells[6].innerHTML = intNumero_integrantes;
+//                         rowTable.cells[7].textContent = strUbicacion;
+//                         rowTable.cells[8].textContent = strRepresentante;
+//                         rowTable.cells[9].innerHTML = intTipocomunidad
+//                         rowTable = "";
+                        
+
+//                     }
+
+//                     $('#modalFormGrupo').modal("hide");
+//                     formGrupo.reset();
+//                     swal("Grupos organiazos", objData.msg ,"success");
+//                     removePhoto();
+//                     tableGrupos.api().ajax.reload();
+//                 }else{
+//                     swal("Error", objData.msg , "error");
+//                 }              
+//             } 
+//             //divLoading.style.display = "none";
+//             return false;
+
+//         }
       
 
         
-    }
+//     }
 
-},false);
+// },false);
 
 function fntComunidadesGrupo(){
     var ajaxUrl = base_url+'/Comunidades/getSelectComunidades';
@@ -232,12 +280,14 @@ function fntViewInfo(id_grupo){
                 document.querySelector("#celId_grupo").innerHTML = objData.data.id_grupo;
                 document.querySelector("#celNombre_grupo").innerHTML = objData.data.nombre_grupo;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
-                document.querySelector("#celEstado").innerHTML = estado;
+                
                 document.querySelector("#celCorreo").innerHTML =  objData.data.correo;
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
                 document.querySelector("#celNumero_integrantes").innerHTML = objData.data.numero_integrantes;
                 document.querySelector("#celUbicacion").innerHTML = objData.data.ubicacion;
                 document.querySelector("#celRepresentante").innerHTML = objData.data.representante;
+                document.querySelector("#celEstado").innerHTML = estado;
+                document.querySelector("#celTipoGrupo").innerHTML = objData.data.nombre_com;
                 document.querySelector("#imgGrupo").innerHTML = '<img src="'+objData.data.url_logo+'"></img>';
                 $('#modalViewGrupo').modal('show');
             }else{
