@@ -25,15 +25,148 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+DROP PROCEDURE IF EXISTS `sp_delete_alimentacion`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_alimentacion` (IN `id` SMALLINT)  BEGIN
+	DELETE FROM alimentacion
+    WHERE id_alimentacion = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_delete_comunidad`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_comunidad` (IN `id` SMALLINT)  BEGIN
+	DELETE from comunidad 
+    where id_comunidad = id; 
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_delete_grupo`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_grupo` (IN `id` TINYINT UNSIGNED)  BEGIN
+	DELETE FROM grupo_organizado 
+    WHERE id_grupo = id;
+END$$
+
 DROP PROCEDURE IF EXISTS `sp_delete_hospedaje`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_hospedaje` (IN `id_hosp` SMALLINT)  BEGIN
-	DELETE from hospedaje where id_hospedaje = id_hosp; 
+	DELETE from hospedaje 
+    where id_hospedaje = id_hosp; 
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_delete_paquete`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_paquete` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	DELETE FROM paquete_turistico
+    WHERE id_paquete = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_delete_tour`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_tour` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	DELETE FROM tour 
+    WHERE id_tour = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_delete_transporte`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_delete_transporte` (IN `id` SMALLINT)  BEGIN
+	DELETE FROM transporte 
+    WHERE id_transporte = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_alimentacion`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_alimentacion` (IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `direccion` TEXT, IN `hora_apertura` TIME, IN `hora_cierre` TIME, IN `telefono` VARCHAR(8), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
+    INSERT INTO alimentacion(nombre_alim,descripcion,direccion,hora_apertura,hora_cierre,telefono,status,imagen)
+    VALUES(nombre,descripcion,direccion,hora_apertura,hora_cierre,telefono,status,imagen);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_comunidad`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_comunidad` (IN `nombre` VARCHAR(50), IN `descrip` TEXT, IN `provincia` ENUM('Puntarenas','Guanacaste'), IN `canton` ENUM('Puntarenas','Esparza','Buenos Aires','Montes de Oro','Osa','Quepos','Golfito','Coto Brus','Parrita','Corredores','Garabito','Monteverde','Puerto Jiménez'), IN `distrito` ENUM('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia'), IN `imagen` VARCHAR(100))  BEGIN
+ INSERT INTO comunidad(nombre_com,descripcion,provincia,canton,distrito,imagen)
+    VALUES (nombre,descrip,provincia,canton,distrito,imagen);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_grupo`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_grupo` (IN `nombre` VARCHAR(100), IN `representante` VARCHAR(100), IN `descripcion` TEXT, IN `ubicacion` TEXT, IN `correo` VARCHAR(50), IN `telefono` VARCHAR(8), IN `num_int` TINYINT, IN `status` INT, IN `logo` VARCHAR(100), IN `comunidad_id` TINYINT UNSIGNED)  BEGIN
+	INSERT INTO grupo_organizado(nombre_grupo,representante,descripcion,ubicacion,correo,telefono,numero_integrantes,status,logo,comunidad_id)
+	VALUES(nombre,representante,descripcion,ubicacion,correo,telefono,num_int,status,logo,comunidad_id);
 END$$
 
 DROP PROCEDURE IF EXISTS `sp_insert_hospedaje`$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_hospedaje` (IN `nombre_hosp` VARCHAR(100), IN `descripcion` TEXT, IN `tipo` ENUM('Cabina','Camping'), IN `direccion` TEXT, IN `telefono` VARCHAR(8), IN `precio` DECIMAL(8,2), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
-    INSERT INTO `hospedaje`(`nombre_hosp`,`descripcion`,`tipo`,`direccion`,`telefono`,`precio`,`status`,`imagen`) 
+    INSERT INTO hospedaje(nombre_hosp,descripcion,tipo,direccion,telefono,precio,status,imagen) 
     VALUES (nombre_hosp,descripcion,tipo, direccion,telefono,precio,status,imagen);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_paquete`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_paquete` (IN `tipo` ENUM('Alimentacion','Transporte','Hospedaje'), IN `detalles` TEXT, IN `tour_id` SMALLINT UNSIGNED)  BEGIN
+	INSERT INTO paquete_turistico (tipo,detalles,tour_id)
+	VALUES(tipo,detalles,tour_id);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_tour`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_tour` (IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `lugar` TEXT, IN `disponibilidad` TEXT, IN `duracion` TIME, IN `cupo_min` TINYINT, IN `telefono` VARCHAR(8), IN `precio` DECIMAL(8,2), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
+	INSERT INTO tour(nombre_tour,descripcion,lugar,disponibilidad,duracion,cupo_minimo,telefono,precio,status,imagen)
+	VALUES(nombre,descripcion,lugar,disponibilidad,duracion,cupo_min,telefono,precio,status,imagen);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_insert_transporte`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_insert_transporte` (IN `nombre` VARCHAR(100), IN `descrip` TEXT, IN `clase` ENUM('Publico','Privado'), IN `tipo` ENUM('Terrestre','Maritimo'), IN `disp` TEXT, IN `precio` DECIMAL(8,2), IN `telefono` VARCHAR(8), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
+INSERT INTO  transporte (nombre_trans ,descripcion,clase,tipo ,disponibilidad,precio,telefono,status,imagen) 
+VALUES (nombre,descrip,clase,tipo,disp,precio,telefono,status,imagen);
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_alimentacion`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_alimentacion` (IN `id` SMALLINT)  BEGIN
+	SELECT id_alimentacion,nombre_alim,descripcion,direccion,hora_apertura,hora_cierre,telefono,status,imagen FROM alimentacion 
+    WHERE id_alimentacion = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_alimentacion`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_alimentacion` ()  BEGIN
+	SELECT id_alimentacion,nombre_alim,descripcion,direccion,hora_apertura,hora_cierre,telefono,status,imagen FROM alimentacion;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_comunidad`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_comunidad` ()  BEGIN
+    SELECT id_comunidad,nombre_com,descripcion,provincia,canton,distrito,imagen
+    from comunidad; 
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_grupo`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_grupo` ()  BEGIN
+		SELECT id_grupo,nombre_grupo,representante,descripcion, ubicacion,correo, telefono, numero_integrantes,status, logo,comunidad_id
+	FROM grupo_organizado;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_hospedaje`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_hospedaje` ()  BEGIN
+SELECT id_hospedaje,nombre_hosp,descripcion,tipo,direccion,telefono,precio,status,imagen 
+from hospedaje;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_paquete`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_paquete` ()  BEGIN
+	SELECT id_paquete,tipo,detalles,tour_id FROM paquete_turistico;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_tour`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_tour` ()  BEGIN
+	SELECT id_tour,nombre_tour,descripcion,lugar,disponibilidad,duracion,cupo_minimo,telefono,precio,status,imagen 
+    FROM tour;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_all_transporte`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_all_transporte` ()  BEGIN
+	SELECT id_transporte,nombre_trans,descripcion,clase,tipo,disponibilidad,precio,telefono,status,imagen 
+  FROM transporte;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_comunidad`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_comunidad` (IN `id` SMALLINT)  BEGIN
+    SELECT id_comunidad,nombre_com,descripcion,provincia,canton,distrito,imagen
+    from comunidad 
+    WHERE id_comunidad = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_grupo`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_grupo` (IN `id` TINYINT UNSIGNED)  BEGIN
+	SELECT id_grupo,nombre_grupo,representante,descripcion, ubicacion,correo, telefono, numero_integrantes,status, logo,comunidad_id
+	FROM grupo_organizado
+	WHERE id_grupo = id;
 END$$
 
 DROP PROCEDURE IF EXISTS `sp_select_hospedaje`$$
@@ -43,15 +176,72 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_hospedaje` (IN `id_hosp` 
     WHERE id_hospedaje = id_hosp;
 END$$
 
-DROP PROCEDURE IF EXISTS `sp_select_hospedajes`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_hospedajes` ()  BEGIN
-SELECT id_hospedaje,nombre_hosp,descripcion,tipo,direccion,telefono,precio,status,imagen 
-from hospedaje;
+DROP PROCEDURE IF EXISTS `sp_select_paquete`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_paquete` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	SELECT id_paquete,tipo,detalles,tour_id FROM paquete_turistico 
+    WHERE id_paquete = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_tour`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_tour` (IN `id` SMALLINT UNSIGNED)  BEGIN
+	SELECT id_tour,nombre_tour,descripcion,lugar,disponibilidad,duracion,cupo_minimo,telefono,precio,status,imagen 
+    FROM tour
+    where id_tour = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_select_transporte`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_select_transporte` (IN `id` SMALLINT)  BEGIN
+	SELECT
+    id_transporte,nombre_trans,descripcion,clase,tipo,disponibilidad,precio,telefono,status,imagen
+	FROM transporte
+	WHERE id_transporte = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_update_alimentacion`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_alimentacion` (IN `id` SMALLINT, IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `hora_apertura` TIME, IN `hora_cierre` TIME, IN `telefono` VARCHAR(8), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
+	UPDATE alimentacion 
+    SET nombre_alim = nombre,
+    descripcion = descripcion,
+    direccion = direccion,
+    hora_apertura = hora_apertura,
+    hora_cierre = hora_cierre,
+    telefono = telefono,
+    status = status,
+    imagen = imagen
+	WHERE id_alimentacion = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_update_comunidad`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_comunidad` (IN `id` TINYINT, IN `nombre` VARCHAR(50), IN `descrip` TEXT, IN `provincia` ENUM('Puntarenas','Guanacaste'), IN `canton` ENUM('Puntarenas','Esparza','Buenos Aires','Montes de Oro','Osa','Quepos','Golfito','Coto Brus','Parrita','Corredores','Garabito','Monteverde','Puerto Jiménez'), IN `distrito` ENUM('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia'), IN `imagen` VARCHAR(100))  BEGIN
+	UPDATE comunidad 
+    SET nombre_com = nombre, 
+    descripcion = descrip,
+    provincia = provincia,
+    canton = canton,
+    distrito = distrito,
+    imagen = imagen
+    WHERE id_comunidad = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_update_grupo`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_grupo` (IN `id` TINYINT, IN `nombre` VARCHAR(100), IN `representante` VARCHAR(100), IN `direccion` TEXT, IN `ubicacion` TEXT, IN `correo` VARCHAR(50), IN `telefono` VARCHAR(8), IN `num_int` TINYINT, IN `status` INT, IN `logo` VARCHAR(100), IN `comunidad_id` TINYINT UNSIGNED)  BEGIN
+	UPDATE grupo_organizado
+	SET nombre_grupo = nombre,
+    representante = representante,
+    descripcion = descripcion,
+    ubicacion = ubicacion,
+    correo = correo,
+    telefono = telefono,
+    numero_integrantes = num_int,
+    status = status,
+    logo = logo,
+    comunidad_id = comunidad_id
+	WHERE id_grupo = id;
 END$$
 
 DROP PROCEDURE IF EXISTS `sp_update_hospedaje`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_hospedaje` (IN `id_hosp` SMALLINT, IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `tipo` ENUM('Cabaña','Camping'), IN `direccion` TEXT, IN `tel` VARCHAR(8), IN `precio` DECIMAL(8,2), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
-	UPDATE `hospedaje` 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_hospedaje` (IN `id` SMALLINT, IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `tipo` ENUM('Cabaña','Camping'), IN `direccion` TEXT, IN `tel` VARCHAR(8), IN `precio` DECIMAL(8,2), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
+	UPDATE hospedaje 
     SET nombre_hosp = nombre, 
     descripcion = descripcion, 
     tipo = tipo, 
@@ -60,7 +250,47 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_hospedaje` (IN `id_hosp` 
     precio = precio,
     status = status,
     imagen = imagen
-    WHERE id_hospedaje = id_hosp;
+    WHERE id_hospedaje = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_update_paquete`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_paquete` (IN `id` SMALLINT UNSIGNED, IN `tipo` ENUM('Alimentacion','Transporte','Hospedaje'), IN `detalles` TEXT, IN `tour_id` SMALLINT UNSIGNED)  BEGIN
+	UPDATE paquete_turistico
+	SET tipo = tipo,
+    detalles = detalles,
+    tour_id = tour_id
+	WHERE id_paquete = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_update_tour`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_tour` (IN `id` SMALLINT UNSIGNED, IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `lugar` TEXT, IN `disponibilidad` TEXT, IN `duracion` TIME, IN `cupo_min` TINYINT, IN `telefono` VARCHAR(8), IN `precio` DECIMAL(8,2), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
+	UPDATE tour
+	SET nombre_tour = nombre,
+    descripcion = descripcion,
+    lugar = lugar,
+    disponibilidad = disponibilidad,
+    duracion = duracion,
+    cupo_minimo = cupo_min,
+    telefono = telefono,
+    precio = precio,
+    status = status,
+    imagen = imagen
+	WHERE id_tour = id;
+END$$
+
+DROP PROCEDURE IF EXISTS `sp_update_transporte`$$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_update_transporte` (IN `id` SMALLINT, IN `nombre` VARCHAR(100), IN `descripcion` TEXT, IN `clase` ENUM('Publico','Privado'), IN `tipo` ENUM('Terrestre','Maritimo'), IN `disponibilidad` TEXT, IN `precio` DECIMAL(8,2), IN `telefono` VARCHAR(8), IN `status` INT, IN `imagen` VARCHAR(100))  BEGIN
+	UPDATE transporte
+	SET nombre_trans = nombre,
+    descripcion = descripcion,
+    clase = clase,
+    tipo = tipo,
+    disponibilidad = disponibilidad,
+    precio = precio,
+    telefono = telefono,
+    status = status,
+    imagen = imagen
+	WHERE id_transporte = id;
 END$$
 
 DELIMITER ;
