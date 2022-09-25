@@ -22,7 +22,8 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="http://localhost/paraiso_azul/home">Inicio</a>
             </li>
-            <li class="nav-item dropdown">
+
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 ¿Que ofrecemos?
               </a>
@@ -58,10 +59,37 @@
                 </li>
                 <li><a class="dropdown-item" href="#">Comunidades</a></li>
               </ul>
+            </li> -->
+
+            <li class="treeview">
+              <a class="app-menu__item" href="#" data-toggle="treeview">
+                <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
+                <span class="app-menu__label">¿Que ofrecemos?</span>
+                <i class="treeview-indicator fa fa-angle-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a class="treeview-item" href="<?= base_url(); ?>/hospedaje"><i class="icon fa fa-circle-o"></i> Hospedaje</a></li>
+                <li><a class="treeview-item" href="<?= base_url(); ?>/alimentacion"><i class="icon fa fa-circle-o"></i> Alimentacion</a></li>
+                <li><a class="treeview-item" href="<?= base_url(); ?>/transporte"><i class="icon fa fa-circle-o"></i> Transporte</a></li>
+                <li><a class="treeview-item" href="<?= base_url(); ?>/tours"><i class="icon fa fa-circle-o"></i> Tours</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+              <a class="app-menu__item" href="#" data-toggle="treeview">
+                <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
+                <span class="app-menu__label">Sobre Nosotros</span>
+                <i class="treeview-indicator fa fa-angle-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a class="treeview-item" href="<?= base_url(); ?>/cemede"><i class="icon fa fa-circle-o"></i> CEMEDE</a></li>
+                <li><a class="treeview-item" href="<?= base_url(); ?>/grupo"><i class="icon fa fa-circle-o"></i> Grupos Organizados</a></li>
+                <li><a class="treeview-item" href="<?= base_url(); ?>/comunidad"><i class="icon fa fa-circle-o"></i> Comunidades</a></li>
+              </ul>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="#">Voluntariado</a>
+              <a class="nav-link" href="<?= base_url(); ?>/voluntariado">Voluntariado</a>
             </li>
 
             <li class="nav-item">
@@ -74,7 +102,7 @@
     </nav>
   </header>
 
-  <h1 class="display-4">Paraiso Azul - Golfo de Nicoya</h1>
+  <h1 class="display-4">Paraiso Azul Golfo de Nicoya</h1>
 
   <br />
   <br />
