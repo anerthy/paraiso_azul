@@ -93,17 +93,16 @@
 		    return $request;			
 		}
 
-		public function deleteTransporte(int $id_transporte)
-		{
-			
-			
-			$this->intId_Transporte = $id_transporte;
-			$sql = "UPDATE transporte SET status = ? WHERE id_transporte = $this->intId_Transporte ";
-			$arrData = array(0);
-			$request = $this->update($sql,$arrData);
-			return $request;
-			die();
-		}
+		public function deleteTransporte(int $intId_transporte)
+	{
+		$this->intId_transporte = $intId_transporte;
+		$sql = "UPDATE transporte SET status = ? WHERE id_transporte = $this->intId_transporte ";
+		$arrData = array(0);
+		$request = $this->update($sql,$arrData);
+		return $request;
 	}
+}
+
+
  ?>
  
