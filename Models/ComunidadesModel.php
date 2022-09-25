@@ -63,7 +63,7 @@ class ComunidadesModel extends Mysql
 		$this->intId_comunidad = $id_comunidad;
 		$this->strComunidad = $comunidad;
 		$this->strDescripcion = $descripcion;
-		$this->strProvinica = $provincia;
+		$this->strProvincia = $provincia;
 		$this->strCanton = $canton;
 		$this->strDistrito = $distrito;
 		$this->strImagen = $imagen;
