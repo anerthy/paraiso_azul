@@ -1,3 +1,4 @@
+
 <!-- Modal -->
 <div class="modal fade" id="modalFormTransporte" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -8,6 +9,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
       <div class="modal-body">
         <div class="tile">
           <div class="tile-body">
@@ -21,7 +23,7 @@
               </div>
               <div class="form-group">
                 <label class="control-label">Descripción</label>
-                <textarea class="form-control" id="txtDescripcion" name="txtDescripcion" rows="1" placeholder="Descripción del transporte" required=""></textarea>
+                <textarea class="form-control" id="txtDescripcion" name="txtDescripcion" rows="2" placeholder="Descripción del transporte" required=""></textarea>
               </div>
               <div class="form-group">
                 <label class="control-label">Clase</label>
@@ -33,19 +35,17 @@
               </div>
               <div class="form-group">
                 <label class="control-label">Disponibilidad</label>
-                <textarea class="form-control" id="txtDisponibilidad" name="txtDisponibilidad" rows="1" placeholder="Disponiblidad" required=""></textarea>
+                <textarea class="form-control" id="txtDisponibilidad" name="txtDisponibilidad" rows="2" placeholder="Disponibilidad" required=""></textarea>
               </div>
+
               <div class="form-group">
                 <label class="control-label">Precio</label>
                 <input class="form-control" id="txtPrecio" name="txtPrecio" rows="2" placeholder="Precio" required="">
               </div>
-
               <div class="form-group">
                 <label class="control-label">Telefono</label>
-                <input class="form-control" id="txtTelefono" name="txtTelefono" rows="2" placeholder="Telefono" required="">
+                <input class="form-control" id="txtTelefono" name="txtTelefono" rows="2" placeholder="Telefono del transporte" required="">
               </div>
-
-
               <div class="form-group">
                 <label for="exampleSelect1">Estado</label>
                 <select class="form-control" id="listStatus" name="listStatus" required="">
@@ -84,12 +84,12 @@
   </div>
 </div>
 
-Modal
+<!-- Modal -->
 <div class="modal fade" id="modalViewTransporte" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog ">
     <div class="modal-content  ">
       <div class="modal-header header-primary">
-        <h5 class="modal-title" id="titleModal">Datos del transporte</h5>
+        <h5 class="modal-title" id="titleModal">Datos de transporte</h5>
         <button type="button" class="close" data-dismiss="modal" data-toggle="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -110,7 +110,7 @@ Modal
               <td id="celDescripcion">Jacob</td>
             </tr>
             <tr>
-              <td>Clase:</td>
+            <td>Clase:</td>
               <td id="celClase">Larry</td>
             </tr>
             <tr>
@@ -118,14 +118,14 @@ Modal
               <td id="celTipo">Larry</td>
             </tr>
             <tr>
-              <td>Disponibilidad:</td>
+              <td>Direccion:</td>
               <td id="celDisponibilidad">Larry</td>
             </tr>
-            <td>Precio:</td>
-            <td id="celPrecio">Larry</td>
-            </tr>
             <tr>
-              <td>Telefono:</td>
+              <td>Precio:</td>
+              <td id="celPrecio">Larry</td>
+            </tr>
+            <td>Telefono:</td>
               <td id="celTelefono">Larry</td>
             </tr>
             <tr>
