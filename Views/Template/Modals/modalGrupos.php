@@ -43,7 +43,7 @@
            
                 
               <div class="form-group">
-                    <label for="exampleSelect1">Estado</label>
+                    <label for="listStatus">Estado</label>
                     <select class="form-control" id="listStatus" name="listStatus" required="">
                       <option value="1">Activo</option>
                       <option value="2">Inactivo</option>
@@ -67,7 +67,7 @@
 
                 <div class="form-group">
                     <label for="listComunidad_id">Comunidad</label>
-                    <select class="form-control" data-live-search="true" id="listComunidad_id" name="listComunidad_id"  >
+                    <select class="form-control" data-live-search="true" id="listComunidad_id" name="listComunidad_id" required="" >
                     </select>
                 </div>
 
@@ -150,6 +150,10 @@ Modal
             <tr>
               <td>Representante:</td>
               <td id="celRepresentante">Larry</td>
+            </tr>
+            <tr>
+              <td>Comunidad:</td>
+              <td id="celTipoGrupo">Larry</td>
             </tr>
             
             <tr>

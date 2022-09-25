@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function(){
             // {"data":"representante"},
             {"data":"status"},
             {"data":"nombre_com"},
+            
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -112,8 +113,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         var intId_Grupo = document.querySelector('#id_Grupo').value;
         var strNombre_grupo = document.querySelector('#txtNombre_grupo').value;
-        var strDescripcion = document.querySelector('#txtDescripcion').value;
-        
+        var strDescripcion = document.querySelector('#txtDescripcion').value;   
         var strCorreo = document.querySelector('#txtCorreo').value; 
         var intTelefono = document.querySelector('#txtTelefono').value;
         var intNumero_integrantes = document.querySelector('#txtNumero_integrantes').value;
@@ -122,8 +122,9 @@ document.addEventListener('DOMContentLoaded', function(){
         var intStatus = document.querySelector('#listStatus').value;
         var intTipogrupo = document.querySelector('#listComunidad_id').value;
 
-        if(strNombre_grupo == '' || strDescripcion == '' || intStatus == '' || strCorreo == '' || intTelefono == '' || intNumero_integrantes == '' || strUbicacion == ''|| strRepresentante == '' )
+        if(strNombre_grupo == '' || strDescripcion == '' || intStatus == '' || strCorreo == '' || intTelefono == '' || intNumero_integrantes == '' || strUbicacion == ''|| strRepresentante == '' || intTipogrupo == '' )
         {
+            alert(intTipogrupo);
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
@@ -148,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function(){
            if(request.readyState == 4 && request.status == 200){
                 
                 var objData = JSON.parse(request.responseText);
+
                 if(objData.status)
                 {
                      if(rowTable == ""){
@@ -164,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         rowTable.cells[6].textContent = strUbicacion;
                         rowTable.cells[7].textContent = strRepresentante;
                         rowTable.cells[8].innerHTML = htmlStatus;
-                        rowTable.cells[9].innerHTML = intTipogrupo
+                        rowTable.cells[9].innerHTML = intTipogrupo;
                         rowTable = "";
                         
 
@@ -175,11 +177,13 @@ document.addEventListener('DOMContentLoaded', function(){
                     $('#modalFormGrupo').modal("hide");
                     formGrupo.reset();
                     swal("Grupos", objData.msg ,"success");
+                    removePhoto();
                     tableGrupos.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
                 }
             }
+            //divLoading.style.display = "none";
             return false;
         }
 
@@ -333,7 +337,7 @@ function fntEditGrupo(id_grupo){
                 document.querySelector("#txtNumero_integrantes").value = objData.data.numero_integrantes;
                 document.querySelector("#txtUbicacion").value = objData.data.ubicacion;
                 document.querySelector("#txtRepresentante").value = objData.data.representante;
-                //document.querySelector("#listComunidad_id").value =objData.data.idrol;
+                document.querySelector("#listComunidad_id").value =objData.data.comunidad_id;//??
                 document.querySelector('#foto_actual').value = objData.data.logo;
                 document.querySelector("#foto_remove").value= 0;
           

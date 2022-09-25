@@ -13,7 +13,7 @@
 			$data['page_id'] = 3;
 			$data['page_tag'] = "Grupos Organizados";
 			$data['page_name'] = "grupo_usuario";
-			$data['page_title'] = "Grupos Organizados ";
+			$data['page_title'] = "Grupos Organizados";
 			$data['page_functions_js'] = "functions_grupos.js";
 			$this->views->getView($this,"grupos",$data);
 		}
@@ -79,206 +79,202 @@
 			die();
 		}
 
-		public function setGrupo(){
-			if($_POST){
-				
-				if(empty($_POST['txtNombre_grupo']) || empty($_POST['txtRepresentante']) || empty($_POST['txtDescripcion']) || empty($_POST['listStatus']) || empty($_POST['txtCorreo']) || empty($_POST['txtTelefono']) || empty($_POST['txtNumero_integrantes']) || empty($_POST['txtUbicacion'])  )
-				{
-					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-				}else{ 
-					$intId_grupo = intval($_POST['id_Grupo']);
-			        //$strGrupo =  strClean($_POST['txtNombre_grupo']);
-					$strNombre_grupo=  strClean($_POST['txtNombre_grupo']);
-			        $strDescripcion = strClean($_POST['txtDescripcion']);
-			        $intStatus = intval(strClean($_POST['listStatus']));
-			        $strCorreo = strClean($_POST['txtCorreo']);
-			        $intTelefono = intval(strClean($_POST['txtTelefono']));
-			        $intNumero_integrantes = intval(strClean($_POST['txtNumero_integrantes']));
-			        $strUbicacion = strClean($_POST['txtUbicacion']);
-			        $strRepresentante =  strClean($_POST['txtRepresentante']);
-			        $intTipoId = intval(strClean($_POST['listComunidad_id']));
-
-					$foto   	= $_FILES['foto'];
-								$nombre_foto 	= $foto['name'];
-								$type 		 	= $foto['type'];
-								$url_temp    	= $foto['tmp_name'];
-								$imgLogo 	= 'portada_categoria.png';
-								$request_grupo = "";
-								if($nombre_foto != ''){
-									$imgLogo = 'img_'.md5(date('d-m-Y H:m:s')).'.jpg';
-								}
-			
-
-				
-
-					if($intId_grupo == 0)
-					{
-						//$option = 1;
-						// $strPassword =  empty($_POST['txtPassword']) ? hash("SHA256",passGenerator()) : hash("SHA256",$_POST['txtPassword']);
-						$request_user = $this->model->insertGrupo(
-																			$strNombre_grupo, 
-																			$strDescripcion, 
-																			
-																			$strCorreo,
-																			$intTelefono, 
-																			$intNumero_integrantes, 
-																			$strUbicacion,
-																			$strRepresentante,
-																			
-																			$imgLogo,
-																			$intStatus,
-																			$intTipoId );
-																			
-																			$option = 1;
-					}else{
-						//$option = 2;
-						// $strPassword =  empty($_POST['txtPassword']) ? "" : hash("SHA256",$_POST['txtPassword']);
-						if($nombre_foto == ''){
-										if($_POST['foto_actual'] != 'portada_categoria.png' && $_POST['foto_remove'] == 0 ){
-											$imgPortada = $_POST['foto_actual'];
-										}
-									}
-						$request_user = $this->model->updateGrupo($strNombre_grupo, 
-																			$strDescripcion, 
-																			
-																			$strCorreo,
-																			$intTelefono, 
-																			$intNumero_integrantes, 
-																			$strUbicacion,
-																			$strRepresentante,
-																			
-																			$imgLogo,
-																			$intStatus,
-																			$intTipoId );
-																			$option = 2;
-																			
-																			
-
-					}
-
-					if($request_user > 0 )
-					{
-						if($option == 1){
-							$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
-							if($nombre_foto != ''){ uploadImage($foto,$imgLogo); }
-
-						}else{
-							$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
-							if($nombre_foto != ''){ uploadImage($foto,$imgLogo); }
-
-
-							if(($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
-													|| ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')){
-													deleteFile($_POST['foto_actual']);
-												}
-					
-									}
-					}else if($request_user == 'exist'){
-						$arrResponse = array('status' => false, 'msg' => '¡Atención! el correo ya existe, ingrese otro.');		
-					}else{
-						$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
-					}
-				}
-				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
-			}
-			die();
-		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		// public function setGrupo(){
-
-	
-			
-		// 	$intId_grupo = intval($_POST['id_Grupo']);
-		// 	$strGrupo =  strClean($_POST['txtNombre_grupo']);
-		// 	$strDescripcion = strClean($_POST['txtDescripcion']);
-		// 	$intStatus = intval($_POST['listStatus']);
-		// 	$strCorreo = strClean($_POST['txtCorreo']);
-		// 	$intTelefono = intval($_POST['txtTelefono']);
-		// 	$intNumero_integrantes = intval($_POST['txtNumero_integrantes']);
-			
-		// 	$strUbicacion = strClean($_POST['txtUbicacion']);
-		// 	$strRepresentante =  strClean($_POST['txtRepresentante']);
-		// 	$intTipoId = intval(strClean($_POST['listComunidad_id']));
-
-
-
-
-		// 	        $foto   	= $_FILES['foto'];
-		// 			$nombre_foto 	= $foto['name'];
-		// 			$type 		 	= $foto['type'];
-		// 			$url_temp    	= $foto['tmp_name'];
-		// 			$imgLogo 	= 'portada_categoria.png';
-		// 			$request_grupo = "";
-		// 			if($nombre_foto != ''){
-		// 				$imgLogo = 'img_'.md5(date('d-m-Y H:m:s')).'.jpg';
-		// 			}
-
-
-
-
-
-
-		// 	if($intId_grupo == 0)
-		// 	{
-		// 		//Crear
-		// 		$request_grupo = $this->model->insertGrupo($strGrupo, $strDescripcion,$intStatus,
-		// 		$strCorreo, $intTelefono, $intNumero_integrantes,$strUbicacion,$strRepresentante,$intTipoId, $imgLogo);
-		// 		$option = 1;
-		// 	}else{
-		// 		//Actualizar
-		// 		if($nombre_foto == ''){
-		// 			if($_POST['foto_actual'] != 'portada_categoria.png' && $_POST['foto_remove'] == 0 ){
-		// 				$imgPortada = $_POST['foto_actual'];
-		// 			}
-		// 		}
-		// 		$request_grupo = $this->model->updateGrupo($intId_grupo, $strGrupo, $strDescripcion, $intStatus,$strCorreo, $intTelefono, $intNumero_integrantes,$strUbicacion ,$strRepresentante,$intTipoId,$imgLogo );
-		// 		$option = 2;
-		// 	}
-
-		// 	if($request_grupo > 0 )
-		// 	{
-		// 		if($option == 1)
-		// 		{
-		// 			$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
-		// 			if($nombre_foto != ''){ uploadImage($foto,$imgLogo); }
-
-
-		// 		}else{
-		// 			$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
-		// 			if($nombre_foto != ''){ uploadImage($foto,$imgLogo); }
-
-					
-		// 			if(($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
-		// 						|| ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')){
-		// 						deleteFile($_POST['foto_actual']);
-		// 					}
-
-		// 		}
-		// 	}else if($request_grupo == 'exist'){
+		// 	if($_POST){
 				
-		// 		$arrResponse = array('status' => false, 'msg' => '¡Atención! El Grupo ya existe.');
-		// 	}else{
-		// 		$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+		// 		if(empty($_POST['txtNombre_grupo']) || empty($_POST['txtRepresentante']) || empty($_POST['txtDescripcion']) || empty($_POST['listStatus']) || empty($_POST['txtCorreo']) || empty($_POST['txtTelefono']) || empty($_POST['txtNumero_integrantes']) || empty($_POST['txtUbicacion']) || empty($_POST['listComunidad_id'])  )
+		// 		{
+					
+		// 			$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
+		// 		}else{ 
+		// 			$id_Grupo = intval($_POST['id_Grupo']);
+		// 	        //$strGrupo =  strClean($_POST['txtNombre_grupo']);
+		// 			$strNombre_grupo=  strClean($_POST['txtNombre_grupo']);
+		// 	        $strDescripcion = strClean($_POST['txtDescripcion']);
+		// 	        $intStatus = intval($_POST['listStatus']);
+		// 	        $strCorreo = strClean($_POST['txtCorreo']);
+		// 	        $intTelefono = intval($_POST['txtTelefono']);
+		// 	        $intNumero_integrantes = intval($_POST['txtNumero_integrantes']);
+		// 	        $strUbicacion = strClean($_POST['txtUbicacion']);
+		// 	        $strRepresentante =  strClean($_POST['txtRepresentante']);
+		// 	        $intTipogrupo = intval($_POST['listComunidad_id']);
+
+		// 			$foto   	= $_FILES['foto'];
+		// 						$nombre_foto 	= $foto['name'];
+		// 						$type 		 	= $foto['type'];
+		// 						$url_temp    	= $foto['tmp_name'];
+		// 						$imgLogo 	= 'portada_categoria.png';
+		// 						$request_grupo = "";
+		// 						if($nombre_foto != ''){
+		// 							$imgLogo = 'img_'.md5(date('d-m-Y H:m:s')).'.jpg';
+		// 						}
+			
+
+				
+
+		// 			if($intId_grupo == 0)
+		// 			{
+		// 				$option = 1;
+		// 				// $strPassword =  empty($_POST['txtPassword']) ? hash("SHA256",passGenerator()) : hash("SHA256",$_POST['txtPassword']);
+		// 				$request_user = $this->model->insertGrupo(
+		// 																	$strNombre_grupo, 
+		// 																	$strDescripcion, 
+																			
+		// 																	$strCorreo,
+		// 																	$intTelefono, 
+		// 																	$intNumero_integrantes, 
+		// 																	$strUbicacion,
+		// 																	$strRepresentante,
+																			
+		// 																	$imgLogo,
+		// 																	$intStatus,
+		// 																	$intTipogrupo );
+																			
+																		
+		// 			}else{
+		// 				$option = 2;
+		// 				// $strPassword =  empty($_POST['txtPassword']) ? "" : hash("SHA256",$_POST['txtPassword']);
+		// 				if($nombre_foto == ''){
+		// 								if($_POST['foto_actual'] != 'portada_categoria.png' && $_POST['foto_remove'] == 0 ){
+		// 									$imgLogo = $_POST['foto_actual'];
+		// 								}
+		// 							}
+		// 				$request_user = $this->model->updateGrupo($strNombre_grupo, 
+		// 																	$strDescripcion, 
+																			
+		// 																	$strCorreo,
+		// 																	$intTelefono, 
+		// 																	$intNumero_integrantes, 
+		// 																	$strUbicacion,
+		// 																	$strRepresentante,
+																			
+		// 																	$imgLogo,
+		// 																	$intStatus,
+		// 																	$intTipogrupo );
+																			
+																			
+																			
+
+		// 			}
+
+		// 			if($request_user > 0 )
+		// 			{
+		// 				if($option == 1){
+		// 					$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+		// 					if($nombre_foto != ''){ uploadImage($foto,$imgLogo); }
+
+		// 				}else{
+		// 					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+		// 					if($nombre_foto != ''){ uploadImage($foto,$imgLogo); }
+
+
+		// 					if(($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
+		// 											|| ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')){
+		// 											deleteFile($_POST['foto_actual']);
+		// 										}
+					
+		// 							}
+		// 			}else if($request_user == 'exist'){
+		// 				$arrResponse = array('status' => false, 'msg' => '¡Atención! el correo ya existe, ingrese otro.');		
+		// 			}else{
+		// 				$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+		// 			}
+		// 		}
+		// 		echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
 		// 	}
-		// 	echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
 		// 	die();
 		// }
+
+
+
+
+
+
+		public function setGrupo(){
+		
+	
+			
+			$intId_grupo = intval($_POST['id_Grupo']);
+			//$strGrupo =  strClean($_POST['txtNombre_grupo']);
+			$strNombre_grupo = strClean($_POST['txtNombre_grupo']);
+			$strDescripcion = strClean($_POST['txtDescripcion']);
+			
+			$strCorreo = strClean($_POST['txtCorreo']);
+			$intTelefono = intval($_POST['txtTelefono']);
+			$intNumero_integrantes = intval($_POST['txtNumero_integrantes']);
+		
+			$strUbicacion = strClean($_POST['txtUbicacion']);
+			$strRepresentante =  strClean($_POST['txtRepresentante']);
+			$intStatus = intval($_POST['listStatus']);
+			$intTipogrupo = intval(strClean($_POST['listComunidad_id']));
+
+
+
+
+			        $foto   	= $_FILES['foto'];
+					$nombre_foto 	= $foto['name'];
+					$type 		 	= $foto['type'];
+					$url_temp    	= $foto['tmp_name'];
+					$imgLogo 	= 'portada_categoria.png';
+					$request_grupo = "";
+					if($nombre_foto != ''){
+						$imgLogo = 'img_'.md5(date('d-m-Y H:m:s')).'.jpg';
+					}
+
+
+
+
+
+
+			if($intId_grupo == 0)
+			{
+				//Crear
+				
+				$request_grupo = $this->model->insertGrupo($strNombre_grupo,$strDescripcion,
+				$strCorreo,$intTelefono,$intNumero_integrantes,$strUbicacion,$strRepresentante,$imgLogo,$intStatus,
+				$intTipogrupo);
+				$option = 1;
+
+			}else{
+				//Actualizar
+				if($nombre_foto == ''){
+					if($_POST['foto_actual'] != 'portada_categoria.png' && $_POST['foto_remove'] == 0 ){
+						$imgPortada = $_POST['foto_actual'];
+					}
+				}
+				$request_grupo = $this->model->updateGrupo($intId_grupo, $strNombre_grupo, $strDescripcion,
+				$strCorreo, $intTelefono, $intNumero_integrantes,$strUbicacion,$strRepresentante,$imgLogo,$intStatus,$intTipogrupo);
+				$option = 2;
+			}
+
+			if($request_grupo > 0 )
+			{
+				if($option == 1)
+				{
+					$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+					if($nombre_foto != ''){ uploadImage($foto,$imgLogo); }
+
+
+				}else{
+					$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+					if($nombre_foto != ''){ uploadImage($foto,$imgLogo); }
+
+					
+					if(($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
+								|| ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')){
+								deleteFile($_POST['foto_actual']);
+							}
+
+				}
+			}else if($request_grupo == 'exist'){
+				
+				$arrResponse = array('status' => false, 'msg' => '¡Atención! El Grupo ya existe.');
+			}else{
+				$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+			}
+			echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+			die();
+		}
 
 		public function delGrupo()
 		{

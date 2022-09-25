@@ -26,9 +26,10 @@
                           <th>ID</th>
                           <th>Nombre</th>
                           <th>Descripcion</th>
-                          <th>Status</th>
+                          
                           <th>Correo</th>
                           <th>Telefono</th>
+                          <th>Status</th>
                           <!-- <th>Integrantes</th> -->
                           <!-- <th>Ubicacion</th> -->
                           <!-- <th>Representante</th> -->
