@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var formUsuario = document.querySelector("#formUsuario");
     formUsuario.onsubmit = function(e) {
         e.preventDefault();
-        var strNombre = document.querySelector('#txtNombre').value;}
+        var strNombre = document.querySelector('#txtNombre').value;
         var strCorreo = document.querySelector('#txtCorreo').value;
         var intTipousuario = document.querySelector('#listRolid').value;
         var strContraseña = document.querySelector('#txtContraseña').value;
@@ -90,7 +90,8 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
             }
         }
-
+    }
+    
     }, false);
 
 window.addEventListener('load', function() {
