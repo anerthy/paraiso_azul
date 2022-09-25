@@ -91,15 +91,12 @@ class HospedajesModel extends Mysql
 		return $request;
 	}
 
-	public function deleteHospedaje(int $id_hospedaje)
+	public function deleteHospedaje(int $intId_hospedaje)
 	{
-
-
-		$this->intId_hospedaje = $id_hospedaje;
-		$sql = "UPDATE hospedaje SET status = ? WHERE id_hospedaje = $this->intId_hospedaje ";
+		$this->intId_hospedaje = $intId_hospedaje;
+		$sql = "UPDATE hospedaje SET status = ? WHERE id_hospedaje = $this->intId_hospedaje";
 		$arrData = array(0);
-		$request = $this->update($sql, $arrData);
+		$request = $this->update($sql,$arrData);
 		return $request;
-		die();
 	}
 }
