@@ -18,8 +18,9 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"id_comunidad"},
             {"data":"nombre_com"},
             {"data":"descripcion"},
-            {"data":"ubicacion"},
-            //{"data":"status"},
+            {"data":"provincia"},
+            {"data":"canton"},
+            {"data":"distrito"},
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -114,9 +115,10 @@ document.addEventListener('DOMContentLoaded', function(){
         var intId_Comunidad = document.querySelector('#id_Comunidad').value;
         var strNombre_com = document.querySelector('#txtNombre_com').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
-        var strUbicacion = document.querySelector('#txtUbicacion').value;      
-        //var intStatus = document.querySelector('#listStatus').value;  
-        if(strNombre_com == '' || strDescripcion == '' ||   strUbicacion== '' /*||   intStatus== ''*/)
+        var strProvincia = document.querySelector('#txtProvincia').value;      
+        var strCanton = document.querySelector('#txtCanton').value;
+        var strDistrito = document.querySelector('#txtDistrito').value; 
+        if(strNombre_com == '' || strDescripcion == '' ||   strProvincia== '' ||    strCanton== '' || strDistrito== '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -141,7 +143,9 @@ document.addEventListener('DOMContentLoaded', function(){
                         //     '<span class="badge badge-danger">Inactivo</span>';
                         rowTable.cells[1].textContent = strNombre_com;
                         rowTable.cells[2].textContent = strDescripcion;
-                        rowTable.cells[3].textContent = strUbicacion;
+                        rowTable.cells[3].textContent = strProvincia;
+                        rowTable.cells[4].textContent = strCanton;
+                        rowTable.cells[5].textContent = strDistrito;
                        // rowTable.cells[4].innerHTML = htmlStatus;
                         
                         rowTable = "";
@@ -151,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
                     $('#modalFormComunidad').modal("hide");
                     formComunidad.reset();
-                    swal("Comunidades de usuario", objData.msg ,"success");
+                    swal("Comunidades", objData.msg ,"success");
                     removePhoto();
                     tableComunidades.api().ajax.reload();
                 }else{
@@ -204,8 +208,10 @@ function fntViewInfo(id_comunidad){
                 document.querySelector("#celId").innerHTML = objData.data.id_comunidad;
                 document.querySelector("#celNombre_com").innerHTML = objData.data.nombre_com;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
-                document.querySelector("#celUbicacion").innerHTML = objData.data.ubicacion;
-                document.querySelector("#imgComunidad").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
+                document.querySelector("#celProvincia").innerHTML = objData.data.provincia;
+                document.querySelector("#celCanton").innerHTML = objData.data.canton;
+                document.querySelector("#celDistrito").innerHTML = objData.data.distrito;
+                document.querySelector("#img").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
                 $('#modalViewComunidad').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
@@ -236,7 +242,9 @@ function fntEditComunidad(id_comunidad){
                 document.querySelector("#id_Comunidad").value = objData.data.id_comunidad;
                 document.querySelector("#txtNombre_com").value = objData.data.nombre_com;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-                document.querySelector("#txtUbicacion").value = objData.data.ubicacion;
+                document.querySelector("#txtProvincia").value = objData.data.provincia;
+                document.querySelector("#txtCanton").value = objData.data.canton;
+                document.querySelector("#txtDistrito").value = objData.data.distrito;
                 document.querySelector('#foto_actual').value = objData.data.imagen;
                 document.querySelector("#foto_remove").value= 0;
                 // if(objData.data.status == 1)
@@ -281,48 +289,6 @@ function fntEditComunidad(id_comunidad){
     }
 
 }
-
-// function fntDelComunidad(id_comunidad){
-//     var id_comunidad = id_comunidad;
-//     swal({
-//         title: "Eliminar Comunidad",
-//         text: "¿Realmente quiere eliminar el Comunidad?",
-//         type: "warning",
-//         showCancelButton: true,
-//         confirmButtonText: "Si, eliminar!",
-//         cancelButtonText: "No, cancelar!",
-//         closeOnConfirm: false,
-//         closeOnCancel: true
-//     }, function(isConfirm) {
-        
-//         if (isConfirm) 
-//         {
-//             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-//             var ajaxUrl = base_url+'/Comunidades/delComunidad/';
-//             var strData = "id_comunidad="+id_comunidad;
-//             request.open("POST",ajaxUrl,true);
-//             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//             request.send(strData);
-//             request.onreadystatechange = function(){
-//                 if(request.readyState == 4 && request.status == 200){
-//                     var objData = JSON.parse(request.responseText);
-//                     if(objData.status)
-//                     {
-//                         swal("Eliminar!", objData.msg , "success");
-//                         tableComunidades.api().ajax.reload(function(){
-//                             fntEditComunidad();
-//                             fntDelComunidad();
-                       
-//                         });
-//                     }else{
-//                         swal("Atención!", objData.msg , "error");
-//                     }
-//                 }
-//             }
-//         }
-
-//     });
-// }
 
 
 function fntDelComunidad(id_comunidad){
