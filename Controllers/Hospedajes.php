@@ -169,17 +169,20 @@ class Hospedajes extends Controllers
 
 	public function delHospedaje()
 	{
-
-		if ($_POST) {
-			$intId_hospedaje = intval($_POST['id_hospedaje']);
-			$requestDelete = $this->model->deleteHospedaje($intId_hospedaje);
-			if ($requestDelete) {
-				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el grupo');
-			} else {
-				$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el grupo.');
+		if($_POST){
+				$intId_hospedaje = intval($_POST['id_hospedaje']);
+				$requestDelete = $this->model->deleteHospedaje($intId_hospedaje);
+				if($requestDelete)
+				{
+					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el hospedaje');
+				}else{
+					$arrResponse = array('status' => false, 'msg' => 'Error al eliminar al hospedaje.');
+				}
+				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
 			}
-			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-		}
+		
 		die();
 	}
 }
+
+
