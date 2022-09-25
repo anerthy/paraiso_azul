@@ -311,10 +311,9 @@ function fntEditTransporte(id_transporte){
 }
 
 function fntDelTransporte(id_transporte){
-    var id_transporte = id_transporte;
     swal({
-        title: "Eliminar transporte",
-        text: "¿Realmente quiere eliminar el transporte?",
+        title: "Eliminar Cliente",
+        text: "¿Realmente quiere eliminar al cliente?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
@@ -325,23 +324,19 @@ function fntDelTransporte(id_transporte){
         
         if (isConfirm) 
         {
-            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var ajaxUrl = base_url+'/Transportes/delTransporte/';
-            var strData = "id_transporte="+id_transporte;
+            let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            let ajaxUrl = base_url+'/Transportes/delTransporte';
+            let strData = "id_transporte="+id_transporte;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
             request.onreadystatechange = function(){
                 if(request.readyState == 4 && request.status == 200){
-                    var objData = JSON.parse(request.responseText);
+                    let objData = JSON.parse(request.responseText);
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableTransportes.api().ajax.reload(function(){
-                            fntEditTransporte();
-                            fntDelTransporte();
-                            //fntPermisos();
-                        });
+                        tableTransportes.api().ajax.reload();
                     }else{
                         swal("Atención!", objData.msg , "error");
                     }
@@ -350,7 +345,9 @@ function fntDelTransporte(id_transporte){
         }
 
     });
+
 }
+
 
 
 function removePhoto(){
