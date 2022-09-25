@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
 window.addEventListener('load', function() {
         fntRolesUsuario();
-        /*fntViewUsuario();
-        fntEditUsuario();
-        fntDelUsuario();*/
+        // fntViewUsuario();
+        // fntEditUsuario();
+        // fntDelUsuario();
 }, false);
 
 function fntRolesUsuario(){
@@ -210,12 +210,13 @@ function fntDelUsuario(id_usuario){
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableUsuarios.api().ajax.reload(function(){
-                            fntRolesUsuario();
-                            fntViewUsuario();
-                            fntEditUsuario();
-                            fntDelUsuario();
-                        });
+                        tableUsuarios.api().ajax.reload();
+                        // tableUsuarios.api().ajax.reload(function(){
+                        //     fntDelUsuario(); 
+                        //     fntRolesUsuario();
+                        //     // fntViewUsuario();
+                        //     // fntEditUsuario();
+                        // });
                     }else{
                         swal("Atención!", objData.msg , "error");
                     }
