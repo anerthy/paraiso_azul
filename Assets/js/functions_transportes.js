@@ -1,5 +1,4 @@
-
-var tableTranportes;
+var tableTransportes;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
@@ -108,16 +107,15 @@ document.addEventListener('DOMContentLoaded', function(){
     formTransporte.onsubmit = function(e) {
         e.preventDefault();
 
-        var intId_Transporte = document.querySelector('#id_Transporte').value;
+        var intId_transporte = document.querySelector('#id_Transporte').value;
         var strNombre_trans = document.querySelector('#txtNombre_trans').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
-        var strClase = document.querySelector('#txtClase').value; 
+        var strClase = document.querySelector('#txtClase').value;
         var strTipo = document.querySelector('#txtTipo').value;
-        var strDisponibilidad = document.querySelector('#txtDisponibilidad').value;
+        var strDisponibilidad = document.querySelector('#txtDisponibilidad').value; 
         var intPrecio = document.querySelector('#txtPrecio').value;
         var strTelefono = document.querySelector('#txtTelefono').value;
         var intStatus = document.querySelector('#listStatus').value;
-
 
         if(strNombre_trans == '' || strDescripcion == '' || strClase == '' || strTipo == '' || strDisponibilidad == '' || intPrecio == '' || strTelefono == '' || intStatus == '' )
         {
@@ -145,11 +143,13 @@ document.addEventListener('DOMContentLoaded', function(){
                         rowTable.cells[1].textContent = strNombre_trans;
                         rowTable.cells[2].textContent = strDescripcion;
                         rowTable.cells[3].innerHTML = strClase;
-                        rowTable.cells[4].textContent = strTipo;
+                        rowTable.cells[4].innerHTML = strTipo;
                         rowTable.cells[5].innerHTML = strDisponibilidad;
                         rowTable.cells[6].innerHTML = intPrecio;
-                        rowTable.cells[7].textContent = strTelefono;
+                        rowTable.cells[7].innerHTML = strTelefono; 
                         rowTable.cells[8].innerHTML = htmlStatus;
+                        //rowTable.cells[8].innerHTML = strImagen;
+                     
                         rowTable = "";
                         
 
@@ -216,11 +216,11 @@ function fntViewInfo(id_transporte){
                 document.querySelector("#celNombre_trans").innerHTML = objData.data.nombre_trans;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
                 document.querySelector("#celClase").innerHTML =  objData.data.clase;
-                document.querySelector("#celTipo").innerHTML = objData.data.tipo;
-                document.querySelector("#celDisponibilidad").innerHTML = objData.data.disponibilidad;
+                document.querySelector("#celTipo").innerHTML =  objData.data.tipo;
+                document.querySelector("#celDisponibilidad").innerHTML =  objData.data.disponibilidad;
                 document.querySelector("#celPrecio").innerHTML = objData.data.precio;
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
-                document.querySelector("#celEstado").innerHTML = estado;
+                document.querySelector("#celStatus").innerHTML = objData.data.status;
                 document.querySelector("#imgTransporte").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
                 $('#modalViewTransporte').modal('show');
             }else{
@@ -283,7 +283,7 @@ function fntEditTransporte(id_transporte){
                 $('#listStatus').selectpicker('render');
 
                 if(document.querySelector('#img')){
-                    document.querySelector('#img').src = objData.data.url_portada;
+                    document.querySelector('#img').src = objData.data.url_imagen;
                 }else{
                     document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objData.data.url_imagen+">";
                 }
