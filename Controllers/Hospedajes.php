@@ -35,6 +35,13 @@ class Hospedajes extends Controllers
 				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 			}
 
+			if ($arrData[$i]['tipo'] == 'Camping') {
+                $arrData[$i]['tipo'] = '<span>Camping</span>';
+            } else {
+                $arrData[$i]['tipo'] = '<span>Cabina</span>';
+            }
+
+
 			$arrData[$i]['options'] = '<div class="text-center">
 				
 				<button class="btn btn-primary btn-sm btnEditHospedaje" onClick="fntEditHospedaje(' . $arrData[$i]['id_hospedaje'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>

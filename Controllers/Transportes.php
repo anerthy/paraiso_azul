@@ -36,6 +36,19 @@ class Transportes extends Controllers
 				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 			}
 
+			if ($arrData[$i]['clase'] == 'Privado') {
+                $arrData[$i]['clase'] = '<span>Privado</span>';
+            } else {
+                $arrData[$i]['clase'] = '<span>Publico</span>';
+            }
+
+			if ($arrData[$i]['tipo'] == 'Maritimo') {
+                $arrData[$i]['tipo'] = '<span>Maritimo</span>';
+            } else {
+                $arrData[$i]['tipo'] = '<span>Terrestre</span>';
+            }
+
+
 			$arrData[$i]['options'] = '<div class="text-center">
 				
 				<button class="btn btn-primary btn-sm btnEditTransporte" onClick="fntEditTransporte(' . $arrData[$i]['id_transporte'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
