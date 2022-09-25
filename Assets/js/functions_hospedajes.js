@@ -306,10 +306,9 @@ function fntEditHospedaje(id_hospedaje){
 }
 
 function fntDelHospedaje(id_hospedaje){
-    var id_hospedaje = id_hospedaje;
     swal({
         title: "Eliminar hospedaje",
-        text: "¿Realmente quiere eliminar el hospedaje?",
+        text: "¿Realmente quiere eliminar al hospedaje?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
@@ -320,23 +319,19 @@ function fntDelHospedaje(id_hospedaje){
         
         if (isConfirm) 
         {
-            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var ajaxUrl = base_url+'/Hospedajes/delHospedaje/';
-            var strData = "id_hospedaje="+id_hospedaje;
+            let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            let ajaxUrl = base_url+'/Hospedajes/delHospedaje';
+            let strData = "id_hospedaje="+id_hospedaje;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
             request.onreadystatechange = function(){
                 if(request.readyState == 4 && request.status == 200){
-                    var objData = JSON.parse(request.responseText);
+                    let objData = JSON.parse(request.responseText);
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableHospedajes.api().ajax.reload(function(){
-                            fntEditHospedaje();
-                            fntDelHospedaje();
-                            //fntPermisos();
-                        });
+                        tableHospedajes.api().ajax.reload();
                     }else{
                         swal("Atención!", objData.msg , "error");
                     }
@@ -345,6 +340,7 @@ function fntDelHospedaje(id_hospedaje){
         }
 
     });
+
 }
 
 
