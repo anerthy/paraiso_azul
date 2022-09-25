@@ -39,14 +39,14 @@
                       <tbody>
                         <tr>
                           <td>1</td>
-                          <td>Patitos</td>
-                          <td>PatitosDescripcion</td>
+                          <td>Hoo</td>
+                          <td>descropcion</td>
+                          <td>publico</td>
+                          <td>terrestre</td>
+                          <td>7854</td>
+                          <td>44</td>
+                          <td>2044</td>
                           <td>Activo</td>
-                          <td>patitos@info.com</td>
-                          <td>78542155</td>
-                          <td>20</td>
-                          <td>Al lado del bnc</td>
-                          <td>Al lado del bnc</td>
                           <td></td>
                         </tr>
                       </tbody>
