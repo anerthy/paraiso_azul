@@ -87,32 +87,9 @@
 		public function deleteComunidad(int $id_comunidad)
 		{
 			
-			// $this->intId_comunidad = $id_comunidad;
-			// $sql = "SELECT * FROM comunidad WHERE id_comunidad = $this->intId_comunidad";
-			// $request = $this->select_all($sql);
-			// if(empty($request))
-			// {
-			// 	$sql = "UPDATE comunidad SET status = ? WHERE id_comunidad = $this->intId_comunidad ";
-			// 	$arrData = array(0);
-			// 	$request = $this->update($sql,$arrData);
-			// 	if($request)
-			// 	{
-			// 		$request = 'ok';	
-			// 	}else{
-			// 		$request = 'error';
-			// 	}
-			// }else{
-			// 	$request = 'exist';
-			// }
-			// return $request;
-
-
-
-
-
-
+			
 			$this->intId_comunidad = $id_comunidad;
-			$sql = "DELETE from comunidad  WHERE id_comunidad = $this->intId_comunidad ";
+			$sql = "DELETE from comunidad  WHERE id_comunidad = $this->intId_comunidad";
 			//$sql = "UPDATE comunidad SET status = ? WHERE id_comunidad = $this->intId_comunidad ";
 			$arrData = array(0);
 			$request = $this->delete($sql,$arrData);

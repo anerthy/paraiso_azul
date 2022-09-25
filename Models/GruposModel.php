@@ -135,9 +135,10 @@
 		public function deleteGrupo(int $id_grupo)
 		{					
 			$this->intId_Grupo = $id_grupo;
-			$sql = "UPDATE grupo_organizado SET status = ? WHERE id_grupo = $this->intId_Grupo";
+			$sql = "DELETE from grupo_organizado WHERE id_grupo = $this->intId_Grupo";
+			//$sql = "UPDATE grupo_organizado SET status = ? WHERE id_grupo = $this->intId_Grupo";
 			$arrData = array(0);
-			$request = $this->update($sql,$arrData);
+			$request = $this->delete($sql,$arrData);
 			return $request;
 			die();
 		}

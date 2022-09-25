@@ -19,7 +19,7 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="txtNombre_grupo">Nombre</label>
-                  <input type="text" class="form-control valid validText" id="txtNombre_grupo" name="txtNombre_grupo" required="">
+                  <input type="text" class="form-control valid validText"  placeholder="Nombre del grupo" id="txtNombre_grupo" name="txtNombre_grupo" required="">
                 </div>
             
                 <div class="form-group col-md-3">
@@ -32,11 +32,11 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="txtTelefono">Teléfono</label>
-                  <input type="text" class="form-control valid validNumber" id="txtTelefono" name="txtTelefono" required="" onkeypress="return controlTag(event);">
+                  <input type="text" class="form-control valid validNumber" placeholder="Número de contacto" id="txtTelefono" name="txtTelefono" required="" onkeypress="return controlTag(event);">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="txtCorreo">Correo</label>
-                  <input type="email" class="form-control valid validCorreo" id="txtCorreo" name="txtCorreo" required="">
+                  <input type="email" class="form-control valid validCorreo" placeholder="Correo electronico" id="txtCorreo" name="txtCorreo" required="">
                 </div>
               </div>
               <div class="form-row">
@@ -50,20 +50,35 @@
                     </select>
                 </div>
          
+
+
                 <div class="form-group col-md-6">
-                  <label for="txtDescripcion">Descripcion</label>
-                  <textarea type="text" class="form-control valid validText" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
+                
+                  <label for="txtRepresentante">Representante</label>
+                  <input type="text" class="form-control valid validText" placeholder="Un representante" id="txtRepresentante" name="txtRepresentante" required="">
                 </div>
+
+
+
+
+              
+
+
 
               </div>
               <div class="form-group">
+                  <label for="txtDescripcion">Descripcion</label>
+                  <textarea type="text" class="form-control valid validText" placeholder="Una pequeña descripcion de la organizacion" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
+                </div>
+              <div class="form-group">
                   <label for="txtUbicacion">Ubicacion</label>
-                  <textarea type="text" class="form-control valid validText" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
+                  <textarea type="text" class="form-control valid validText" placeholder="Ubicacion para la organizacion" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
                 </div>
-                <div class="form-group">
-                  <label for="txtRepresentante">Representante</label>
-                  <textarea type="text" class="form-control valid validText" id="txtRepresentante" name="txtRepresentante" required=""></textarea>
-                </div>
+
+               
+
+
+
 
                 <div class="form-group">
                     <label for="listComunidad_id">Comunidad</label>

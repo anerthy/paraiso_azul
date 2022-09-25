@@ -282,8 +282,50 @@ function fntEditComunidad(id_comunidad){
 
 }
 
+// function fntDelComunidad(id_comunidad){
+//     var id_comunidad = id_comunidad;
+//     swal({
+//         title: "Eliminar Comunidad",
+//         text: "¿Realmente quiere eliminar el Comunidad?",
+//         type: "warning",
+//         showCancelButton: true,
+//         confirmButtonText: "Si, eliminar!",
+//         cancelButtonText: "No, cancelar!",
+//         closeOnConfirm: false,
+//         closeOnCancel: true
+//     }, function(isConfirm) {
+        
+//         if (isConfirm) 
+//         {
+//             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+//             var ajaxUrl = base_url+'/Comunidades/delComunidad/';
+//             var strData = "id_comunidad="+id_comunidad;
+//             request.open("POST",ajaxUrl,true);
+//             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//             request.send(strData);
+//             request.onreadystatechange = function(){
+//                 if(request.readyState == 4 && request.status == 200){
+//                     var objData = JSON.parse(request.responseText);
+//                     if(objData.status)
+//                     {
+//                         swal("Eliminar!", objData.msg , "success");
+//                         tableComunidades.api().ajax.reload(function(){
+//                             fntEditComunidad();
+//                             fntDelComunidad();
+                       
+//                         });
+//                     }else{
+//                         swal("Atención!", objData.msg , "error");
+//                     }
+//                 }
+//             }
+//         }
+
+//     });
+// }
+
+
 function fntDelComunidad(id_comunidad){
-    var id_comunidad = id_comunidad;
     swal({
         title: "Eliminar Comunidad",
         text: "¿Realmente quiere eliminar el Comunidad?",
@@ -297,23 +339,21 @@ function fntDelComunidad(id_comunidad){
         
         if (isConfirm) 
         {
-            var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            var ajaxUrl = base_url+'/Comunidades/delComunidad/';
-            var strData = "id_comunidad="+id_comunidad;
+            let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            let ajaxUrl = base_url+'/Comunidades/delComunidad/';
+            let strData = "id_comunidad="+id_comunidad;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
             request.onreadystatechange = function(){
                 if(request.readyState == 4 && request.status == 200){
-                    var objData = JSON.parse(request.responseText);
+                    let objData = JSON.parse(request.responseText);
+                    
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableComunidades.api().ajax.reload(function(){
-                            fntEditComunidad();
-                            fntDelComunidad();
-                       
-                        });
+                        tableComunidades.api().ajax.reload();
+                        
                     }else{
                         swal("Atención!", objData.msg , "error");
                     }
@@ -322,7 +362,17 @@ function fntDelComunidad(id_comunidad){
         }
 
     });
+
 }
+
+
+
+
+
+
+
+
+
 
 function removePhoto(){
     document.querySelector('#foto').value ="";
