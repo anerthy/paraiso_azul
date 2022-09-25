@@ -33,11 +33,18 @@
                     <span class="app-menu__label">Grupos Organizados</span>
                 </a>
             </li>
-<li>
+            <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/transportes">
 
                     <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
                     <span class="app-menu__label">Transportes</span>
+                </a>
+            </li>
+            <li>
+                <a class="app-menu__item" href="<?= base_url(); ?>/hospedajes">
+
+                    <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
+                    <span class="app-menu__label">Hospedajes</span>
                 </a>
             </li>
             <li>
