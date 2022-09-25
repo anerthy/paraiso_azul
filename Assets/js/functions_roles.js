@@ -154,11 +154,12 @@ function fntDelRol(id_rol){
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableRoles.api().ajax.reload(function(){
-                            fntEditRol();
-                            fntDelRol();
-                            fntPermisos();
-                        });
+                        // tableRoles.api().ajax.reload(function(){
+                        //     fntEditRol();
+                        //     fntDelRol();
+                        //     fntPermisos();
+                        // });
+                        tableRoles.api().ajax.reload();
                     }else{
                         swal("Atención!", objData.msg , "error");
                     }
