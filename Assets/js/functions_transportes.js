@@ -144,8 +144,8 @@ document.addEventListener('DOMContentLoaded', function(){
                             '<span class="badge badge-danger">Inactivo</span>';
                         rowTable.cells[1].textContent = strNombre_trans;
                         rowTable.cells[2].textContent = strDescripcion;
-                        rowTable.cells[3].textContent = strTipo;
-                        rowTable.cells[4].innerHTML = strClase;
+                        rowTable.cells[3].innerHTML = strClase;
+                        rowTable.cells[4].textContent = strTipo;
                         rowTable.cells[5].innerHTML = strDisponibilidad;
                         rowTable.cells[6].innerHTML = intPrecio;
                         rowTable.cells[7].textContent = strTelefono;
