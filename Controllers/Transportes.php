@@ -172,17 +172,18 @@ class Transportes extends Controllers
 
 	public function delTransporte()
 	{
-
-		if ($_POST) {
-			$intId_transporte = intval($_POST['id_transporte']);
-			$requestDelete = $this->model->deleteTransporte($intId_transporte);
-			if ($requestDelete) {
-				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el transporte');
-			} else {
-				$arrResponse = array('status' => false, 'msg' => 'Error al eliminar el transporte.');
+		if($_POST){
+				$intId_transporte = intval($_POST['id_transporte']);
+				$requestDelete = $this->model->deleteTransporte($intId_transporte);
+				if($requestDelete)
+				{
+					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el cliente');
+				}else{
+					$arrResponse = array('status' => false, 'msg' => 'Error al eliminar al cliente.');
+				}
+				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
 			}
-			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-		}
+		
 		die();
 	}
 }
