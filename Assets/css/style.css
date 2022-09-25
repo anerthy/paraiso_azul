@@ -120,10 +120,18 @@
 	width: 200px;
 	margin: auto;
 }
-#imgProduct{
+#imgComunidad{
 	text-align: center;
 }
-#imgProduct img{
+#imgComunidad img{
+	width: 200px;
+	margin: auto;
+}
+
+#imgHospedaje{
+	text-align: center;
+}
+#imgHospedaje img{
 	width: 200px;
 	margin: auto;
 }

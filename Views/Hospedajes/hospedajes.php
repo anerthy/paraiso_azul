@@ -1,8 +1,8 @@
 <?php 
     headerAdmin($data); 
-    getModal('modalGrupos',$data);
+    getModal('modalHospedajes',$data);
 ?>
-<div id="contentAjax"></div> 
+    <div id="contentAjax"></div> 
     <main class="app-content">
       <div class="app-title">
         <div>
@@ -12,44 +12,42 @@
         </div>
         <ul class="app-breadcrumb breadcrumb">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item"><a href="<?= base_url(); ?>/grupos"><?= $data['page_title'] ?></a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url(); ?>/hospedajes"><?= $data['page_title'] ?></a></li>
         </ul>
       </div>
+
         <div class="row">
             <div class="col-md-12">
               <div class="tile">
                 <div class="tile-body">
                   <div class="table-responsive">
-                    <table class="table table-hover table-bordered" id="tableGrupos">
+                    <table class="table table-hover table-bordered" id="tableHospedajes">
                       <thead>
                         <tr>
-                          <th>ID</th>
+                        <th>ID</th>
                           <th>Nombre</th>
                           <th>Descripcion</th>
-                          
-                          <th>Correo</th>
+                          <th>Tipo</th>
+                          <th>Direccion</th>
                           <th>Telefono</th>
+                          <th>Precio</th>
+                 
                           <th>Status</th>
-                          <!-- <th>Integrantes</th> -->
-                          <!-- <th>Ubicacion</th> -->
-                          <!-- <th>Representante</th> -->
-                          <th>Comunidad</th>
                           <th>Acciones</th>
-                        
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                      <tr>
                           <td>1</td>
                           <td>Patitos</td>
                           <td>PatitosDescripcion</td>
-                          <td>Activo</td>
-                          <td>patitos@info.com</td>
+                          <td>camping</td>
+                          <td>al lado del bcr</td>
                           <td>78542155</td>
-                          <!-- <td>20</td>
-                          <td>Al lado del bnc</td>
-                          <td>PATO</td> -->
-                          <td>Caballo</td>
+                          <td>20</td>
+               
+                          <td>Activo</td>
+                        
                           <td></td>
                         </tr>
                       </tbody>
@@ -61,4 +59,3 @@
         </div>
     </main>
 <?php footerAdmin($data); ?>
-    
