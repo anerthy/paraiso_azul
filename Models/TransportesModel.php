@@ -45,7 +45,7 @@
 			$this->strTipo = $tipo;
 			$this->strDisponibilidad = $disponibilidad;
 			$this->intPrecio = $precio;
-            $this->intTelefono = $telefono;
+            $this->strTelefono = $telefono;
             $this->intStatus = $status;
 			$this->strImagen = $imagen;
 			
@@ -85,7 +85,7 @@
 			if(empty($request))
 			{
 				$sql = "UPDATE transporte SET nombre_trans = ?, descripcion = ?, clase = ?, tipo = ?,  disponibilidad = ?, precio = ?, telefono= ?, status= ?,imagen = ?WHERE id_transporte = $this->intId_transporte ";
-				$arrData = array($this->strTransporte, $this->strDescripcion, $this->strClase,$this->strTipo, $this->strDisponibilidad, $this->intPrecio,$this->strTelefono, $this->strImagen);
+				$arrData = array($this->strTransporte, $this->strDescripcion, $this->strClase,$this->strTipo, $this->strDisponibilidad, $this->intPrecio,$this->strTelefono, $this->intStatus,$this->strImagen);
 				$request = $this->update($sql,$arrData);
 			}else{
 				$request = "exist";
