@@ -291,8 +291,7 @@ function fntViewInfo(id_grupo){
                 '<span class="badge badge-danger">Inactivo</span>';
                 document.querySelector("#celId_grupo").innerHTML = objData.data.id_grupo;
                 document.querySelector("#celNombre_grupo").innerHTML = objData.data.nombre_grupo;
-                document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
-                
+                document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;               
                 document.querySelector("#celCorreo").innerHTML =  objData.data.correo;
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
                 document.querySelector("#celNumero_integrantes").innerHTML = objData.data.numero_integrantes;
@@ -311,7 +310,7 @@ function fntViewInfo(id_grupo){
 
 
 function fntEditGrupo(id_grupo){
-   // rowTable = element.parentNode.parentNode.parentNode;
+    //rowTable = element.parentNode.parentNode.parentNode;
     document.querySelector('#titleModal').innerHTML ="Actualizar Grupo";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
