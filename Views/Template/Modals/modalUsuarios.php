@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="modalFormUsuario" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-lg" >
+  <div class="modal-dialog modal-lg " role="document" >
     <div class="modal-content">
       <div class="modal-header headerRegister">
         <h5 class="modal-title" id="titleModal">Nuevo Usuario</h5>
