@@ -1,7 +1,8 @@
 <?php
 headerAdmin($data);
-getModal('modalUsuarios', $data);
+getModal('modalComunidades', $data);
 ?>
+<div id="contentAjax"></div>
 <main class="app-content">
   <div class="app-title">
     <div>
@@ -11,7 +12,7 @@ getModal('modalUsuarios', $data);
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item"><a href="<?= base_url(); ?>/usuarios"><?= $data['page_title'] ?></a></li>
+      <li class="breadcrumb-item"><a href="<?= base_url(); ?>/comunidades"><?= $data['page_title'] ?></a></li>
     </ul>
   </div>
   <div class="row">
@@ -19,24 +20,28 @@ getModal('modalUsuarios', $data);
       <div class="tile">
         <div class="tile-body">
           <div class="table-responsive">
-            <table class="table table-hover table-bordered" id="tableUsuarios">
+            <table class="table table-hover table-bordered" id="tableComunidades">
               <thead>
                 <tr>
                   <th>ID</th>
                   <th>Nombre</th>
-                  <th>Correo</th>
-                  <th>Rol</th>
-                  <th>Estado</th>
+                  <th>Descripcion</th>
+                  <th>Provincia</th>
+                  <th>Canton</th>
+                  <th>Distrito</th>
+                  <!-- <th></th> -->
                   <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Carlos</td>
-                  <td>carlos@info.com</td>
-                  <td>Administrador</td>
-                  <td>Activo</td>
+                  <td>Patitos</td>
+                  <td>PatitosDescripcion</td>
+                  <td>Al lado del bnc</td>
+                  <td>Al lado del bnc</td>
+                  <td>Al lado del bnc</td>
+                  <!-- <td></td> -->
                   <td></td>
                 </tr>
               </tbody>

@@ -19,10 +19,25 @@
                 <label class="control-label">Nombre</label>
                 <input class="form-control" id="txtNombre_hosp" name="txtNombre_hosp" type="text" placeholder="Nombre del hospedaje" required="">
               </div>
+
+
+
+             
+
               <div class="form-group">
-                <label class="control-label">Tipo</label>
-                <input class="form-control" id="txtTipo" name="txtTipo" rows="2" required="">
+                <label for="exampleSelect1">Tipo</label>
+                <select class="form-control" id="txtTipo" name="txtTipo" required="">
+                  <option value="1">Cabina</option>
+                  <option value="2">Camping</option>
+                </select>
               </div>
+
+
+
+
+
+
+
               <div class="form-group">
                 <label class="control-label">Descripción</label>
                 <textarea class="form-control" id="txtDescripcion" name="txtDescripcion" rows="2" placeholder="Descripción del hospedaje" required=""></textarea>

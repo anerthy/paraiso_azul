@@ -23,7 +23,7 @@
                 <ul class="treeview-menu">
                     <li><a class="treeview-item" href="<?= base_url(); ?>/usuarios"><i class="icon fa fa-circle-o"></i> Usuarios</a></li>
                     <li><a class="treeview-item" href="<?= base_url(); ?>/roles"><i class="icon fa fa-circle-o"></i> Roles</a></li>
-                    <li><a class="treeview-item" href="<?= base_url(); ?>/permisos"><i class="icon fa fa-circle-o"></i> Permisos</a></li>
+                    <!-- <li><a class="treeview-item" href="<?= base_url(); ?>/permisos"><i class="icon fa fa-circle-o"></i> Permisos</a></li> -->
                 </ul>
             </li>
             <li>
@@ -31,6 +31,13 @@
 
                     <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
                     <span class="app-menu__label">Grupos Organizados</span>
+                </a>
+            </li>
+            <li>
+                <a class="app-menu__item" href="<?= base_url(); ?>/comunidades">
+
+                    <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
+                    <span class="app-menu__label">Comunidades</span>
                 </a>
             </li>
             <li>

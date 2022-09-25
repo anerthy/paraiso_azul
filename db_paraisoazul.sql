@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 25-09-2022 a las 19:13:42
+-- Tiempo de generación: 25-09-2022 a las 23:19:12
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -438,7 +438,6 @@ END$$
 
 DELIMITER ;
 
-
 -- --------------------------------------------------------
 
 --
@@ -482,16 +481,15 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
   `distrito` enum('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_comunidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `comunidad`
 --
 
 INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia`, `canton`, `distrito`, `imagen`) VALUES
-(1, 'Isla Caballito', 'es isla caballito no caballo', NULL, NULL, '', 'img_102ecc646c8bea3741fd3fa16038866b.jpg'),
-(24, 'ASDF', 'ASDASDASD', NULL, NULL, '', 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg'),
-(25, 'TEST', 'TEST', 'Puntarenas', 'Puntarenas', '', 'TEST');
+(1, 'Isla Caballito', 'es isla caballito no caballo', 'Guanacaste', 'Montes de Oro', 'Paquera', 'img_102ecc646c8bea3741fd3fa16038866b.jpg'),
+(24, 'Isla Bejuco', 'ASDASDASD', 'Puntarenas', 'Corredores', 'Pitahaya', 'img_dfb56fb5157c161c5e7c6f14fb31fb1b.jpg');
 
 -- --------------------------------------------------------
 
@@ -514,15 +512,16 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
   `comunidad_id` tinyint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_grupo`),
   KEY `comunidad_id` (`comunidad_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `grupo_organizado`
 --
 
 INSERT INTO `grupo_organizado` (`id_grupo`, `nombre_grupo`, `representante`, `descripcion`, `ubicacion`, `correo`, `telefono`, `numero_integrantes`, `status`, `logo`, `comunidad_id`) VALUES
-(11, 'sdsdad', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 31, 1, 'img_909c761e1ca52f67ba38b6c35be92d3a.jpg', 1),
-(13, 'ASA', 'REPRE', 'SSAD', 'SDSD', 'SDASDD', '34324234', 127, 0, 'SADD', 1);
+(11, 'sdsdad', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 31, 1, 'portada_categoria.png', 24),
+(13, 'ASA', 'REPRE', 'SSAD', 'SDSD', 'SDASDD', '34324234', 127, 0, 'SADD', 1),
+(14, 'MACHUICHU', 'ddsf', 'ddsfd', 'ddffdsf', 'dkgwf@dddgmail.com', '89742984', 31, 1, 'portada_categoria.png', 1);
 
 -- --------------------------------------------------------
 
@@ -542,7 +541,7 @@ CREATE TABLE IF NOT EXISTS `hospedaje` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_hospedaje`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `hospedaje`
@@ -553,7 +552,8 @@ INSERT INTO `hospedaje` (`id_hospedaje`, `nombre_hosp`, `descripcion`, `tipo`, `
 (3, 'Mariposas', 'Se ofrece habitacion para dos personas', 'Cabina', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
 (6, 'Hotel la vida loca', 'jdskjssjdsaaaaaaaaaaaaaaaaaaaaaaadk', 'Camping', '222222222222222222ewd', '89320012', '21000.00', 1, 'imagen.png'),
 (7, 'sdsfdfsdf', 'dfdsff', '', 'fsdfsdfsdf', '49284949', '2500.00', 1, 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg'),
-(8, 'WSDDA', 'DASDAD', '', 'ASDASDAD', '89742984', '2500.00', 2, 'img_f33f7dfe75e576e02a423b83d082c7ba.jpg');
+(8, 'WSDDA', 'DASDAD', 'Camping', 'ASDASDAD', '89742984', '2500.00', 2, 'img_f33f7dfe75e576e02a423b83d082c7ba.jpg'),
+(9, 'SIRVE', 'kjhf', 'Camping', 'lkmjnhbgvf', '24438433', '90000.00', 0, 'img_703ec07accdeb8eba156715faf6bee80.jpg');
 
 -- --------------------------------------------------------
 
@@ -626,7 +626,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -644,7 +644,13 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (10, 0, 0, 0, 0, 9, 3),
 (11, 0, 0, 0, 0, 9, 4),
 (12, 0, 0, 0, 0, 9, 5),
-(13, 0, 0, 0, 0, 9, 6);
+(13, 0, 0, 0, 0, 9, 6),
+(20, 1, 0, 0, 1, 19, 1),
+(21, 0, 1, 0, 0, 19, 2),
+(22, 0, 0, 1, 0, 19, 3),
+(23, 1, 0, 0, 1, 19, 4),
+(24, 0, 1, 0, 0, 19, 5),
+(25, 0, 0, 1, 1, 19, 6);
 
 -- --------------------------------------------------------
 
@@ -730,7 +736,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -739,7 +745,8 @@ CREATE TABLE IF NOT EXISTS `rol` (
 INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 (8, 'ADMIN', 'super administrador', 1),
 (9, 'rolt_est', 'sdsadaa', 2),
-(12, 'Dealer', 'vende mota', 0);
+(12, 'Dealer', 'vende mota y confites', 1),
+(19, 'Mariposas Golfo de Nicoya', 'lkjhgfdd', 1);
 
 -- --------------------------------------------------------
 
@@ -792,14 +799,17 @@ CREATE TABLE IF NOT EXISTS `transporte` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_transporte`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `transporte`
 --
 
 INSERT INTO `transporte` (`id_transporte`, `nombre_trans`, `descripcion`, `clase`, `tipo`, `disponibilidad`, `precio`, `telefono`, `status`, `imagen`) VALUES
-(2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 0, 'SDASDDAD');
+(2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 0, 'SDASDDAD'),
+(3, 'Taxi alfredo', '.hbgf', '', '', 'jhgfd', '2500.00', '89742984', 0, 'img_18b2ab157b9609dcf2025e4e06188867.jpg'),
+(4, 'Bus', 'ijdkidjsadadj', 'Privado', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 2, 'img_2664a10b57c8059bd14e871ff8bf6add.jpg'),
+(5, 'SIRVE', 'FSDJFLSLF', 'Privado', 'Terrestre', 'QWERTYUIOLÑJHG', '2500.00', '24438433', 1, 'img_7b8946c196a2eb013f3e14d35d7b4ccb.jpg');
 
 -- --------------------------------------------------------
 
@@ -820,7 +830,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `nombre_2` (`nombre_usuario`),
   UNIQUE KEY `correo` (`correo`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -828,7 +838,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `status`, `rol_id`) VALUES
 (1, 'anerthy', 'aner@gmail.com', 'qwerty', 1, 9),
-(5, 'srAA', 'aaron@gmail.com', 'aaron1314', 1, 8);
+(5, 'sr AA', 'aaron@gmail.com', '3324dab86f4dcdf48ba8ed6d736dcf050f09a23bf617c7d3579224548269ba1f', 1, 8);
 
 -- --------------------------------------------------------
 

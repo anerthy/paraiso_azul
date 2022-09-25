@@ -25,14 +25,41 @@
                 <label class="control-label">Descripción</label>
                 <textarea class="form-control" id="txtDescripcion" name="txtDescripcion" rows="2" placeholder="Descripción del transporte" required=""></textarea>
               </div>
+
+
+
+              
+
+              
               <div class="form-group">
-                <label class="control-label">Clase</label>
-                <input class="form-control" id="txtClase" name="txtClase" rows="2" required="">
+                <label for="exampleSelect1">Clase</label>
+                <select class="form-control" id="txtClase" name="txtClase" required="">
+                  <option value="1">Publico</option>
+                  <option value="2">Privado</option>
+                </select>
               </div>
+
+
+
+
+
+
+
+              
+
               <div class="form-group">
-                <label class="control-label">Tipo</label>
-                <input class="form-control" id="txtTipo" name="txtTipo" rows="2" required="">
+                <label for="exampleSelect1">Tipo</label>
+                <select class="form-control" id="txtTipo" name="txtTipo" required="">
+                  <option value="1">Terrestre</option>
+                  <option value="2">Maritimo</option>
+                </select>
               </div>
+
+
+
+
+
+
               <div class="form-group">
                 <label class="control-label">Disponibilidad</label>
                 <textarea class="form-control" id="txtDisponibilidad" name="txtDisponibilidad" rows="2" placeholder="Disponibilidad" required=""></textarea>
