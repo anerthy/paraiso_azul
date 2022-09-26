@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 25-09-2022 a las 23:19:12
+-- Tiempo de generación: 26-09-2022 a las 04:29:38
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -626,7 +626,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -645,12 +645,12 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (11, 0, 0, 0, 0, 9, 4),
 (12, 0, 0, 0, 0, 9, 5),
 (13, 0, 0, 0, 0, 9, 6),
-(20, 1, 0, 0, 1, 19, 1),
-(21, 0, 1, 0, 0, 19, 2),
-(22, 0, 0, 1, 0, 19, 3),
-(23, 1, 0, 0, 1, 19, 4),
-(24, 0, 1, 0, 0, 19, 5),
-(25, 0, 0, 1, 1, 19, 6);
+(26, 1, 1, 0, 1, 19, 1),
+(27, 0, 1, 0, 0, 19, 2),
+(28, 0, 0, 1, 0, 19, 3),
+(29, 1, 0, 0, 1, 19, 4),
+(30, 0, 1, 0, 0, 19, 5),
+(31, 0, 0, 1, 1, 19, 6);
 
 -- --------------------------------------------------------
 
@@ -744,9 +744,9 @@ CREATE TABLE IF NOT EXISTS `rol` (
 
 INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 (8, 'ADMIN', 'super administrador', 1),
-(9, 'rolt_est', 'sdsadaa', 2),
+(9, 'Mudecop', 'lorem ipsum', 2),
 (12, 'Dealer', 'vende mota y confites', 1),
-(19, 'Mariposas Golfo de Nicoya', 'lkjhgfdd', 1);
+(19, 'Mariposas Golfo de Nicoya DOS', 'lkjhgfdd', 1);
 
 -- --------------------------------------------------------
 
@@ -830,15 +830,15 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `nombre_2` (`nombre_usuario`),
   UNIQUE KEY `correo` (`correo`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `status`, `rol_id`) VALUES
-(1, 'anerthy', 'aner@gmail.com', 'qwerty', 1, 9),
-(5, 'sr AA', 'aaron@gmail.com', '3324dab86f4dcdf48ba8ed6d736dcf050f09a23bf617c7d3579224548269ba1f', 1, 8);
+(5, 'Andres', 'anerthy@gmail.com', '7592771166a7088801c2adcdbfba017ece2b380b8d230ffeb8b282465d98f5ef', 2, 8),
+(20, 'Aaron Villegas', 'aaron1314@gmail.com', '3324dab86f4dcdf48ba8ed6d736dcf050f09a23bf617c7d3579224548269ba1f', 1, 8);
 
 -- --------------------------------------------------------
 
