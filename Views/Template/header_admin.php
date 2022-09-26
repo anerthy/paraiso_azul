@@ -6,7 +6,7 @@
   <meta name="description" content="Paraiso Azul Golfo Nicoya">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Abel OSH">
+  <meta name="author" content="paraiso azul">
   <meta name="theme-color" content="#009688">
   <link rel="shortcut icon" href="<?= media(); ?>/images/favicon.ico">
   <title><?= $data['page_tag'] ?></title>
