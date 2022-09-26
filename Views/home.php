@@ -5,116 +5,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/home.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   <title>Home</title>
 </head>
 
 <body>
 
   <header>
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="http://localhost/paraiso_azul">Paraiso Azul</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="http://localhost/paraiso_azul/home">Inicio</a>
-            </li>
+    <nav class="navbar">
+      <ul>
 
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                ¿Que ofrecemos?
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Hospedaje</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Alimentacion</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Transporte</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Tours</a></li>
-              </ul>
-            </li>
+        <li><a href="<?= base_url(); ?>">Inicio</a></li>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Sobre Nosotros
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">CEMEDE</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="<?= base_url(); ?>/grupos">Grupos Organizados</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Comunidades</a></li>
-              </ul>
-            </li> -->
-
-            <li class="treeview">
-              <a class="app-menu__item" href="#" data-toggle="treeview">
-                <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
-                <span class="app-menu__label">¿Que ofrecemos?</span>
-                <i class="treeview-indicator fa fa-angle-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a class="treeview-item" href="<?= base_url(); ?>/hospedaje"><i class="icon fa fa-circle-o"></i> Hospedaje</a></li>
-                <li><a class="treeview-item" href="<?= base_url(); ?>/alimentacion"><i class="icon fa fa-circle-o"></i> Alimentacion</a></li>
-                <li><a class="treeview-item" href="<?= base_url(); ?>/transporte"><i class="icon fa fa-circle-o"></i> Transporte</a></li>
-                <li><a class="treeview-item" href="<?= base_url(); ?>/tours"><i class="icon fa fa-circle-o"></i> Tours</a></li>
-              </ul>
-            </li>
-
-            <li class="treeview">
-              <a class="app-menu__item" href="#" data-toggle="treeview">
-                <i class="app-menu__icon fa fa-users" aria-hidden="true"></i>
-                <span class="app-menu__label">Sobre Nosotros</span>
-                <i class="treeview-indicator fa fa-angle-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a class="treeview-item" href="<?= base_url(); ?>/cemede"><i class="icon fa fa-circle-o"></i> CEMEDE</a></li>
-                <li><a class="treeview-item" href="<?= base_url(); ?>/grupo"><i class="icon fa fa-circle-o"></i> Grupos Organizados</a></li>
-                <li><a class="treeview-item" href="<?= base_url(); ?>/comunidad"><i class="icon fa fa-circle-o"></i> Comunidades</a></li>
-              </ul>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="<?= base_url(); ?>/voluntariado">Voluntariado</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="<?= base_url(); ?>/dashboard">DashBoard</a>
-            </li>
-
+        <li id="dd" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">¿Que ofrecemos?</a>
+          <ul id="dropdown" class="dropdown-menu" role="menu">
+            <li><a href="<?= base_url(); ?>/alimentacion">Alimentacion</a></li>
+            <li><a href="<?= base_url(); ?>/hospedaje">Hospedaje</a></li>
+            <li><a href="<?= base_url(); ?>/trasnporte">Transporte</a></li>
+            <li><a href="#">Tours</a></li>
           </ul>
-        </div>
-      </div>
+        <li>
+
+        <li id="dd" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sobre el proyecto</a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="<?= base_url(); ?>/alimentacion">CEMEDE</a></li>
+            <li><a href="<?= base_url(); ?>/hospedaje">Grupos Organizados</a></li>
+            <li><a href="<?= base_url(); ?>/trasnporte">Comunidades</a></li>
+          </ul>
+        </li>
+
+        <li><a href="<?= base_url(); ?>/voluntariado">Voluntariado</a></li>
+
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+
+        <li>
+          <a href="<?= base_url(); ?>/dashboard">
+            <i class="fa fa-user"></i> Dashboard
+          </a>
+        </li>
+
+      </ul>
     </nav>
   </header>
 
-  <h1 class="display-4">Paraiso Azul Golfo de Nicoya</h1>
+  <div id="general">
 
-  <br />
-  <br />
-  <br />
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero libero, molestie et purus dapibus, elementum fermentum nunc. Curabitur sit amet nisl elit. Nulla luctus purus vel orci porttitor, condimentum lacinia sapien fermentum. Quisque diam libero, vulputate et tortor a, imperdiet rutrum libero. In nec nulla efficitur, auctor elit ut, molestie libero. Ut venenatis turpis tincidunt, dapibus justo et, finibus metus. Phasellus venenatis enim diam, ut cursus tellus tristique non. Fusce at mi laoreet, pharetra felis ut, iaculis metus. Donec suscipit elementum nibh non bibendum. Praesent sit amet felis eget diam posuere eleifend. Vestibulum mattis dictum tempor.
-    Cras sed leo lectus. Pellentesque nibh orci, tristique quis gravida non, dictum eget mi. Nulla in dui quam. Duis dui dolor, venenatis a pharetra non, dapibus a mauris. Quisque non bibendum ante. Vivamus ultrices consectetur purus, nec dapibus elit sodales non. Etiam ut odio rutrum, tincidunt dolor ac, ornare felis. Vivamus laoreet quam neque, at sollicitudin nisl lacinia vitae. Cras aliquet, nibh quis porttitor cursus, purus quam pellentesque lacus, vel euismod lorem nulla a tortor. Cras nec dui dolor.
-    Ut ac elit ex. Sed non nisi sollicitudin, scelerisque dolor sed, dapibus felis. Sed efficitur sollicitudin justo non ultrices. Integer ornare feugiat aliquet. Donec mattis faucibus mauris, mollis mollis erat varius quis. Vestibulum sollicitudin commodo ultricies. Vestibulum consequat ultrices libero eu pellentesque. Donec vitae vestibulum neque. Suspendisse sagittis posuere nisl eleifend cursus. Duis iaculis dui sem, vitae hendrerit quam aliquam eget. Curabitur ac felis volutpat, tempor lorem vel, faucibus ante.
-    Fusce posuere velit et convallis mattis. Suspendisse luctus imperdiet tellus, ut vestibulum odio bibendum nec. Donec vitae ipsum sed nibh scelerisque ultricies. Morbi vitae faucibus nunc. Integer sagittis nunc nec massa pretium pretium. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi ac rhoncus quam. Suspendisse tempor faucibus neque at tempor. Fusce sit amet hendrerit orci. Suspendisse quis libero at urna sagittis tincidunt.
-    Donec auctor enim sit amet nisl rutrum, id vulputate quam volutpat. Aenean risus metus, tempus a mollis ultricies, rhoncus vel nulla. Nam dictum sed odio in condimentum. Morbi eu tempor massa. Maecenas gravida urna nec mauris luctus fermentum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent dapibus magna semper, blandit tortor at, commodo nisl.
-  </p>
+    <div id="foto">
+      <br><br>
+      <img id="logo" src="<?= media(); ?>/images/uploads/redCostera.jpg" width="350" height="350">
+    </div>
+
+    <div id="titulo">
+      <div class="text-center">
+        <h1 class="display-4">Paraiso Azul</h1>
+      </div>
+    </div>
+
+    <div id="contenido">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus risus in augue porta rhoncus. Nunc at magna eleifend, sodales neque ut, aliquet nisi. Duis sit amet eros a arcu varius elementum posuere in eros. Donec turpis quam, egestas vel pretium sit amet, pulvinar ac nulla. Suspendisse ac tempor nunc. Morbi interdum ac risus sed semper. Etiam blandit augue id porta hendrerit. Nullam semper nibh sed ullamcorper elementum. Aenean vel ante a odio fermentum cursus at id nulla. Nulla pharetra felis eget ullamcorper ultrices. Maecenas sit amet viverra tortor. Ut tempor aliquet felis, in pellentesque elit. Aenean sollicitudin diam turpis, in vulputate magna sollicitudin quis. Nam imperdiet lectus dui, cursus iaculis elit dignissim ut. Maecenas a euismod nisl, et fermentum dolor. Pellentesque ornare magna non sem posuere, vitae tempor tortor sodales. In hac habitasse platea dictumst. Curabitur at libero at nisl interdum scelerisque. Donec nec sapien id nunc laoreet ultricies sit amet faucibus urna. Duis vel sodales ipsum, consequat tincidunt tortor. Integer id tristique leo. Morbi sagittis, mi nec commodo feugiat, augue risus consequat mi, at iaculis risus sapien ut odio. Fusce at odio fermentum, convallis nulla et, tempus magna. Proin finibus nunc quis metus volutpat, nec egestas diam tristique. Phasellus porta lobortis lorem, eu varius eros elementum a. In hac habitasse platea dictumst. Fusce pharetra hendrerit bibendum. Suspendisse dapibus, felis a aliquet auctor, dolor velit maximus tellus, at sodales lacus odio non libero. Maecenas rhoncus, dui quis pharetra accumsan, ligula justo luctus turpis, nec mollis lacus massa non dolor. Nulla et posuere metus. Morbi imperdiet erat id magna rutrum vehicula et vitae lectus. Pellentesque maximus, lectus consectetur malesuada congue, lorem mi scelerisque sem, et maximus tellus ipsum vitae massa. Proin massa nulla, pulvinar ac congue id, facilisis quis orci.
+      </p>
+    </div>
+
+    <div id="texto">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus risus in augue porta rhoncus. Nunc at magna eleifend, sodales neque ut, aliquet nisi. Duis sit amet eros a arcu varius elementum posuere in eros. Donec turpis quam, egestas vel pretium sit amet, pulvinar ac nulla. Suspendisse ac tempor nunc. Morbi interdum ac risus sed semper. Etiam blandit augue id porta hendrerit. Nullam semper nibh sed ullamcorper elementum. Aenean vel ante a odio fermentum cursus at id nulla. Nulla pharetra felis eget ullamcorper ultrices. Maecenas sit amet viverra tortor. Ut tempor aliquet felis, in pellentesque elit. Aenean sollicitudin diam turpis, in vulputate magna sollicitudin quis. Nam imperdiet lectus dui, cursus iaculis elit dignissim ut. Maecenas a euismod nisl, et fermentum dolor. Pellentesque ornare magna non sem posuere, vitae tempor tortor sodales. In hac habitasse platea dictumst. Curabitur at libero at nisl interdum scelerisque. Donec nec sapien id nunc laoreet ultricies sit amet faucibus urna. Duis vel sodales ipsum, consequat tincidunt tortor. Integer id tristique leo. Morbi sagittis, mi nec commodo feugiat, augue risus consequat mi, at iaculis risus sapien ut odio. Fusce at odio fermentum, convallis nulla et, tempus magna. Proin finibus nunc quis metus volutpat, nec egestas diam tristique. Phasellus porta lobortis lorem, eu varius eros elementum a. In hac habitasse platea dictumst. Fusce pharetra hendrerit bibendum. Suspendisse dapibus, felis a aliquet auctor, dolor velit maximus tellus, at sodales lacus odio non libero. Maecenas rhoncus, dui quis pharetra accumsan, ligula justo luctus turpis, nec mollis lacus massa non dolor. Nulla et posuere metus. Morbi imperdiet erat id magna rutrum vehicula et vitae lectus. Pellentesque maximus, lectus consectetur malesuada congue, lorem mi scelerisque sem, et maximus tellus ipsum vitae massa. Proin massa nulla, pulvinar ac congue id, facilisis quis orci. Vivamus in velit ligula. Pellentesque maximus, lectus consectetur malesuada congue, lorem mi scelerisque sem.
+      </p>
+    </div>
+
+  </div>
 
   <script src="http://localhost/paraiso_azul/Assets/js/bootstrap.min.js""></script>
 </body>
 </html>
+<script src=" http://localhost/paraiso_azul/Assets/js/bootstrap.min.js""></script>
