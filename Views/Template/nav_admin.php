@@ -29,7 +29,7 @@
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/grupos">
 
-                    <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
+                    <i class="app-menu__icon fa  fa-building" aria-hidden="true"></i>
                     <span class="app-menu__label">Grupos Organizados</span>
                 </a>
             </li>
@@ -43,21 +43,21 @@
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/alimentacion">
 
-                    <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
+                    <i class="app-menu__icon fas fa-fish" aria-hidden="true"></i>
                     <span class="app-menu__label">Alimentacion</span>
                 </a>
             </li>
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/transportes">
 
-                    <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
+                    <i class="app-menu__icon fa  fa-car" aria-hidden="true"></i>
                     <span class="app-menu__label">Transportes</span>
                 </a>
             </li>
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/hospedajes">
 
-                    <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
+                    <i class="app-menu__icon fa  fa-home" aria-hidden="true"></i>
                     <span class="app-menu__label">Hospedajes</span>
                 </a>
             </li>
