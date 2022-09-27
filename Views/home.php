@@ -37,7 +37,7 @@
         <li id="dd" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sobre el proyecto</a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="<?= base_url(); ?>/cemede">CEMEDE</a></li>
+            <li><a href="<?= base_url(); ?>/home/cemede">CEMEDE</a></li>
             <li><a href="<?= base_url(); ?>/grupo">Grupos Organizados</a></li>
             <li><a href="<?= base_url(); ?>/comunidad">Comunidades</a></li>
           </ul>
