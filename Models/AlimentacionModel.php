@@ -96,7 +96,7 @@ class AlimentacionModel extends Mysql
         $this->intId_alimentacion = $intId_alimentacion;
         $sql = "DELETE FROM alimentacion WHERE id_alimentacion = $this->intId_alimentacion";
         $arrData = array(0);
-        $request = $this->update($sql, $arrData);
+        $request = $this->delete($sql, $arrData);
         return $request;
     }
 }
