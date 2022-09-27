@@ -71,8 +71,8 @@ class AlimentacionModel extends Mysql
         $this->strAlimentacion = $alimentacion;
         $this->strDescripcion = $descripcion;
         $this->strDireccion = $direccion;
-        $this->strHoraApertura = $telefono;
-        $this->strHoraCierre = $telefono;
+        $this->strHoraApertura = $horaApertura;
+        $this->strHoraCierre = $horaCierre;
         $this->strTelefono = $telefono;
         $this->intStatus = $status;
         $this->strImagen = $imagen;
@@ -82,7 +82,7 @@ class AlimentacionModel extends Mysql
         $request = $this->select_all($sql);
 
         if (empty($request)) {
-            $sql = "UPDATE alimentacion SET nombre_alim = ?, descripcion = ?,direccion = ?,  hora_apertura = ?,horaCierre = ?,telefono = ?, status= ?, imagen = ? WHERE id_alimentacion = $this->intId_alimentacion ";
+            $sql = "UPDATE alimentacion SET nombre_alim = ?, descripcion = ?,direccion = ?,  horaApertura = ?,horaCierre = ?,telefono = ?, status= ?, imagen = ? WHERE id_alimentacion = $this->intId_alimentacion ";
             $arrData = array($this->strAlimentacion, $this->strDescripcion, $this->strDireccion, $this->strHoraApertura, $this->strHoraCierre, $this->strTelefono, $this->intStatus, $this->strImagen);
             $request = $this->update($sql, $arrData);
         } else {
