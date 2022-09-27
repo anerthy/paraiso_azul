@@ -312,8 +312,8 @@ function fntEditTransporte(id_transporte){
 
 function fntDelTransporte(id_transporte){
     swal({
-        title: "Eliminar Cliente",
-        text: "¿Realmente quiere eliminar al cliente?",
+        title: "Eliminar transporte",
+        text: "¿Realmente quiere eliminar al transporte?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
