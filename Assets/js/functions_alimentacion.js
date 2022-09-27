@@ -250,8 +250,8 @@ function fntEditAlimentacion(id_alimentacion){
                 document.querySelector("#txtNombre_alim").value = objData.data.nombre_alim;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
                 document.querySelector("#txtDireccion").value = objData.data.direccion;
-                document.querySelector("#txtHoraApertura").value = objData.data.hora_apertura;
-                document.querySelector("#txtHoraCierre").value = objData.data.hora_cierre;
+                document.querySelector("#txtHoraApertura").value = objData.data.horaApertura;
+                document.querySelector("#txtHoraCierre").value = objData.data.horaCierre;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
                 document.querySelector('#foto_actual').value = objData.data.imagen;
                 document.querySelector("#foto_remove").value= 0;
