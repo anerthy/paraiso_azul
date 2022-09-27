@@ -94,9 +94,9 @@ class HospedajesModel extends Mysql
 	public function deleteHospedaje(int $intId_hospedaje)
 	{
 		$this->intId_hospedaje = $intId_hospedaje;
-		$sql = "UPDATE hospedaje SET status = ? WHERE id_hospedaje = $this->intId_hospedaje";
+		$sql = "DELETE from hospedaje WHERE id_hospedaje = $this->intId_hospedaje";
 		$arrData = array(0);
-		$request = $this->update($sql,$arrData);
+		$request = $this->delete($sql,$arrData);
 		return $request;
 	}
 }
