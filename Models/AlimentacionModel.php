@@ -1,6 +1,6 @@
 <?php
 
-class HospedajesModel extends Mysql
+class AlimentacionModel extends Mysql
 {
     public $intId_alimentacion;
     public $strAlimentacion;

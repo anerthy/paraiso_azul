@@ -41,6 +41,13 @@
                 </a>
             </li>
             <li>
+                <a class="app-menu__item" href="<?= base_url(); ?>/alimentacion">
+
+                    <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
+                    <span class="app-menu__label">Alimentacion</span>
+                </a>
+            </li>
+            <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/transportes">
 
                     <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
