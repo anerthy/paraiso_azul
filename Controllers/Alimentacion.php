@@ -37,7 +37,7 @@ class Alimentacion extends Controllers
             $arrData[$i]['options'] = '<div class="text-center">
 				
 				<button class="btn btn-primary btn-sm fntEditAlimentacion" onClick="fntEditAlimentacion(' . $arrData[$i]['id_alimentacion'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
-				<button class="btn btn-danger btn-sm btnDeltAlimentacion" onClick="fntDeltAlimentacion(' . $arrData[$i]['id_alimentacion'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
+				<button class="btn btn-danger btn-sm fntDelAlimentacion" onClick="fntDelAlimentacion(' . $arrData[$i]['id_alimentacion'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
 				<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_alimentacion'] . ')" title="Ver alimentacion"><i class="far fa-eye"></i></button>
 				</div>';
         }
