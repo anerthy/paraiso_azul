@@ -1,27 +1,27 @@
-var tableTransportes;
+
+var tableAlimentaciones;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
 //document.addEventListener('DOMContentLoaded', function(){
 
-    tableTransportes = $('#tableTransportes').dataTable( {
+    tableAlimentaciones = $('#tableAlimentaciones').dataTable( {
         "aProcessing":true,
         "aServerSide":true,
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-            "url": " "+base_url+"/Transportes/getTransportes",
+            "url": " "+base_url+"/Alimentacion/getAlimentaciones",
             "dataSrc":""
         },
         "columns":[
-            {"data":"id_transporte"},
-            {"data":"nombre_trans"},
+            {"data":"id_alimentacion"},
+            {"data":"nombre_alim"},
             {"data":"descripcion"},
-            {"data":"clase"},
-            {"data":"tipo"},
-            {"data":"disponibilidad"},
-            {"data":"precio"},
+            {"data":"direccion"},
+            {"data":"hora_apertura"},
+            {"data":"hora_cierre"},
             {"data":"telefono"},
             {"data":"status"},
             {"data":"options"}
@@ -103,29 +103,28 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
     //NUEVO GRUPO
-    var formTransporte = document.querySelector("#formTransporte");
-    formTransporte.onsubmit = function(e) {
+    var formAlimentacion = document.querySelector("#formAlimentacion");
+    formAlimentacion.onsubmit = function(e) {
         e.preventDefault();
 
-        var intId_transporte = document.querySelector('#id_Transporte').value;
-        var strNombre_trans = document.querySelector('#txtNombre_trans').value;
+        var intId_alimentacion = document.querySelector('#id_Alimentacion').value;
+        var strNombre_alim = document.querySelector('#txtNombre_alim').value;
         var strDescripcion = document.querySelector('#txtDescripcion').value;
-        var strClase = document.querySelector('#txtClase').value;
-        var strTipo = document.querySelector('#txtTipo').value;
-        var strDisponibilidad = document.querySelector('#txtDisponibilidad').value; 
-        var intPrecio = document.querySelector('#txtPrecio').value;
+        var strDireccion = document.querySelector('#txtDireccion').value; 
+        var strHoraApertura = document.querySelector('#txtHoraApertura').value;
+        var strHoraCierre = document.querySelector('#txtHoraCierre').value;
         var strTelefono = document.querySelector('#txtTelefono').value;
         var intStatus = document.querySelector('#listStatus').value;
 
-        if(strNombre_trans == '' || strDescripcion == '' || strClase == '' || strTipo == '' || strDisponibilidad == '' || intPrecio == '' || strTelefono == '' || intStatus == '' )
+        if(strNombre_alim == '' || strDescripcion == '' || strDireccion == '' || strHoraApertura == '' ||  strHoraCierre == '' ||strTelefono == '' || intStatus == '' )
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
        //  divLoading.style.display = "flex";
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = base_url+'/Transportes/setTransporte'; 
-        var formData = new FormData(formTransporte);
+        var ajaxUrl = base_url+'/Alimentacion/setAlimentacion'; 
+        var formData = new FormData(formAlimentacion);
         request.open("POST",ajaxUrl,true);
         request.send(formData);
         request.onreadystatechange = function(){
@@ -135,31 +134,29 @@ document.addEventListener('DOMContentLoaded', function(){
                 if(objData.status)
                 {
                     if(rowTable == ""){
-                        tableTransportes.api().ajax.reload();
+                        tableAlimentaciones.api().ajax.reload();
                     }else{
                         htmlStatus = intStatus == 1 ? 
                             '<span class="badge badge-success">Activo</span>' : 
                             '<span class="badge badge-danger">Inactivo</span>';
-                        rowTable.cells[1].textContent = strNombre_trans;
+                        rowTable.cells[1].textContent = strNombre_alim;
                         rowTable.cells[2].textContent = strDescripcion;
-                        rowTable.cells[3].innerHTML = strClase;
-                        rowTable.cells[4].innerHTML = strTipo;
-                        rowTable.cells[5].innerHTML = strDisponibilidad;
-                        rowTable.cells[6].innerHTML = intPrecio;
-                        rowTable.cells[7].innerHTML = strTelefono; 
-                        rowTable.cells[8].innerHTML = htmlStatus;
-                        //rowTable.cells[8].innerHTML = strImagen;
+                        rowTable.cells[3].innerHTML = strDireccion;
+                        rowTable.cells[5].innerHTML = strHoraApertura;
+                        rowTable.cells[6].innerHTML = strHoraCierre;
+                        rowTable.cells[6].innerHTML = strTelefono;
+                        rowTable.cells[7].innerHTML = htmlStatus;
                      
                         rowTable = "";
                         
 
                     }
 
-                    $('#modalFormTransporte').modal("hide");
-                    formTransporte.reset();
-                    swal("Transporte", objData.msg ,"success");
+                    $('#modalFormAlimentacion').modal("hide");
+                    formAlimentacion.reset();
+                    swal("Alimentacion", objData.msg ,"success");
                     removePhoto();
-                    tableTransportes.api().ajax.reload();
+                    tableAlimentaciones.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
                 }              
@@ -180,13 +177,13 @@ document.addEventListener('DOMContentLoaded', function(){
 function openModal(){
     
     rowTable = "";
-    document.querySelector('#id_Transporte').value ="";
+    document.querySelector('#id_Alimentacion').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
-    document.querySelector('#titleModal').innerHTML = "Nuevo transporte";
-    document.querySelector("#formTransporte").reset();
-    $('#modalFormTransporte').modal('show');
+    document.querySelector('#titleModal').innerHTML = "Nueva alimentacion";
+    document.querySelector("#formAlimentacion").reset();
+    $('#modalFormAlimentacion').modal('show');
     removePhoto();
 }
 
@@ -199,9 +196,9 @@ function openModal(){
 
 
 
-function fntViewInfo(id_transporte){
+function fntViewInfo(id_alimentacion){
     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/Transportes/getTransporte/'+id_transporte;
+    let ajaxUrl = base_url+'/Alimentacion/getAlimentacion/'+id_alimentacion;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -212,17 +209,16 @@ function fntViewInfo(id_transporte){
                 let estado = objData.data.status == 1 ? 
                 '<span class="badge badge-success">Activo</span>' : 
                 '<span class="badge badge-danger">Inactivo</span>';
-                document.querySelector("#celId").innerHTML = objData.data.id_transporte;
-                document.querySelector("#celNombre_trans").innerHTML = objData.data.nombre_trans;
+                document.querySelector("#celId").innerHTML = objData.data.id_alimentacion;
+                document.querySelector("#celNombre_alim").innerHTML = objData.data.nombre_alim;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
-                document.querySelector("#celClase").innerHTML =  objData.data.clase;
-                document.querySelector("#celTipo").innerHTML =  objData.data.tipo;
-                document.querySelector("#celDisponibilidad").innerHTML =  objData.data.disponibilidad;
-                document.querySelector("#celPrecio").innerHTML = objData.data.precio;
+                document.querySelector("#celDireccion").innerHTML =  objData.data.direccion;
+                document.querySelector("#celHoraApertura").innerHTML =  objData.data.hora_apertura;
+                document.querySelector("#celHoraCierre").innerHTML =  objData.data.hora_cierre;
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
                 document.querySelector("#celStatus").innerHTML = objData.data.status;
-                document.querySelector("#imgTransporte").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
-                $('#modalViewTransporte').modal('show');
+                document.querySelector("#imgAlimentacion").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
+                $('#modalViewAlimentacion').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -231,16 +227,16 @@ function fntViewInfo(id_transporte){
 }
 
 
-function fntEditTransporte(id_transporte){
+function fntEditAlimentacion(id_alimentacion){
    // rowTable = element.parentNode.parentNode.parentNode;
-    document.querySelector('#titleModal').innerHTML ="Actualizar transporte";
+    document.querySelector('#titleModal').innerHTML ="Actualizar alimentacion";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var id_transporte = id_transporte;
+    var id_alimentacion = id_alimentacion;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl  = base_url+'/Transportes/getTransporte/'+id_transporte;
+    var ajaxUrl  = base_url+'/Alimentacion/getAlimentacion/'+id_alimentacion;
     request.open("GET",ajaxUrl ,true);
     request.send();
 
@@ -250,21 +246,16 @@ function fntEditTransporte(id_transporte){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#id_Transporte").value = objData.data.id_transporte;
-                document.querySelector("#txtNombre_trans").value = objData.data.nombre_trans;
+                document.querySelector("#id_Alimentacion").value = objData.data.id_alimentacion;
+                document.querySelector("#txtNombre_alim").value = objData.data.nombre_alim;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-                document.querySelector("#txtClase").value = objData.data.clase;
-                document.querySelector("#txtTipo").value = objData.data.tipo;
-                document.querySelector("#txtDisponibilidad").value = objData.data.disponibilidad;
-                document.querySelector("#txtPrecio").value = objData.data.precio;
+                document.querySelector("#txtDireccion").value = objData.data.direccion;
+                document.querySelector("#txtHoraApertura").value = objData.data.horaApertura;
+                document.querySelector("#txtHoraCierre").value = objData.data.horaCierre;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
                 document.querySelector('#foto_actual').value = objData.data.imagen;
                 document.querySelector("#foto_remove").value= 0;
           
-
-
-
-
                 if(objData.data.status == 1)
                 {
                     var optionSelect = '<option value="1" selected class="notBlock">Activo</option>';
@@ -276,9 +267,6 @@ function fntEditTransporte(id_transporte){
                                   <option value="2">Inactivo</option>
                                 `;
                 document.querySelector("#listStatus").innerHTML = htmlSelect;
-                
-                
-                /////////////
 
                 $('#listStatus').selectpicker('render');
 
@@ -301,7 +289,7 @@ function fntEditTransporte(id_transporte){
 
 
                
-                $('#modalFormTransporte').modal('show');
+                $('#modalFormAlimentacion').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -310,10 +298,10 @@ function fntEditTransporte(id_transporte){
 
 }
 
-function fntDelTransporte(id_transporte){
+function fntDelAlimentacion(id_alimentacion){
     swal({
-        title: "Eliminar transporte",
-        text: "¿Realmente quiere eliminar al transporte?",
+        title: "Eliminar Alimentacion",
+        text: "¿Realmente quiere eliminar la Alimentacion?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
@@ -325,8 +313,8 @@ function fntDelTransporte(id_transporte){
         if (isConfirm) 
         {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url+'/Transportes/delTransporte';
-            let strData = "id_transporte="+id_transporte;
+            let ajaxUrl = base_url+'/Alimentacion/delAlimentacion';
+            let strData = "id_alimentacion="+id_alimentacion;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
@@ -336,7 +324,7 @@ function fntDelTransporte(id_transporte){
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableTransportes.api().ajax.reload();
+                        tableAlimentaciones.api().ajax.reload();
                     }else{
                         swal("Atención!", objData.msg , "error");
                     }
@@ -349,7 +337,6 @@ function fntDelTransporte(id_transporte){
 }
 
 
-
 function removePhoto(){
     document.querySelector('#foto').value ="";
     document.querySelector('.delPhoto').classList.add("notBlock");
@@ -357,5 +344,6 @@ function removePhoto(){
         document.querySelector('#img').remove();
     }
 }
+
 
 
