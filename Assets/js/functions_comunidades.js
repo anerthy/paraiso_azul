@@ -211,7 +211,7 @@ function fntViewInfo(id_comunidad){
                 document.querySelector("#celProvincia").innerHTML = objData.data.provincia;
                 document.querySelector("#celCanton").innerHTML = objData.data.canton;
                 document.querySelector("#celDistrito").innerHTML = objData.data.distrito;
-                document.querySelector("#img").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
+                document.querySelector("#imgComunidad").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
                 $('#modalViewComunidad').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
