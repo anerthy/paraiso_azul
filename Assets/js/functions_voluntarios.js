@@ -1,26 +1,31 @@
 
-var tableComunidades;
+var tableVoluntarios;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
 
-	tableComunidades = $('#tableComunidades').dataTable( {
+	tableVoluntarios = $('#tableVoluntarios').dataTable( {
 		"aProcessing":true,
 		"aServerSide":true,
         "language": {
         	"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-            "url": " "+base_url+"/Comunidades/getComunidades",
+            "url": " "+base_url+"/Voluntarios/getVoluntarios",
             "dataSrc":""
         },
         "columns":[
-            {"data":"id_comunidad"},
-            {"data":"nombre_com"},
-            {"data":"descripcion"},
-            {"data":"provincia"},
-            {"data":"canton"},
-            {"data":"distrito"},
+            {"data":"id_voluntario"},
+            {"data":"nombre_vol"},
+            {"data":"apellido1"},
+            {"data":"apellido2"},
+            {"data":"cedula"},
+            {"data":"correo"},
+            {"data":"telefono"},
+            {"data":"fecha_nacimiento"},
+            {"data":"genero"},
+            {"data":"lugar_residencia"},
+            {"data":"status"},
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -54,78 +59,35 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
 
+   
 
 
 
-    
-	if(document.querySelector("#foto")){
-	    let foto = document.querySelector("#foto");
-	    foto.onchange = function(e) {
-	        let uploadFoto = document.querySelector("#foto").value;
-	        let fileimg = document.querySelector("#foto").files;
-	        let nav = window.URL || window.webkitURL;
-	        let contactAlert = document.querySelector('#form_alert');
-	        if(uploadFoto !=''){
-	            let type = fileimg[0].type;
-	            let name = fileimg[0].name;
-	            if(type != 'image/jpeg' && type != 'image/jpg' && type != 'image/png'){
-	                contactAlert.innerHTML = '<p class="errorArchivo">El archivo no es válido.</p>';
-	                if(document.querySelector('#img')){
-	                    document.querySelector('#img').remove();
-	                }
-	                document.querySelector('.delPhoto').classList.add("notBlock");
-	                foto.value="";
-	                return false;
-	            }else{  
-	                    contactAlert.innerHTML='';
-	                    if(document.querySelector('#img')){
-	                        document.querySelector('#img').remove();
-	                    }
-	                    document.querySelector('.delPhoto').classList.remove("notBlock");
-	                    let objeto_url = nav.createObjectURL(this.files[0]);
-	                    document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objeto_url+">";
-	                }
-	        }else{
-	            alert("No selecciono foto");
-	            if(document.querySelector('#img')){
-	                document.querySelector('#img').remove();
-	            }
-	        }
-	    }
-	}
-
-	if(document.querySelector(".delPhoto")){
-	    let delPhoto = document.querySelector(".delPhoto");
-	    delPhoto.onclick = function(e) {
-            document.querySelector("#foto_remove").value= 1;
-	        removePhoto();
-	    }
-	}
-
-
-
-
-
-
-    //NUEVO ROL
-    var formComunidad = document.querySelector("#formComunidad");
-    formComunidad.onsubmit = function(e) {
+    //NUEVO 
+    var formVoluntario = document.querySelector("#formVoluntario");
+    formVoluntario.onsubmit = function(e) {
         e.preventDefault();
 
-        var intId_Comunidad = document.querySelector('#id_Comunidad').value;
-        var strNombre_com = document.querySelector('#txtNombre_com').value;
-        var strDescripcion = document.querySelector('#txtDescripcion').value;
-        var strProvincia = document.querySelector('#txtProvincia').value;      
-        var strCanton = document.querySelector('#txtCanton').value;
-        var strDistrito = document.querySelector('#txtDistrito').value; 
-        if(strNombre_com == '' || strDescripcion == '' ||   strProvincia== '' ||    strCanton== '' || strDistrito== '')
+        var intId_Voluntario = document.querySelector('#id_Voluntario').value;
+        var strNombre_vol = document.querySelector('#txtNombre_vol').value;
+        var strApellido1 = document.querySelector('#txtApellido1').value;
+        var strApellido2 = document.querySelector('#txtApellido2').value;      
+        var strCedula = document.querySelector('#txtCedula').value;
+        var strCorreo = document.querySelector('#txtCorreo').value;
+        var strTelefono = document.querySelector('#txtTelefono').value;
+        var strFecha_nacimiento = document.querySelector('#txtFecha_nacimiento').value;
+        var strGenero = document.querySelector('#txtGenero').value;
+        var strLugar_residencia = document.querySelector('#txtLugar_residencia').value;
+        var intStatus = document.querySelector('#listStatus').value;
+       
+        if(strNombre_vol == '' || strApellido1 == '' ||   strApellido2== '' ||    strCedula== '' || strCorreo== '' || strTelefono== '' || strFecha_nacimiento== '' || strGenero== '' || strLugar_residencia == '' || intStatus == '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = base_url+'/Comunidades/setComunidad'; 
-        var formData = new FormData(formComunidad);
+        var ajaxUrl = base_url+'/Voluntarios/setVoluntario'; 
+        var formData = new FormData(formVoluntario);
         request.open("POST",ajaxUrl,true);
         request.send(formData);             
         request.onreadystatechange = function(){
@@ -136,28 +98,31 @@ document.addEventListener('DOMContentLoaded', function(){
                 {
 
                     if(rowTable == ""){
-                        tableComunidades.api().ajax.reload();
+                        tableVoluntarios.api().ajax.reload();
                     }else{
-                        // htmlStatus = intStatus == 1 ? 
-                        //     '<span class="badge badge-success">Activo</span>' : 
-                        //     '<span class="badge badge-danger">Inactivo</span>';
-                        rowTable.cells[1].textContent = strNombre_com;
-                        rowTable.cells[2].textContent = strDescripcion;
-                        rowTable.cells[3].textContent = strProvincia;
-                        rowTable.cells[4].textContent = strCanton;
-                        rowTable.cells[5].textContent = strDistrito;
-                       // rowTable.cells[4].innerHTML = htmlStatus;
+                        htmlStatus = intStatus == 1 ? 
+                            '<span class="badge badge-success">Activo</span>' : 
+                            '<span class="badge badge-danger">Inactivo</span>';
+                        rowTable.cells[1].textContent = strNombre_vol;
+                        rowTable.cells[2].textContent = strApellido1;
+                        rowTable.cells[3].textContent = strApellido2;
+                        rowTable.cells[4].textContent = strCedula;
+                        rowTable.cells[5].textContent = strTelefono;
+                        rowTable.cells[6].textContent = strFecha_nacimiento;
+                        rowTable.cells[7].textContent = strGenero;
+                        rowTable.cells[8].textContent = strLugar_residencia;
+                       rowTable.cells[9].innerHTML = htmlStatus;
                         
                         rowTable = "";
                         
 
                     }
 
-                    $('#modalFormComunidad').modal("hide");
-                    formComunidad.reset();
-                    swal("Comunidades", objData.msg ,"success");
+                    $('#modalFormVoluntario').modal("hide");
+                    formVoluntario.reset();
+                    swal("Voluntarios", objData.msg ,"success");
                     removePhoto();
-                    tableComunidades.api().ajax.reload();
+                    tableVoluntarios.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
                 }              
@@ -170,31 +135,24 @@ document.addEventListener('DOMContentLoaded', function(){
 
 },false);
 
-$('#tableComunidades').DataTable();
+$('#tableVoluntarios').DataTable();
 
 function openModal(){
     rowTable = "";
-    document.querySelector('#id_Comunidad').value ="";
+    document.querySelector('#id_Voluntario').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
-    document.querySelector('#titleModal').innerHTML = "Nuevo Comunidad";
-    document.querySelector("#formComunidad").reset();
-	$('#modalFormComunidad').modal('show');
+    document.querySelector('#titleModal').innerHTML = "Nuevo Voluntario";
+    document.querySelector("#formVoluntario").reset();
+	$('#modalFormVoluntario').modal('show');
     removePhoto();
 }
 
-// window.addEventListener('load', function() {
-//     /*fntEditComunidad();
-//     fntDelComunidad();
-//     fntPermisos();*/
-// }, false);
 
-
-
-function fntViewInfo(id_comunidad){
+function fntViewInfo(id_voluntario){
     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/Comunidades/getComunidad/'+id_comunidad;
+    let ajaxUrl = base_url+'/Voluntarios/getVoluntario/'+id_voluntario;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -205,14 +163,14 @@ function fntViewInfo(id_comunidad){
                 // let estado = objData.data.status == 1 ? 
                 // '<span class="badge badge-success">Activo</span>' : 
                 // '<span class="badge badge-danger">Inactivo</span>';
-                document.querySelector("#celId").innerHTML = objData.data.id_comunidad;
+                document.querySelector("#celId").innerHTML = objData.data.id_voluntario;
                 document.querySelector("#celNombre_com").innerHTML = objData.data.nombre_com;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
                 document.querySelector("#celProvincia").innerHTML = objData.data.provincia;
                 document.querySelector("#celCanton").innerHTML = objData.data.canton;
                 document.querySelector("#celDistrito").innerHTML = objData.data.distrito;
-                document.querySelector("#imgComunidades").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
-                $('#modalViewComunidad').modal('show');
+                document.querySelector("#imgVoluntarios").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
+                $('#modalViewVoluntario').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -221,15 +179,15 @@ function fntViewInfo(id_comunidad){
 }
 
 
-function fntEditComunidad(id_comunidad){
-    document.querySelector('#titleModal').innerHTML ="Actualizar Comunidad";
+function fntEditVoluntario(id_voluntario){
+    document.querySelector('#titleModal').innerHTML ="Actualizar Voluntario";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var id_comunidad = id_comunidad;
+    var id_voluntario = id_voluntario;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl  = base_url+'/Comunidades/getComunidad/'+id_comunidad;
+    var ajaxUrl  = base_url+'/Voluntarios/getVoluntario/'+id_voluntario;
     request.open("GET",ajaxUrl ,true);
     request.send();
 
@@ -239,7 +197,7 @@ function fntEditComunidad(id_comunidad){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#id_Comunidad").value = objData.data.id_comunidad;
+                document.querySelector("#id_Voluntario").value = objData.data.id_voluntario;
                 document.querySelector("#txtNombre_com").value = objData.data.nombre_com;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
                 document.querySelector("#txtProvincia").value = objData.data.provincia;
@@ -281,7 +239,7 @@ function fntEditComunidad(id_comunidad){
             ///////////
 
             
-             $('#modalFormComunidad').modal('show');
+             $('#modalFormVoluntario').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -291,10 +249,10 @@ function fntEditComunidad(id_comunidad){
 }
 
 
-function fntDelComunidad(id_comunidad){
+function fntDelVoluntario(id_voluntario){
     swal({
-        title: "Eliminar Comunidad",
-        text: "¿Realmente quiere eliminar el Comunidad?",
+        title: "Eliminar Voluntario",
+        text: "¿Realmente quiere eliminar el Voluntario?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
@@ -306,8 +264,8 @@ function fntDelComunidad(id_comunidad){
         if (isConfirm) 
         {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url+'/Comunidades/delComunidad/';
-            let strData = "id_comunidad="+id_comunidad;
+            let ajaxUrl = base_url+'/Voluntarios/delVoluntario/';
+            let strData = "id_voluntario="+id_voluntario;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
@@ -318,7 +276,7 @@ function fntDelComunidad(id_comunidad){
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableComunidades.api().ajax.reload();
+                        tableVoluntarios.api().ajax.reload();
                         
                     }else{
                         swal("Atención!", objData.msg , "error");
@@ -338,12 +296,3 @@ function fntDelComunidad(id_comunidad){
 
 
 
-
-
-function removePhoto(){
-    document.querySelector('#foto').value ="";
-    document.querySelector('.delPhoto').classList.add("notBlock");
-    if(document.querySelector('#img')){
-        document.querySelector('#img').remove();
-    }
-}
