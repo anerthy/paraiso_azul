@@ -35,7 +35,7 @@ class AlimentacionModel extends Mysql
         return $request;
     }
 
-    public function insertAlimentacion(string $alimentacion, string $descripcion, string $direccion, string $horaApertura, string $horaCierre, string $telefono, int $status, string $imagen)
+    public function insertAlimentacion(string $alimentacion, string $descripcion, string $direccion, string $hora_apertura, string $hora_cierre, string $telefono, int $status, string $imagen)
     {
 
 
@@ -43,8 +43,8 @@ class AlimentacionModel extends Mysql
         $this->strAlimentacion = $alimentacion;
         $this->strDescripcion = $descripcion;
         $this->strDireccion = $direccion;
-        $this->strHoraApertura = $horaApertura;
-        $this->strHoraCierre = $horaCierre;
+        $this->strHoraApertura = $hora_apertura;
+        $this->strHoraCierre = $hora_cierre;
         $this->strTelefono = $telefono;
         $this->intStatus = $status;
         $this->strImagen = $imagen;
@@ -65,14 +65,14 @@ class AlimentacionModel extends Mysql
         return $return;
     }
 
-    public function updateAlimentacion(int $id_alimentacion, string $alimentacion, string $descripcion, string $direccion, string $horaApertura, string $horaCierre, string $telefono, int $status, string $imagen)
+    public function updateAlimentacion(int $id_alimentacion, string $alimentacion, string $descripcion, string $direccion, string $hora_apertura, string $hora_cierre, string $telefono, int $status, string $imagen)
     {
         $this->intId_alimentacion = $id_alimentacion;
         $this->strAlimentacion = $alimentacion;
         $this->strDescripcion = $descripcion;
         $this->strDireccion = $direccion;
-        $this->strHoraApertura = $horaApertura;
-        $this->strHoraCierre = $horaCierre;
+        $this->strHoraApertura = $hora_apertura;
+        $this->strHoraCierre = $hora_cierre;
         $this->strTelefono = $telefono;
         $this->intStatus = $status;
         $this->strImagen = $imagen;
@@ -82,7 +82,7 @@ class AlimentacionModel extends Mysql
         $request = $this->select_all($sql);
 
         if (empty($request)) {
-            $sql = "UPDATE alimentacion SET nombre_alim = ?, descripcion = ?,direccion = ?,  horaApertura = ?,horaCierre = ?,telefono = ?, status = ?, imagen = ? WHERE id_alimentacion = $this->intId_alimentacion ";
+            $sql = "UPDATE alimentacion SET nombre_alim = ?, descripcion = ?,direccion = ?,  hora_apertura = ?,hora_cierre = ?,telefono = ?, status = ?, imagen = ? WHERE id_alimentacion = $this->intId_alimentacion ";
 
             $arrData = array($this->strAlimentacion, $this->strDescripcion, $this->strDireccion, $this->strHoraApertura, $this->strHoraCierre, $this->strTelefono, $this->intStatus, $this->strImagen);
             $request = $this->update($sql, $arrData);

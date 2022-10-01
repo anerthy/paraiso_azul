@@ -290,7 +290,7 @@ function fntEditAlimentacion(id_alimentacion){
 
              
                 $('#modalFormAlimentacion').modal('show');
-              
+                
             }else{
                 swal("Error", objData.msg , "error");
             }
