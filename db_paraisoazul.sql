@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 26-09-2022 a las 04:29:38
+-- Tiempo de generación: 27-09-2022 a las 04:19:56
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -456,14 +456,16 @@ CREATE TABLE IF NOT EXISTS `alimentacion` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_alimentacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `alimentacion`
 --
 
 INSERT INTO `alimentacion` (`id_alimentacion`, `nombre_alim`, `descripcion`, `direccion`, `hora_apertura`, `hora_cierre`, `telefono`, `status`, `imagen`) VALUES
-(1, 'SIRVE', 'dsffsfdfsdf', 'asdda', '20:10:00', '23:40:00', '12345678', 1, 'SDASDDAD');
+(7, 'Soda la playa', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', '07:00:00', '20:00:00', '89742984', 1, 'img_def626362da50491744b69cecc501a2b.jpg'),
+(8, 'Restaurante', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '13:00:00', '17:00:00', '22004591', 2, 'img_fed4e2a14d47f706cf8406b974c86260.jpg'),
+(9, 'HIUHI TETS', 'A', 'F', '23:05:00', '21:03:00', '89742984', 2, 'img_296bfc0586699a0b2c35eb3f66e7df60.jpg');
 
 -- --------------------------------------------------------
 
@@ -481,15 +483,16 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
   `distrito` enum('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_comunidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `comunidad`
 --
 
 INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia`, `canton`, `distrito`, `imagen`) VALUES
-(1, 'Isla Caballito', 'es isla caballito no caballo', 'Guanacaste', 'Montes de Oro', 'Paquera', 'img_102ecc646c8bea3741fd3fa16038866b.jpg'),
-(24, 'Isla Bejuco', 'ASDASDASD', 'Puntarenas', 'Corredores', 'Pitahaya', 'img_dfb56fb5157c161c5e7c6f14fb31fb1b.jpg');
+(1, 'Isla Caballo', 'lorem ipsum', 'Guanacaste', 'Montes de Oro', 'Paquera', 'img_a1d92727950d9ea0e9e308828d2449c8.jpg'),
+(24, 'Isla Bejuco', 'ASDASDASD', 'Puntarenas', 'Corredores', 'Pitahaya', 'img_e253a0afc3f038cb66ffd42876a00955.jpg'),
+(30, 'Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Puntarenas', 'Lepanto', 'img_8d90ee11922419a003463c366f460a1e.jpg');
 
 -- --------------------------------------------------------
 
@@ -519,9 +522,9 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
 --
 
 INSERT INTO `grupo_organizado` (`id_grupo`, `nombre_grupo`, `representante`, `descripcion`, `ubicacion`, `correo`, `telefono`, `numero_integrantes`, `status`, `logo`, `comunidad_id`) VALUES
-(11, 'sdsdad', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 31, 1, 'portada_categoria.png', 24),
+(11, 'Asopecupachi', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 20, 1, 'portada_categoria.png', 24),
 (13, 'ASA', 'REPRE', 'SSAD', 'SDSD', 'SDASDD', '34324234', 127, 0, 'SADD', 1),
-(14, 'MACHUICHU', 'ddsf', 'ddsfd', 'ddffdsf', 'dkgwf@dddgmail.com', '89742984', 31, 1, 'portada_categoria.png', 1);
+(14, 'Asociación de desarrollo integral de Isla Caballo', 'ddsf', 'ddsfd', 'ddffdsf', 'dkgwf@dddgmail.com', '89742984', 31, 1, 'portada_categoria.png', 1);
 
 -- --------------------------------------------------------
 
@@ -549,10 +552,9 @@ CREATE TABLE IF NOT EXISTS `hospedaje` (
 
 INSERT INTO `hospedaje` (`id_hospedaje`, `nombre_hosp`, `descripcion`, `tipo`, `direccion`, `telefono`, `precio`, `status`, `imagen`) VALUES
 (1, 'Mariposas', 'Se ofrece habitacion para dos personas', 'Camping', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
-(3, 'Mariposas', 'Se ofrece habitacion para dos personas', 'Cabina', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
-(6, 'Hotel la vida loca', 'jdskjssjdsaaaaaaaaaaaaaaaaaaaaaaadk', 'Camping', '222222222222222222ewd', '89320012', '21000.00', 1, 'imagen.png'),
-(7, 'sdsfdfsdf', 'dfdsff', '', 'fsdfsdfsdf', '49284949', '2500.00', 1, 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg'),
-(8, 'WSDDA', 'DASDAD', 'Camping', 'ASDASDAD', '89742984', '2500.00', 2, 'img_f33f7dfe75e576e02a423b83d082c7ba.jpg'),
+(3, 'Chira House', 'Se ofrece habitacion para dos personas', 'Cabina', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
+(6, 'Hotel la vida', 'jdskjssjdsaaaaaaaaaaaaaaaaaaaaaaadk', 'Cabina', '25m de la plaza', '89320012', '21000.00', 1, 'img_d44bacf25b82aa9de2d70aa8b8c8bf19.jpg'),
+(7, 'sdsfdfsdf', 'dfdsff', '', 'fsdfsdfsdf', '49284949', '2500.00', 0, 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg'),
 (9, 'SIRVE', 'kjhf', 'Camping', 'lkmjnhbgvf', '24438433', '90000.00', 0, 'img_703ec07accdeb8eba156715faf6bee80.jpg');
 
 -- --------------------------------------------------------
@@ -626,7 +628,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -645,12 +647,18 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (11, 0, 0, 0, 0, 9, 4),
 (12, 0, 0, 0, 0, 9, 5),
 (13, 0, 0, 0, 0, 9, 6),
-(26, 1, 1, 0, 1, 19, 1),
-(27, 0, 1, 0, 0, 19, 2),
-(28, 0, 0, 1, 0, 19, 3),
-(29, 1, 0, 0, 1, 19, 4),
-(30, 0, 1, 0, 0, 19, 5),
-(31, 0, 0, 1, 1, 19, 6);
+(32, 1, 1, 1, 1, 19, 1),
+(33, 0, 1, 0, 0, 19, 2),
+(34, 0, 0, 1, 0, 19, 3),
+(35, 1, 0, 0, 1, 19, 4),
+(36, 0, 1, 0, 0, 19, 5),
+(37, 0, 0, 1, 1, 19, 6),
+(38, 1, 1, 1, 1, 20, 1),
+(39, 0, 0, 0, 0, 20, 2),
+(40, 0, 0, 0, 0, 20, 3),
+(41, 0, 0, 0, 0, 20, 4),
+(42, 0, 0, 0, 0, 20, 5),
+(43, 0, 0, 0, 0, 20, 6);
 
 -- --------------------------------------------------------
 
@@ -667,13 +675,6 @@ CREATE TABLE IF NOT EXISTS `registro_alimentacion` (
   KEY `usuario_id` (`usuario_id`),
   KEY `alimentacion_id` (`alimentacion_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
---
--- Volcado de datos para la tabla `registro_alimentacion`
---
-
-INSERT INTO `registro_alimentacion` (`alimentacion_id`, `fecha_creacion`, `usuario_id`) VALUES
-(1, '2022-09-24 15:32:44', 5);
 
 -- --------------------------------------------------------
 
@@ -736,7 +737,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -744,9 +745,9 @@ CREATE TABLE IF NOT EXISTS `rol` (
 
 INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 (8, 'ADMIN', 'super administrador', 1),
-(9, 'Mudecop', 'lorem ipsum', 2),
-(12, 'Dealer', 'vende mota y confites', 1),
-(19, 'Mariposas Golfo de Nicoya DOS', 'lkjhgfdd', 1);
+(9, 'Asopecupachi', 'lorem ipsum', 2),
+(19, 'Mariposas Golfo de Nicoya', 'lkjhgfdd', 1),
+(20, 'Coopeacuicultores Isla Venado', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1);
 
 -- --------------------------------------------------------
 
@@ -799,7 +800,7 @@ CREATE TABLE IF NOT EXISTS `transporte` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_transporte`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `transporte`
@@ -808,8 +809,9 @@ CREATE TABLE IF NOT EXISTS `transporte` (
 INSERT INTO `transporte` (`id_transporte`, `nombre_trans`, `descripcion`, `clase`, `tipo`, `disponibilidad`, `precio`, `telefono`, `status`, `imagen`) VALUES
 (2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 0, 'SDASDDAD'),
 (3, 'Taxi alfredo', '.hbgf', '', '', 'jhgfd', '2500.00', '89742984', 0, 'img_18b2ab157b9609dcf2025e4e06188867.jpg'),
-(4, 'Bus', 'ijdkidjsadadj', 'Privado', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 2, 'img_2664a10b57c8059bd14e871ff8bf6add.jpg'),
-(5, 'SIRVE', 'FSDJFLSLF', 'Privado', 'Terrestre', 'QWERTYUIOLÑJHG', '2500.00', '24438433', 1, 'img_7b8946c196a2eb013f3e14d35d7b4ccb.jpg');
+(4, 'Bus', 'ijdkidjsadadj', 'Publico', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 2, 'img_2664a10b57c8059bd14e871ff8bf6add.jpg'),
+(5, 'Panga Don Lelo', 'FSDJFLSLF', 'Publico', 'Maritimo', 'QWERTYUIOLÑJHG', '2500.00', '24438433', 1, 'img_7b8946c196a2eb013f3e14d35d7b4ccb.jpg'),
+(6, 'Taxi alfredo lopez', 'affdfdsdf', 'Publico', 'Terrestre', 'todos los dias', '5000.00', '89742984', 1, 'img_f39a962a6a8b91fccdbf195ecf2a9a72.jpg');
 
 -- --------------------------------------------------------
 
@@ -830,7 +832,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `nombre_2` (`nombre_usuario`),
   UNIQUE KEY `correo` (`correo`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -838,7 +840,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `status`, `rol_id`) VALUES
 (5, 'Andres', 'anerthy@gmail.com', '7592771166a7088801c2adcdbfba017ece2b380b8d230ffeb8b282465d98f5ef', 2, 8),
-(20, 'Aaron Villegas', 'aaron1314@gmail.com', '3324dab86f4dcdf48ba8ed6d736dcf050f09a23bf617c7d3579224548269ba1f', 1, 8);
+(20, 'Aaron Mora', 'aaronvimo@gmail.com', '124640bf2792a0cdce2c04e13326d67bf013bac6ce546616b04888e7c4e68631', 1, 8);
 
 -- --------------------------------------------------------
 
