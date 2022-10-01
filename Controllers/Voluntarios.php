@@ -35,6 +35,13 @@
 					$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 				}
 
+				if($arrData[$i]['genero'] == 'Masculino')
+				{
+					$arrData[$i]['genero'] = '<span class="badge badge-success">Masculino</span>';
+				}else{
+					$arrData[$i]['genero'] = '<span class="badge badge-danger">Femenino</span>';
+				}
+
 				$arrData[$i]['options'] = '<div class="text-center">
 				
 				<button class="btn btn-primary btn-sm btnEditVoluntario" onClick="fntEditVoluntario('.$arrData[$i]['id_voluntario'].')" title="Editar"><i class="fas fa-pencil-alt"></i></button>

@@ -52,9 +52,24 @@
                   <input type="date" class="form-control valid validText" placeholder="Fecha de nacimiento" id="txtFecha_nacimiento" name="txtFecha_nacimiento" required="">
                 </div>
                 <div class="form-row">
+
                   <label for="txtGenero">Genero</label>
-                  <input type="text" class="form-control valid validText" placeholder="Genero" id="txtGenero" name="txtGenero" required="" >
+                
+                 <select class="form-control" id="txtGenero" name="txtGenero" required="">
+                  <option value="1">Masculino</option>
+                  <option value="2">Femenino</option>
+                </select>
+
                 </div>
+
+
+                   
+          
+
+
+
+
+
                 <div class="form-row">
                   <label for="txtLugar_residencia">Lugar de residencia</label>
                   <input type="text" class="form-control valid validText" placeholder="Lugar donde vive" id="txtLugar_residencia" name="txtLugar_residencia" required="" >
