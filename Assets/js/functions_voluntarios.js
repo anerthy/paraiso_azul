@@ -212,7 +212,22 @@ function fntEditVoluntario(id_voluntario){
                 document.querySelector("#txtCorreo").value = objData.data.correo;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
                 document.querySelector("#txtFecha_nacimiento").value = objData.data.fecha_nacimiento;
-                document.querySelector("#txtGenero").value = objData.data.genero;
+                //document.querySelector("#txtGenero").value = objData.data.genero;
+
+                
+                if(objData.data.genero == 'Masculino')
+                {
+                    var optionSelect = '<option value="Masculino" selected class="notBlock">Masculino</option>';
+                }else{
+                    var optionSelect = '<option value="Femenino" selected class="notBlock">Femenino</option>';
+                }
+                var htmlSelect = `${optionSelect}
+                                  <option value="Masculino">Masculino</option>
+                                  <option value="Femenino">Femenino</option>
+                                `;
+
+                                document.querySelector("#txtGenero").innerHTML = htmlSelect;
+
                 document.querySelector("#txtLugar_residencia").value = objData.data.lugar_residencia;
                
 
