@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"apellido1"},
             {"data":"apellido2"},
             {"data":"cedula"},
-            {"data":"correo"},
+            // {"data":"correo"},
             {"data":"telefono"},
-            {"data":"fecha_nacimiento"},
-            {"data":"genero"},
+            // {"data":"fecha_nacimiento"},
+            // {"data":"genero"},
             {"data":"lugar_residencia"},
             {"data":"status"},
             {"data":"options"}
@@ -107,12 +107,12 @@ document.addEventListener('DOMContentLoaded', function(){
                         rowTable.cells[2].textContent = strApellido1;
                         rowTable.cells[3].textContent = strApellido2;
                         rowTable.cells[4].textContent = strCedula;
-                        rowTable.cells[5].textContent = strTelefono;
-                        rowTable.cells[6].textContent = strFecha_nacimiento;
-                        rowTable.cells[7].textContent = strGenero;
-                        rowTable.cells[8].textContent = strLugar_residencia;
-                       rowTable.cells[9].innerHTML = htmlStatus;
-                        
+                        rowTable.cells[5].textContent = strCorreo;
+                        rowTable.cells[6].textContent = strTelefono;
+                        rowTable.cells[7].textContent = strFecha_nacimiento;
+                        rowTable.cells[8].textContent = strGenero;
+                        rowTable.cells[9].textContent = strLugar_residencia;
+                       rowTable.cells[10].innerHTML = htmlStatus;                        
                         rowTable = "";
                         
 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     $('#modalFormVoluntario').modal("hide");
                     formVoluntario.reset();
                     swal("Voluntarios", objData.msg ,"success");
-                    removePhoto();
+                
                     tableVoluntarios.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
@@ -146,7 +146,7 @@ function openModal(){
     document.querySelector('#titleModal').innerHTML = "Nuevo Voluntario";
     document.querySelector("#formVoluntario").reset();
 	$('#modalFormVoluntario').modal('show');
-    removePhoto();
+   
 }
 
 
@@ -160,16 +160,21 @@ function fntViewInfo(id_voluntario){
             let objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                // let estado = objData.data.status == 1 ? 
-                // '<span class="badge badge-success">Activo</span>' : 
-                // '<span class="badge badge-danger">Inactivo</span>';
-                document.querySelector("#celId").innerHTML = objData.data.id_voluntario;
-                document.querySelector("#celNombre_com").innerHTML = objData.data.nombre_com;
-                document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
-                document.querySelector("#celProvincia").innerHTML = objData.data.provincia;
-                document.querySelector("#celCanton").innerHTML = objData.data.canton;
-                document.querySelector("#celDistrito").innerHTML = objData.data.distrito;
-                document.querySelector("#imgVoluntarios").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
+                let estado = objData.data.status == 1 ? 
+                '<span class="badge badge-success">Activo</span>' : 
+                '<span class="badge badge-danger">Inactivo</span>';
+                document.querySelector("#celId_voluntatario").innerHTML = objData.data.id_voluntario;
+                document.querySelector("#celNombre_vol").innerHTML = objData.data.nombre_vol;
+                document.querySelector("#celApellido1").innerHTML = objData.data.apellido1;
+                document.querySelector("#celApellido2").innerHTML = objData.data.apellido2;
+                document.querySelector("#celCedula").innerHTML = objData.data.cedula;
+                document.querySelector("#celCorreo").innerHTML = objData.data.correo;
+                document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
+                document.querySelector("#celFecha_nacimiento").innerHTML = objData.data.fecha_nacimiento;
+                document.querySelector("#celGenero").innerHTML = objData.data.genero;
+                document.querySelector("#celLugar_residencia").innerHTML = objData.data.lugar_residencia;
+                document.querySelector("#celEstado").innerHTML = estado;
+              
                 $('#modalViewVoluntario').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
@@ -197,46 +202,36 @@ function fntEditVoluntario(id_voluntario){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
+
+
                 document.querySelector("#id_Voluntario").value = objData.data.id_voluntario;
-                document.querySelector("#txtNombre_com").value = objData.data.nombre_com;
-                document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-                document.querySelector("#txtProvincia").value = objData.data.provincia;
-                document.querySelector("#txtCanton").value = objData.data.canton;
-                document.querySelector("#txtDistrito").value = objData.data.distrito;
-                document.querySelector('#foto_actual').value = objData.data.imagen;
-                document.querySelector("#foto_remove").value= 0;
-                // if(objData.data.status == 1)
-                // {
-                //     var optionSelect = '<option value="1" selected class="notBlock">Activo</option>';
-                // }else{
-                //     var optionSelect = '<option value="2" selected class="notBlock">Inactivo</option>';
-                // }
-                // var htmlSelect = `${optionSelect}
-                //                   <option value="1">Activo</option>
-                //                   <option value="2">Inactivo</option>
-                //                 `;
+                document.querySelector("#txtNombre_vol").value = objData.data.nombre_vol;
+                document.querySelector("#txtApellido1").value = objData.data.apellido1;
+                document.querySelector("#txtApellido2").value = objData.data.apellido2;
+                document.querySelector("#txtCedula").value = objData.data.cedula;
+                document.querySelector("#txtCorreo").value = objData.data.correo;
+                document.querySelector("#txtTelefono").value = objData.data.telefono;
+                document.querySelector("#txtFecha_nacimiento").value = objData.data.fecha_nacimiento;
+                document.querySelector("#txtGenero").value = objData.data.genero;
+                document.querySelector("#txtLugar_residencia").value = objData.data.lugar_residencia;
+               
 
                
-             //document.querySelector("#listStatus").innerHTML = htmlSelect;
+                if(objData.data.status == 1)
+                {
+                    var optionSelect = '<option value="1" selected class="notBlock">Activo</option>';
+                }else{
+                    var optionSelect = '<option value="2" selected class="notBlock">Inactivo</option>';
+                }
+                var htmlSelect = `${optionSelect}
+                                  <option value="1">Activo</option>
+                                  <option value="2">Inactivo</option>
+                                `;
+
+               
+             document.querySelector("#listStatus").innerHTML = htmlSelect;
             
-            /////////////
-
-           // $('#listStatus').selectpicker('render');
-
-            if(document.querySelector('#img')){
-                document.querySelector('#img').src = objData.data.url_imagen;
-            }else{
-                document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objData.data.url_imagen+">";
-            }
-
-            if(objData.data.imagen == 'portada_categoria.png'){
-                document.querySelector('.delPhoto').classList.add("notBlock");
-            }else{
-                document.querySelector('.delPhoto').classList.remove("notBlock");
-            }
-
-
-            ///////////
+            
 
             
              $('#modalFormVoluntario').modal('show');

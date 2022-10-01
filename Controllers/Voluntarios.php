@@ -71,7 +71,7 @@
 				{
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				}else{
-					$arrData['url_logo'] = media().'/images/uploads/'.$arrData['logo'];
+					
 					$arrResponse = array('status' => true, 'data' => $arrData);
 				}
 				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
@@ -99,11 +99,6 @@
 			$strLugar_residencia = strClean($_POST['txtLugar_residencia']);
             $intStatus = intval($_POST['listStatus']);
 
-
-
-			
-
-      
 			if($intId_voluntario == 0)
 			{
 				//Crear
@@ -118,7 +113,7 @@
                 $strFecha_nacimiento,
                 $strGenero,
                 $strLugar_residencia,
-                $intStatus );
+                $intStatus);
 				$option = 1;
 
 			}else{
