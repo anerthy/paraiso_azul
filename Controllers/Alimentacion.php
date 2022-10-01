@@ -78,9 +78,6 @@ class Alimentacion extends Controllers
 
     public function setAlimentacion()
     {
-
-
-
         $intId_alimentacion = intval($_POST['id_Alimentacion']);
         $strAlimentacion =  strClean($_POST['txtNombre_alim']);
         $strDescripcion = strClean($_POST['txtDescripcion']);
@@ -89,11 +86,6 @@ class Alimentacion extends Controllers
         $strHoraCierre = strClean($_POST['txtHoraCierre']);
         $strTelefono = strClean($_POST['txtTelefono']);
         $intStatus = intval($_POST['listStatus']);
-        //$strImagen = strClean($_POST['txtImagen']);
-
-
-
-
 
         $foto       = $_FILES['foto'];
         $nombre_foto     = $foto['name'];
@@ -105,15 +97,7 @@ class Alimentacion extends Controllers
             $imgImagen = 'img_' . md5(date('d-m-Y H:m:s')) . '.jpg';
         }
 
-
-
-
-
-
         if ($intId_alimentacion == 0) {
-
-
-
             //Crear
             $request_alimentacion = $this->model->insertAlimentacion(
                 $strAlimentacion,
