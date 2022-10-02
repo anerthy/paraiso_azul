@@ -27,9 +27,9 @@
         <li id="dd" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">¿Que ofrecemos?</a>
           <ul id="dropdown" class="dropdown-menu" role="menu">
-            <li><a href="<?= base_url(); ?>/alimentacion">Alimentacion</a></li>
-            <li><a href="<?= base_url(); ?>/hospedaje">Hospedaje</a></li>
-            <li><a href="<?= base_url(); ?>/trasnporte">Transporte</a></li>
+            <li><a href="<?= base_url(); ?>/home/alimentacion">Alimentacion</a></li>
+            <li><a href="<?= base_url(); ?>/home/hospedaje">Hospedaje</a></li>
+            <li><a href="<?= base_url(); ?>/home/trasnporte">Transporte</a></li>
             <li><a href="#">Tours</a></li>
           </ul>
         <li>
@@ -38,12 +38,12 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sobre el proyecto</a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="<?= base_url(); ?>/home/cemede">CEMEDE</a></li>
-            <li><a href="<?= base_url(); ?>/grupo">Grupos Organizados</a></li>
-            <li><a href="<?= base_url(); ?>/comunidad">Comunidades</a></li>
+            <li><a href="<?= base_url(); ?>/home/grupo">Grupos Organizados</a></li>
+            <li><a href="<?= base_url(); ?>/home/comunidad">Comunidades</a></li>
           </ul>
         </li>
 
-        <li><a href="<?= base_url(); ?>/voluntariado">Voluntariado</a></li>
+        <li><a href="<?= base_url(); ?>/home/voluntariado">Voluntariado</a></li>
 
         <li><a href="#"></a></li>
         <li><a href="#"></a></li>
