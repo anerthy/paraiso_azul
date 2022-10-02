@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/home.css">
+  <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/navbar.css">
+  <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/vistas/home.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!-- js -->
@@ -27,23 +28,23 @@
         <li id="dd" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">¿Que ofrecemos?</a>
           <ul id="dropdown" class="dropdown-menu" role="menu">
-            <li><a href="<?= base_url(); ?>/home/alimentacion">Alimentacion</a></li>
-            <li><a href="<?= base_url(); ?>/home/hospedaje">Hospedaje</a></li>
-            <li><a href="<?= base_url(); ?>/home/trasnporte">Transporte</a></li>
-            <li><a href="#">Tours</a></li>
+            <li><a href="<?= base_url(); ?>/Servicios/alimentacion">Alimentacion</a></li>
+            <li><a href="<?= base_url(); ?>/Servicios/hospedaje">Hospedaje</a></li>
+            <li><a href="<?= base_url(); ?>/Servicios/transporte">Transporte</a></li>
+            <li><a href="<?= base_url(); ?>/Servicios/tours">Tours</a></li>
           </ul>
         <li>
 
         <li id="dd" class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sobre el proyecto</a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="<?= base_url(); ?>/home/cemede">CEMEDE</a></li>
-            <li><a href="<?= base_url(); ?>/home/grupo">Grupos Organizados</a></li>
-            <li><a href="<?= base_url(); ?>/home/comunidad">Comunidades</a></li>
+            <li><a href="<?= base_url(); ?>/SobreNosotros/cemede">CEMEDE</a></li>
+            <li><a href="<?= base_url(); ?>/SobreNosotros/grupos">Grupos Organizados</a></li>
+            <li><a href="<?= base_url(); ?>/SobreNosotros/comunidades">Comunidades</a></li>
           </ul>
         </li>
 
-        <li><a href="<?= base_url(); ?>/home/voluntariado">Voluntariado</a></li>
+        <li><a href="<?= base_url(); ?>/voluntariado">Voluntariado</a></li>
 
         <li><a href="#"></a></li>
         <li><a href="#"></a></li>
