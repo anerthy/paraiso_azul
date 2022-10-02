@@ -49,11 +49,11 @@
 
               <div class="form-group">
                 <label class="control-label">Telefono</label>
-                <input class="form-control" id="txtTelefono" name="txtTelefono" rows="2" placeholder="Telefono del hospedaje" required="">
+                <input class="form-control valid validNumber"  maxlength="8" id="txtTelefono" name="txtTelefono" rows="2" placeholder="Telefono del hospedaje" required="" onkeypress="return controlTag(event);">
               </div>
               <div class="form-group">
                 <label class="control-label">Precio</label>
-                <input class="form-control" id="txtPrecio" name="txtPrecio" rows="2" placeholder="Precio" required="">
+                <input class="form-control valid validNumber" id="txtPrecio" name="txtPrecio" rows="2" placeholder="Precio" required="" onkeypress="return controlTag(event);">
               </div>
 
               <div class="form-group">
