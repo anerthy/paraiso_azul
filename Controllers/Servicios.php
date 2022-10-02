@@ -11,7 +11,7 @@ class Servicios extends Controllers
     {
         $data['page_id'] = 1;
         $data['page_tag'] = "alimentacion";
-        $data['page_title'] = "alimentacion";
+        $data['page_title'] = "Servicio de Alimentacion";
         $data['page_name'] = "alimentacion";
         $data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
         $this->views->getView($this, "alimentacion", $data);
