@@ -22,6 +22,12 @@ function footerAdmin($data = "")
 }
 
 // NAVBAR Y FOOTER DE LAS VISTAS INFORMATICAS
+function _header($data = "")
+{
+    $view_header = "Views/Template/header.php";
+    require_once($view_header);
+}
+
 function nav_bar($data = "")
 {
     $view_nav_bar = "Views/Template/nav_bar.php";

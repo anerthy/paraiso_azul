@@ -1,3 +1,3 @@
-        <script src=" http://localhost/paraiso_azul/Assets/js/bootstrap.min.js""></script>
+        <script src="<?= media(); ?>/js/bootstrap.min.js""></script>
     </body>
 </html>
