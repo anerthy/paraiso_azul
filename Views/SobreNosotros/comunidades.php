@@ -1,5 +1,5 @@
 <?php
-nav_bar($data);
+_header($data);
 ?>
 
 <h1>Comunidades</h1>
