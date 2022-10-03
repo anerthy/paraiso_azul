@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 03-10-2022 a las 02:15:08
+-- Tiempo de generación: 03-10-2022 a las 06:47:01
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -602,7 +602,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -627,12 +627,12 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (35, 1, 0, 0, 1, 19, 4),
 (36, 0, 1, 0, 0, 19, 5),
 (37, 0, 0, 1, 1, 19, 6),
-(38, 1, 1, 1, 1, 20, 1),
-(39, 0, 0, 0, 0, 20, 2),
-(40, 0, 0, 0, 0, 20, 3),
-(41, 0, 0, 0, 0, 20, 4),
-(42, 0, 0, 0, 0, 20, 5),
-(43, 0, 0, 0, 0, 20, 6);
+(44, 1, 1, 1, 1, 20, 1),
+(45, 0, 0, 0, 0, 20, 2),
+(46, 0, 0, 0, 0, 20, 3),
+(47, 0, 0, 0, 0, 20, 4),
+(48, 0, 0, 0, 0, 20, 5),
+(49, 0, 0, 0, 0, 20, 6);
 
 -- --------------------------------------------------------
 
@@ -711,7 +711,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -720,7 +720,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
 INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 (8, 'ADMIN', 'super administrador', 1),
 (9, 'Asopecupachi', 'lorem ipsum', 2),
-(19, 'Mariposas Golfo de Nicoya', 'lkjhgfdd', 1),
+(19, 'Mariposas Golfo de Nicoya', 'mraio', 1),
 (20, 'Coopeacuicultores Isla Venado', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1);
 
 -- --------------------------------------------------------

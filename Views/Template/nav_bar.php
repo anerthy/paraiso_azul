@@ -32,11 +32,10 @@
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
                 <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
 
                 <li>
                     <a href="<?= base_url(); ?>/dashboard">
-                        <i class="fa fa-user"></i> Dashboard
+                        Dashboard <i class="fa fa-user"></i>
                     </a>
                 </li>
 
