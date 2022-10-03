@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/navbar.css">
-    <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/vistas/home.css">
+    <link rel="stylesheet" href="<?= media(); ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= media(); ?>/css/navbar.css">
+    <link rel="stylesheet" href="<?= media(); ?>/css/vistas/home.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- js -->
