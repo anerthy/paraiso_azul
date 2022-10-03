@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 27-09-2022 a las 04:19:56
+-- Tiempo de generación: 03-10-2022 a las 02:15:08
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -587,32 +587,6 @@ INSERT INTO `modulo` (`id_modulo`, `titulo`, `descripcion`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `paquete_turistico`
---
-
-DROP TABLE IF EXISTS `paquete_turistico`;
-CREATE TABLE IF NOT EXISTS `paquete_turistico` (
-  `id_paquete` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `tipo` enum('Alimentacion','Transporte','Hospedaje') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `detalles` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `tour_id` smallint UNSIGNED NOT NULL,
-  PRIMARY KEY (`id_paquete`),
-  KEY `tour_id` (`tour_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
---
--- Volcado de datos para la tabla `paquete_turistico`
---
-
-INSERT INTO `paquete_turistico` (`id_paquete`, `tipo`, `detalles`, `tour_id`) VALUES
-(1, 'Hospedaje', 'habitacion para 2', 1),
-(3, 'Transporte', 'Taxiesdf', 1),
-(4, 'Alimentacion', 'Incluye almuerzo y cena', 1),
-(5, 'Transporte', 'dsdsd', 2);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `permisos`
 --
 
@@ -752,6 +726,20 @@ INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tbl_pagina`
+--
+
+DROP TABLE IF EXISTS `tbl_pagina`;
+CREATE TABLE IF NOT EXISTS `tbl_pagina` (
+  `pag_id` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `pag_titulo` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `pag_contenido` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  PRIMARY KEY (`pag_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tour`
 --
 
@@ -760,8 +748,14 @@ CREATE TABLE IF NOT EXISTS `tour` (
   `id_tour` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre_tour` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `servicio` set('Actividad','Alimentacion','Hospedaje','Transporte') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT 'Actividad',
+  `actividad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `alimentacion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `hospedaje` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `transporte` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
   `lugar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `disponibilidad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `hora_inicio` time NOT NULL,
   `duracion` time NOT NULL,
   `cupo_minimo` tinyint NOT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
@@ -769,17 +763,18 @@ CREATE TABLE IF NOT EXISTS `tour` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_tour`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `tour`
 --
 
-INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `lugar`, `disponibilidad`, `duracion`, `cupo_minimo`, `telefono`, `precio`, `status`, `imagen`) VALUES
-(1, 'sdda', 'sddasd', 'sddasd', 'sdadsdd', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
-(2, 'FDSFSDF', 'sddasd', 'sddasd', 'sdadsdd', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
-(4, 'ZZZZZ', 'sddasd', 'sddasd', 'sdadsdd', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
-(5, 'ACTU', 'dd', 'sdd', 'sddad', '00:50:00', 12, '12345678', '10500.00', 1, 'asdadad');
+INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `servicio`, `actividad`, `alimentacion`, `hospedaje`, `transporte`, `lugar`, `disponibilidad`, `hora_inicio`, `duracion`, `cupo_minimo`, `telefono`, `precio`, `status`, `imagen`) VALUES
+(1, 'sdda', 'sddasd', 'Actividad,Transporte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sdadd', 'sddasd', 'sdadsdd', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(2, 'FDSFSDF', 'sddasd', 'Actividad,Alimentacion', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'saddsdas', NULL, NULL, 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(4, 'ZZZZZ', 'sddasd', 'Actividad,Transporte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sadsdadsad', 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(5, 'ACTU', 'dd', 'Alimentacion,Hospedaje', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'asddsd', 'dddsfs', NULL, 'sdd', 'sddad', '10:00:00', '00:50:00', 12, '12345678', '10500.00', 1, 'asdadad'),
+(6, 'Tour a playa Albina', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'Actividad', 'Reforestacion del manglar', 'Incluye cafe por la tarde', NULL, 'en panga', 'En playa albina', 'De lunes a viernes', '23:39:42', '01:08:58', 10, '34232414', '120000.00', 1, 'iLorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultri');
 
 -- --------------------------------------------------------
 
@@ -873,20 +868,21 @@ CREATE TABLE IF NOT EXISTS `voluntario` (
   `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `fecha_nacimiento` date NOT NULL,
-  `genero` enum('Masculino','Feminino') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `genero` enum('Masculino','Femenino') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `lugar_residencia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_voluntario`),
   UNIQUE KEY `cedula` (`cedula`),
   UNIQUE KEY `correo` (`correo`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `voluntario`
 --
 
-INSERT INTO `voluntario` (`id_voluntario`, `nombre_vol`, `apellido1`, `apellido2`, `cedula`, `correo`, `telefono`, `fecha_nacimiento`, `genero`, `lugar_residencia`) VALUES
-(2, 'pepe', 'ape', 'llido', '512312386', 'SADSD@', '12345678', '0000-00-00', 'Masculino', 'AQUI'),
-(5, 'keisha', 'SE', 'DE', '501230123', 'SADSDad@', '34324234', '0000-00-00', 'Feminino', 'alla');
+INSERT INTO `voluntario` (`id_voluntario`, `nombre_vol`, `apellido1`, `apellido2`, `cedula`, `correo`, `telefono`, `fecha_nacimiento`, `genero`, `lugar_residencia`, `status`) VALUES
+(2, 'pepe', 'ape', 'llido', '512312386', 'SADSD@', '12345678', '0000-00-00', 'Masculino', 'AQUI', 1),
+(6, 'Sr Aa', 'Villegas', 'Mora', '504323233', 'aaronvimo@gmail.com', '89742984', '2000-10-14', 'Masculino', 'Nambi', 1);
 
 --
 -- Restricciones para tablas volcadas
@@ -897,12 +893,6 @@ INSERT INTO `voluntario` (`id_voluntario`, `nombre_vol`, `apellido1`, `apellido2
 --
 ALTER TABLE `grupo_organizado`
   ADD CONSTRAINT `grupo_organizado_ibfk_1` FOREIGN KEY (`comunidad_id`) REFERENCES `comunidad` (`id_comunidad`);
-
---
--- Filtros para la tabla `paquete_turistico`
---
-ALTER TABLE `paquete_turistico`
-  ADD CONSTRAINT `paquete_turistico_ibfk_1` FOREIGN KEY (`tour_id`) REFERENCES `tour` (`id_tour`);
 
 --
 -- Filtros para la tabla `permisos`
