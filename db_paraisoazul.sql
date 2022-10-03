@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 01-10-2022 a las 02:15:41
+-- Tiempo de generación: 03-10-2022 a las 02:15:08
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -587,32 +587,6 @@ INSERT INTO `modulo` (`id_modulo`, `titulo`, `descripcion`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `paquete_turistico`
---
-
-DROP TABLE IF EXISTS `paquete_turistico`;
-CREATE TABLE IF NOT EXISTS `paquete_turistico` (
-  `id_paquete` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `tipo` enum('Alimentacion','Transporte','Hospedaje') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `detalles` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `tour_id` smallint UNSIGNED NOT NULL,
-  PRIMARY KEY (`id_paquete`),
-  KEY `tour_id` (`tour_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
-
---
--- Volcado de datos para la tabla `paquete_turistico`
---
-
-INSERT INTO `paquete_turistico` (`id_paquete`, `tipo`, `detalles`, `tour_id`) VALUES
-(1, 'Hospedaje', 'habitacion para 2', 1),
-(3, 'Transporte', 'Taxiesdf', 1),
-(4, 'Alimentacion', 'Incluye almuerzo y cena', 1),
-(5, 'Transporte', 'dsdsd', 2);
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `permisos`
 --
 
@@ -752,6 +726,20 @@ INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `tbl_pagina`
+--
+
+DROP TABLE IF EXISTS `tbl_pagina`;
+CREATE TABLE IF NOT EXISTS `tbl_pagina` (
+  `pag_id` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `pag_titulo` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `pag_contenido` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  PRIMARY KEY (`pag_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `tour`
 --
 
@@ -761,10 +749,10 @@ CREATE TABLE IF NOT EXISTS `tour` (
   `nombre_tour` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `servicio` set('Actividad','Alimentacion','Hospedaje','Transporte') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT 'Actividad',
-  `actividad` text COLLATE utf8mb4_swedish_ci NOT NULL,
-  `alimentacion` text COLLATE utf8mb4_swedish_ci,
-  `hospedaje` text COLLATE utf8mb4_swedish_ci,
-  `transporte` text COLLATE utf8mb4_swedish_ci,
+  `actividad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `alimentacion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `hospedaje` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
+  `transporte` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
   `lugar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `disponibilidad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `hora_inicio` time NOT NULL,
@@ -905,12 +893,6 @@ INSERT INTO `voluntario` (`id_voluntario`, `nombre_vol`, `apellido1`, `apellido2
 --
 ALTER TABLE `grupo_organizado`
   ADD CONSTRAINT `grupo_organizado_ibfk_1` FOREIGN KEY (`comunidad_id`) REFERENCES `comunidad` (`id_comunidad`);
-
---
--- Filtros para la tabla `paquete_turistico`
---
-ALTER TABLE `paquete_turistico`
-  ADD CONSTRAINT `paquete_turistico_ibfk_1` FOREIGN KEY (`tour_id`) REFERENCES `tour` (`id_tour`);
 
 --
 -- Filtros para la tabla `permisos`
