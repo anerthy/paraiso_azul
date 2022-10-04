@@ -47,6 +47,8 @@
 				<button class="btn btn-primary btn-sm btnEditVoluntario" onClick="fntEditVoluntario('.$arrData[$i]['id_voluntario'].')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
 				<button class="btn btn-danger btn-sm btnDelVoluntario" onClick="fntDelVoluntario('.$arrData[$i]['id_voluntario'].')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
 				<button class="btn btn-info btn-sm" onClick="fntViewInfo('.$arrData[$i]['id_voluntario'].')" title="Ver voluntario"><i class="far fa-eye"></i></button>
+				<button class="btn btn-warning btn-sm" onClick="fntViewInfo('.$arrData[$i]['id_voluntario'].')" title="Ver voluntario"><i class="fa fa-paper-plane"></i></button>
+			
 				</div>';
 			}
 			echo json_encode($arrData,JSON_UNESCAPED_UNICODE);
@@ -86,7 +88,80 @@
 			die();
 		}
 
-		
+
+		 /////  /////     /////ESTO NO FUNCIONA TODAVIA   /////   /////   /////   /////
+		public function EnvioInfo(){
+			if($_POST){
+				error_reporting(0);
+
+				if(empty($_POST['txtEmailReset'])){
+					$arrResponse = array('status' => false, 'msg' => 'Error de datos' );
+				}else{
+					$token = token();
+					$strEmail  =  strtolower(strClean($_POST['txtEmailReset']));
+					$arrData = $this->model->getVoluntarioEmail($strEmail);
+
+					if(empty($arrData)){
+						$arrResponse = array('status' => false, 'msg' => 'Usuario no existente.' ); 
+					}else{
+						$id_voluntario = $arrData['id_voluntario'];
+						$nombre_vol = $arrData['nombre_vol'].' '.$arrData['apellido1'];
+
+						$url_recovery = base_url().'/voluntario/Informacion/'.$strEmail.'/'.$token;
+						$requestUpdate = $this->model->setTokenUser($id_voluntario,$token);
+
+						$dataVoluntario = array('nombre_vol' => $nombre_vol,
+											 'correo' => $strCorreo,
+											 'asunto' => 'Recuperar cuenta - '.NOMBRE_REMITENTE,
+											 'url_recovery' => $url_recovery);
+						if($requestUpdate){
+							$sendEmail = sendMailLocal($dataVoluntario,'email_cambioPassword');
+
+							if($sendEmail){
+								$arrResponse = array('status' => true, 
+												 'msg' => 'Se ha enviado un email a tu cuenta de correo para cambiar tu contraseña.');
+							}else{
+								$arrResponse = array('status' => false, 
+												 'msg' => 'No es posible realizar el proceso, intenta más tarde.' );
+							}
+						}else{
+							$arrResponse = array('status' => false, 
+												 'msg' => 'No es posible realizar el proceso, intenta más tarde.' );
+						}
+					}
+				}
+				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+			}
+			die();
+		}
+
+
+		public function Informacion(string $params){
+
+			if(empty($params)){
+				header('Location: '.base_url());
+			}else{
+				$arrParams = explode(',',$params);
+				$strEmail = strClean($arrParams[0]);
+				$strToken = strClean($arrParams[1]);
+				$arrResponse = $this->model->getVoluntario($strEmail,$strToken);
+				if(empty($arrResponse)){
+					header("Location: ".base_url());
+				}else{
+					$data['page_tag'] = "Cambiar contraseña";
+					$data['page_name'] = "cambiar_contrasenia";
+					$data['page_title'] = "Cambiar Contraseña";
+					$data['email'] = $strEmail;
+					$data['token'] = $strToken;
+					$data['id_voluntario'] = $arrResponse['id_voluntario'];
+					$data['page_functions_js'] = "functions_login.js";
+					$this->views->getView($this,"cambiar_password",$data);
+				}
+			}
+			die();
+		}
+
+		 /////  /////  /////  /////  /////  /////  /////  /////  /////  /////  /////  /////  ///// 
        
 
 
