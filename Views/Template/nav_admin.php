@@ -74,6 +74,14 @@
             </li>
 
             <li>
+                <a class="app-menu__item" href="<?= base_url(); ?>/tours">
+
+                    <i class="app-menu__icon fa fa-map-o" aria-hidden="true"></i>
+                    <span class="app-menu__label">Tours</span>
+                </a>
+            </li>
+
+            <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/logout">
                     <i class="app-menu__icon fa fa-sign-out" aria-hidden="true"></i>
                     <span class="app-menu__label">Logout</span>
