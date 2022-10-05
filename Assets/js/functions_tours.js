@@ -31,9 +31,7 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"cupo_minimo"},
             {"data":"telefono"},
             {"data":"precio"},
-            {"data":"status"},
-    
-            
+            {"data":"status"},    
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -189,8 +187,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         rowTable.cells[12].innerHTML = strCupo_minimo;
                         rowTable.cells[13].innerHTML = strTelefono;
                         rowTable.cells[14].innerHTML = strPrecio;
-                        rowTable.cells[15].innerHTML = intTipotour;
-                        rowTable.cells[16].innerHTML = htmlStatus;
+                        rowTable.cells[15].innerHTML = htmlStatus;
                         rowTable = "";
                
 
@@ -213,45 +210,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
     }
 }, false);
-//                     if(rowTable == ""){
-//                         tableTours.api().ajax.reload();
-//                     }else{
-//                         htmlStatus = intStatus == 1 ? 
-//                             '<span class="badge badge-success">Activo</span>' : 
-//                             '<span class="badge badge-danger">Inactivo</span>';
-//                         rowTable.cells[1].textContent = strNombre_tour;
-//                         rowTable.cells[2].textContent = strDescripcion;
-//                         rowTable.cells[3].innerHTML = htmlStatus;
-//                         rowTable.cells[4].innerHTML = strCorreo;
-//                         rowTable.cells[5].innerHTML = intTelefono;
-//                         rowTable.cells[6].innerHTML = intNumero_integrantes;
-//                         rowTable.cells[7].textContent = strUbicacion;
-//                         rowTable.cells[8].textContent = strRepresentante;
-//                         rowTable.cells[9].innerHTML = intTipocomunidad
-//                         rowTable = "";
-                        
-
-//                     }
-
-//                     $('#modalFormTour').modal("hide");
-//                     formTour.reset();
-//                     swal("Tours organiazos", objData.msg ,"success");
-//                     removePhoto();
-//                     tableTours.api().ajax.reload();
-//                 }else{
-//                     swal("Error", objData.msg , "error");
-//                 }              
-//             } 
-//             //divLoading.style.display = "none";
-//             return false;
-
-//         }
-      
-
-        
-//     }
-
-// },false);
 
 
 window.addEventListener('load', function() {

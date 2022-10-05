@@ -15,6 +15,7 @@
         public $strLugar;
         public $strDisponibilidad;
         public $strHora_inicio;
+        public $strDuracion;
         public $strCupo_minimo;
         public $strTelefono;
         public $strPrecio;
@@ -31,46 +32,26 @@
 		public function selectTours()
 		{
 			//EXTRAE GRUPOS
-			$sql = "SELECT * FROM tour_organizado";
+			$sql = "SELECT * FROM tour";
 			$request = $this->select_all($sql);
 			return $request;
 		}
 
-	// 	public function selectTours()
-	// {
-	// 	$sql = "SELECT g.id_tour,g.nombre_tour,g.representante,g.descripcion,g.ubicacion,g.correo,g.telefono,g.numero_integrantes,g.logo,g.status,g.comunidad_id,c.nombre_com
-	// 				FROM tour_organizado g
-	// 				INNER JOIN comunidad c
-	// 				ON g.comunidad_id = c.id_comunidad
-	// 				WHERE g.status != 0 ";
-	// 	$request = $this->select_all($sql);
-	// 	return $request;
-	// }
-////// ????/
+	
 		public function selectTour(int $id_tour)
 		{
 
 
-			// $this->intId_Tour = $id_tour;
-			// $sql = "SELECT g.id_tour,g.nombre_tour,g.representante,g.descripcion,g.ubicacion,g.correo,g.telefono,g.numero_integrantes,g.logo,g.status,c.nombre_com,c.id_comunidad
-			// FROM tour_organizado g
-			// 		INNER JOIN comunidad c
-			// 		ON g.comunidad_id = c.id_comunidad
-			// 		WHERE g.id_tour = $this->intId_Tour";
-					
-			// $request = $this->select($sql);
-			// return $request;
-
 			//BUSCAR GRUPO
 			$this->intId_tour = $id_tour;
-			$sql = "SELECT * FROM tour_organizado WHERE id_tour = $this->intId_tour";
+			$sql = "SELECT * FROM tour WHERE id_tour = $this->intId_tour";
 			$request = $this->select($sql);
 			return $request;
 		}
 
 		public function insertTour(
          string $nombre_tour, string $descripcion, string $servicio, string $actividad, string $alimentacion, string $hospedaje,
-         string $transporte, string $lugar, string $disponibilidad, string $hora_inicio, string $cupo_minimo, string $telefono,
+         string $transporte, string $lugar, string $disponibilidad, string $hora_inicio, string $duracion,string $cupo_minimo, string $telefono,
          string $precio, int $status,string $imagen 
          ){
 
@@ -86,6 +67,7 @@
             $this->strLugar = $lugar;
             $this->strDisponibilidad = $disponibilidad;
             $this->strHora_inicio = $hora_inicio;
+            $this->strDuracion = $duracion;
             $this->strCupo_minimo = $cupo_minimo;
             $this->strTelefono = $telefono;
             $this->strPrecio = $precio;
@@ -103,10 +85,10 @@
 			{
 				$query_insert  = "INSERT INTO tour(nombre_tour,descripcion,
                 servicio,actividad,alimentacion,hospedaje,transporte,
-                lugar,disponibilidad,hora_inicio,cupo_minimo,telefono,precio,status,imagen)
+                lugar,disponibilidad,hora_inicio,duracion,cupo_minimo,telefono,precio,status,imagen)
                 
                 
-                 VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                 VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 	        	$arrData = array(
                  $this->strNombre_tour,
                  $this->strDescripcion,
@@ -118,6 +100,7 @@
                  $this->strLugar, 
                  $this->strDisponibilidad,
                  $this->strHora_inicio,
+                 $this->strDuracion,
                  $this->strCupo_minimo,
                  $this->strTelefono,
                  $this->strPrecio,
@@ -140,7 +123,7 @@
 
 		public function updateTour(int $id_tour,
         string $nombre_tour, string $descripcion, string $servicio, string $actividad, string $alimentacion, string $hospedaje,
-        string $transporte, string $lugar, string $disponibilidad, string $hora_inicio, string $cupo_minimo, string $telefono,
+        string $transporte, string $lugar, string $disponibilidad, string $hora_inicio, string $duracion , string $cupo_minimo, string $telefono,
         string $precio, int $status, string $imagen  ){
 
 
@@ -155,6 +138,7 @@
             $this->strLugar = $lugar;
             $this->strDisponibilidad = $disponibilidad;
             $this->strHora_inicio = $hora_inicio;
+            $this->strDuracion = $duracion;
             $this->strCupo_minimo = $cupo_minimo;
             $this->strTelefono = $telefono;
             $this->strPrecio = $precio;
@@ -179,6 +163,7 @@
                  lugar= ?,
                  disponibilidad = ?,
                  hora_inicio = ?,
+                 duracion = ?,
                  cupo_minimo =?,
                  telefono = ?,
                  precio = ?,
@@ -196,6 +181,7 @@
                 $this->strLugar, 
                 $this->strDisponibilidad,
                 $this->strHora_inicio,
+                $this->strDuracion,
                 $this->strCupo_minimo,
                 $this->strTelefono,
                 $this->strPrecio,
@@ -213,7 +199,7 @@
 		{					
 			$this->intId_Tour = $id_tour;
 			$sql = "DELETE from tour WHERE id_tour = $this->intId_Tour";
-			//$sql = "UPDATE tour_organizado SET status = ? WHERE id_tour = $this->intId_Tour";
+	
 			$arrData = array(0);
 			$request = $this->delete($sql,$arrData);
 			return $request;

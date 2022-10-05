@@ -107,6 +107,7 @@
             $strLugar = strClean($_POST['txtLugar']);
             $strDisponibilidad = strClean($_POST['txtDisponibilidad']);
             $strHora_inicio = strClean($_POST['txtHora_inicio']);
+			$strDuracion = strClean($_POST['txtDuracion']);
             $strCupo_minimo = strClean($_POST['txtCupo_minimo']);
             $strTelefono = strClean($_POST['txtTelefono']);
             $strPrecio = strClean($_POST['txtPrecio']);
@@ -146,10 +147,12 @@
                 $strLugar,
                 $strDisponibilidad,
                 $strHora_inicio,
+				$strDuracion,
                 $strCupo_minimo,
                 $strTelefono,
                 $strPrecio,
-                $intStatus);
+                $intStatus,
+			    $imgImagen);
 				$option = 1;
 
 			}else{
@@ -171,10 +174,12 @@
                     $strLugar,
                     $strDisponibilidad,
                     $strHora_inicio,
+					$strDuracion,
                     $strCupo_minimo,
                     $strTelefono,
                     $strPrecio,
-                    $intStatus 
+                    $intStatus,
+					$imgImagen 
                 );
 				$option = 2;
 			}
