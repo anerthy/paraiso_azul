@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 window.addEventListener('load', function() {
-    fntComunidadesTour();
+    //fntComunidadesTour();
     /*fntViewUsuario();
     fntEditUsuario();
     fntDelUsuario();*/
