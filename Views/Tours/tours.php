@@ -51,14 +51,14 @@ getModal('modalTours', $data);
                   <td>PatitosServicio</td>
                   <td>PatitosActividad</td>
                   <td>PatitosAlimentacion</td>
-                  <td> PatitosHospedaje </td>
-                  <td> PatitosTransporte </td>
-                  <td>  PatitosLugar</td>
-                  <td>  PatitosDisponibilidad</td>
-                  <td>  PatitosInicio</td>
-                  <td> PatitosDuracion </td>
-                  <td>  PatitosMinimo</td>
-                  <td> PatitosAlimentacion </td>
+                  <td>PatitosHospedaje </td>
+                  <td>PatitosTransporte </td>
+                  <td>PatitosLugar</td>
+                  <td>PatitosDisponibilidad</td>
+                  <td>PatitosInicio</td>
+                  <td>PatitosDuracion </td>
+                  <td>PatitosMinimo</td>
+                  <td>PatitosAlimentacion </td>
                   <td>PatitosTelefono</td>
                   <td>PatitosPrecio</td>
                   <td>Activo</td>

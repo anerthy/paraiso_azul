@@ -303,7 +303,7 @@ function fntViewInfo(id_tour){
 
 
 function fntEditTour(id_tour){
-    //rowTable = element.parentNode.parentNode.parentNode;
+
     document.querySelector('#titleModal').innerHTML ="Actualizar Tour";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");

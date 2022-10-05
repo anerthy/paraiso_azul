@@ -56,7 +56,7 @@
          ){
 
 			$return = "";
-			//$this->strTour = $tour;
+
 			$this->strNombre_tour = $nombre_tour;
 			$this->strDescripcion = $descripcion;	
             $this->strServicio = $servicio;
