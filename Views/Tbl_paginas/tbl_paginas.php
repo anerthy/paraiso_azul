@@ -24,7 +24,6 @@ getModal('modalTbl_paginas', $data);
               <thead>
                 <tr>
                   <th>ID</th>
-                  <th>Nombre</th>
                   <th>Titulo</th>
                   <th>Contenido</th>
                   <!-- <th></th> -->
@@ -34,7 +33,6 @@ getModal('modalTbl_paginas', $data);
               <tbody>
                 <tr>
                   <td>1</td>
-                  <td>Patitos</td>
                   <td>PatitosDescripcion</td>
                   <td>Al lado del bnc</td>
                   <!-- <td></td> -->
