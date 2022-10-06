@@ -1,55 +1,196 @@
+
+<?php
+nav_bar($data);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="<?= media(); ?>/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?= media(); ?>/css/navbar.css">
-  <link rel="stylesheet" href="<?= media(); ?>/css/vistas/home.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <!-- js -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-  <title><?= $data['page_title']; ?></title>
-</head>
-
-<body>
-
-  <?php
-  nav_bar($data);
-  ?>
-
-  <div id="general">
-
-    <div id="foto">
-      <br><br>
-      <img id="logo" src="<?= media(); ?>/images/uploads/redCostera.jpg" width="350" height="350">
-    </div>
-
-    <div id="titulo">
-      <div class="text-center">
-        <h1 class="display-4">Paraiso Azul</h1>
-      </div>
-    </div>
-
-    <div id="contenido">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus risus in augue porta rhoncus. Nunc at magna eleifend, sodales neque ut, aliquet nisi. Duis sit amet eros a arcu varius elementum posuere in eros. Donec turpis quam, egestas vel pretium sit amet, pulvinar ac nulla. Suspendisse ac tempor nunc. Morbi interdum ac risus sed semper. Etiam blandit augue id porta hendrerit. Nullam semper nibh sed ullamcorper elementum. Aenean vel ante a odio fermentum cursus at id nulla. Nulla pharetra felis eget ullamcorper ultrices. Maecenas sit amet viverra tortor. Ut tempor aliquet felis, in pellentesque elit. Aenean sollicitudin diam turpis, in vulputate magna sollicitudin quis. Nam imperdiet lectus dui, cursus iaculis elit dignissim ut. Maecenas a euismod nisl, et fermentum dolor. Pellentesque ornare magna non sem posuere, vitae tempor tortor sodales. In hac habitasse platea dictumst. Curabitur at libero at nisl interdum scelerisque. Donec nec sapien id nunc laoreet ultricies sit amet faucibus urna. Duis vel sodales ipsum, consequat tincidunt tortor. Integer id tristique leo. Morbi sagittis, mi nec commodo feugiat, augue risus consequat mi, at iaculis risus sapien ut odio. Fusce at odio fermentum, convallis nulla et, tempus magna. Proin finibus nunc quis metus volutpat, nec egestas diam tristique. Phasellus porta lobortis lorem, eu varius eros elementum a. In hac habitasse platea dictumst. Fusce pharetra hendrerit bibendum. Suspendisse dapibus, felis a aliquet auctor, dolor velit maximus tellus, at sodales lacus odio non libero. Maecenas rhoncus, dui quis pharetra accumsan, ligula justo luctus turpis, nec mollis lacus massa non dolor. Nulla et posuere metus. Morbi imperdiet erat id magna rutrum vehicula et vitae lectus. Pellentesque maximus, lectus consectetur malesuada congue, lorem mi scelerisque sem, et maximus tellus ipsum vitae massa. Proin massa nulla, pulvinar ac congue id, facilisis quis orci.
-      </p>
-    </div>
-
-    <div id="texto">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus risus in augue porta rhoncus. Nunc at magna eleifend, sodales neque ut, aliquet nisi. Duis sit amet eros a arcu varius elementum posuere in eros. Donec turpis quam, egestas vel pretium sit amet, pulvinar ac nulla. Suspendisse ac tempor nunc. Morbi interdum ac risus sed semper. Etiam blandit augue id porta hendrerit. Nullam semper nibh sed ullamcorper elementum. Aenean vel ante a odio fermentum cursus at id nulla. Nulla pharetra felis eget ullamcorper ultrices. Maecenas sit amet viverra tortor. Ut tempor aliquet felis, in pellentesque elit. Aenean sollicitudin diam turpis, in vulputate magna sollicitudin quis. Nam imperdiet lectus dui, cursus iaculis elit dignissim ut. Maecenas a euismod nisl, et fermentum dolor. Pellentesque ornare magna non sem posuere, vitae tempor tortor sodales. In hac habitasse platea dictumst. Curabitur at libero at nisl interdum scelerisque. Donec nec sapien id nunc laoreet ultricies sit amet faucibus urna. Duis vel sodales ipsum, consequat tincidunt tortor. Integer id tristique leo. Morbi sagittis, mi nec commodo feugiat, augue risus consequat mi, at iaculis risus sapien ut odio. Fusce at odio fermentum, convallis nulla et, tempus magna. Proin finibus nunc quis metus volutpat, nec egestas diam tristique. Phasellus porta lobortis lorem, eu varius eros elementum a. In hac habitasse platea dictumst. Fusce pharetra hendrerit bibendum. Suspendisse dapibus, felis a aliquet auctor, dolor velit maximus tellus, at sodales lacus odio non libero. Maecenas rhoncus, dui quis pharetra accumsan, ligula justo luctus turpis, nec mollis lacus massa non dolor. Nulla et posuere metus. Morbi imperdiet erat id magna rutrum vehicula et vitae lectus. Pellentesque maximus, lectus consectetur malesuada congue, lorem mi scelerisque sem, et maximus tellus ipsum vitae massa. Proin massa nulla, pulvinar ac congue id, facilisis quis orci. Vivamus in velit ligula. Pellentesque maximus, lectus consectetur malesuada congue, lorem mi scelerisque sem.
-      </p>
-    </div>
-
-  </div>
-
-  <script src="<?= media(); ?>/js/bootstrap.min.js""></script>
+    <head>
+        <!-- <link rel="stylesheet" href="<?= media(); ?>/css/navbar.css"> -->
+        
+        <link rel="stylesheet" href="<?= media(); ?>/css/vistas/home.css">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Stylish Portfolio - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="Assets/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+      
+     
+        <!-- Header-->
+        <header class="masthead d-flex align-items-center">
+            <div class="container px-4 px-lg-5 text-center">
+                <h1 class="mb-1">Paraiso azul</h1>
+                <h3 class="mb-5"><em>A Free Bootstrap Theme by Start Bootstrap</em></h3>
+                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="content-section bg-light" id="about">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
+                        <p class="lead mb-5">
+                            This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
+                            <a href="https://unsplash.com/">Unsplash</a>
+                            !
+                        </p>
+                        <a class="btn btn-dark btn-xl" href="#services">What We Offer</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="content-section bg-primary text-white text-center" id="services">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading">
+                    <h3 class="text-secondary mb-0">Services</h3>
+                    <h2 class="mb-5">What We Offer</h2>
+                </div>
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
+                        <h4><strong>Responsive</strong></h4>
+                        <p class="text-faded mb-0">Looks great on any screen size!</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
+                        <h4><strong>Redesigned</strong></h4>
+                        <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
+                        <h4><strong>Favorited</strong></h4>
+                        <p class="text-faded mb-0">
+                            Millions of users
+                            <i class="fas fa-heart"></i>
+                            Start Bootstrap!
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
+                        <h4><strong>Question</strong></h4>
+                        <p class="text-faded mb-0">I mustache you a question...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Callout-->
+        <section class="callout">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mx-auto mb-5">
+                    Welcome to
+                    <em>your</em>
+                    next website!
+                </h2>
+                <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        <section class="content-section" id="portfolio">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading text-center">
+                    <h3 class="text-secondary mb-0">Portfolio</h3>
+                    <h2 class="mb-5">Recent Projects</h2>
+                </div>
+                <div class="row gx-0">
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Stationary</div>
+                                    <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="Assets/images/img/portfolio-1.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Ice Cream</div>
+                                    <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="Assets/images/img/portfolio-2.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Strawberries</div>
+                                    <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="Assets/images/img/portfolio-3.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Workspace</div>
+                                    <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="Assets/images/img/portfolio-4.jpg" alt="..." />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to Action-->
+        <section class="content-section bg-primary text-white">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+                <a class="btn btn-xl btn-light me-4" href="#!">Click Me!</a>
+                <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
+            </div>
+        </section>
+        <!-- Map-->
+        <div class="map" id="contact">
+            <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+            <br />
+            <small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
+        </div>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container px-4 px-lg-5">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                    </li>
+                </ul>
+                <p class="text-muted small mb-0">Copyright &copy; Your Website 2022</p>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="Assets/js/scripts.js"></script>
+        <!-- <script src="Assets/js/nav_bar.js"></script> -->
     </body>
 </html>
