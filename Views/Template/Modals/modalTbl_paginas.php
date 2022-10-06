@@ -15,12 +15,6 @@
 
           <p class="text-primary">Todos los campos son obligatorios.</p>
           <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="txtTbl_pagina">Tabla</label>
-              <input type="text" class="form-control valid validText" placeholder="Ingrese el nombre" id="txtTbl_pagina" name="txtTbl_pagina" required="">
-            </div>
-          </div>
-          <div class="form-row">
           <div class="form-group col-md-6">
             <label for="txtPag_Titulo">Titulo</label>
             <input type="text" class="form-control valid validText" placeholder="Ingrese el titulo" id="txtPag_Titulo" name="txtPag_Titulo" required="">
@@ -63,15 +57,11 @@ Modal
               <td id="celId">654654654</td>
             </tr>
             <tr>
-              <td>Nombre:</td>
-              <td id="celTbla_pagina">Jacob</td>
-            </tr>
-            <tr>
-              <td>Descripcion:</td>
+              <td>Titulo:</td>
               <td id="celPag_Titulo">Jacob</td>
             </tr>
             <tr>
-              <td>Provincia:</td>
+              <td>Contenido:</td>
               <td id="celPag_Contenido">Larry</td>
             </tr>
             <tr>
