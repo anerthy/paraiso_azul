@@ -2,8 +2,8 @@
 
 class Tbl_paginasModel extends Mysql
 {
+	public $intTbl_pagina;
 	public $intPag_id;
-	public $strTbl_pagina;
 	public $strPag_Titulo;
     public $strPag_Contenido;
 
@@ -30,20 +30,19 @@ class Tbl_paginasModel extends Mysql
 		return $request;
 	}
 
-	public function insertTbl_pagina(string $tbl_pagina, string $pag_titulo, string $pag_contenido)
+	public function insertTbl_pagina(string $pag_titulo, string $pag_contenido)
 	{
 
 		$return = "";
-		$this->strTbl_pagina = $tbl_pagina;
 		$this->strPag_Titulo = $pag_titulo;
 		$this->strPag_Contenido = $pag_contenido;
 	
-		$sql = "SELECT * FROM tbl_pagina WHERE tbl_pagina = '{$this->strTbl_pagina}' ";
+		$sql = "SELECT * FROM tbl_pagina WHERE pag_titulo = '{$this->strTbl_pagina}' ";
 		$request = $this->select_all($sql);
 
 		if (empty($request)) {
 			$query_insert  = "INSERT INTO tbl_pagina(pag_titulo,pag_contenido) VALUES(?,?)";
-			$arrData = array($this->strTbl_pagina,$this->strPag_Titulo, $this->strPag_Contenido);
+			$arrData = array($this->strPag_Titulo, $this->strPag_Contenido);
 			$request_insert = $this->insert($query_insert, $arrData);
 			$return = $request_insert;
 		} else {
@@ -52,20 +51,19 @@ class Tbl_paginasModel extends Mysql
 		return $return;
 	}
 
-	public function updateTbl_pagina(int $pag_id, string $tbl_pagina, string $pag_titulo, string $pag_contenido)
+	public function updateTbl_pagina(int $pag_id,string $pag_titulo, string $pag_contenido)
 	{
 		$this->intPag_id = $pag_id;
-		$this->strTbl_Pagina = $tbl_pagina;
 		$this->strPag_Titulo = $pag_titulo;
 		$this->strPag_Contenido = $pag_contenido;
 		
 
-		$sql = "SELECT * FROM tbl_pagina WHERE tbl_pagina = '$this->strTbl_Pagina' AND pag_id != $this->intPag_id";
+		$sql = "SELECT * FROM tbl_pagina WHERE pag_titulo = '$this->strTbl_Pagina' AND pag_id != $this->intPag_id";
 		$request = $this->select_all($sql);
 
 		if (empty($request)) {
 			$sql = "UPDATE tbl_pagina SET pag_titulo = ?, pag_contenido = ? WHERE pag_id = $this->intPag_id ";
-			$arrData = array($this->strTbl_Pagina, $this->strPag_Titulo,$this->strPag_Contenido);
+			$arrData = array($this->$this->strPag_Titulo,$this->strPag_Contenido);
 			$request = $this->update($sql, $arrData);
 		} else {
 			$request = "exist";
