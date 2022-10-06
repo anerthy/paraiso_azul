@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function(){
         },
         "columns":[
             {"data":"pag_id"},
-            {"data":"tbl_pagina"},
             {"data":"pag_titulo"},
             {"data":"pag_contenido"},
             {"data":"options"}
@@ -69,11 +68,10 @@ document.addEventListener('DOMContentLoaded', function(){
         e.preventDefault();
 
         var intPag_id = document.querySelector('#pag_id').value;
-        var strTbl_pagina = document.querySelector('#txtTbl_pagina').value;
         var strPag_Titulo = document.querySelector('#txtPag_Titulo').value;
         var strPag_Contenido = document.querySelector('#txtPag_Contenido').value;      
     
-        if(strTbl_pagina == '' || strPag_Titulo == '' ||   strPag_Contenido== '')
+        if(strPag_Titulo == '' ||   strPag_Contenido== '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -96,9 +94,9 @@ document.addEventListener('DOMContentLoaded', function(){
                         // htmlStatus = intStatus == 1 ? 
                         //     '<span class="badge badge-success">Activo</span>' : 
                         //     '<span class="badge badge-danger">Inactivo</span>';
-                        rowTable.cells[1].textContent = strTbl_pagina;
-                        rowTable.cells[2].textContent = strPag_Titulo;
-                        rowTable.cells[3].textContent = strPag_Contenido;
+                   
+                        rowTable.cells[1].textContent = strPag_Titulo;
+                        rowTable.cells[2].textContent = strPag_Contenido;
                         
                        // rowTable.cells[4].innerHTML = htmlStatus;
                         
@@ -160,7 +158,6 @@ function fntViewInfo(pag_id){
                 // '<span class="badge badge-success">Activo</span>' : 
                 // '<span class="badge badge-danger">Inactivo</span>';
                 document.querySelector("#celId").innerHTML = objData.data.pag_id;
-                document.querySelector("#celTbl_pagina").innerHTML = objData.data.tbl_pagina;
                 document.querySelector("#celPag_Titulo").innerHTML = objData.data.pag_Titulo;
                 document.querySelector("#celPag_Contenido").innerHTML = objData.data.pag_Contenido;
                 $('#modalViewTbl_pagina').modal('show');
@@ -191,7 +188,6 @@ function fntEditTbl_pagina(pag_id){
             if(objData.status)
             {
                 document.querySelector("#pag_id").value = objData.data.pag_id;
-                document.querySelector("#txtTbl_pagina").value = objData.data.tbl_pagina;
                 document.querySelector("#txtPag_Titulo").value = objData.data.pag_Titulo;
                 document.querySelector("#txtPag_Contenido").value = objData.data.pag_Contenido;
                 
