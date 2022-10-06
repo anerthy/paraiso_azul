@@ -46,7 +46,7 @@ class Tbl_paginas extends Controllers
 		if (count($arrData) > 0) {
 			for ($i = 0; $i < count($arrData); $i++) {
 				//if($arrData[$i]['status'] == 1 ){
-				$htmlOptions .= '<option value="' . $arrData[$i]['pag_id'] . '">' . $arrData[$i]['tbl_pagina'] . '</option>';
+				$htmlOptions .= '<option value="' . $arrData[$i]['pag_id'] . '">' . $arrData[$i]['pag_titulo'] . '</option>';
 				//}
 			}
 		}

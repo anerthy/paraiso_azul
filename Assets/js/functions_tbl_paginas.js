@@ -73,9 +73,12 @@ document.addEventListener('DOMContentLoaded', function(){
     
         if(strPag_Titulo == '' ||   strPag_Contenido== '')
         {
+            
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
+        
+        
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         var ajaxUrl = base_url+'/Tbl_paginas/setTbl_pagina'; 
         var formData = new FormData(formTbl_pagina);
@@ -107,8 +110,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
                     $('#modalFormTbl_pagina').modal("hide");
                     formTbl_pagina.reset();
-                    swal("Tbl_paginas", objData.msg ,"success");
-                    removePhoto();
+                    swal("Paginas", objData.msg ,"success");
+                    
                     tableTbl_paginas.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
@@ -158,8 +161,8 @@ function fntViewInfo(pag_id){
                 // '<span class="badge badge-success">Activo</span>' : 
                 // '<span class="badge badge-danger">Inactivo</span>';
                 document.querySelector("#celId").innerHTML = objData.data.pag_id;
-                document.querySelector("#celPag_Titulo").innerHTML = objData.data.pag_Titulo;
-                document.querySelector("#celPag_Contenido").innerHTML = objData.data.pag_Contenido;
+                document.querySelector("#celPag_Titulo").innerHTML = objData.data.pag_titulo;
+                document.querySelector("#celPag_Contenido").innerHTML = objData.data.pag_contenido;
                 $('#modalViewTbl_pagina').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
@@ -188,8 +191,8 @@ function fntEditTbl_pagina(pag_id){
             if(objData.status)
             {
                 document.querySelector("#pag_id").value = objData.data.pag_id;
-                document.querySelector("#txtPag_Titulo").value = objData.data.pag_Titulo;
-                document.querySelector("#txtPag_Contenido").value = objData.data.pag_Contenido;
+                document.querySelector("#txtPag_Titulo").value = objData.data.pag_titulo;
+                document.querySelector("#txtPag_Contenido").value = objData.data.pag_contenido;
                 
                 // if(objData.data.status == 1)
                 // {
