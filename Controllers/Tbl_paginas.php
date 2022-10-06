@@ -62,7 +62,6 @@ class Tbl_paginas extends Controllers
 			if (empty($arrData)) {
 				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 			} else {
-				$arrData['url_imagen'] = media() . '/images/uploads/' . $arrData['imagen'];
 				$arrResponse = array('status' => true, 'data' => $arrData);
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
@@ -74,7 +73,6 @@ class Tbl_paginas extends Controllers
 	{
 
 		$intPag_id = intval($_POST['pag_id']);
-		$strTbl_pagina =  strClean($_POST['txtTbl_pagina']);
 		$strPag_Titulo = strClean($_POST['txtPag_Titulo']);
 		$strPag_Contenido = strClean($_POST['txtPag_Contenido']);
 		
@@ -83,32 +81,22 @@ class Tbl_paginas extends Controllers
 
 		if ($intPag_id == 0) {
 			//Crear
-			$request_tbl_pagina = $this->model->insertTbl_pagina($strTbl_pagina, $strPag_Titulo, $strPag_Contenido);
+			$request_tbl_pagina = $this->model->insertTbl_pagina($strPag_Titulo, $strPag_Contenido);
 			$option = 1;
 		} else {
 			//Actualizar
 			
-			$request_tbl_pagina = $this->model->updateTbl_pagina($intPag_id, $strTbl_pagina, $strPag_Titulo, $strPag_Contenido);
+			$request_tbl_pagina = $this->model->updateTbl_pagina($intPag_id,$strPag_Titulo, $strPag_Contenido);
 			$option = 2;
 		}
 
 		if ($request_tbl_pagina > 0) {
 			if ($option == 1) {
 				$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
-				if ($nombre_foto != '') {
-					uploadImage($foto, $imgImagen);
-				}
+				
 			} else {
 				$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
-				if ($nombre_foto != '') {
-					uploadImage($foto, $imgImagen);
-				}
-
-				if (($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
-					|| ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')
-				) {
-					deleteFile($_POST['foto_actual']);
-				}
+				
 			}
 		} else if ($request_tbl_pagina == 'exist') {
 
