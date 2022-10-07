@@ -4,9 +4,13 @@ class Hospedajes extends Controllers
 {
 	public function __construct()
 	{
+		parent::__construct();
 		session_start();
 		session_regenerate_id(true);
-		parent::__construct();
+		if (empty($_SESSION['login'])) {
+			header('Location: ' . base_url() . '/login');
+		}
+		// getPermisos(1);
 	}
 
 	public function Hospedajes()
@@ -36,10 +40,10 @@ class Hospedajes extends Controllers
 			}
 
 			if ($arrData[$i]['tipo'] == 'Camping') {
-                $arrData[$i]['tipo'] = '<span>Camping</span>';
-            } else {
-                $arrData[$i]['tipo'] = '<span>Cabina</span>';
-            }
+				$arrData[$i]['tipo'] = '<span>Camping</span>';
+			} else {
+				$arrData[$i]['tipo'] = '<span>Cabina</span>';
+			}
 
 
 			$arrData[$i]['options'] = '<div class="text-center">
@@ -176,20 +180,17 @@ class Hospedajes extends Controllers
 
 	public function delHospedaje()
 	{
-		if($_POST){
-				$intId_hospedaje = intval($_POST['id_hospedaje']);
-				$requestDelete = $this->model->deleteHospedaje($intId_hospedaje);
-				if($requestDelete)
-				{
-					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el hospedaje');
-				}else{
-					$arrResponse = array('status' => false, 'msg' => 'Error al eliminar al hospedaje.');
-				}
-				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+		if ($_POST) {
+			$intId_hospedaje = intval($_POST['id_hospedaje']);
+			$requestDelete = $this->model->deleteHospedaje($intId_hospedaje);
+			if ($requestDelete) {
+				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el hospedaje');
+			} else {
+				$arrResponse = array('status' => false, 'msg' => 'Error al eliminar al hospedaje.');
 			}
-		
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+
 		die();
 	}
 }
-
-
