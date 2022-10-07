@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 03-10-2022 a las 06:47:01
+-- Tiempo de generación: 07-10-2022 a las 06:42:56
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -719,9 +719,9 @@ CREATE TABLE IF NOT EXISTS `rol` (
 
 INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 (8, 'ADMIN', 'super administrador', 1),
-(9, 'Asopecupachi', 'lorem ipsum', 2),
+(9, 'Asopecupachi', 'lorem ipsum', 1),
 (19, 'Mariposas Golfo de Nicoya', 'mraio', 1),
-(20, 'Coopeacuicultores Isla Venado', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 1);
+(20, 'Coopeacuicultores Isla Venado', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2);
 
 -- --------------------------------------------------------
 
@@ -827,15 +827,16 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `nombre_2` (`nombre_usuario`),
   UNIQUE KEY `correo` (`correo`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `status`, `rol_id`) VALUES
+(1, 'Administrador', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 1, 8),
 (5, 'Andres', 'anerthy@gmail.com', '7592771166a7088801c2adcdbfba017ece2b380b8d230ffeb8b282465d98f5ef', 2, 8),
-(20, 'Aaron Mora', 'aaronvimo@gmail.com', '124640bf2792a0cdce2c04e13326d67bf013bac6ce546616b04888e7c4e68631', 1, 8);
+(20, 'Aaron Mora', 'aaron@gmail.com', '91014162f34e902a9c10de1f6c7726af9ec2d8c5d961db39be98d96f75ced71a', 1, 9);
 
 -- --------------------------------------------------------
 
