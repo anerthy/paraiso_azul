@@ -35,7 +35,7 @@ class Login extends Controllers
 				} else {
 					$arrData = $requestUser;
 					if ($arrData['status'] == 1) {
-						$_SESSION['idUser'] = $arrData['idpersona'];
+						$_SESSION['idUser'] = $arrData['id_usuario'];
 						$_SESSION['login'] = true;
 
 						$arrData = $this->model->sessionLogin($_SESSION['idUser']);
