@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 07-10-2022 a las 06:42:56
+-- Tiempo de generación: 08-10-2022 a las 06:00:01
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -735,7 +735,14 @@ CREATE TABLE IF NOT EXISTS `tbl_pagina` (
   `pag_titulo` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
   `pag_contenido` text COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`pag_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `tbl_pagina`
+--
+
+INSERT INTO `tbl_pagina` (`pag_id`, `pag_titulo`, `pag_contenido`) VALUES
+(2, 'Inicio', 'LOREMSJDSHSKD FSKJFSDJKFHSDJKF HSDJFKDSHFJDHFJDSKFHSDJFKHDSJFKHDSJFHDS');
 
 -- --------------------------------------------------------
 
@@ -820,6 +827,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nombre_usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `contraseña` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `token` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `status` int NOT NULL DEFAULT '1',
   `rol_id` smallint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_usuario`),
@@ -833,10 +841,10 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `status`, `rol_id`) VALUES
-(1, 'Administrador', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 1, 8),
-(5, 'Andres', 'anerthy@gmail.com', '7592771166a7088801c2adcdbfba017ece2b380b8d230ffeb8b282465d98f5ef', 2, 8),
-(20, 'Aaron Mora', 'aaron@gmail.com', '91014162f34e902a9c10de1f6c7726af9ec2d8c5d961db39be98d96f75ced71a', 1, 9);
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `token`, `status`, `rol_id`) VALUES
+(1, 'Administrador', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '16b1b3f72ee7f7d3807a-773726e1a08c5b41471a-9386338954f627b63f0e-59dd79adb98125c27', 1, 8),
+(5, 'Andres', 'anerthy@gmail.com', '7592771166a7088801c2adcdbfba017ece2b380b8d230ffeb8b282465d98f5ef', 'acf717e946c4343dfd1e-f489a15dd870f8383fc9-24a77b91b97ada015358-f6a341af143da1410', 1, 8),
+(20, 'Aaron Mora', 'aaron@gmail.com', '91014162f34e902a9c10de1f6c7726af9ec2d8c5d961db39be98d96f75ced71a', NULL, 1, 9);
 
 -- --------------------------------------------------------
 

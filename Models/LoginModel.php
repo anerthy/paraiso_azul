@@ -38,41 +38,45 @@ class LoginModel extends Mysql
 		return $request;
 	}
 
-	// public function getUserEmail(string $strEmail){
-	// 	$this->strUsuario = $strEmail;
-	// 	$sql = "SELECT idpersona,nombres,apellidos,status FROM persona WHERE 
-	// 			email_user = '$this->strUsuario' and  
-	// 			status = 1 ";
-	// 	$request = $this->select($sql);
-	// 	return $request;
-	// }
+	public function getUserEmail(string $strEmail)
+	{
+		$this->strUsuario = $strEmail;
+		$sql = "SELECT id_usuario,nombre_usuario,correo,status FROM usuario WHERE 
+				correo = '$this->strUsuario' and  
+				status = 1 ";
+		$request = $this->select($sql);
+		return $request;
+	}
 
-	// public function setTokenUser(int $idpersona, string $token){
-	// 	$this->intIdUsuario = $idpersona;
-	// 	$this->strToken = $token;
-	// 	$sql = "UPDATE persona SET token = ? WHERE idpersona = $this->intIdUsuario ";
-	// 	$arrData = array($this->strToken);
-	// 	$request = $this->update($sql,$arrData);
-	// 	return $request;
-	// }
+	public function setTokenUser(int $id_usuario, string $token)
+	{
+		$this->intIdUsuario = $id_usuario;
+		$this->strToken = $token;
+		$sql = "UPDATE usuario SET token = ? WHERE id_usuario = $this->intIdUsuario ";
+		$arrData = array($this->strToken);
+		$request = $this->update($sql, $arrData);
+		return $request;
+	}
 
-	// public function getUsuario(string $email, string $token){
-	// 	$this->strUsuario = $email;
-	// 	$this->strToken = $token;
-	// 	$sql = "SELECT idpersona FROM persona WHERE 
-	// 			email_user = '$this->strUsuario' and 
-	// 			token = '$this->strToken' and 					
-	// 			status = 1 ";
-	// 	$request = $this->select($sql);
-	// 	return $request;
-	// }
+	public function getUsuario(string $email, string $token)
+	{
+		$this->strUsuario = $email;
+		$this->strToken = $token;
+		$sql = "SELECT id_usuario FROM usuario WHERE 
+				correo = '$this->strUsuario' and 
+				token = '$this->strToken' and 					
+				status = 1 ";
+		$request = $this->select($sql);
+		return $request;
+	}
 
-	// public function insertPassword(int $idPersona, string $password){
-	// 	$this->intIdUsuario = $idPersona;
-	// 	$this->strPassword = $password;
-	// 	$sql = "UPDATE persona SET password = ?, token = ? WHERE idpersona = $this->intIdUsuario ";
-	// 	$arrData = array($this->strPassword,"");
-	// 	$request = $this->update($sql,$arrData);
-	// 	return $request;
-	// }
+	public function insertPassword(int $idUsuario, string $password)
+	{
+		$this->intIdUsuario = $idUsuario;
+		$this->strPassword = $password;
+		$sql = "UPDATE usuario SET contraseña = ?, token = ? WHERE id_usuario = $this->intIdUsuario ";
+		$arrData = array($this->strPassword, "");
+		$request = $this->update($sql, $arrData);
+		return $request;
+	}
 }
