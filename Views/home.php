@@ -27,13 +27,22 @@ nav_bar($data);
     </head>
     <body id="page-top">
         <!-- Navigation-->
-      
+       
+       <!-- Compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<!-- Minified JS library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+
+
      
         <!-- Header-->
         <header class="masthead d-flex align-items-center">
             <div class="container px-4 px-lg-5 text-center">
                 <h1 class="mb-1">Paraiso azul</h1>
-                <h3 class="mb-5"><em>A Free Bootstrap Theme by Start Bootstrap</em></h3>
+                <h3 class="mb-5"><em>em></h3>
                 <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
             </div>
         </header>
@@ -42,17 +51,63 @@ nav_bar($data);
             <div class="container px-4 px-lg-5 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-10">
-                        <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
+                        <h2>Bienvenidos a paraíso azul,Golfo de Nicoya</h2>
                         <p class="lead mb-5">
-                            This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-                            <a href="https://unsplash.com/">Unsplash</a>
-                            !
+                            Si deseeas más informar acerca de nuestro proyecto, sigue bajando.
+                        
                         </p>
-                        <a class="btn btn-dark btn-xl" href="#services">What We Offer</a>
+                        <a class="btn btn-dark btn-xl" href="#services">Seguir</a>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!--carrousel-->
+<div id="myCarouselCustom" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarouselCustom" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarouselCustom" data-slide-to="1"></li>
+        <li data-target="#myCarouselCustom" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="https://cdn.forbescentroamerica.com/2020/07/Playas-Centroameria-scaled-e1594343240505.jpg" alt="">
+            <div class="carousel-caption">
+                <h3>First Slide</h3>
+                <p>This is the first image slide</p>
+            </div>
+        </div>
+  
+        <div class="item">
+            <img src="https://www.ngenespanol.com/wp-content/uploads/2018/08/Playas-espectaculares-en-Per%C3%BA-1280x720.jpg" alt="">
+            <div class="carousel-caption">
+                <h3>Second Slide</h3>
+                <p>This is the second image slide</p>
+            </div>
+        </div>
+        
+        <div class="item">
+            <img src="https://www.visitcentroamerica.com/sala-prensa/wp-content/uploads/2021/11/el-momento-de-ir-a-las-playas.jpg" alt="">
+            <div class="carousel-caption">
+                <h3>Third Slide</h3>
+                <p>This is the third image slide</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
         <!-- Services-->
         <section class="content-section bg-primary text-white text-center" id="services">
             <div class="container px-4 px-lg-5">
@@ -154,19 +209,13 @@ nav_bar($data);
                 </div>
             </div>
         </section>
-        <!-- Call to Action-->
-        <section class="content-section bg-primary text-white">
-            <div class="container px-4 px-lg-5 text-center">
-                <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-                <a class="btn btn-xl btn-light me-4" href="#!">Click Me!</a>
-                <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
-            </div>
-        </section>
+        
         <!-- Map-->
         <div class="map" id="contact">
-            <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-            <br />
-            <small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
+        <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232573.96957117325!2d-85.15739319901735!3d10.08854626850582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa1d4dbd04d2ecb%3A0x63c6b31db43dd0fd!2sGolfo%20de%20Nicoya!5e0!3m2!1ses-419!2scr!4v1665263755971!5m2!1ses-419!2scr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+            
         </div>
         <!-- Footer-->
         <footer class="footer text-center">
@@ -191,6 +240,32 @@ nav_bar($data);
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="Assets/js/scripts.js"></script>
+     
         <!-- <script src="Assets/js/nav_bar.js"></script> -->
+        <script type="text/javascript">
+// Call carousel manually
+$('#myCarouselCustom').carousel();
+
+// Go to the previous item
+$("#prevBtn").click(function(){
+    $("#myCarouselCustom").carousel("prev");
+});
+// Go to the previous item
+$("#nextBtn").click(function(){
+    $("#myCarouselCustom").carousel("next");
+});
+</script>
+<!-- Custom Controls -->
+<a href="javascript:void(0);" id="prevBtn">Prev Slide</a>
+<a href="javascript:void(0);" id="nextBtn">Next Slide</a>
+
+<script type="text/javascript">
+$('.carousel').carousel({
+     interval: 1000,
+     pause:true,
+     wrap:false
+});
+</script>
+
     </body>
 </html>
