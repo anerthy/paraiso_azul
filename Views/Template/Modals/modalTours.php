@@ -31,7 +31,7 @@
                 </div>
               
                 </div>
-                 <!-- <div class="form-row">
+                 <div class="form-row">
                 <input type="checkbox" class="largerCheckbox" id="txtServicio" name="txtServicio" value="Actividad">Actividad 
 
                 <br>
@@ -50,9 +50,9 @@
                
 
                  <br>
-                 </div> -->
+                 </div>
 
-                    <div class="form-row">
+                    <!-- <div class="form-row">
                     <div class="form-group">
                     <label for="txtServicio">Servicios</label>
                     <select  class="form-control"  id="txtServicio" name="txtServicio" required="" >
@@ -62,7 +62,7 @@
                     <option value="Transporte">Transporte</option>
                     </select>
                   </div>
-                  </div> 
+                  </div>  -->
 
 
                 
