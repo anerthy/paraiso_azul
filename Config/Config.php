@@ -19,3 +19,9 @@ const SPM = ",";
 
 //Simbolo de moneda
 const SMONEY = "₡";
+
+//Datos envio de correo
+const NOMBRE_REMITENTE = "Paraiso Azul";
+const EMAIL_REMITENTE = "andmejigo12@gmail.com";
+const NOMBRE_EMPESA = "Paraiso Azul";
+const WEB_EMPRESA = "www.cemede.una.ac.cr";
