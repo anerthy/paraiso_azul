@@ -37,13 +37,17 @@
 
 
 
+				
+
+
+
 				if($arrData[$i]['servicio'] == "Actividad")
 				{
 					$arrData[$i]['servicio'] = '<span >Actividad</span>';
 				}
 				elseif($arrData[$i]['servicio'] == "Alimentacion")
 				{
-					$arrData[$i]['servicio'] = '<span >Alimentacion</span>';
+					$arrData[$i]['servicio'] = '<span>Alimentacion</span>';
 				}
 				elseif($arrData[$i]['servicio'] == "Hospedaje")
 				{
@@ -53,6 +57,17 @@
 				{
 					$arrData[$i]['servicio'] = '<span >Transporte</span>';
 				}
+
+				
+			
+				// $actividad = '<button class="btn btn-info btn-sm"(' . $arrData[$i]['Actividad'] . ')" title="Ver usuario"><i class="far fa-eye"></i></button>';
+				// $alimentacion = '<button class="btn btn-info btn-sm"(' . $arrData[$i]['Alimentacion'] . ')" title="Ver usuario"><i class="far fa-eye"></i></button>';
+				// $hospedaje = '<button class="btn btn-info btn-sm"(' . $arrData[$i]['Hospedaje'] . ')" title="Ver usuario"><i class="far fa-eye"></i></button>';
+				// $transporte = '<button class="btn btn-info btn-sm"(' . $arrData[$i]['Transporte'] . ')" title="Ver usuario"><i class="far fa-eye"></i></button>';
+			
+
+				// $arrData[$i]['options'] = '<div class="text-center">' . $actividad . ' ' . $alimentacion . ' ' . $hospedaje .' ' . $transporte . '</div>';
+			
 
 
 
