@@ -247,6 +247,10 @@ function fntEditComunidad(id_comunidad){
                 document.querySelector("#txtDistrito").value = objData.data.distrito;
                 document.querySelector('#foto_actual').value = objData.data.imagen;
                 document.querySelector("#foto_remove").value= 0;
+
+
+                
+
                 // if(objData.data.status == 1)
                 // {
                 //     var optionSelect = '<option value="1" selected class="notBlock">Activo</option>';
