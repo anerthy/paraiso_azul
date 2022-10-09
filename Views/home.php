@@ -15,7 +15,6 @@ nav_bar($data);
         <meta name="author" content="" />
         <title>Stylish Portfolio - Start Bootstrap Template</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Simple line icons-->
@@ -38,16 +37,18 @@ nav_bar($data);
 
 
      
-        <!-- Header-->
-        <header class="masthead d-flex align-items-center">
+        <section class="callout">
             <div class="container px-4 px-lg-5 text-center">
-                <h1 class="mb-1">Paraiso azul</h1>
-                <h3 class="mb-5"><em>em></h3>
-                <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+                <h2 class="mx-auto mb-5">
+                    Welcome to
+                    <em>your</em>
+                    next website!
+                </h2>
             </div>
-        </header>
-        <!-- About-->
-        <section class="content-section bg-light" id="about">
+        </section>
+
+       <!-- About-->
+ <section class="content-section bg-light" id="about">
             <div class="container px-4 px-lg-5 text-center">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-10">
@@ -62,52 +63,6 @@ nav_bar($data);
             </div>
         </section>
 
-        <!--carrousel-->
-<div id="myCarouselCustom" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarouselCustom" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarouselCustom" data-slide-to="1"></li>
-        <li data-target="#myCarouselCustom" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-        <div class="item active">
-            <img src="https://cdn.forbescentroamerica.com/2020/07/Playas-Centroameria-scaled-e1594343240505.jpg" alt="">
-            <div class="carousel-caption">
-                <h3>First Slide</h3>
-                <p>This is the first image slide</p>
-            </div>
-        </div>
-  
-        <div class="item">
-            <img src="https://www.ngenespanol.com/wp-content/uploads/2018/08/Playas-espectaculares-en-Per%C3%BA-1280x720.jpg" alt="">
-            <div class="carousel-caption">
-                <h3>Second Slide</h3>
-                <p>This is the second image slide</p>
-            </div>
-        </div>
-        
-        <div class="item">
-            <img src="https://www.visitcentroamerica.com/sala-prensa/wp-content/uploads/2021/11/el-momento-de-ir-a-las-playas.jpg" alt="">
-            <div class="carousel-caption">
-                <h3>Third Slide</h3>
-                <p>This is the third image slide</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
         <!-- Services-->
         <section class="content-section bg-primary text-white text-center" id="services">
             <div class="container px-4 px-lg-5">
@@ -150,8 +105,7 @@ nav_bar($data);
                     Welcome to
                     <em>your</em>
                     next website!
-                </h2>
-                <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
+</h2>
             </div>
         </section>
         <!-- Portfolio-->
@@ -159,40 +113,37 @@ nav_bar($data);
             <div class="container px-4 px-lg-5">
                 <div class="content-section-heading text-center">
                     <h3 class="text-secondary mb-0">Portfolio</h3>
-                    <h2 class="mb-5">Recent Projects</h2>
+                    <h2 class="mb-5">Comunidades</h2>
                 </div>
                 <div class="row gx-0">
                     <div class="col-lg-6">
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2">Stationary</div>
-                                    <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                                    <div class="h2">Isla Caballo</div>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="Assets/images/img/portfolio-1.jpg" alt="..." />
+                            <img class="img-fluid" src="Assets/images/islaCaballo.jpg" alt="..." />
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2">Ice Cream</div>
-                                    <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                                    <div class="h2">Isla Chira</div>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="Assets/images/img/portfolio-2.jpg" alt="..." />
+                            <img class="img-fluid" src="Assets/images/islaChira.jpg" alt="..." />
                         </a>
                     </div>
                     <div class="col-lg-6">
                         <a class="portfolio-item" href="#!">
                             <div class="caption">
                                 <div class="caption-content">
-                                    <div class="h2">Strawberries</div>
-                                    <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                                    <div class="h2">Isla Venado</div>
                                 </div>
                             </div>
-                            <img class="img-fluid" src="Assets/images/img/portfolio-3.jpg" alt="..." />
+                            <img class="img-fluid" src="Assets/images/islaVenado.jpg" alt="..." />
                         </a>
                     </div>
                     <div class="col-lg-6">
@@ -200,7 +151,7 @@ nav_bar($data);
                             <div class="caption">
                                 <div class="caption-content">
                                     <div class="h2">Workspace</div>
-                                    <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                                   
                                 </div>
                             </div>
                             <img class="img-fluid" src="Assets/images/img/portfolio-4.jpg" alt="..." />
@@ -231,7 +182,7 @@ nav_bar($data);
                         <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
                     </li>
                 </ul>
-                <p class="text-muted small mb-0">Copyright &copy; Your Website 2022</p>
+                
             </div>
         </footer>
         <!-- Scroll to Top Button-->
@@ -241,30 +192,11 @@ nav_bar($data);
         <!-- Core theme JS-->
         <script src="Assets/js/scripts.js"></script>
      
-        <!-- <script src="Assets/js/nav_bar.js"></script> -->
+       
         <script type="text/javascript">
-// Call carousel manually
-$('#myCarouselCustom').carousel();
 
-// Go to the previous item
-$("#prevBtn").click(function(){
-    $("#myCarouselCustom").carousel("prev");
-});
-// Go to the previous item
-$("#nextBtn").click(function(){
-    $("#myCarouselCustom").carousel("next");
-});
-</script>
-<!-- Custom Controls -->
-<a href="javascript:void(0);" id="prevBtn">Prev Slide</a>
-<a href="javascript:void(0);" id="nextBtn">Next Slide</a>
 
-<script type="text/javascript">
-$('.carousel').carousel({
-     interval: 1000,
-     pause:true,
-     wrap:false
-});
+
 </script>
 
     </body>
