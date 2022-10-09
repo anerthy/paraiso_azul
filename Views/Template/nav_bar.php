@@ -1,4 +1,4 @@
-    <header>
+    <header class="header">
         <nav class="navbar">
             <ul>
 
@@ -24,19 +24,8 @@
                 </li>
 
                 <li><a href="<?= base_url(); ?>/voluntariado">Voluntariado</a></li>
-
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
-                <li><a href="#"></a></li>
                 <li>
-                    <a href="<?= base_url(); ?>/login">
+                    <a href="<?= base_url(); ?>/login" class="login">
                         <i class="fa fa-user"></i>
                     </a>
                 </li>
