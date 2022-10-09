@@ -87,11 +87,11 @@ function getPermisos(int $idmodulo)
     $_SESSION['permisosMod'] = $permisosMod;
 }
 
-function sessionUser(int $idpersona)
+function sessionUser(int $idusuario)
 {
     require_once("Models/LoginModel.php");
     $objLogin = new LoginModel();
-    $request = $objLogin->sessionLogin($idpersona);
+    $request = $objLogin->sessionLogin($idusuario);
     return $request;
 }
 
