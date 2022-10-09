@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function(){
         || strDisponibilidad == '' || strHora_inicio == '' || strDuracion == '' || strDuracion == '' 
         || strCupo_minimo == '' || strTelefono == '' || intPrecio == '' || intStatus == ''  )
         {
-            alert(intTipotour);
+            
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
