@@ -1,13 +1,13 @@
 <!-- Modal -->
-
+<!-- 
  <div class="modal fade" id="modalFormTour" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content"> 
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+    <div class="modal-content">  -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
 
 <div class="modal fade bd-example-modal-lg" id="modalFormTour" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
-    <div class="modal-content"> -->
+    <div class="modal-content"> 
 
 
       <div class="modal-header headerRegister">
@@ -272,13 +272,10 @@
               <td>Estado:</td>
               <td id="celEstado">Larry</td>
             </tr>
-            
-            <tr>
-              <td>Foto:</td>
-              <td id="imgTour"></td>
-            </tr>
+               
           </tbody>
         </table>
+        <div id="imgTour"> </div> 
       </div>
 
       <div class="modal-footer">
