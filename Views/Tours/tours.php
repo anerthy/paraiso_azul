@@ -27,16 +27,15 @@ getModal('modalTours', $data);
                   <th>Nombre</th>
                   <th>Descripcion</th>
                   <th>Servicio</th>
-                  <th>Actividad</th>
+                  <!-- <th>Actividad</th>
                   <th>Alimentacion</th>
                   <th>Hospedaje</th>
                   <th>Transporte</th>
                   <th>Lugar</th>
-                  <th>Disponibilidad</th>
+                  <th>Disponibilidad</th> -->
                   <th>Inicio</th>
-                  <th>Duracion</th>
-                  <th>Minimo</th>
-                  <th>Alimentacion</th>
+                  <!-- <th>Duracion</th>
+                  <th>Minimo</th> -->
                   <th>Telefono</th>
                   <th>Precio</th>
                   <th>Status</th>
@@ -49,16 +48,15 @@ getModal('modalTours', $data);
                   <td>Patitos</td>
                   <td>PatitosDescripcion</td>
                   <td>PatitosServicio</td>
-                  <td>PatitosActividad</td>
+                  <!-- <td>PatitosActividad</td>
                   <td>PatitosAlimentacion</td>
                   <td>PatitosHospedaje </td>
                   <td>PatitosTransporte </td>
                   <td>PatitosLugar</td>
-                  <td>PatitosDisponibilidad</td>
+                  <td>PatitosDisponibilidad</td> -->
                   <td>PatitosInicio</td>
-                  <td>PatitosDuracion </td>
-                  <td>PatitosMinimo</td>
-                  <td>PatitosAlimentacion </td>
+                  <!-- <td>PatitosDuracion </td>
+                  <td>PatitosMinimo</td> -->
                   <td>PatitosTelefono</td>
                   <td>PatitosPrecio</td>
                   <td>Activo</td>
