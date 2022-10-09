@@ -18,7 +18,7 @@
         public $strDuracion;
         public $strCupo_minimo;
         public $strTelefono;
-        public $strPrecio;
+        public $intPrecio;
         public $intStatus;
         public $strImagen; 
 
@@ -70,7 +70,7 @@
             $this->strDuracion = $duracion;
             $this->strCupo_minimo = $cupo_minimo;
             $this->strTelefono = $telefono;
-            $this->strPrecio = $precio;
+            $this->intPrecio = $precio;
             $this->intStatus = $status;
             $this->strImagen = $imagen;
             
@@ -103,7 +103,7 @@
                  $this->strDuracion,
                  $this->strCupo_minimo,
                  $this->strTelefono,
-                 $this->strPrecio,
+                 $this->intPrecio,
                  $this->intStatus,
                  $this->strImagen
 
@@ -141,7 +141,7 @@
             $this->strDuracion = $duracion;
             $this->strCupo_minimo = $cupo_minimo;
             $this->strTelefono = $telefono;
-            $this->strPrecio = $precio;
+            $this->intPrecio = $precio;
             $this->intStatus = $status;
             $this->strImagen = $imagen;
 	
@@ -184,7 +184,7 @@
                 $this->strDuracion,
                 $this->strCupo_minimo,
                 $this->strTelefono,
-                $this->strPrecio,
+                $this->intPrecio,
                 $this->intStatus,
                 $this->strImagen
             );
