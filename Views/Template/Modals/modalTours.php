@@ -1,7 +1,15 @@
 <!-- Modal -->
-<div class="modal fade" id="modalFormTour" tabindex="-1" role="dialog" aria-hidden="true">
+
+ <div class="modal fade" id="modalFormTour" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content"> 
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" id="modalFormTour" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content"> -->
+
+
       <div class="modal-header headerRegister">
         <h5 class="modal-title" id="titleModal">Nuevo Tour</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -17,31 +25,58 @@
 
               <p class="text-primary">Todos los campos son obligatorios.</p>
               <div class="form-row">
-                <div class="form-group col-md-6">
+              <div class="form-group col-md-6">
                   <label for="txtNombre_tour">Nombre del tour</label>
                   <input type="text" class="form-control valid validText"  placeholder="Nombre del tour" id="txtNombre_tour" name="txtNombre_tour" required="">
                 </div>
-            
-                <div class="form-group col-md-3">
-                  <label for="txtDescripcion">Descripcion</label>
-                  <input type="text" class="form-control valid validNumber" placeholder="Cantidad" id="txtDescripcion" name="txtDescripcion" required="" onkeypress="return controlTag(event);">
-            </div>
+              
+                </div>
+                 <!-- <div class="form-row">
+                <input type="checkbox" class="largerCheckbox" id="txtServicio" name="txtServicio" value="Actividad">Actividad 
+
+                <br>
+                 <br>
+
+                  <input type="checkbox" class="largerCheckbox" id="txtServicio" name="txtServicio" value="Alimentacion">Alimentacion
+
+                  <br>
+                 <br>
+
+                 <input type="checkbox" class="largerCheckbox" id="txtServicio" name="txtServicio" value="Hospedaje">Hospedaje
+                 <br>
+                 <br>
+
+                 <input type="checkbox" class="largerCheckbox" id="txtServicio" name="txtServicio" value="Transporte">Transporte
+               
+
+                 <br>
+                 </div> -->
+
+                    <div class="form-row">
+                    <div class="form-group">
+                    <label for="txtServicio">Servicios</label>
+                    <select  class="form-control"  id="txtServicio" name="txtServicio" required="" >
+                    <option value="Actividad">Actividad</option>
+                    <option value="Alimentacion">Alimentacion</option>
+                    <option value="Hospedaje">Hospedaje</option>
+                    <option value="Transporte">Transporte</option>
+                    </select>
+                  </div>
+                  </div> 
 
 
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="txtServicio">Servicios</label>
-                  <input type="text" class="form-control valid validNumber" placeholder="Número de contacto" id="txtServicio" name="txtServicio" required="" onkeypress="return controlTag(event);">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="txtActividad">Actividad</label>
-                  <input type="email" class="form-control valid validCorreo" placeholder="Correo electronico" id="txtActividad" name="txtActividad" required="">
-                </div>
-              </div>
-              <div class="form-row">
-           
                 
+                  <div class="form-row">
+                  <div class="form-group col-md-4">
+                  <label for="txtActividad">Actividad</label>
+            <input type="text" class="form-control valid validText" placeholder="Actividad" id="txtActividad"  name="txtActividad" required="">
+                </div>
+                </div>
+          
+
+
+              <div class="form-row">
+
               <div class="form-group">
                     <label for="listStatus">Estado</label>
                     <select class="form-control" id="listStatus" name="listStatus" required="">
@@ -49,83 +84,80 @@
                       <option value="2">Inactivo</option>
                     </select>
                 </div>
-         
-
-
-                <div class="form-group col-md-6">
-                
-                  <label for="txtAlimentacion">Alimentacion</label>
-                  <input type="text" class="form-control valid validText" placeholder="Un representante" id="txtAlimentacion" name="txtAlimentacion" required="">
+                <div class="form-group col-md-3">
+                    <label for="txtCupo_minimo">Cupo minimo</label>
+                    <input type="text" class="form-control" data-live-search="true" id="txtCupo_minimo" placeholder="Minimo" name="txtCupo_minimo" required="" >
+                    
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="txtPrecio">Precio</label>
+                    <input type="text" class="form-control" data-live-search="true" placeholder="Cantidad en colones" id="txtPrecio" name="txtPrecio" required="" >
+                  
+                </div>
+                </div>
+                <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="txtHora_inicio">Hora inicio</label>
+                    <input type="time" class="form-control" data-live-search="true" id="txtHora_inicio" name="txtHora_inicio" required="">
+                   
                 </div>
 
+                <div class="form-group col-md-4">
+                    <label for="txtDuracion">Duracion</label>
+                    <input type="time" class="form-control" data-live-search="true" id="txtDuracion" name="txtDuracion" required="" >
+                 
 
+                  </div>
+                  </div>
+                  
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="txtTelefono">Telefono</label>
+                    <input type="text" class="form-control" data-live-search="true" placeholder="Numero de contacto" id="txtTelefono" name="txtTelefono" required="" >
+                   
+                </div>
+                </div>
+                <div class="form-group">
+                
+                  <label for="txtAlimentacion">Alimentacion</label>
+                  <textarea type="text" class="form-control valid validText" placeholder="Tiene servicio de alimentacion el tour?" id="txtAlimentacion" name="txtAlimentacion" required=""></textarea>
+                </div>
 
-
-              
-
-
-
-              </div>
+             
 
               <div class="form-group">
                   <label for="txtHospedaje">Hospedaje</label>
-                  <textarea type="text" class="form-control valid validText" placeholder="Una pequeña descripcion de la organizacion" id="txtHospedaje" name="txtHospedaje" required=""></textarea>
+                  <textarea type="text" class="form-control valid validText" placeholder="Tiene servicio de hospedaje el tour?" id="txtHospedaje" name="txtHospedaje" required=""></textarea>
                 </div>
 
-              <div class="form-group">
-                  <label for="txtUbicacion">Ubicacion</label>
-                  <textarea type="text" class="form-control valid validText" placeholder="Ubicacion para la organizacion" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
-                </div>
-
-               
+           
 
 
 
 
                 <div class="form-group">
                     <label for="txtTransporte">Transporte</label>
-                    <select class="form-control" data-live-search="true" id="txtTransporte" name="txtTransporte" required="" >
-                    </select>
+                    <textarea class="form-control" data-live-search="true" placeholder="Tiene servicio de transporte el tour?" id="txtTransporte" name="txtTransporte" required="" ></textarea>
+                  
                 </div>
                 
                 <div class="form-group">
                     <label for="txtLugar">Lugar</label>
-                    <select class="form-control" data-live-search="true" id="txtLugar" name="txtLugar" required="" >
-                    </select>
+                    <textarea class="form-control" data-live-search="true" id="txtLugar" placeholder="Donde sera el tour" name="txtLugar" required="" ></textarea>
+                    
                 </div>
                 <div class="form-group">
                     <label for="txtDisponibilidad">Disponibilidad</label>
-                    <select class="form-control" data-live-search="true" id="txtDisponibilidad" name="txtDisponibilidad" required="" >
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="txtHora_inicio">Hora inicio</label>
-                    <select class="form-control" data-live-search="true" id="txtHora_inicio" name="txtHora_inicio" required="" >
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="txtDuracion">Duracion</label>
-                    <select class="form-control" data-live-search="true" id="txtDuracion" name="txtDuracion" required="" >
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="txtCupo_minimo">Cupo minimo</label>
-                    <select class="form-control" data-live-search="true" id="txtCupo_minimo" name="txtCupo_minimo" required="" >
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="txtTelefono">Telefono</label>
-                    <select class="form-control" data-live-search="true" id="txtTelefono" name="txtTelefono" required="" >
-                    </select>
+                    <textarea class="form-control" data-live-search="true" id="txtDisponibilidad" placeholder="DISPONIBILIDAD" name="txtDisponibilidad" required="" ></textarea>
+                    
                 </div>
 
                 <div class="form-group">
-                    <label for="txtPrecio">Precio</label>
-                    <select class="form-control" data-live-search="true" id="txtPrecio" name="txtPrecio" required="" >
-                    </select>
-                </div>
+                  <label for="txtDescripcion">Descripcion</label>
+                  <textarea class="form-control" data-live-search="true" id="txtDescripcion" placeholder="Pequeña descripcion de las activiades del tour" name="txtDescripcion" required=""></textarea>
+            </div>
 
-
+<br>
               <div class="form-row">
  
             <div class="col-md-6">
@@ -155,13 +187,19 @@
   </div>
 </div>
 
-<!-- 
-Modal
-<div class="modal fade" id="modalViewGrupo" tabindex="-1" role="dialog" aria-hidden="true">
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="modalViewTour" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog " >
-    <div class="modal-content  ">
+    <div class="modal-content  "> -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" id="modalViewTour" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
       <div class="modal-header header-primary">
-        <h5 class="modal-title" id="titleModal">Datos del grupo</h5>
+        <h5 class="modal-title" id="titleModal">Datos del tour</h5>
         <button type="button" class="close" data-dismiss="modal" data-toggle="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -171,48 +209,73 @@ Modal
           <tbody>
             <tr>
               <td>Id:</td>
-              <td id="celId_grupo">654654654</td>
+              <td id="celId_tour">654654654</td>
             </tr>
             <tr>
-              <td>Nombres:</td>
-              <td id="celNombre_grupo">Jacob</td>
+              <td>Nombre:</td>
+              <td id="celNombre_tour">Jacob</td>
             </tr>
             <tr>
               <td>Descripcion:</td>
               <td id="celDescripcion">Jacob</td>
             </tr>
             <tr>
-              <td>Estado:</td>
-              <td id="celEstado">Larry</td>
+              <td>Servicio:</td>
+              <td id="celServicio">Larry</td>
             </tr>
             <tr>
-              <td>Correo (Grupo):</td>
-              <td id="celCorreo">Larry</td>
+              <td>Actividad:</td>
+              <td id="celActividad">Larry</td>
             </tr>
             <tr>
-              <td>Telefono:</td>
+              <td>Alimentacion:</td>
+              <td id="celAlimentacion">Larry</td>
+            </tr>
+            <tr>
+              <td>Hospedaje:</td>
+              <td id="celHospedaje">Larry</td>
+            </tr>
+            <tr>
+              <td>Transporte:</td>
+              <td id="celTransporte">Larry</td>
+            </tr>
+            <tr>
+              <td>Lugar:</td>
+              <td id="celLugar">Larry</td>
+            </tr>
+            <tr>
+              <td>Disponibilidad:</td>
+              <td id="celDisponibilidad">Larry</td>
+            </tr>
+            <tr>
+              <td>Hora de inicio:</td>
+              <td id="celHora_inicio">Larry</td>
+            </tr>
+            <tr>
+              <td>Duracion:</td>
+              <td id="celDuracion">Larry</td>
+            </tr>
+            <tr>
+              <td>Cupo minimo:</td>
+              <td id="celCupo_minimo">Larry</td>
+            </tr>
+            <tr>
+              <td>Cupo Telefono:</td>
               <td id="celTelefono">Larry</td>
             </tr>
             <tr>
-              <td>Integrantes:</td>
-              <td id="celNumero_integrantes">Larry</td>
+              <td>Precio:</td>
+              <td id="celPrecio">Larry</td>
             </tr>
+            
             <tr>
-              <td>Ubicacion:</td>
-              <td id="celUbicacion">Larry</td>
-            </tr>
-            <tr>
-              <td>Representante:</td>
-              <td id="celRepresentante">Larry</td>
-            </tr>
-            <tr>
-              <td>Comunidad:</td>
-              <td id="celTipoGrupo">Larry</td>
+              <td>Estado:</td>
+              <td id="celEstado">Larry</td>
             </tr>
             
             <tr>
               <td>Foto:</td>
-              <td id="imgGrupo"></td>
+              <td id="imgTour"></td>
             </tr>
           </tbody>
         </table>
@@ -225,4 +288,4 @@ Modal
   </div>
 </div>
 
- -->
+
