@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 08-10-2022 a las 06:00:01
+-- Tiempo de generación: 09-10-2022 a las 03:03:43
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -570,19 +570,25 @@ CREATE TABLE IF NOT EXISTS `modulo` (
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_modulo`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `modulo`
 --
 
 INSERT INTO `modulo` (`id_modulo`, `titulo`, `descripcion`, `status`) VALUES
-(1, 'Comunidades', 'Modulo de comunidades', 1),
-(2, 'Hospedaje', 'Modulo de hospedaje', 1),
-(3, 'Transporte', 'Modulo de transporte', 1),
-(4, 'Usuario', 'Modulo de usuario', 1),
-(5, 'Roles', 'Modulo de roles', 1),
-(6, 'Grupos', 'Modulo de Grupos Organizados', 1);
+(1, 'Dashboard', 'Modulo de dashboard', 1),
+(2, 'Roles', 'Modulo de roles', 1),
+(3, 'Usuarios', 'Modulo de usuarios', 1),
+(4, 'Grupos Organizados', 'Modulo de Grupos Organizados', 1),
+(5, 'Comunidades', 'Modulo de comunidades', 1),
+(6, 'Alimentacion', 'Modulo de Alimentacion', 1),
+(7, 'Tours', 'Modulo de tours', 1),
+(8, 'Hospedaje', 'Modulo de Hospedaje', 1),
+(9, 'Transporte', 'Modulo de Transporte', 1),
+(10, 'Paginas', 'Modulo de Paginas', 1),
+(11, 'Voluntarios', 'Modulo de Voluntarios', 1),
+(12, 'asda', 'dsad', 1);
 
 -- --------------------------------------------------------
 
@@ -602,37 +608,91 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=234 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
 --
 
 INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`, `rol_id`, `modulo_id`) VALUES
-(2, 1, 1, 1, 1, 8, 1),
-(3, 1, 1, 1, 1, 8, 2),
-(4, 1, 1, 1, 1, 8, 3),
-(5, 1, 1, 1, 1, 8, 4),
-(6, 1, 1, 1, 1, 8, 5),
-(7, 1, 1, 1, 1, 8, 6),
-(8, 1, 1, 1, 1, 9, 1),
-(9, 0, 0, 0, 0, 9, 2),
-(10, 0, 0, 0, 0, 9, 3),
-(11, 0, 0, 0, 0, 9, 4),
-(12, 0, 0, 0, 0, 9, 5),
-(13, 0, 0, 0, 0, 9, 6),
-(32, 1, 1, 1, 1, 19, 1),
-(33, 0, 1, 0, 0, 19, 2),
-(34, 0, 0, 1, 0, 19, 3),
-(35, 1, 0, 0, 1, 19, 4),
-(36, 0, 1, 0, 0, 19, 5),
-(37, 0, 0, 1, 1, 19, 6),
-(44, 1, 1, 1, 1, 20, 1),
-(45, 0, 0, 0, 0, 20, 2),
-(46, 0, 0, 0, 0, 20, 3),
-(47, 0, 0, 0, 0, 20, 4),
-(48, 0, 0, 0, 0, 20, 5),
-(49, 0, 0, 0, 0, 20, 6);
+(89, 1, 1, 1, 1, 20, 1),
+(90, 0, 0, 0, 0, 20, 2),
+(91, 0, 0, 0, 0, 20, 3),
+(92, 0, 0, 0, 0, 20, 4),
+(93, 0, 0, 0, 0, 20, 5),
+(94, 0, 0, 0, 0, 20, 6),
+(95, 0, 0, 0, 0, 20, 7),
+(96, 0, 0, 0, 0, 20, 8),
+(97, 0, 0, 0, 0, 20, 9),
+(98, 0, 0, 0, 0, 20, 10),
+(99, 0, 0, 0, 0, 20, 11),
+(100, 1, 1, 1, 1, 19, 1),
+(101, 0, 1, 0, 0, 19, 2),
+(102, 0, 0, 1, 0, 19, 3),
+(103, 1, 0, 0, 1, 19, 4),
+(104, 0, 1, 0, 0, 19, 5),
+(105, 0, 0, 1, 1, 19, 6),
+(106, 0, 0, 0, 0, 19, 7),
+(107, 0, 0, 0, 0, 19, 8),
+(108, 0, 0, 0, 0, 19, 9),
+(109, 0, 0, 0, 0, 19, 10),
+(110, 0, 0, 0, 0, 19, 11),
+(111, 1, 1, 1, 1, 9, 1),
+(112, 0, 0, 0, 0, 9, 2),
+(113, 0, 0, 0, 0, 9, 3),
+(114, 0, 0, 0, 0, 9, 4),
+(115, 0, 0, 0, 0, 9, 5),
+(116, 0, 0, 0, 0, 9, 6),
+(117, 0, 0, 0, 0, 9, 7),
+(118, 0, 0, 0, 0, 9, 8),
+(119, 0, 0, 0, 0, 9, 9),
+(120, 0, 0, 0, 0, 9, 10),
+(121, 0, 0, 0, 0, 9, 11),
+(144, 1, 1, 1, 1, 1, 1),
+(145, 1, 1, 1, 1, 1, 2),
+(146, 1, 1, 1, 1, 1, 3),
+(147, 1, 1, 1, 1, 1, 4),
+(148, 1, 1, 1, 1, 1, 5),
+(149, 1, 1, 1, 1, 1, 6),
+(150, 1, 1, 1, 1, 1, 7),
+(151, 1, 1, 1, 1, 1, 8),
+(152, 1, 1, 1, 1, 1, 9),
+(153, 1, 1, 1, 1, 1, 10),
+(154, 1, 1, 1, 1, 1, 11),
+(155, 1, 0, 0, 0, 24, 1),
+(156, 1, 0, 0, 0, 24, 2),
+(157, 1, 0, 0, 0, 24, 3),
+(158, 1, 0, 0, 0, 24, 4),
+(159, 1, 0, 0, 0, 24, 5),
+(160, 1, 0, 0, 0, 24, 6),
+(161, 1, 0, 0, 0, 24, 7),
+(162, 1, 0, 0, 0, 24, 8),
+(163, 1, 0, 0, 0, 24, 9),
+(164, 1, 0, 0, 0, 24, 10),
+(165, 1, 0, 0, 0, 24, 11),
+(177, 0, 1, 1, 0, 23, 1),
+(178, 0, 1, 1, 0, 23, 2),
+(179, 0, 1, 1, 0, 23, 3),
+(180, 0, 1, 1, 0, 23, 4),
+(181, 0, 1, 1, 0, 23, 5),
+(182, 0, 1, 1, 0, 23, 6),
+(183, 0, 1, 1, 0, 23, 7),
+(184, 0, 1, 1, 0, 23, 8),
+(185, 0, 1, 1, 0, 23, 9),
+(186, 1, 1, 1, 1, 23, 10),
+(187, 0, 1, 1, 0, 23, 11),
+(222, 0, 0, 0, 0, 25, 1),
+(223, 0, 0, 0, 0, 25, 2),
+(224, 0, 0, 0, 0, 25, 3),
+(225, 0, 0, 0, 0, 25, 4),
+(226, 0, 0, 0, 0, 25, 5),
+(227, 1, 1, 1, 1, 25, 6),
+(228, 1, 1, 1, 1, 25, 7),
+(229, 1, 1, 1, 1, 25, 8),
+(230, 1, 1, 1, 1, 25, 9),
+(231, 0, 0, 0, 0, 25, 10),
+(232, 0, 0, 0, 0, 25, 11),
+(233, 0, 0, 0, 0, 25, 12);
 
 -- --------------------------------------------------------
 
@@ -711,17 +771,20 @@ CREATE TABLE IF NOT EXISTS `rol` (
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
 --
 
 INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
-(8, 'ADMIN', 'super administrador', 1),
+(1, 'Administrador', 'Tiene acceso a todo los modulos', 1),
 (9, 'Asopecupachi', 'lorem ipsum', 1),
 (19, 'Mariposas Golfo de Nicoya', 'mraio', 1),
-(20, 'Coopeacuicultores Isla Venado', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2);
+(20, 'Coopeacuicultores Isla Venado', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2),
+(23, 'registrador', 'el que agrega y edita', 1),
+(24, 'Chismoso', 'puede ver todo', 1),
+(25, 'servicios', 'servicios', 1);
 
 -- --------------------------------------------------------
 
@@ -732,8 +795,8 @@ INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 DROP TABLE IF EXISTS `tbl_pagina`;
 CREATE TABLE IF NOT EXISTS `tbl_pagina` (
   `pag_id` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `pag_titulo` varchar(20) COLLATE utf8mb4_swedish_ci NOT NULL,
-  `pag_contenido` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `pag_titulo` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `pag_contenido` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`pag_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -827,7 +890,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nombre_usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `contraseña` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `token` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
   `status` int NOT NULL DEFAULT '1',
   `rol_id` smallint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_usuario`),
@@ -842,8 +905,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `token`, `status`, `rol_id`) VALUES
-(1, 'Administrador', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '16b1b3f72ee7f7d3807a-773726e1a08c5b41471a-9386338954f627b63f0e-59dd79adb98125c27', 1, 8),
-(5, 'Andres', 'anerthy@gmail.com', '7592771166a7088801c2adcdbfba017ece2b380b8d230ffeb8b282465d98f5ef', 'acf717e946c4343dfd1e-f489a15dd870f8383fc9-24a77b91b97ada015358-f6a341af143da1410', 1, 8),
+(1, 'SA', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '7cf40813aa9242aad538-4f5a53943a0b171dfb00-37eedf317106ae60efbc-31ec7154239d5de84', 1, 1),
+(5, 'Andres', 'andmejigo12@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', '18511aa38d955146ac09-530cfd901b9a5f99bafc-3ad12cf02ed68072fbae-9d19fa50d098c8bf5af9', 1, 1),
 (20, 'Aaron Mora', 'aaron@gmail.com', '91014162f34e902a9c10de1f6c7726af9ec2d8c5d961db39be98d96f75ced71a', NULL, 1, 9);
 
 -- --------------------------------------------------------
