@@ -14,8 +14,12 @@ class RolesModel extends Mysql
 
 	public function selectRoles()
 	{
+		$whereAdmin = "";
+		if ($_SESSION['idUser'] != 1) {
+			$whereAdmin = " where id_rol != 1 ";
+		}
 		//EXTRAE ROLES
-		$sql = "SELECT * FROM rol";
+		$sql = "SELECT * FROM rol " . $whereAdmin;
 		$request = $this->select_all($sql);
 		return $request;
 	}
