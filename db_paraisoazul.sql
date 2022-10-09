@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-10-2022 a las 03:03:43
+-- Tiempo de generación: 09-10-2022 a las 07:30:48
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -608,7 +608,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=234 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=342 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -648,17 +648,6 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (119, 0, 0, 0, 0, 9, 9),
 (120, 0, 0, 0, 0, 9, 10),
 (121, 0, 0, 0, 0, 9, 11),
-(144, 1, 1, 1, 1, 1, 1),
-(145, 1, 1, 1, 1, 1, 2),
-(146, 1, 1, 1, 1, 1, 3),
-(147, 1, 1, 1, 1, 1, 4),
-(148, 1, 1, 1, 1, 1, 5),
-(149, 1, 1, 1, 1, 1, 6),
-(150, 1, 1, 1, 1, 1, 7),
-(151, 1, 1, 1, 1, 1, 8),
-(152, 1, 1, 1, 1, 1, 9),
-(153, 1, 1, 1, 1, 1, 10),
-(154, 1, 1, 1, 1, 1, 11),
 (155, 1, 0, 0, 0, 24, 1),
 (156, 1, 0, 0, 0, 24, 2),
 (157, 1, 0, 0, 0, 24, 3),
@@ -670,17 +659,6 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (163, 1, 0, 0, 0, 24, 9),
 (164, 1, 0, 0, 0, 24, 10),
 (165, 1, 0, 0, 0, 24, 11),
-(177, 0, 1, 1, 0, 23, 1),
-(178, 0, 1, 1, 0, 23, 2),
-(179, 0, 1, 1, 0, 23, 3),
-(180, 0, 1, 1, 0, 23, 4),
-(181, 0, 1, 1, 0, 23, 5),
-(182, 0, 1, 1, 0, 23, 6),
-(183, 0, 1, 1, 0, 23, 7),
-(184, 0, 1, 1, 0, 23, 8),
-(185, 0, 1, 1, 0, 23, 9),
-(186, 1, 1, 1, 1, 23, 10),
-(187, 0, 1, 1, 0, 23, 11),
 (222, 0, 0, 0, 0, 25, 1),
 (223, 0, 0, 0, 0, 25, 2),
 (224, 0, 0, 0, 0, 25, 3),
@@ -692,7 +670,31 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (230, 1, 1, 1, 1, 25, 9),
 (231, 0, 0, 0, 0, 25, 10),
 (232, 0, 0, 0, 0, 25, 11),
-(233, 0, 0, 0, 0, 25, 12);
+(233, 0, 0, 0, 0, 25, 12),
+(318, 1, 1, 1, 1, 1, 1),
+(319, 1, 1, 1, 1, 1, 2),
+(320, 1, 1, 1, 1, 1, 3),
+(321, 1, 1, 1, 1, 1, 4),
+(322, 1, 1, 1, 1, 1, 5),
+(323, 1, 1, 1, 1, 1, 6),
+(324, 1, 1, 1, 1, 1, 7),
+(325, 1, 1, 1, 1, 1, 8),
+(326, 1, 1, 1, 1, 1, 9),
+(327, 1, 1, 1, 1, 1, 10),
+(328, 1, 1, 1, 1, 1, 11),
+(329, 0, 0, 0, 0, 1, 12),
+(330, 1, 1, 1, 0, 23, 1),
+(331, 1, 1, 1, 0, 23, 2),
+(332, 1, 1, 1, 0, 23, 3),
+(333, 1, 1, 1, 0, 23, 4),
+(334, 1, 1, 1, 0, 23, 5),
+(335, 1, 1, 1, 0, 23, 6),
+(336, 1, 1, 1, 0, 23, 7),
+(337, 1, 1, 1, 0, 23, 8),
+(338, 1, 1, 1, 0, 23, 9),
+(339, 1, 1, 1, 1, 23, 10),
+(340, 1, 1, 1, 0, 23, 11),
+(341, 0, 0, 0, 0, 23, 12);
 
 -- --------------------------------------------------------
 
@@ -840,7 +842,7 @@ CREATE TABLE IF NOT EXISTS `tour` (
 --
 
 INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `servicio`, `actividad`, `alimentacion`, `hospedaje`, `transporte`, `lugar`, `disponibilidad`, `hora_inicio`, `duracion`, `cupo_minimo`, `telefono`, `precio`, `status`, `imagen`) VALUES
-(1, 'sdda', 'sddasd', 'Actividad,Transporte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sdadd', 'sddasd', 'sdadsdd', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(1, 'Tour loco', 'sddasd', 'Actividad,Alimentacion,Hospedaje,Transporte', 'Caminata a la montaña', 'Incluye fresquito', 'Habitacion individual', 'Lancha', 'Chira', 'todos los dias', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
 (2, 'FDSFSDF', 'sddasd', 'Actividad,Alimentacion', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'saddsdas', NULL, NULL, 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
 (4, 'ZZZZZ', 'sddasd', 'Actividad,Transporte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sadsdadsad', 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
 (5, 'ACTU', 'dd', 'Alimentacion,Hospedaje', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'asddsd', 'dddsfs', NULL, 'sdd', 'sddad', '10:00:00', '00:50:00', 12, '12345678', '10500.00', 1, 'asdadad'),
@@ -898,7 +900,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `nombre_2` (`nombre_usuario`),
   UNIQUE KEY `correo` (`correo`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -907,7 +909,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `token`, `status`, `rol_id`) VALUES
 (1, 'SA', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '7cf40813aa9242aad538-4f5a53943a0b171dfb00-37eedf317106ae60efbc-31ec7154239d5de84', 1, 1),
 (5, 'Andres', 'andmejigo12@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', '18511aa38d955146ac09-530cfd901b9a5f99bafc-3ad12cf02ed68072fbae-9d19fa50d098c8bf5af9', 1, 1),
-(20, 'Aaron Mora', 'aaron@gmail.com', '91014162f34e902a9c10de1f6c7726af9ec2d8c5d961db39be98d96f75ced71a', NULL, 1, 9);
+(25, 'Sr AA', 'aaron1314@gmail.com', '91014162f34e902a9c10de1f6c7726af9ec2d8c5d961db39be98d96f75ced71a', NULL, 1, 1),
+(26, 'Carlos', 'carlos@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', NULL, 1, 23);
 
 -- --------------------------------------------------------
 
