@@ -18,7 +18,7 @@ headerAdmin($data);
       <div class="tile p-0">
         <ul class="nav flex-column nav-tabs user-tabs">
           <li class="nav-item"><a class="nav-link active" href="#user-timeline" data-toggle="tab">Datos personales</a></li>
-          <li class="nav-item"><a class="nav-link" href="#user-settings" data-toggle="tab">Datos fiscales</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#user-settings" data-toggle="tab">Datos fiscales</a></li> -->
         </ul>
       </div>
     </div>
@@ -28,7 +28,7 @@ headerAdmin($data);
           <div class="timeline-post">
             <div class="post-media">
               <div class="content">
-                <h5>DATOS PERSONALES <button class="btn btn-sm btn-info" type="button" onclick="openModalPerfil();"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button></h5>
+                <h5>Informacion del usuario <button class="btn btn-sm btn-info" type="button" onclick="openModalPerfil();"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button></h5>
               </div>
             </div>
 
