@@ -5,6 +5,7 @@ let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
 
 
+    
     tableTours = $('#tableTours').dataTable( {
         "aProcessing":true,
         "aServerSide":true,
@@ -20,15 +21,15 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"nombre_tour"},
             {"data":"descripcion"},
             {"data":"servicio"},
-            {"data":"actividad"},
-            {"data":"alimentacion"},
-            {"data":"hospedaje"},
-            {"data":"transporte"},
-            {"data":"lugar"},
-            {"data":"disponibilidad"},
+            // {"data":"actividad"},
+            // {"data":"alimentacion"},
+            // {"data":"hospedaje"},
+            // {"data":"transporte"},
+            // {"data":"lugar"},
+            // {"data":"disponibilidad"},
             {"data":"hora_inicio"},
-            {"data":"duracion"},
-            {"data":"cupo_minimo"},
+           // {"data":"duracion"},
+            //{"data":"cupo_minimo"},
             {"data":"telefono"},
             {"data":"precio"},
             {"data":"status"},    
@@ -129,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function(){
         var strDuracion = document.querySelector('#txtDuracion').value;
         var strCupo_minimo = document.querySelector('#txtCupo_minimo').value;
         var strTelefono = document.querySelector('#txtTelefono').value;
-        var strPrecio = document.querySelector('#txtPrecio').value;
+        var intPrecio = document.querySelector('#txtPrecio').value;
         var intStatus = document.querySelector('#listStatus').value;
 
 
@@ -137,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(strNombre_tour == '' || strDescripcion == '' || strServicio == '' || strActividad == '' 
         || strAlimentacion == '' || strHospedaje == '' || strTransporte == ''|| strLugar == '' 
         || strDisponibilidad == '' || strHora_inicio == '' || strDuracion == '' || strDuracion == '' 
-        || strCupo_minimo == '' || strTelefono == '' || strPrecio == '' || intStatus == ''  )
+        || strCupo_minimo == '' || strTelefono == '' || intPrecio == '' || intStatus == ''  )
         {
             alert(intTipotour);
             swal("Atención", "Todos los campos son obligatorios." , "error");
@@ -186,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         rowTable.cells[11].innerHTML = strDuracion;
                         rowTable.cells[12].innerHTML = strCupo_minimo;
                         rowTable.cells[13].innerHTML = strTelefono;
-                        rowTable.cells[14].innerHTML = strPrecio;
+                        rowTable.cells[14].innerHTML = intPrecio;
                         rowTable.cells[15].innerHTML = htmlStatus;
                         rowTable = "";
                
@@ -289,7 +290,7 @@ function fntViewInfo(id_tour){
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
                 document.querySelector("#celPrecio").innerHTML = objData.data.precio;
                 document.querySelector("#celEstado").innerHTML = estado;
-                document.querySelector("#imgTour").innerHTML = '<img src="'+objData.data.url_logo+'"></img>';
+                document.querySelector("#imgTour").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
                 $('#modalViewTour').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
@@ -324,7 +325,7 @@ function fntEditTour(id_tour){
                 document.querySelector("#id_Tour").value = objData.data.id_tour;
                 document.querySelector("#txtNombre_tour").value = objData.data.nombre_tour;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-                document.querySelector("#txtServicio").value = objData.data.servicio;
+               // document.querySelector("#txtServicio").value = objData.data.servicio;
                 document.querySelector("#txtActividad").value = objData.data.actividad;
                 document.querySelector("#txtAlimentacion").value = objData.data.alimentacion;
                 document.querySelector("#txtHospedaje").value = objData.data.hospedaje;
@@ -353,6 +354,35 @@ function fntEditTour(id_tour){
                                   <option value="2">Inactivo</option>
                                 `;
                 document.querySelector("#listStatus").innerHTML = htmlSelect;
+//////////////////////////////////////////////////////////////////////////
+
+                if(objData.data.servicio == "Actividad")
+                {
+                    var optionSelect = '<option value="1" selected class="notBlock">Actividad</option>';
+                } 
+                 else if(objData.data.servicio == "Alimentacion")
+                {
+                    var optionSelect = '<option value="2" selected class="notBlock">Alimentacion</option>';
+                } 
+                else if(objData.data.servicio == "Hospedaje")
+                {
+                    var optionSelect = '<option value="3" selected class="notBlock">Hospedaje</option>';
+                }
+                else if(objData.data.servicio == "Transporte")
+                {
+                    var optionSelect = '<option value="4" selected class="notBlock">Transporte</option>';
+                }
+
+
+                
+                var htmlservicio = `${optionSelect}
+                                  <option value="Actividad">Actividad</option>
+                                  <option value="Alimentacion">Alimentacion</option>
+                                  <option value="Hospedaje">Hospedaje</option>
+                                  <option value="Transporte">Transporte</option>
+                                `;
+                document.querySelector("#txtServicio").innerHTML = htmlservicio;
+
                 
                 
                 /////////////
