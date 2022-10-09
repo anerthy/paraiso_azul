@@ -29,16 +29,16 @@ class Permisos extends Controllers
 				}
 			} else {
 				for ($i = 0; $i < count($arrModulos); $i++) {
-
-					$arrPermisos = array(
-						'ver' => $arrPermisosRol[$i]['ver'],
-						'agregar' => $arrPermisosRol[$i]['agregar'],
-						'actualizar' => $arrPermisosRol[$i]['actualizar'],
-						'eliminar' => $arrPermisosRol[$i]['eliminar']
-					);
-					if ($arrModulos[$i]['id_modulo'] == $arrPermisosRol[$i]['modulo_id']) {
-						$arrModulos[$i]['permisos'] = $arrPermisos;
+					$arrPermisos = array('ver' => 0, 'agregar' => 0, 'actualizar' => 0, 'eliminar' => 0);
+					if (isset($arrPermisosRol[$i])) {
+						$arrPermisos = array(
+							'ver' => $arrPermisosRol[$i]['ver'],
+							'agregar' => $arrPermisosRol[$i]['agregar'],
+							'actualizar' => $arrPermisosRol[$i]['actualizar'],
+							'eliminar' => $arrPermisosRol[$i]['eliminar']
+						);
 					}
+					$arrModulos[$i]['permisos'] = $arrPermisos;
 				}
 			}
 			$arrPermisoRol['modulos'] = $arrModulos;
