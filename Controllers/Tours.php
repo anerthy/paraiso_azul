@@ -12,7 +12,7 @@
 		{
 			$data['page_id'] = 3;
 			$data['page_tag'] = "Tours Organizados";
-			$data['page_name'] = "tour_usuario";
+			$data['page_name'] = "tour";
 			$data['page_title'] = "Tours Organizados";
 			$data['page_functions_js'] = "functions_tours.js";
 			$this->views->getView($this,"tours",$data);
@@ -34,6 +34,30 @@
 				}else{
 					$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 				}
+
+
+
+				if($arrData[$i]['servicio'] == "Actividad")
+				{
+					$arrData[$i]['servicio'] = '<span >Actividad</span>';
+				}
+				elseif($arrData[$i]['servicio'] == "Alimentacion")
+				{
+					$arrData[$i]['servicio'] = '<span >Alimentacion</span>';
+				}
+				elseif($arrData[$i]['servicio'] == "Hospedaje")
+				{
+					$arrData[$i]['servicio'] = '<span >Hospedaje</span>';
+				}
+				elseif($arrData[$i]['servicio'] == "Transporte")
+				{
+					$arrData[$i]['servicio'] = '<span >Transporte</span>';
+				}
+
+
+
+
+
 
 				$arrData[$i]['options'] = '<div class="text-center">
 				
@@ -71,7 +95,7 @@
 				{
 					$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 				}else{
-					$arrData['url_imagen'] = media().'/images/uploads/'.$arrData['imagen'];
+					$arrData['url_imagen'] = media().'/images/uploads/' .$arrData['imagen'];
 					$arrResponse = array('status' => true, 'data' => $arrData);
 				}
 				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
@@ -86,16 +110,6 @@
 
 		public function setTour(){
 
-        
-         
-      
-    
-            
-   
-  
-		
-	
-			
 			$intId_tour = intval($_POST['id_Tour']);		
 			$strNombre_tour = strClean($_POST['txtNombre_tour']);
 			$strDescripcion = strClean($_POST['txtDescripcion']);
@@ -110,7 +124,7 @@
 			$strDuracion = strClean($_POST['txtDuracion']);
             $strCupo_minimo = strClean($_POST['txtCupo_minimo']);
             $strTelefono = strClean($_POST['txtTelefono']);
-            $strPrecio = strClean($_POST['txtPrecio']);
+            $intPrecio = intval($_POST['txtPrecio']);
 			$intStatus = intval($_POST['listStatus']);
 		
 
@@ -150,7 +164,7 @@
 				$strDuracion,
                 $strCupo_minimo,
                 $strTelefono,
-                $strPrecio,
+                $intPrecio,
                 $intStatus,
 			    $imgImagen);
 				$option = 1;
@@ -177,7 +191,7 @@
 					$strDuracion,
                     $strCupo_minimo,
                     $strTelefono,
-                    $strPrecio,
+                    $intPrecio,
                     $intStatus,
 					$imgImagen 
                 );
