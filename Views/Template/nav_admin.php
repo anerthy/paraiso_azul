@@ -2,7 +2,7 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
         <div class="app-sidebar__user">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAjtJREFUSEvFVu1NQzEMdCaBTgLdhE4CnQSYhHYSuonRPdnRxXFe3quEmj+V+hKffT5/FHnQKQ/Cld3AqvosIq8igt+bOX4rpVz2BLEJ2MDeROR9xTicAPi5lOIODa9PgVX1YwIYjQP0u5SCd/uBLcpPo9UNIKKriHwhKruDb6D+RUTAih84cBxFn0ZsBn/JCABPMwrtHdLhDgzBR8A/FCly1tCmqm4YAruwsBI9QHiHyHkHrKqg1w03oAP6YbNjJGgDqTkxeAMcKEYkR76sqjpRdc1pcBKUI1W15CIwRwsj9WKI4AyBmRNcZhlDrpUm6giMS8hbR42qet67nFF6MpbSdxVYVVESuIQDWjyi5Q9VdacysVWmSikxGDCC7ziVRQbmC4dYOgScseFOZWyAQae7BpQCR68tYu5gS46tiTT/J6XHwJUtBmYDXcSB7kzcab3aO6+GNGLOcaNoRzEdoDPhLh8fDt2EsmbjOU6BU0qy0MwBgC8Taa2VhjKsTDLVAPah0JWFUQYwHwjsExy4xkqwN6nio/Q5z5XulVYZCWmGQijR1QbCdC9iSSYVjMdBzzmv4FSCcLARbDYkOGo0EV918LhrHkYn7nDrdJG5Q927DJhz3Sg3Do3Ic5hs/nnbWKQI0D7hhJ+ujSbAXJL4PKzt4c5luY3gyB+61rJV0uoDmp/i6pMtAO7s6rK3cbvMSj3VAl+cbpkD8aQtE9ul9/Dswm5gapmec1erL/X/s9DPvL/n+yaq7zE8e/MHM9FaLnKfVaMAAAAASUVORK5CYII=" width="45" height="45" />
+            <img class="user-img" src="<?= media(); ?>/images/avatar (2).png" width="75" height="75" />
 
             <!-- <img class="app-sidebar__user-avatar" src="<?= media(); ?>/images/avatar.png" alt="User Image"> -->
             <div>
@@ -115,7 +115,7 @@
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/logout">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltGNAjEMRGc6uVKgk6MSoBK4So5S6GTQSOslC3uneLMiQsLS/iBHDzvjcYhOwU5cvBdY0hcAf1VB8vKYmK5Y0gnAdxXxnnQF8EPyED+lwJIMNHhpbKP6LPgXwAaAK9gl6D7nOEbVS8EXkttasCR9wM2tHlTuu/O9z8YarbawHNcASbJwPNNW7Cy8GTxXzgAOpU9mNfKrwZKishrheq5LFxtHZgk45F8Dnstxy8fWZypuBU/mPAPOtHo/uFlUfiY5cbVqcKa/hbh8bEfy/Hi+GVyuwzD7YpwMfVp//hNrgGNJjHco6VCuuz9G7uPVuTdXIaR+a9FLPaH+5odAt6ePPdnenDGYaMzEw1P7uDD91z9vE/f6b+qiiteAdwPfAMXn3x8RFp1CAAAAAElFTkSuQmCC" />
-                    <span class="app-menu__label">Logout</span>
+                    <span class="app-menu__label"> Cerrar sesion</span>
                 </a>
             </li>
         </ul>

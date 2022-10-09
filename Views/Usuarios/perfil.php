@@ -7,7 +7,7 @@ headerAdmin($data);
     <div class="col-md-12">
       <div class="profile">
         <div class="info">
-          <img class="user-img" src="<?= media(); ?>/images/avatar.png">
+          <img class="user-img" src="<?= media(); ?>/images/avatar (2).png">
           <h4><?= $_SESSION['userData']['nombre_usuario']; ?></h4>
           <p><?= $_SESSION['userData']['nombre_rol']; ?></p>
         </div>
