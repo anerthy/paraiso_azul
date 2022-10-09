@@ -31,22 +31,22 @@ div #titulo
 
 div #contenido
 {
-    /* float: right; */
-    margin-top: 50px;
-    width: 1490px; 
+    float: right; 
+    margin-top: 70px;
+    width: 500px; 
     height: 380px;
-    text-align: justify;
+    text-align:left;
     background-color:white;
     font-style: arial;
 }
 
 div #texto
 {
-    text-align: justify;
+    text-align:center;
     width: 1450px;
     height: 580px;
     margin-left: 50px;
-    margin-right: 50px;
+    margin-right: 30px;
     background-color:white;
     font-style: arial;
 }
