@@ -11,12 +11,12 @@ class Dashboard extends Controllers
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
-		// getPermisos(1);
+		getPermisos(1);
 	}
 
 	public function dashboard()
 	{
-		$data['page_id'] = 2;
+		$data['page_id'] = 1;
 		$data['page_tag'] = "Dashboard - Paraiso Azul";
 		$data['page_title'] = "Dashboard";
 		$data['page_name'] = "dashboard";
