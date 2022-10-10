@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 09-10-2022 a las 07:30:48
+-- Tiempo de generación: 10-10-2022 a las 00:36:35
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -608,7 +608,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=342 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=414 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -683,18 +683,18 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (327, 1, 1, 1, 1, 1, 10),
 (328, 1, 1, 1, 1, 1, 11),
 (329, 0, 0, 0, 0, 1, 12),
-(330, 1, 1, 1, 0, 23, 1),
-(331, 1, 1, 1, 0, 23, 2),
-(332, 1, 1, 1, 0, 23, 3),
-(333, 1, 1, 1, 0, 23, 4),
-(334, 1, 1, 1, 0, 23, 5),
-(335, 1, 1, 1, 0, 23, 6),
-(336, 1, 1, 1, 0, 23, 7),
-(337, 1, 1, 1, 0, 23, 8),
-(338, 1, 1, 1, 0, 23, 9),
-(339, 1, 1, 1, 1, 23, 10),
-(340, 1, 1, 1, 0, 23, 11),
-(341, 0, 0, 0, 0, 23, 12);
+(402, 1, 1, 1, 0, 23, 1),
+(403, 1, 1, 1, 0, 23, 2),
+(404, 1, 1, 1, 0, 23, 3),
+(405, 1, 1, 1, 0, 23, 4),
+(406, 1, 1, 1, 0, 23, 5),
+(407, 0, 0, 0, 0, 23, 6),
+(408, 1, 1, 1, 0, 23, 7),
+(409, 1, 1, 1, 0, 23, 8),
+(410, 1, 1, 1, 0, 23, 9),
+(411, 1, 1, 1, 1, 23, 10),
+(412, 1, 1, 1, 0, 23, 11),
+(413, 0, 0, 0, 0, 23, 12);
 
 -- --------------------------------------------------------
 
@@ -835,7 +835,7 @@ CREATE TABLE IF NOT EXISTS `tour` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_tour`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `tour`
@@ -900,7 +900,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   UNIQUE KEY `nombre_2` (`nombre_usuario`),
   UNIQUE KEY `correo` (`correo`),
   KEY `rol_id` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -908,7 +908,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `token`, `status`, `rol_id`) VALUES
 (1, 'SA', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '7cf40813aa9242aad538-4f5a53943a0b171dfb00-37eedf317106ae60efbc-31ec7154239d5de84', 1, 1),
-(5, 'Andres', 'andmejigo12@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', '18511aa38d955146ac09-530cfd901b9a5f99bafc-3ad12cf02ed68072fbae-9d19fa50d098c8bf5af9', 1, 1),
+(5, 'Andres', 'andmejigo12@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', '', 1, 1),
 (25, 'Sr AA', 'aaron1314@gmail.com', '91014162f34e902a9c10de1f6c7726af9ec2d8c5d961db39be98d96f75ced71a', NULL, 1, 1),
 (26, 'Carlos', 'carlos@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', NULL, 1, 23);
 
