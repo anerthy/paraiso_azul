@@ -18,7 +18,7 @@ class Comunidades extends Controllers
 		if (empty($_SESSION['permisosMod']['ver'])) {
 			header("Location:" . base_url() . '/access_denied');
 		}
-		$data['page_id'] = 3;
+		$data['page_id'] = 5;
 		$data['page_tag'] = "Comunidades";
 		$data['page_name'] = "comunidad_usuario";
 		$data['page_title'] = "Comunidades";
