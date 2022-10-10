@@ -50,4 +50,26 @@ class PermisosModel extends Mysql
 		$request_insert = $this->insert($query_insert, $arrData);
 		return $request_insert;
 	}
+
+	public function permisosModulo(int $idrol)
+	{
+		$this->intRolid = $idrol;
+		$sql = "SELECT p.rol_id,
+					   p.modulo_id,
+					   m.titulo as modulo,
+					   p.ver,
+					   p.agregar,
+					   p.actualizar,
+					   p.eliminar 
+				FROM permisos p 
+				INNER JOIN modulo m
+				ON p.modulo_id = m.id_modulo
+				WHERE p.rol_id = $this->intRolid";
+		$request = $this->select_all($sql);
+		$arrPermisos = array();
+		for ($i = 0; $i < count($request); $i++) {
+			$arrPermisos[$request[$i]['modulo_id']] = $request[$i];
+		}
+		return $arrPermisos;
+	}
 }

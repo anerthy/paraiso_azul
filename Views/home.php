@@ -1,4 +1,3 @@
-
 <?php
 nav_bar($data);
 ?>

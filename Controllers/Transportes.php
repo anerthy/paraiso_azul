@@ -5,9 +5,13 @@ class Transportes extends Controllers
 {
 	public function __construct()
 	{
+		parent::__construct();
 		session_start();
 		session_regenerate_id(true);
-		parent::__construct();
+		if (empty($_SESSION['login'])) {
+			header('Location: ' . base_url() . '/login');
+		}
+		// getPermisos(1);
 	}
 
 	public function Transportes()
@@ -37,16 +41,16 @@ class Transportes extends Controllers
 			}
 
 			if ($arrData[$i]['clase'] == 'Privado') {
-                $arrData[$i]['clase'] = '<span>Privado</span>';
-            } else {
-                $arrData[$i]['clase'] = '<span>Publico</span>';
-            }
+				$arrData[$i]['clase'] = '<span>Privado</span>';
+			} else {
+				$arrData[$i]['clase'] = '<span>Publico</span>';
+			}
 
 			if ($arrData[$i]['tipo'] == 'Maritimo') {
-                $arrData[$i]['tipo'] = '<span>Maritimo</span>';
-            } else {
-                $arrData[$i]['tipo'] = '<span>Terrestre</span>';
-            }
+				$arrData[$i]['tipo'] = '<span>Maritimo</span>';
+			} else {
+				$arrData[$i]['tipo'] = '<span>Terrestre</span>';
+			}
 
 
 			$arrData[$i]['options'] = '<div class="text-center">
@@ -150,7 +154,7 @@ class Transportes extends Controllers
 					$imgImagen = $_POST['foto_actual'];
 				}
 			}
-			$request_transporte = $this->model->updateTransporte($intId_transporte, $strTransporte, $strDescripcion, $strClase, $strTipo, $strDisponibilidad, $intPrecio,$strTelefono, $intStatus, $imgImagen);
+			$request_transporte = $this->model->updateTransporte($intId_transporte, $strTransporte, $strDescripcion, $strClase, $strTipo, $strDisponibilidad, $intPrecio, $strTelefono, $intStatus, $imgImagen);
 			$option = 2;
 		}
 
@@ -185,18 +189,17 @@ class Transportes extends Controllers
 
 	public function delTransporte()
 	{
-		if($_POST){
-				$intId_transporte = intval($_POST['id_transporte']);
-				$requestDelete = $this->model->deleteTransporte($intId_transporte);
-				if($requestDelete)
-				{
-					$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el cliente');
-				}else{
-					$arrResponse = array('status' => false, 'msg' => 'Error al eliminar al cliente.');
-				}
-				echo json_encode($arrResponse,JSON_UNESCAPED_UNICODE);
+		if ($_POST) {
+			$intId_transporte = intval($_POST['id_transporte']);
+			$requestDelete = $this->model->deleteTransporte($intId_transporte);
+			if ($requestDelete) {
+				$arrResponse = array('status' => true, 'msg' => 'Se ha eliminado el cliente');
+			} else {
+				$arrResponse = array('status' => false, 'msg' => 'Error al eliminar al cliente.');
 			}
-		
+			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
+		}
+
 		die();
 	}
 }

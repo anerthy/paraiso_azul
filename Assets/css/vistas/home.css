@@ -5,11 +5,10 @@
 
 div #general
 {
-    margin: auto;
-    margin-top: 50px;
+    padding: 500px;
     width: 960px; 
     height: 800px;
-    background-color: white
+    background-color: white;
 }
 
 div #foto
