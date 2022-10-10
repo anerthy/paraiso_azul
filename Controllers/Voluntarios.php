@@ -19,9 +19,9 @@ class Voluntarios extends Controllers
 			header("Location:" . base_url() . '/access_denied');
 		}
 		$data['page_id'] = 10;
-		$data['page_tag'] = "Voluntarios Organizados";
-		$data['page_name'] = "voluntario_usuario";
-		$data['page_title'] = "Voluntarios Organizados";
+		$data['page_tag'] = "Voluntarios";
+		$data['page_name'] = "voluntario";
+		$data['page_title'] = "Voluntarios";
 		$data['page_functions_js'] = "functions_voluntarios.js";
 		$this->views->getView($this, "voluntarios", $data);
 	}

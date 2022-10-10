@@ -19,9 +19,9 @@ class Tours extends Controllers
 			header("Location:" . base_url() . '/access_denied');
 		}
 		$data['page_id'] = 7;
-		$data['page_tag'] = "Tours Organizados";
+		$data['page_tag'] = "Tours";
 		$data['page_name'] = "tour";
-		$data['page_title'] = "Tours Organizados";
+		$data['page_title'] = "Tours";
 		$data['page_functions_js'] = "functions_tours.js";
 		$this->views->getView($this, "tours", $data);
 	}

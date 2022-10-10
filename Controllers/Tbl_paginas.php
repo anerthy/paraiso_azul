@@ -21,7 +21,7 @@ class Tbl_paginas extends Controllers
 		$data['page_id'] = 11;
 		$data['page_tag'] = "Tabla de paginas";
 		$data['page_name'] = "Tabla de paginas";
-		$data['page_title'] = "Tabla de paginas";
+		$data['page_title'] = "Contenido de paginas";
 		$data['page_functions_js'] = "functions_tbl_paginas.js";
 		$this->views->getView($this, "tbl_paginas", $data);
 	}

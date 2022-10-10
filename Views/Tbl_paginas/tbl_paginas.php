@@ -6,9 +6,11 @@ getModal('modalTbl_paginas', $data);
 <main class="app-content">
   <div class="app-title">
     <div>
-      <?php if ($_SESSION['permisosMod']['agregar']) { ?>
-        <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
-      <?php } ?>
+      <h1> <i class="fas fa-file"></i> <?= $data['page_title'] ?>
+        <?php if ($_SESSION['permisosMod']['agregar']) { ?>
+          <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
+        <?php } ?>
+      </h1>
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
