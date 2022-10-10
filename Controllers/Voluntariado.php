@@ -9,7 +9,7 @@ class Voluntariado extends Controllers
 
     public function voluntariado()
     {
-        $data['page_id'] = 2;
+        $data['page_id'] = 10;
         $data['page_tag'] = "voluntariado";
         $data['page_title'] = "voluntariado";
         $data['page_name'] = "voluntariado";
