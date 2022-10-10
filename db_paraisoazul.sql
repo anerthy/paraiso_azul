@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-10-2022 a las 00:36:35
+-- Tiempo de generación: 10-10-2022 a las 02:15:03
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -586,9 +586,9 @@ INSERT INTO `modulo` (`id_modulo`, `titulo`, `descripcion`, `status`) VALUES
 (7, 'Tours', 'Modulo de tours', 1),
 (8, 'Hospedaje', 'Modulo de Hospedaje', 1),
 (9, 'Transporte', 'Modulo de Transporte', 1),
-(10, 'Paginas', 'Modulo de Paginas', 1),
-(11, 'Voluntarios', 'Modulo de Voluntarios', 1),
-(12, 'asda', 'dsad', 1);
+(10, 'Voluntario', 'Modulo de voluntarios', 1),
+(11, 'Paginas', 'Modulo de paginas', 1),
+(12, 'Imagenes', 'Modulo de imagenes', 1);
 
 -- --------------------------------------------------------
 
@@ -608,7 +608,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=414 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=426 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -671,18 +671,6 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (231, 0, 0, 0, 0, 25, 10),
 (232, 0, 0, 0, 0, 25, 11),
 (233, 0, 0, 0, 0, 25, 12),
-(318, 1, 1, 1, 1, 1, 1),
-(319, 1, 1, 1, 1, 1, 2),
-(320, 1, 1, 1, 1, 1, 3),
-(321, 1, 1, 1, 1, 1, 4),
-(322, 1, 1, 1, 1, 1, 5),
-(323, 1, 1, 1, 1, 1, 6),
-(324, 1, 1, 1, 1, 1, 7),
-(325, 1, 1, 1, 1, 1, 8),
-(326, 1, 1, 1, 1, 1, 9),
-(327, 1, 1, 1, 1, 1, 10),
-(328, 1, 1, 1, 1, 1, 11),
-(329, 0, 0, 0, 0, 1, 12),
 (402, 1, 1, 1, 0, 23, 1),
 (403, 1, 1, 1, 0, 23, 2),
 (404, 1, 1, 1, 0, 23, 3),
@@ -694,7 +682,19 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (410, 1, 1, 1, 0, 23, 9),
 (411, 1, 1, 1, 1, 23, 10),
 (412, 1, 1, 1, 0, 23, 11),
-(413, 0, 0, 0, 0, 23, 12);
+(413, 0, 0, 0, 0, 23, 12),
+(414, 1, 1, 1, 1, 1, 1),
+(415, 1, 1, 1, 1, 1, 2),
+(416, 1, 1, 1, 1, 1, 3),
+(417, 1, 1, 1, 1, 1, 4),
+(418, 1, 1, 1, 1, 1, 5),
+(419, 1, 1, 1, 1, 1, 6),
+(420, 1, 1, 1, 1, 1, 7),
+(421, 1, 1, 1, 1, 1, 8),
+(422, 1, 1, 1, 1, 1, 9),
+(423, 1, 1, 1, 1, 1, 10),
+(424, 1, 1, 1, 1, 1, 11),
+(425, 1, 1, 1, 1, 1, 12);
 
 -- --------------------------------------------------------
 
@@ -807,7 +807,7 @@ CREATE TABLE IF NOT EXISTS `tbl_pagina` (
 --
 
 INSERT INTO `tbl_pagina` (`pag_id`, `pag_titulo`, `pag_contenido`) VALUES
-(2, 'Inicio', 'LOREMSJDSHSKD FSKJFSDJKFHSDJKF HSDJFKDSHFJDHFJDSKFHSDJFKHDSJFKHDSJFHDS');
+(2, 'Inicio', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis quibusdam, cupiditate minima perspiciatis provident ab animi pariatur consequatur accusantium voluptatum dolor, deserunt quasi harum qui, cumque inventore ex molestiae soluta.');
 
 -- --------------------------------------------------------
 
