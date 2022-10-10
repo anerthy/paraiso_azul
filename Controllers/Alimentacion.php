@@ -17,7 +17,7 @@ class Alimentacion extends Controllers
     public function Alimentacion()
     {
         if (empty($_SESSION['permisosMod']['ver'])) {
-            header("Location:" . base_url() . '/dashboard');
+            header("Location:" . base_url() . '/error');
         }
         $data['page_id'] = 3;
         $data['page_tag'] = "Alimentacion";
