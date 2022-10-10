@@ -71,11 +71,58 @@ function sendEmail($data, $template)
     return $send;
 }
 
+// function sendMailLocal($data, $template)
+// {
+//     //Create an instance; passing `true` enables exceptions
+//     $mail = new PHPMailer(true);
+//     ob_start();
+//     require_once("Views/Template/Email/" . $template . ".php");
+//     $mensaje = ob_get_clean();
+
+//     try {
+//         //Server settings
+//         $mail->SMTPDebug = 1;                      //Enable verbose debug output
+//         $mail->isSMTP();                                            //Send using SMTP
+//         $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+//         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+//         $mail->Username   = 'teemoelvenenoloco@gmail.com';                     //SMTP username
+//         $mail->Password   = 'Teemojaja';                               //SMTP password
+//         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+//         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+//         //Recipients
+//         $mail->setFrom('teemoelvenenoloco@gmail.com', 'Servidos_Local');
+//         $mail->addAddress($data['email']);     //Add a recipient
+//         // $mail->addAddress('ellen@example.com');               //Name is optional
+//         // $mail->addReplyTo('info@example.com', 'Information');
+//         // $mail->addCC('cc@example.com');
+//         if (!empty($data['emailCopia'])) {
+//             $mail->addBCC($data['emailCopia']);
+//         }
+
+
+//         //Attachments
+//         // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+//         // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
+
+//         //Content
+//         $mail->isHTML(true);                                  //Set email format to HTML
+//         $mail->Subject = $data['asunto'];
+//         $mail->Body    =  $mensaje;
+//         // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+//         $mail->send();
+//         echo 'Mensaje enviado';
+//     } catch (Exception $e) {
+//         echo "Error en el envio del mensaje: {$mail->ErrorInfo}";
+//     }
+// }
+
 function getPermisos(int $idmodulo)
 {
     require_once("Models/PermisosModel.php");
     $objPermisos = new PermisosModel();
-    $idrol = $_SESSION['userData']['idrol'];
+    $idrol = $_SESSION['userData']['id_rol'];
     $arrPermisos = $objPermisos->permisosModulo($idrol);
     $permisos = '';
     $permisosMod = '';
@@ -87,11 +134,11 @@ function getPermisos(int $idmodulo)
     $_SESSION['permisosMod'] = $permisosMod;
 }
 
-function sessionUser(int $idpersona)
+function sessionUser(int $idusuario)
 {
     require_once("Models/LoginModel.php");
     $objLogin = new LoginModel();
-    $request = $objLogin->sessionLogin($idpersona);
+    $request = $objLogin->sessionLogin($idusuario);
     return $request;
 }
 
