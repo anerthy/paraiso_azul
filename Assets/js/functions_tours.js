@@ -1,29 +1,38 @@
-var tableTransportes;
+
+var tableTours;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
-//document.addEventListener('DOMContentLoaded', function(){
 
-    tableTransportes = $('#tableTransportes').dataTable( {
+
+    
+    tableTours = $('#tableTours').dataTable( {
         "aProcessing":true,
         "aServerSide":true,
         "language": {
             "url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-            "url": " "+base_url+"/Transportes/getTransportes",
+            "url": " "+base_url+"/Tours/getTours",
             "dataSrc":""
         },
         "columns":[
-            {"data":"id_transporte"},
-            {"data":"nombre_trans"},
+            {"data":"id_tour"},
+            {"data":"nombre_tour"},
             {"data":"descripcion"},
-            {"data":"clase"},
-            {"data":"tipo"},
-            {"data":"disponibilidad"},
-            {"data":"precio"},
+            {"data":"servicio"},
+            // {"data":"actividad"},
+            // {"data":"alimentacion"},
+            // {"data":"hospedaje"},
+            // {"data":"transporte"},
+            // {"data":"lugar"},
+            // {"data":"disponibilidad"},
+            {"data":"hora_inicio"},
+           // {"data":"duracion"},
+            //{"data":"cupo_minimo"},
             {"data":"telefono"},
-            {"data":"status"},
+            {"data":"precio"},
+            {"data":"status"},    
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -102,106 +111,159 @@ document.addEventListener('DOMContentLoaded', function(){
 	}
 
 
-    //NUEVO GRUPO
-    var formTransporte = document.querySelector("#formTransporte");
-    formTransporte.onsubmit = function(e) {
+    //NUEVO tour
+    var formTour = document.querySelector("#formTour");
+    formTour.onsubmit = function(e) {
         e.preventDefault();
 
-        var intId_transporte = document.querySelector('#id_Transporte').value;
-        var strNombre_trans = document.querySelector('#txtNombre_trans').value;
-        var strDescripcion = document.querySelector('#txtDescripcion').value;
-        var strClase = document.querySelector('#txtClase').value;
-        var strTipo = document.querySelector('#txtTipo').value;
-        var strDisponibilidad = document.querySelector('#txtDisponibilidad').value; 
-        var intPrecio = document.querySelector('#txtPrecio').value;
+        var intId_Tour = document.querySelector('#id_Tour').value;
+        var strNombre_tour = document.querySelector('#txtNombre_tour').value;
+        var strDescripcion = document.querySelector('#txtDescripcion').value;  
+        var strServicio = document.querySelector('#txtServicio').value; 
+        var strActividad = document.querySelector('#txtActividad').value;
+        var strAlimentacion = document.querySelector('#txtAlimentacion').value;
+        var strHospedaje = document.querySelector('#txtHospedaje').value;
+        var strTransporte = document.querySelector('#txtTransporte').value;
+        var strLugar = document.querySelector('#txtLugar').value;
+        var strDisponibilidad = document.querySelector('#txtDisponibilidad').value;
+        var strHora_inicio = document.querySelector('#txtHora_inicio').value;
+        var strDuracion = document.querySelector('#txtDuracion').value;
+        var strCupo_minimo = document.querySelector('#txtCupo_minimo').value;
         var strTelefono = document.querySelector('#txtTelefono').value;
+        var intPrecio = document.querySelector('#txtPrecio').value;
         var intStatus = document.querySelector('#listStatus').value;
 
-        if(strNombre_trans == '' || strDescripcion == '' || strClase == '' || strTipo == '' || strDisponibilidad == '' || intPrecio == '' || strTelefono == '' || intStatus == '' )
+
+
+        if(strNombre_tour == '' || strDescripcion == '' || strServicio == '' || strActividad == '' 
+        || strAlimentacion == '' || strHospedaje == '' || strTransporte == ''|| strLugar == '' 
+        || strDisponibilidad == '' || strHora_inicio == '' || strDuracion == '' || strDuracion == '' 
+        || strCupo_minimo == '' || strTelefono == '' || intPrecio == '' || intStatus == ''  )
         {
+            
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
+
+
+        let elementsValid = document.getElementsByClassName("valid");
+        for (let i = 0; i < elementsValid.length; i++) { 
+            if(elementsValid[i].classList.contains('is-invalid')) { 
+                swal("Atención", "Por favor verifique los campos en rojo." , "error");
+                return false;
+            } 
+        } 
+
+
        //  divLoading.style.display = "flex";
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = base_url+'/Transportes/setTransporte'; 
-        var formData = new FormData(formTransporte);
+        var ajaxUrl = base_url+'/Tours/setTour'; 
+        var formData = new FormData(formTour);
         request.open("POST",ajaxUrl,true);
         request.send(formData);
         request.onreadystatechange = function(){
            if(request.readyState == 4 && request.status == 200){
                 
                 var objData = JSON.parse(request.responseText);
+
                 if(objData.status)
                 {
-                    if(rowTable == ""){
-                        tableTransportes.api().ajax.reload();
+                     if(rowTable == ""){
+                        tableTours.api().ajax.reload();
                     }else{
                         htmlStatus = intStatus == 1 ? 
                             '<span class="badge badge-success">Activo</span>' : 
                             '<span class="badge badge-danger">Inactivo</span>';
-                        rowTable.cells[1].textContent = strNombre_trans;
+                        rowTable.cells[1].textContent = strNombre_tour;
                         rowTable.cells[2].textContent = strDescripcion;
-                        rowTable.cells[3].innerHTML = strClase;
-                        rowTable.cells[4].innerHTML = strTipo;
-                        rowTable.cells[5].innerHTML = strDisponibilidad;
-                        rowTable.cells[6].innerHTML = intPrecio;
-                        rowTable.cells[7].innerHTML = strTelefono; 
-                        rowTable.cells[8].innerHTML = htmlStatus;
-                        //rowTable.cells[8].innerHTML = strImagen;
-                     
+                        rowTable.cells[3].textContent = strServicio;
+                        rowTable.cells[4].innerHTML = strActividad;
+                        rowTable.cells[5].innerHTML = strAlimentacion;
+                        rowTable.cells[6].textContent = strHospedaje;
+                        rowTable.cells[7].textContent = strTransporte;
+                        rowTable.cells[8].textContent = strLugar;
+                        rowTable.cells[9].innerHTML = strDisponibilidad;
+                        rowTable.cells[10].innerHTML = strHora_inicio;
+                        rowTable.cells[11].innerHTML = strDuracion;
+                        rowTable.cells[12].innerHTML = strCupo_minimo;
+                        rowTable.cells[13].innerHTML = strTelefono;
+                        rowTable.cells[14].innerHTML = intPrecio;
+                        rowTable.cells[15].innerHTML = htmlStatus;
                         rowTable = "";
-                        
+               
 
                     }
 
-                    $('#modalFormTransporte').modal("hide");
-                    formTransporte.reset();
-                    swal("Transporte", objData.msg ,"success");
+
+                    
+                    $('#modalFormTour').modal("hide");
+                    formTour.reset();
+                    swal("Tours", objData.msg ,"success");
                     removePhoto();
-                    tableTransportes.api().ajax.reload();
+                    tableTours.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
-                }              
-            } 
+                }
+            }
             //divLoading.style.display = "none";
             return false;
-
         }
-      
 
-        
     }
+}, false);
 
-},false);
 
-//$('#tableGrupos').DataTable();
+window.addEventListener('load', function() {
+    //fntComunidadesTour();
+    /*fntViewUsuario();
+    fntEditUsuario();
+    fntDelUsuario();*/
+}, false);
+
+
+////LLAMA DATOS DE OTRAS TABLAS
+// function fntComunidadesTour(){
+//     var ajaxUrl = base_url+'/Comunidades/getSelectComunidades';
+//     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+//     request.open("GET",ajaxUrl,true);
+//     request.send();
+
+//     request.onreadystatechange = function(){
+//         if(request.readyState == 4 && request.status == 200){
+//             document.querySelector('#listComunidad_id').innerHTML = request.responseText;
+//             document.querySelector('#listComunidad_id').value = 1;
+//             $('#listComunidad_id').selectpicker('render');
+//         }
+//     }
+    
+// }
+//$('#tableTours').DataTable();
 
 function openModal(){
     
     rowTable = "";
-    document.querySelector('#id_Transporte').value ="";
+    document.querySelector('#id_Tour').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
-    document.querySelector('#titleModal').innerHTML = "Nuevo transporte";
-    document.querySelector("#formTransporte").reset();
-    $('#modalFormTransporte').modal('show');
+    document.querySelector('#titleModal').innerHTML = "Nuevo Tour";
+    document.querySelector("#formTour").reset();
+    $('#modalFormTour').modal('show');
     removePhoto();
 }
 
 // window.addEventListener('load', function() {
-//     /*fntEditGrupo();
-//     fntDelGrupo();
+//     /*fntEditTour();
+//     fntDelTour();
 //     fntPermisos();*/
 // }, false);
 
 
 
 
-function fntViewInfo(id_transporte){
+function fntViewInfo(id_tour){
     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/Transportes/getTransporte/'+id_transporte;
+    let ajaxUrl = base_url+'/Tours/getTour/'+id_tour;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -212,17 +274,24 @@ function fntViewInfo(id_transporte){
                 let estado = objData.data.status == 1 ? 
                 '<span class="badge badge-success">Activo</span>' : 
                 '<span class="badge badge-danger">Inactivo</span>';
-                document.querySelector("#celId").innerHTML = objData.data.id_transporte;
-                document.querySelector("#celNombre_trans").innerHTML = objData.data.nombre_trans;
-                document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
-                document.querySelector("#celClase").innerHTML =  objData.data.clase;
-                document.querySelector("#celTipo").innerHTML =  objData.data.tipo;
-                document.querySelector("#celDisponibilidad").innerHTML =  objData.data.disponibilidad;
-                document.querySelector("#celPrecio").innerHTML = objData.data.precio;
+                document.querySelector("#celId_tour").innerHTML = objData.data.id_tour;
+                document.querySelector("#celNombre_tour").innerHTML = objData.data.nombre_tour;
+                document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;               
+                document.querySelector("#celServicio").innerHTML =  objData.data.servicio;
+                document.querySelector("#celActividad").innerHTML = objData.data.actividad;
+                document.querySelector("#celAlimentacion").innerHTML = objData.data.alimentacion;
+                document.querySelector("#celHospedaje").innerHTML = objData.data.hospedaje;
+                document.querySelector("#celTransporte").innerHTML = objData.data.transporte;
+                document.querySelector("#celLugar").innerHTML = objData.data.lugar;
+                document.querySelector("#celDisponibilidad").innerHTML = objData.data.disponibilidad;
+                document.querySelector("#celHora_inicio").innerHTML = objData.data.hora_inicio;
+                document.querySelector("#celDuracion").innerHTML = objData.data.duracion;
+                document.querySelector("#celCupo_minimo").innerHTML = objData.data.cupo_minimo;
                 document.querySelector("#celTelefono").innerHTML = objData.data.telefono;
-                document.querySelector("#celStatus").innerHTML = objData.data.status;
-                document.querySelector("#imgTransporte").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
-                $('#modalViewTransporte').modal('show');
+                document.querySelector("#celPrecio").innerHTML = objData.data.precio;
+                document.querySelector("#celEstado").innerHTML = estado;
+                document.querySelector("#imgTour").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
+                $('#modalViewTour').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -231,16 +300,19 @@ function fntViewInfo(id_transporte){
 }
 
 
-function fntEditTransporte(id_transporte){
-   // rowTable = element.parentNode.parentNode.parentNode;
-    document.querySelector('#titleModal').innerHTML ="Actualizar transporte";
+
+
+
+function fntEditTour(id_tour){
+
+    document.querySelector('#titleModal').innerHTML ="Actualizar Tour";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var id_transporte = id_transporte;
+    var id_tour = id_tour;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl  = base_url+'/Transportes/getTransporte/'+id_transporte;
+    var ajaxUrl  = base_url+'/Tours/getTour/'+id_tour;
     request.open("GET",ajaxUrl ,true);
     request.send();
 
@@ -250,51 +322,24 @@ function fntEditTransporte(id_transporte){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#id_Transporte").value = objData.data.id_transporte;
-                document.querySelector("#txtNombre_trans").value = objData.data.nombre_trans;
+                document.querySelector("#id_Tour").value = objData.data.id_tour;
+                document.querySelector("#txtNombre_tour").value = objData.data.nombre_tour;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-                //document.querySelector("#txtClase").value = objData.data.clase;
-
-
-                if(objData.data.clase == 'Publico')
-                {
-                    var option = '<option value="Publico" selected class="notBlock">Publico</option>';
-                }else{
-                    var option = '<option value="Privado" selected class="notBlock">Privado</option>';
-                }
-                var htmlClase = `${option}
-                                  <option value="Publico">Publico</option>
-                                  <option value="Privado">Privado</option>
-                                `;
-                document.querySelector("#txtClase").innerHTML = htmlClase;
-
-
-
-
-                //document.querySelector("#txtTipo").value = objData.data.tipo;
-
-
-
-                if(objData.data.tipo== 'Terrestre')
-                {
-                    var option = '<option value="Terrestre" selected class="notBlock">Terrestre</option>';
-                }else{
-                    var option = '<option value="Maritimo" selected class="notBlock">Maritimo</option>';
-                }
-                var htmlTipo = `${option}
-                                  <option value="Terrestre">Terrestre</option>
-                                  <option value="Maritimo">Maritimo</option>
-                                `;
-                document.querySelector("#txtTipo").innerHTML = htmlTipo;
-
-
+               // document.querySelector("#txtServicio").value = objData.data.servicio;
+                document.querySelector("#txtActividad").value = objData.data.actividad;
+                document.querySelector("#txtAlimentacion").value = objData.data.alimentacion;
+                document.querySelector("#txtHospedaje").value = objData.data.hospedaje;
+                document.querySelector("#txtTransporte").value = objData.data.transporte;
+                document.querySelector("#txtLugar").value = objData.data.lugar;
                 document.querySelector("#txtDisponibilidad").value = objData.data.disponibilidad;
-                document.querySelector("#txtPrecio").value = objData.data.precio;
+                document.querySelector("#txtHora_inicio").value = objData.data.hora_inicio;
+                document.querySelector("#txtDuracion").value = objData.data.duracion;
+                document.querySelector("#txtCupo_minimo").value = objData.data.cupo_minimo;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
+                document.querySelector("#txtPrecio").value = objData.data.precio;
                 document.querySelector('#foto_actual').value = objData.data.imagen;
                 document.querySelector("#foto_remove").value= 0;
           
-
 
 
 
@@ -309,6 +354,35 @@ function fntEditTransporte(id_transporte){
                                   <option value="2">Inactivo</option>
                                 `;
                 document.querySelector("#listStatus").innerHTML = htmlSelect;
+//////////////////////////////////////////////////////////////////////////
+
+                if(objData.data.servicio == "Actividad")
+                {
+                    var optionSelect = '<option value="1" selected class="notBlock">Actividad</option>';
+                } 
+                 else if(objData.data.servicio == "Alimentacion")
+                {
+                    var optionSelect = '<option value="2" selected class="notBlock">Alimentacion</option>';
+                } 
+                else if(objData.data.servicio == "Hospedaje")
+                {
+                    var optionSelect = '<option value="3" selected class="notBlock">Hospedaje</option>';
+                }
+                else if(objData.data.servicio == "Transporte")
+                {
+                    var optionSelect = '<option value="4" selected class="notBlock">Transporte</option>';
+                }
+
+
+                
+                var htmlservicio = `${optionSelect}
+                                  <option value="Actividad">Actividad</option>
+                                  <option value="Alimentacion">Alimentacion</option>
+                                  <option value="Hospedaje">Hospedaje</option>
+                                  <option value="Transporte">Transporte</option>
+                                `;
+                document.querySelector("#txtServicio").innerHTML = htmlservicio;
+
                 
                 
                 /////////////
@@ -334,7 +408,7 @@ function fntEditTransporte(id_transporte){
 
 
                
-                $('#modalFormTransporte').modal('show');
+                $('#modalFormTour').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -343,10 +417,12 @@ function fntEditTransporte(id_transporte){
 
 }
 
-function fntDelTransporte(id_transporte){
+
+
+function fntDelTour(id_tour){
     swal({
-        title: "Eliminar transporte",
-        text: "¿Realmente quiere eliminar al transporte?",
+        title: "Eliminar Tour",
+        text: "¿Realmente quiere eliminar el Tour?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
@@ -358,18 +434,20 @@ function fntDelTransporte(id_transporte){
         if (isConfirm) 
         {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url+'/Transportes/delTransporte';
-            let strData = "id_transporte="+id_transporte;
+            let ajaxUrl = base_url+'/Tours/delTour/';
+            let strData = "id_tour="+id_tour;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
             request.onreadystatechange = function(){
                 if(request.readyState == 4 && request.status == 200){
                     let objData = JSON.parse(request.responseText);
+                    
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableTransportes.api().ajax.reload();
+                        tableTours.api().ajax.reload();
+                        
                     }else{
                         swal("Atención!", objData.msg , "error");
                     }
@@ -380,7 +458,6 @@ function fntDelTransporte(id_transporte){
     });
 
 }
-
 
 
 function removePhoto(){

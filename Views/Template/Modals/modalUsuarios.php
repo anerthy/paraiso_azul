@@ -16,7 +16,7 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="txtNombre">Nombre</label>
-              <input type="text" class="form-control valid validText" id="txtNombre" name="txtNombre" required="">
+              <input type="text" class="form-control" id="txtNombre" name="txtNombre" required="">
             </div>
             <div class="form-group col-md-6">
               <label for="txtCorreo">Correo</label>
