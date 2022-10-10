@@ -69,6 +69,13 @@
                     <span class="app-menu__label">Tours</span>
                 </a>
             </li>
+            <li>
+                <a class="app-menu__item" href="<?= base_url(); ?>/tbl_paginas">
+
+                    <i class="app-menu__icon fa  fa-city" aria-hidden="true"></i>
+                    <span class="app-menu__label">Tabla de paginas</span>
+                </a>
+            </li>
 
             <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/logout">
