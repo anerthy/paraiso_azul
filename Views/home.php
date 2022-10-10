@@ -5,7 +5,7 @@ nav_bar($data);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Insure - Insurance HTML Template</title>
+    <title>Paraíso Azul</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -44,116 +44,12 @@ nav_bar($data);
 
   <body>
     <!-- Spinner Start -->
-    <div
-      id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
-    >
-      <div class="spinner-grow text-primary" role="status"></div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    <div
-      class="container-fluid bg-dark text-white-50 py-2 px-0 d-none d-lg-block"
-    >
-      <div class="row gx-0 align-items-center">
-        <div class="col-lg-7 px-5 text-start">
-          <div class="h-100 d-inline-flex align-items-center me-4">
-         
-          </div>
-          <div class="h-100 d-inline-flex align-items-center me-4">
-           
-          </div>
-          <div class="h-100 d-inline-flex align-items-center me-4">
-           
-          </div>
-        </div>
-        <div class="col-lg-5 px-5 text-end">
-          <div class="h-100 d-inline-flex align-items-center">
-            <a class="text-white-50 ms-4" href=""
-             
-            ></a>
-            <a class="text-white-50 ms-4" href=""
-            
-            ></a>
-            <a class="text-white-50 ms-4" href=""
-             
-            ></a>
-            <a class="text-white-50 ms-4" href=""
-            
-            ></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Topbar End -->
+   
+    
 
   
 
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
-      <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="w-60" src="Assets/images/LANCHA.jpeg" alt="Image" />
-            <div class="carousel-caption">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12 col-lg-6">
-                    <h1 class="display-3 text-dark mb-4 animated slideInDown">
-                    </h1>
-                    <p class="fs-5 text-body mb-5">
-                   
-                    </p>
-                   
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="w-65" src="Assets/images/piedra.jpeg" alt="Image" />
-            <div class="carousel-caption">
-              <div class="container">
-                <div class="row">
-                  <div class="col-12 col-lg-6">
-                    <h1 class="display-3 text-dark mb-4 animated slideInDown">
-                    
-                    </h1>
-                    <p class="fs-5 text-body mb-5">
-                     
-                    </p>
-                    <a href="" class="btn btn-primary py-3 px-5"
-                      >More Details</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#header-carousel"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#header-carousel"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-    <!-- Carousel End -->
+    
 
     <!-- About Start -->
     <div class="container-xxl py-5">
@@ -220,7 +116,69 @@ nav_bar($data);
     </div>
     <!-- About End -->
 
-    
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0 mb-5 wow fadeIn" data-wow-delay="0.1s">
+      <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="w-100" src="Assets/images/manzanillo.jpg" alt="Image" height="850" />
+            <div class="carousel-caption">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <h1 class="display-3 text-dark mb-4 animated slideInDown">
+                    </h1>
+                    <p class="fs-5 text-body mb-5">
+                   
+                    </p>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            
+            <img class="w-100" src="Assets/images/2.jpg" alt="Image" height="750"/>
+            <div class="carousel-caption">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 col-lg-6">
+                    <h1 class="display-3 text-dark mb-4 animated slideInDown">
+                    
+                    </h1>
+                    <p class="fs-5 text-body mb-5">
+                     
+                    </p>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#header-carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#header-carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <!-- Carousel End -->
 
     <!-- Features Start -->
     <div class="container-xxl py-5">
@@ -299,7 +257,7 @@ nav_bar($data);
             >
               <img
                 class="position-absolute w-100 h-100"
-                src="Assets/images/img/feature.jpg"
+                src="Assets/images/red.jpeg"
                 alt=""
                 style="object-fit: cover"
               />
@@ -328,7 +286,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-10-light.png"
+                    src="Assets/images/fondo2.jpeg"
                     alt=""
                   />
                 </div>
@@ -349,7 +307,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-01-light.png"
+                    src="Assets/images/fondo3.jpeg"
                     alt=""
                   />
                 </div>
@@ -369,7 +327,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-05-light.png"
+                    src="Assets/images/fondo4.jpeg"
                     alt=""
                   />
                 </div>
@@ -390,7 +348,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-08-light.png"
+                    src="Assets/images/fondo6.jpeg"
                     alt=""
                   />
                 </div>
@@ -430,7 +388,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-07-light.png"
+                    src="Assets/images/fondo5.jpeg"
                     alt=""
                   />
                 </div>
@@ -450,7 +408,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-07-light.png"
+                    src="Assets/images/img/fondo1.jpeg"
                     alt=""
                   />
                 </div>
@@ -470,7 +428,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-07-light.png"
+                    src="Assets/images/fondo8.jpeg"
                     alt=""
                   />
                 </div>
@@ -490,7 +448,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-07-light.png"
+                    src="Assets/images/fondo8.jpeg"
                     alt=""
                   />
                 </div>
@@ -511,7 +469,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-07-light.png"
+                    src="Assets/images/fondo9.jpeg"
                     alt=""
                   />
                 </div>
@@ -531,7 +489,7 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-06-light.png"
+                    src="Assets/images/fondo10.jpeg"
                     alt=""
                   />
                 </div>
@@ -553,11 +511,11 @@ nav_bar($data);
                 >
                   <img
                     class="img-fluid"
-                    src="Assets/images/img/icon/icon-05-light.png"
+                    src="Assets/images/fondo11.jpeg"
                     alt=""
                   />
                 </div>
-                <h4 class="mb-0">Asocación de cultivo de mejillones y maríscos de Isla Chira</h4>
+                <h4 class="mb-0">Asociación de cultivo de mejillones y maríscos de Isla Chira</h4>
               </div>
               <p class="mb-4">
                 Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
@@ -653,17 +611,17 @@ nav_bar($data);
             <div class="testimonial-left h-100">
               <img
                 class="img-fluid animated pulse infinite"
-                src="Assets/images/img/testimonial-1.jpg"
+                src="Assets/images/CEMEDE.png"
                 alt=""
               />
               <img
                 class="img-fluid animated pulse infinite"
-                src="Assets/images/img/testimonial-2.jpg"
+                src="Assets/images/ingenieria.png"
                 alt=""
               />
               <img
                 class="img-fluid animated pulse infinite"
-                src="Assets/images/img/testimonial-3.jpg"
+                src="Assets/images/UNA.jpg"
                 alt=""
               />
             </div>
@@ -673,7 +631,7 @@ nav_bar($data);
               <div class="testimonial-item text-center">
                 <img
                   class="img-fluid rounded mx-auto mb-4"
-                  src="Assets/images/img/testimonial-1.jpg"
+                  src="Assets/images/UNA.jpg"
                   alt=""
                 />
                 <p class="fs-5">
@@ -681,13 +639,13 @@ nav_bar($data);
                   labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
                   et labore et tempor diam tempor erat.
                 </p>
-                <h5>Client Name</h5>
-                <span>Profession</span>
+                <h5>Universidad Nacional de Costa Rica</h5>
+                <span>Colaborador</span>
               </div>
               <div class="testimonial-item text-center">
                 <img
                   class="img-fluid rounded mx-auto mb-4"
-                  src="Assets/images/img/testimonial-2.jpg"
+                  src="Assets/images/CEMEDE.png"
                   alt=""
                 />
                 <p class="fs-5">
@@ -695,13 +653,13 @@ nav_bar($data);
                   labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
                   et labore et tempor diam tempor erat.
                 </p>
-                <h5>Client Name</h5>
-                <span>Profession</span>
+                <h5>CEMEDE</h5>
+                <span>Colaborador</span>
               </div>
               <div class="testimonial-item text-center">
                 <img
                   class="img-fluid rounded mx-auto mb-4"
-                  src="Assets/images/img/testimonial-3.jpg"
+                  src="Assets/images/ingenieria.png"
                   alt=""
                 />
                 <p class="fs-5">
@@ -709,8 +667,7 @@ nav_bar($data);
                   labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy
                   et labore et tempor diam tempor erat.
                 </p>
-                <h5>Client Name</h5>
-                <span>Profession</span>
+                <h5>Ingeniería en sistemas de información</h5>
               </div>
             </div>
           </div>
@@ -718,17 +675,17 @@ nav_bar($data);
             <div class="testimonial-right h-100">
               <img
                 class="img-fluid animated pulse infinite"
-                src="Assets/images/img/testimonial-1.jpg"
+                src="Assets/images/CEMEDE.png"
                 alt=""
               />
               <img
                 class="img-fluid animated pulse infinite"
-                src="Assets/images/img/testimonial-2.jpg"
+                src="Assets/images/ingenieria.png"
                 alt=""
               />
               <img
                 class="img-fluid animated pulse infinite"
-                src="Assets/images/img/testimonial-3.jpg"
+                src="Assets/images/UNA.jpg"
                 alt=""
               />
             </div>
@@ -739,29 +696,7 @@ nav_bar($data);
     <!-- Testimonial End -->
 
     <!-- Footer Start -->
-    <div
-      class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
-      data-wow-delay="0.1s"
-    
-      <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-lg-3 col-md-6">
-            <h1 class="text-white mb-4">
-          </div>
-          
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid copyright">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a href="#">Paraíso Azul</a>, All Right Reserved.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     <!-- Footer End -->
 
     <!-- Back to Top -->
