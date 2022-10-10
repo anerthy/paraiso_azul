@@ -2,9 +2,7 @@
 <html lang="en">
 
 <head>
-<title>
-        Set checkbox size
-    </title>
+
       
     <!-- Style to set the size of checkbox -->
     <style>
