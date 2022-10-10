@@ -16,6 +16,9 @@ class Dashboard extends Controllers
 
 	public function dashboard()
 	{
+		if (empty($_SESSION['permisosMod']['ver'])) {
+			header("Location:" . base_url() . '/access_denied');
+		}
 		$data['page_id'] = 1;
 		$data['page_tag'] = "Dashboard - Paraiso Azul";
 		$data['page_title'] = "Dashboard";
