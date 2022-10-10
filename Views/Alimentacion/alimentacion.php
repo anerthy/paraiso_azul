@@ -7,7 +7,9 @@ getModal('modalAlimentacion', $data);
     <div class="app-title">
         <div>
             <h1><i class="fas fa-utensils"></i> <?= $data['page_title'] ?>
-                <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
+                <?php if ($_SESSION['permisosMod']['agregar']) { ?>
+                    <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
+                <?php } ?>
             </h1>
         </div>
         <ul class="app-breadcrumb breadcrumb">
