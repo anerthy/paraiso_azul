@@ -41,10 +41,12 @@
 
                             <div class="form-group">
                                 <label class="control-label">Telefono</label>
-                                <input class="form-control" id="txtTelefono" name="txtTelefono" rows="2" placeholder="Telefono del hospedaje" required="">
+                                <input class="form-control valid validNumber" maxlength="8" id="txtTelefono" name="txtTelefono" rows="2" placeholder="Telefono del hospedaje" required="" onkeypress="return controlTag(event);">
                             </div>
 
                             <div class="form-group">
+
+
                                 <label for="exampleSelect1">Estado</label>
                                 <select class="form-control" id="listStatus" name="listStatus" required="">
                                     <option value="1">Activo</option>

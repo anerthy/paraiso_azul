@@ -249,7 +249,26 @@ function fntEditHospedaje(id_hospedaje){
                 document.querySelector("#id_Hospedaje").value = objData.data.id_hospedaje;
                 document.querySelector("#txtNombre_hosp").value = objData.data.nombre_hosp;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-                document.querySelector("#txtTipo").value = objData.data.tipo;
+
+
+
+
+
+                if(objData.data.tipo == 'Camping')
+                {
+                    var option = '<option value="Camping" selected class="notBlock">Camping</option>';
+                }else{
+                    var option = '<option value="Cabina" selected class="notBlock">Cabina</option>';
+                }
+                var htmlTipo = `${option}
+                                  <option value="Camping">Camping</option>
+                                  <option value="Cabina">Cabina</option>
+                                `;
+                document.querySelector("#txtTipo").innerHTML = htmlTipo;
+
+
+
+                //document.querySelector("#txtTipo").value = objData.data.tipo;
                 document.querySelector("#txtDireccion").value = objData.data.direccion;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
                 document.querySelector("#txtPrecio").value = objData.data.precio;
@@ -271,6 +290,10 @@ function fntEditHospedaje(id_hospedaje){
                                   <option value="2">Inactivo</option>
                                 `;
                 document.querySelector("#listStatus").innerHTML = htmlSelect;
+
+
+
+
                 
                 
                 /////////////

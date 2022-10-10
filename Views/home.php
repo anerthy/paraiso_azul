@@ -1,97 +1,202 @@
+<?php
+nav_bar($data);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- <link rel="stylesheet" href="<?= media(); ?>/css/navbar.css"> -->
+        
+        <link rel="stylesheet" href="<?= media(); ?>/css/vistas/home.css">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Stylish Portfolio - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Simple line icons-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="Assets/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+       
+       <!-- Compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<!-- Minified JS library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://localhost/paraiso_azul/Assets/css/home.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <!-- js -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-  <title>Paraiso Azul</title>
-</head>
+     
+        <section class="callout">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mx-auto mb-5">
+                    Welcome to
+                    <em>your</em>
+                    next website!
+                </h2>
+            </div>
+        </section>
 
-<body>
+       <!-- About-->
+ <section class="content-section bg-light" id="about">
+            <div class="container px-4 px-lg-5 text-center">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Bienvenidos a paraíso azul,Golfo de Nicoya</h2>
+                        <p class="lead mb-5">
+                            Si deseeas más informar acerca de nuestro proyecto, sigue bajando.
+                        
+                        </p>
+                        <a class="btn btn-dark btn-xl" href="#services">Seguir</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <header>
-    <nav class="navbar">
-      <ul>
+        <!-- Services-->
+        <section class="content-section bg-primary text-white text-center" id="services">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading">
+                    <h3 class="text-secondary mb-0">Services</h3>
+                    <h2 class="mb-5">What We Offer</h2>
+                </div>
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
+                        <h4><strong>Responsive</strong></h4>
+                        <p class="text-faded mb-0">Looks great on any screen size!</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
+                        <h4><strong>Redesigned</strong></h4>
+                        <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
+                        <h4><strong>Favorited</strong></h4>
+                        <p class="text-faded mb-0">
+                            Millions of users
+                            <i class="fas fa-heart"></i>
+                            Start Bootstrap!
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
+                        <h4><strong>Question</strong></h4>
+                        <p class="text-faded mb-0">I mustache you a question...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Callout-->
+        <section class="callout">
+            <div class="container px-4 px-lg-5 text-center">
+                <h2 class="mx-auto mb-5">
+                    Welcome to
+                    <em>your</em>
+                    next website!
+</h2>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        <section class="content-section" id="portfolio">
+            <div class="container px-4 px-lg-5">
+                <div class="content-section-heading text-center">
+                    <h3 class="text-secondary mb-0">Portfolio</h3>
+                    <h2 class="mb-5">Comunidades</h2>
+                </div>
+                <div class="row gx-0">
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Isla Caballo</div>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="Assets/images/islaCaballo.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Isla Chira</div>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="Assets/images/islaChira.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Isla Venado</div>
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="Assets/images/islaVenado.jpg" alt="..." />
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a class="portfolio-item" href="#!">
+                            <div class="caption">
+                                <div class="caption-content">
+                                    <div class="h2">Workspace</div>
+                                   
+                                </div>
+                            </div>
+                            <img class="img-fluid" src="Assets/images/img/portfolio-4.jpg" alt="..." />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Map-->
+        <div class="map" id="contact">
+        <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232573.96957117325!2d-85.15739319901735!3d10.08854626850582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa1d4dbd04d2ecb%3A0x63c6b31db43dd0fd!2sGolfo%20de%20Nicoya!5e0!3m2!1ses-419!2scr!4v1665263755971!5m2!1ses-419!2scr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+            
+        </div>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container px-4 px-lg-5">
+                <ul class="list-inline mb-5">
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
+                    </li>
+                </ul>
+                
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="Assets/js/scripts.js"></script>
+     
+       
+        <script type="text/javascript">
 
-        <li><a href="<?= base_url(); ?>">Inicio</a></li>
 
-        <li id="dd" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">¿Que ofrecemos?</a>
-          <ul id="dropdown" class="dropdown-menu" role="menu">
-            <li><a href="<?= base_url(); ?>/alimentacion">Alimentacion</a></li>
-            <li><a href="<?= base_url(); ?>/hospedaje">Hospedaje</a></li>
-            <li><a href="<?= base_url(); ?>/trasnporte">Transporte</a></li>
-            <li><a href="#">Tours</a></li>
-          </ul>
-        <li>
 
-        <li id="dd" class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sobre el proyecto</a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="<?= base_url(); ?>/home/cemede">CEMEDE</a></li>
-            <li><a href="<?= base_url(); ?>/grupo">Grupos Organizados</a></li>
-            <li><a href="<?= base_url(); ?>/comunidad">Comunidades</a></li>
-          </ul>
-        </li>
+</script>
 
-        <li><a href="<?= base_url(); ?>/voluntariado">Voluntariado</a></li>
-
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-
-        <li>
-          <a href="<?= base_url(); ?>/dashboard">
-            <i class="fa fa-user"></i> Dashboard
-          </a>
-        </li>
-
-      </ul>
-    </nav>
-  </header>
-
-  <div id="general">
-
-    <div id="foto">
-      <br><br>
-      <img id="logo" src="<?= media(); ?>/images/uploads/redCostera.jpg" width="350" height="350">
-    </div>
-
-    <div id="titulo">
-      <div class="text-center">
-        <h1 class="display-4">Paraiso Azul</h1>
-      </div>
-    </div>
-
-    <div id="contenido">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus risus in augue porta rhoncus. Nunc at magna eleifend, sodales neque ut, aliquet nisi. Duis sit amet eros a arcu varius elementum posuere in eros. Donec turpis quam, egestas vel pretium sit amet, pulvinar ac nulla. Suspendisse ac tempor nunc. Morbi interdum ac risus sed semper. Etiam blandit augue id porta hendrerit. Nullam semper nibh sed ullamcorper elementum. Aenean vel ante a odio fermentum cursus at id nulla. Nulla pharetra felis eget ullamcorper ultrices. Maecenas sit amet viverra tortor. Ut tempor aliquet felis, in pellentesque elit. Aenean sollicitudin diam turpis, in vulputate magna sollicitudin quis. Nam imperdiet lectus dui, cursus iaculis elit dignissim ut. Maecenas a euismod nisl, et fermentum dolor. Pellentesque ornare magna non sem posuere, vitae tempor tortor sodales. In hac habitasse platea dictumst. Curabitur at libero at nisl interdum scelerisque. Donec nec sapien id nunc laoreet ultricies sit amet faucibus urna. Duis vel sodales ipsum, consequat tincidunt tortor. Integer id tristique leo. Morbi sagittis, mi nec commodo feugiat, augue risus consequat mi, at iaculis risus sapien ut odio. Fusce at odio fermentum, convallis nulla et, tempus magna. Proin finibus nunc quis metus volutpat, nec egestas diam tristique. Phasellus porta lobortis lorem, eu varius eros elementum a. In hac habitasse platea dictumst. Fusce pharetra hendrerit bibendum. Suspendisse dapibus, felis a aliquet auctor, dolor velit maximus tellus, at sodales lacus odio non libero. Maecenas rhoncus, dui quis pharetra accumsan, ligula justo luctus turpis, nec mollis lacus massa non dolor. Nulla et posuere metus. Morbi imperdiet erat id magna rutrum vehicula et vitae lectus. Pellentesque maximus, lectus consectetur malesuada congue, lorem mi scelerisque sem, et maximus tellus ipsum vitae massa. Proin massa nulla, pulvinar ac congue id, facilisis quis orci.
-      </p>
-    </div>
-
-    <div id="texto">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus risus in augue porta rhoncus. Nunc at magna eleifend, sodales neque ut, aliquet nisi. Duis sit amet eros a arcu varius elementum posuere in eros. Donec turpis quam, egestas vel pretium sit amet, pulvinar ac nulla. Suspendisse ac tempor nunc. Morbi interdum ac risus sed semper. Etiam blandit augue id porta hendrerit. Nullam semper nibh sed ullamcorper elementum. Aenean vel ante a odio fermentum cursus at id nulla. Nulla pharetra felis eget ullamcorper ultrices. Maecenas sit amet viverra tortor. Ut tempor aliquet felis, in pellentesque elit. Aenean sollicitudin diam turpis, in vulputate magna sollicitudin quis. Nam imperdiet lectus dui, cursus iaculis elit dignissim ut. Maecenas a euismod nisl, et fermentum dolor. Pellentesque ornare magna non sem posuere, vitae tempor tortor sodales. In hac habitasse platea dictumst. Curabitur at libero at nisl interdum scelerisque. Donec nec sapien id nunc laoreet ultricies sit amet faucibus urna. Duis vel sodales ipsum, consequat tincidunt tortor. Integer id tristique leo. Morbi sagittis, mi nec commodo feugiat, augue risus consequat mi, at iaculis risus sapien ut odio. Fusce at odio fermentum, convallis nulla et, tempus magna. Proin finibus nunc quis metus volutpat, nec egestas diam tristique. Phasellus porta lobortis lorem, eu varius eros elementum a. In hac habitasse platea dictumst. Fusce pharetra hendrerit bibendum. Suspendisse dapibus, felis a aliquet auctor, dolor velit maximus tellus, at sodales lacus odio non libero. Maecenas rhoncus, dui quis pharetra accumsan, ligula justo luctus turpis, nec mollis lacus massa non dolor. Nulla et posuere metus. Morbi imperdiet erat id magna rutrum vehicula et vitae lectus. Pellentesque maximus, lectus consectetur malesuada congue, lorem mi scelerisque sem, et maximus tellus ipsum vitae massa. Proin massa nulla, pulvinar ac congue id, facilisis quis orci. Vivamus in velit ligula. Pellentesque maximus, lectus consectetur malesuada congue, lorem mi scelerisque sem.
-      </p>
-    </div>
-
-  </div>
-
-  <script src="http://localhost/paraiso_azul/Assets/js/bootstrap.min.js""></script>
-</body>
+    </body>
 </html>
-<script src=" http://localhost/paraiso_azul/Assets/js/bootstrap.min.js""></script>

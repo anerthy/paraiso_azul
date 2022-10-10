@@ -178,7 +178,7 @@ function openModal(){
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
-    document.querySelector('#titleModal').innerHTML = "Nuevo Comunidad";
+    document.querySelector('#titleModal').innerHTML = "Nueva Comunidad";
     document.querySelector("#formComunidad").reset();
 	$('#modalFormComunidad').modal('show');
     removePhoto();
@@ -247,6 +247,10 @@ function fntEditComunidad(id_comunidad){
                 document.querySelector("#txtDistrito").value = objData.data.distrito;
                 document.querySelector('#foto_actual').value = objData.data.imagen;
                 document.querySelector("#foto_remove").value= 0;
+
+
+                
+
                 // if(objData.data.status == 1)
                 // {
                 //     var optionSelect = '<option value="1" selected class="notBlock">Activo</option>';

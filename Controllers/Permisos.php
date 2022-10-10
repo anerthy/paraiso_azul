@@ -5,6 +5,12 @@ class Permisos extends Controllers
 	public function __construct()
 	{
 		parent::__construct();
+		session_start();
+		session_regenerate_id(true);
+		if (empty($_SESSION['login'])) {
+			header('Location: ' . base_url() . '/login');
+		}
+		// getPermisos(1);
 	}
 
 	public function getPermisosRol(int $idrol)
@@ -23,16 +29,16 @@ class Permisos extends Controllers
 				}
 			} else {
 				for ($i = 0; $i < count($arrModulos); $i++) {
-
-					$arrPermisos = array(
-						'ver' => $arrPermisosRol[$i]['ver'],
-						'agregar' => $arrPermisosRol[$i]['agregar'],
-						'actualizar' => $arrPermisosRol[$i]['actualizar'],
-						'eliminar' => $arrPermisosRol[$i]['eliminar']
-					);
-					if ($arrModulos[$i]['id_modulo'] == $arrPermisosRol[$i]['modulo_id']) {
-						$arrModulos[$i]['permisos'] = $arrPermisos;
+					$arrPermisos = array('ver' => 0, 'agregar' => 0, 'actualizar' => 0, 'eliminar' => 0);
+					if (isset($arrPermisosRol[$i])) {
+						$arrPermisos = array(
+							'ver' => $arrPermisosRol[$i]['ver'],
+							'agregar' => $arrPermisosRol[$i]['agregar'],
+							'actualizar' => $arrPermisosRol[$i]['actualizar'],
+							'eliminar' => $arrPermisosRol[$i]['eliminar']
+						);
 					}
+					$arrModulos[$i]['permisos'] = $arrPermisos;
 				}
 			}
 			$arrPermisoRol['modulos'] = $arrModulos;

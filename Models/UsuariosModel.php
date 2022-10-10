@@ -48,10 +48,14 @@ class UsuariosModel extends Mysql
 
 	public function selectUsuarios()
 	{
-		$sql = "SELECT u.id_usuario,u.nombre_usuario,u.correo,u.status,r.nombre_rol 
+		$whereAdmin = "";
+		if ($_SESSION['idUser'] != 1) {
+			$whereAdmin = " where u.id_usuario != 1 ";
+		}
+		$sql = "SELECT u.id_usuario,u.nombre_usuario,u.correo,u.status,r.id_rol,r.nombre_rol 
 					FROM usuario u 
 					INNER JOIN rol r
-					ON u.rol_id = r.id_rol";
+					ON u.rol_id = r.id_rol " . $whereAdmin;
 		$request = $this->select_all($sql);
 		return $request;
 	}
@@ -62,7 +66,7 @@ class UsuariosModel extends Mysql
 					FROM usuario u
 					INNER JOIN rol r
 					ON u.rol_id = r.id_rol
-					WHERE u.id_usuario = $this->intIdUsuario";
+					WHERE u.id_usuario = $this->intIdUsuario ";
 		$request = $this->select($sql);
 		return $request;
 	}
