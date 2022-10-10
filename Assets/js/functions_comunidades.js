@@ -178,7 +178,7 @@ function openModal(){
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
-    document.querySelector('#titleModal').innerHTML = "Nuevo Comunidad";
+    document.querySelector('#titleModal').innerHTML = "Nueva Comunidad";
     document.querySelector("#formComunidad").reset();
 	$('#modalFormComunidad').modal('show');
     removePhoto();

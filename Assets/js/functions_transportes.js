@@ -253,8 +253,41 @@ function fntEditTransporte(id_transporte){
                 document.querySelector("#id_Transporte").value = objData.data.id_transporte;
                 document.querySelector("#txtNombre_trans").value = objData.data.nombre_trans;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-                document.querySelector("#txtClase").value = objData.data.clase;
-                document.querySelector("#txtTipo").value = objData.data.tipo;
+                //document.querySelector("#txtClase").value = objData.data.clase;
+
+
+                if(objData.data.clase == 'Publico')
+                {
+                    var option = '<option value="Publico" selected class="notBlock">Publico</option>';
+                }else{
+                    var option = '<option value="Privado" selected class="notBlock">Privado</option>';
+                }
+                var htmlClase = `${option}
+                                  <option value="Publico">Publico</option>
+                                  <option value="Privado">Privado</option>
+                                `;
+                document.querySelector("#txtClase").innerHTML = htmlClase;
+
+
+
+
+                //document.querySelector("#txtTipo").value = objData.data.tipo;
+
+
+
+                if(objData.data.tipo== 'Terrestre')
+                {
+                    var option = '<option value="Terrestre" selected class="notBlock">Terrestre</option>';
+                }else{
+                    var option = '<option value="Maritimo" selected class="notBlock">Maritimo</option>';
+                }
+                var htmlTipo = `${option}
+                                  <option value="Terrestre">Terrestre</option>
+                                  <option value="Maritimo">Maritimo</option>
+                                `;
+                document.querySelector("#txtTipo").innerHTML = htmlTipo;
+
+
                 document.querySelector("#txtDisponibilidad").value = objData.data.disponibilidad;
                 document.querySelector("#txtPrecio").value = objData.data.precio;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;

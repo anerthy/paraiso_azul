@@ -50,38 +50,3 @@ div #texto
     background-color:white;
     font-style: arial;
 }
-
-/* NAV BAR */
-.navbar{
-    margin-top: 20px;
-    background-color:#0f265c;
-    border-radius: 30px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  
-  .navbar li{
-    float:left;
-    list-style: none; 
-    margin: 13px 20px;
-    color: blue;
-}
-
-.navbar ul{
-    /* overflow: auto; */
-    font-style: arial;
-    font-size:25px;
-    background-color: #0f265c;
-    color: white;
-}
-
-.navbar li a{
-    padding: 3px 3px;
-    text-decoration: none;
-    font-style: arial;
-    font-size:25px;
-    color: white;
-}
-.navbar li a:hover{
-    color: rgb(93, 47, 148)
-}
