@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #015FC9;
+    --primary:var(--secondary);
     --secondary: #0DD3F1;
     --light: #F6F7FC;
     --dark: #15233C;
@@ -171,7 +171,12 @@
     border: 15px solid var(--primary);
     border-radius: 50px;
 }
+body {
+    heigh:665px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAA1BMVEVJs93vu9iHAAAASElEQVR4nO3BgQAAAADDoPlTX+AIVQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwDcaiAAFXD1ujAAAAAElFTkSuQmCC");
 
+    background-size: 10rem;
+  }
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
         position: relative;
