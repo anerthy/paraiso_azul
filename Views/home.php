@@ -95,17 +95,15 @@ nav_bar($data);
       <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="w-100" src="Assets/images/img/carousel-1.jpg" alt="Image" />
+            <img class="w-60" src="Assets/images/LANCHA.jpeg" alt="Image" />
             <div class="carousel-caption">
               <div class="container">
                 <div class="row">
                   <div class="col-12 col-lg-6">
                     <h1 class="display-3 text-dark mb-4 animated slideInDown">
-                      Insurance Creates Wealth For Everyone
                     </h1>
                     <p class="fs-5 text-body mb-5">
-                      Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                      duo justo magna dolore erat amet
+                   
                     </p>
                    
                   </div>
@@ -114,17 +112,16 @@ nav_bar($data);
             </div>
           </div>
           <div class="carousel-item">
-            <img class="w-100" src="Assets/images/img/carousel-2.jpg" alt="Image" />
+            <img class="w-65" src="Assets/images/piedra.jpeg" alt="Image" />
             <div class="carousel-caption">
               <div class="container">
                 <div class="row">
                   <div class="col-12 col-lg-6">
                     <h1 class="display-3 text-dark mb-4 animated slideInDown">
-                      The Best Insurance Begins Here
+                    
                     </h1>
                     <p class="fs-5 text-body mb-5">
-                      Clita erat ipsum et lorem et sit, sed stet lorem sit clita
-                      duo justo magna dolore erat amet
+                     
                     </p>
                     <a href="" class="btn btn-primary py-3 px-5"
                       >More Details</a
@@ -169,7 +166,7 @@ nav_bar($data);
             >
               <img
                 class="position-absolute w-100 h-100"
-                src="Assets/images/img/about.jpg"
+                src="Assets/images/collage.jpeg"
                 alt=""
                 style="object-fit: cover"
               />
@@ -180,9 +177,9 @@ nav_bar($data);
                 <div
                   class="d-flex flex-column justify-content-center text-center bg-primary rounded h-100 p-3"
                 >
-                  <h1 class="text-white mb-0">25</h1>
-                  <h2 class="text-white">Years</h2>
-                  <h5 class="text-white mb-0">Experience</h5>
+                  <h1 class="text-white mb-0">RED</h1>
+                  <h2 class="text-white">COSTERA</h2>
+                  <h5 class="text-white mb-0"></h5>
                 </div>
               </div>
             </div>
@@ -190,23 +187,12 @@ nav_bar($data);
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
             <div class="h-100">
               <h1 class="display-6 mb-5">
-                We're Here To Assist You With Exploring Protection
+                ¿Dé que se trata el proyecto Paraíso Azul, Golfo de Nicoya?
               </h1>
               <p class="fs-5 text-primary mb-4">
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem sed stet
-                lorem sit clita duo justo erat amet
+                Es un proyecto extensión de CEMEDE, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la universidad Nacional de Costa Rica, sede regional chorotega
               </p>
-              <div class="row g-4 mb-4">
-                <div class="col-sm-6">
-                  <div class="d-flex align-items-center">
-                    <img
-                      class="flex-shrink-0 me-3"
-                      src="Assets/images/img/icon/icon-04-primary.png"
-                      alt=""
-                    />
-                    <h5 class="mb-0">Flexible Insurance Plans</h5>
-                  </div>
-                </div>
+             
                 <div class="col-sm-6">
                   <div class="d-flex align-items-center">
                     <img
@@ -214,23 +200,17 @@ nav_bar($data);
                       src="Assets/images/img/icon/icon-03-primary.png"
                       alt=""
                     />
-                    <h5 class="mb-0">Money Back Guarantee</h5>
+                    <h5 class="mb-0">Objetivo del proyecto</h5>
                   </div>
+                  <p class="mb-4">
+                Brindar mayor visibilización a los productos y servicios que brindas los habitantes del golfo de nicoya
+              </p>
                 </div>
               </div>
-              <p class="mb-4">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                sed stet lorem sit clita duo justo magna dolore erat amet
-              </p>
+             
               <div class="border-top mt-4 pt-4">
                 <div class="d-flex align-items-center">
-                  <img
-                    class="flex-shrink-0 rounded-circle me-3"
-                    src="Assets/images/img/profile.jpg"
-                    alt=""
-                  />
-                  <h5 class="mb-0">Call Us: +012 345 6789</h5>
+                
                 </div>
               </div>
             </div>
@@ -240,56 +220,14 @@ nav_bar($data);
     </div>
     <!-- About End -->
 
-    <!-- Facts Start -->
-    <div class="container-fluid overflow-hidden my-5 px-lg-0">
-      <div class="container facts px-lg-0">
-        <div class="row g-0 mx-lg-0">
-          <div class="col-lg-6 facts-text wow fadeIn" data-wow-delay="0.1s">
-            <div class="h-100 px-4 ps-lg-0">
-              <h1 class="text-white mb-4">For Individuals And Organisations</h1>
-              <p class="text-light mb-5">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                sed stet lorem sit clita duo justo magna dolore erat amet
-              </p>
-              <a href="" class="align-self-start btn btn-secondary py-3 px-5"
-                >More Details</a
-              >
-            </div>
-          </div>
-          <div class="col-lg-6 facts-counter wow fadeIn" data-wow-delay="0.5s">
-            <div class="h-100 px-4 pe-lg-0">
-              <div class="row g-5">
-                <div class="col-sm-6">
-                  <h1 class="display-5" data-toggle="counter-up">1234</h1>
-                  <p class="fs-5 text-primary">Happy Clients</p>
-                </div>
-                <div class="col-sm-6">
-                  <h1 class="display-5" data-toggle="counter-up">1234</h1>
-                  <p class="fs-5 text-primary">Projects Succeed</p>
-                </div>
-                <div class="col-sm-6">
-                  <h1 class="display-5" data-toggle="counter-up">1234</h1>
-                  <p class="fs-5 text-primary">Awards Achieved</p>
-                </div>
-                <div class="col-sm-6">
-                  <h1 class="display-5" data-toggle="counter-up">1234</h1>
-                  <p class="fs-5 text-primary">Team Members</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Facts End -->
+    
 
     <!-- Features Start -->
     <div class="container-xxl py-5">
       <div class="container">
         <div class="row g-5">
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-            <h1 class="display-6 mb-5">Few Reasons Why People Choosing Us!</h1>
+            <h1 class="display-6 mb-5">Fases del proyecto</h1>
             <p class="mb-4">
               Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
               diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
@@ -374,10 +312,11 @@ nav_bar($data);
 
     <!-- Service Start -->
     <div class="container-xxl py-5">
+
       <div class="container">
         <div class="text-center mx-auto" style="max-width: 500px">
           <h1 class="display-6 mb-5">
-            We Provide professional Insurance Services
+            Grupos Organizados
           </h1>
         </div>
         <div class="row g-4 justify-content-center">
@@ -393,13 +332,13 @@ nav_bar($data);
                     alt=""
                   />
                 </div>
-                <h4 class="mb-0">Life Insurance</h4>
+                <h4 class="mb-0">Asociación de pesca responsable de Montero Isla Chira</h4>
               </div>
               <p class="mb-4">
                 Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
                 sit clita duo justo erat amet
               </p>
-              <a class="btn btn-light px-3" href="">Read More</a>
+              
             </div>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -414,13 +353,12 @@ nav_bar($data);
                     alt=""
                   />
                 </div>
-                <h4 class="mb-0">Health Insurance</h4>
+                <h4 class="mb-0">ADI isla caballo</h4>
               </div>
               <p class="mb-4">
                 Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
                 sit clita duo justo erat amet
               </p>
-              <a class="btn btn-light px-3" href="">Read More</a>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -435,13 +373,13 @@ nav_bar($data);
                     alt=""
                   />
                 </div>
-                <h4 class="mb-0">Home Insurance</h4>
+                <h4 class="mb-0">Asociación de mujeres de la Montañita de Coyolito</h4>
               </div>
               <p class="mb-4">
                 Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
                 sit clita duo justo erat amet
               </p>
-              <a class="btn btn-light px-3" href="">Read More</a>
+             
             </div>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -456,13 +394,12 @@ nav_bar($data);
                     alt=""
                   />
                 </div>
-                <h4 class="mb-0">Vehicle Insurance</h4>
+                <h4 class="mb-0">Asociación de mujeres mariposa</h4>
               </div>
               <p class="mb-4">
                 Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
                 sit clita duo justo erat amet
               </p>
-              <a class="btn btn-light px-3" href="">Read More</a>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -477,13 +414,113 @@ nav_bar($data);
                     alt=""
                   />
                 </div>
-                <h4 class="mb-0">Business Insurance</h4>
+                <h4 class="mb-0">Mudecoop</h4>
               </div>
               <p class="mb-4">
                 Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
                 sit clita duo justo erat amet
               </p>
-              <a class="btn btn-light px-3" href="">Read More</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded h-100 p-5">
+              <div class="d-flex align-items-center ms-n5 mb-4">
+                <div
+                  class="service-icon flex-shrink-0 bg-primary rounded-end me-4"
+                >
+                  <img
+                    class="img-fluid"
+                    src="Assets/images/img/icon/icon-07-light.png"
+                    alt=""
+                  />
+                </div>
+                <h4 class="mb-0">Mudencos</h4>
+              </div>
+              <p class="mb-4">
+                Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+                sit clita duo justo erat amet
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded h-100 p-5">
+              <div class="d-flex align-items-center ms-n5 mb-4">
+                <div
+                  class="service-icon flex-shrink-0 bg-primary rounded-end me-4"
+                >
+                  <img
+                    class="img-fluid"
+                    src="Assets/images/img/icon/icon-07-light.png"
+                    alt=""
+                  />
+                </div>
+                <h4 class="mb-0">Asociación de Jovenes de Isla Venado</h4>
+              </div>
+              <p class="mb-4">
+                Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+                sit clita duo justo erat amet
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded h-100 p-5">
+              <div class="d-flex align-items-center ms-n5 mb-4">
+                <div
+                  class="service-icon flex-shrink-0 bg-primary rounded-end me-4"
+                >
+                  <img
+                    class="img-fluid"
+                    src="Assets/images/img/icon/icon-07-light.png"
+                    alt=""
+                  />
+                </div>
+                <h4 class="mb-0">Coopeacuicultores Isla Venado</h4>
+              </div>
+              <p class="mb-4">
+                Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+                sit clita duo justo erat amet
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded h-100 p-5">
+              <div class="d-flex align-items-center ms-n5 mb-4">
+                <div
+                  class="service-icon flex-shrink-0 bg-primary rounded-end me-4"
+                >
+                  <img
+                    class="img-fluid"
+                    src="Assets/images/img/icon/icon-07-light.png"
+                    alt=""
+                  />
+                </div>
+                <h4 class="mb-0">Asociación de desarrollo integral de Isla Caballo
+</h4>
+              </div>
+              <p class="mb-4">
+                Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+                sit clita duo justo erat amet
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="service-item rounded h-100 p-5">
+              <div class="d-flex align-items-center ms-n5 mb-4">
+                <div
+                  class="service-icon flex-shrink-0 bg-primary rounded-end me-4"
+                >
+                  <img
+                    class="img-fluid"
+                    src="Assets/images/img/icon/icon-07-light.png"
+                    alt=""
+                  />
+                </div>
+                <h4 class="mb-0">Asopecupachi</h4>
+              </div>
+              <p class="mb-4">
+                Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+                sit clita duo justo erat amet
+              </p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -498,7 +535,7 @@ nav_bar($data);
                     alt=""
                   />
                 </div>
-                <h4 class="mb-0">Property Insurance</h4>
+                <h4 class="mb-0">Asociación de desarrollo integral de Isla Venado</h4>
               </div>
               <p class="mb-4">
                 Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
@@ -506,226 +543,97 @@ nav_bar($data);
               </p>
               <a class="btn btn-light px-3" href="">Read More</a>
             </div>
+            
           </div>
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="service-item rounded h-100 p-5">
+              <div class="d-flex align-items-center ms-n5 mb-4">
+                <div
+                  class="service-icon flex-shrink-0 bg-primary rounded-end me-4"
+                >
+                  <img
+                    class="img-fluid"
+                    src="Assets/images/img/icon/icon-05-light.png"
+                    alt=""
+                  />
+                </div>
+                <h4 class="mb-0">Asocación de cultivo de mejillones y maríscos de Isla Chira</h4>
+              </div>
+              <p class="mb-4">
+                Aliqu diam amet eos erat ipsum et lorem et sit, sed stet lorem
+                sit clita duo justo erat amet
+              </p>
+             
+            </div>
+          </div>
+          
         </div>
+        
       </div>
+      
     </div>
+    
     <!-- Service End -->
 
-    <!-- Appointment Start -->
-    <div
-      class="container-fluid appointment my-5 py-5 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
-      <div class="container py-5">
-        <div class="row g-5">
-          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
-            <h1 class="display-6 text-white mb-5">
-              We're Award Winning Insurance Company
-            </h1>
-            <p class="text-white mb-5">
-              Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed
-              stet lorem sit clita duo justo magna dolore erat amet. Tempor erat
-              elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet
-              diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit
-              clita duo justo magna.
-            </p>
-            <div class="bg-white rounded p-3">
-              <div class="d-flex align-items-center bg-primary rounded p-3">
-                <img
-                  class="flex-shrink-0 rounded-circle me-3"
-                  src="Assets/images/img/profile.jpg"
-                  alt=""
-                />
-                <h5 class="text-white mb-0">Call Us: +012 345 6789</h5>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-            <div class="bg-white rounded p-5">
-              <form>
-                <div class="row g-3">
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="gname"
-                        placeholder="Gurdian Name"
-                      />
-                      <label for="gname">Your Name</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="gmail"
-                        placeholder="Gurdian Email"
-                      />
-                      <label for="gmail">Your Email</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="cname"
-                        placeholder="Child Name"
-                      />
-                      <label for="cname">Your Mobile</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="cage"
-                        placeholder="Child Age"
-                      />
-                      <label for="cage">Service Type</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="Leave a message here"
-                        id="message"
-                        style="height: 80px"
-                      ></textarea>
-                      <label for="message">Message</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button class="btn btn-primary py-3 px-5" type="submit">
-                      Get Appointment
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Appointment End -->
-
+    
     <!-- Team Start -->
     <div class="container-xxl py-5">
       <div class="container">
         <div class="text-center mx-auto" style="max-width: 500px">
-          <h1 class="display-6 mb-5">Meet Our Professional Team Members</h1>
+          <h1 class="display-6 mb-5">Desarrolladores</h1>
         </div>
         <div class="row g-4">
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="team-item rounded">
-              <img class="img-fluid" src="Assets/images/img/team-1.jpg" alt="" />
+              <img class="img-fluid" src="Assets/images/Andrés.jpeg" alt="" />
               <div class="text-center p-4">
-                <h5>Full Name</h5>
+                <h5>Andrés Mejía González</h5>
                 <span>Designation</span>
               </div>
               <div class="team-text text-center bg-white p-4">
-                <h5>Full Name</h5>
+              <h5>Fauricio Andrés Mejía González</h5>
                 <p>Designation</p>
-                <div class="d-flex justify-content-center">
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-youtube"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </div>
+                
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="team-item rounded">
-              <img class="img-fluid" src="Assets/images/img/team-2.jpg" alt="" />
+              <img class="img-fluid" src="Assets/images/Sofia.jpeg" alt="" />
               <div class="text-center p-4">
-                <h5>Full Name</h5>
+                <h5>Sofia Moraga Gutierréz</h5>
                 <span>Designation</span>
               </div>
               <div class="team-text text-center bg-white p-4">
-                <h5>Full Name</h5>
+              <h5>Glenda Sofia Moraga Gutierréz</h5>
                 <p>Designation</p>
-                <div class="d-flex justify-content-center">
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-youtube"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </div>
+                
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
             <div class="team-item rounded">
-              <img class="img-fluid" src="Assets/images/img/team-3.jpg" alt="" />
+              <img class="img-fluid" src="Assets/images/Fiorella.jpeg" alt="" />
               <div class="text-center p-4">
-                <h5>Full Name</h5>
+                <h5>Fiorella Bonilla González</h5>
                 <span>Designation</span>
               </div>
               <div class="team-text text-center bg-white p-4">
-                <h5>Full Name</h5>
+                <h5>Fiorella Bonilla González</h5>
                 <p>Designation</p>
-                <div class="d-flex justify-content-center">
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-youtube"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </div>
               </div>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
             <div class="team-item rounded">
-              <img class="img-fluid" src="Assets/images/img/team-4.jpg" alt="" />
+              <img class="img-fluid" src="Assets/images/Aaron.jpeg" alt="" />
               <div class="text-center p-4">
-                <h5>Full Name</h5>
+                <h5>Aaron Villegas Mora</h5>
                 <span>Designation</span>
               </div>
               <div class="team-text text-center bg-white p-4">
-                <h5>Full Name</h5>
+                <h5>Aaron Villegas Mora</h5>
                 <p>Designation</p>
-                <div class="d-flex justify-content-center">
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-youtube"></i
-                  ></a>
-                  <a class="btn btn-square btn-light m-1" href=""
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </div>
               </div>
             </div>
           </div>
@@ -834,68 +742,13 @@ nav_bar($data);
     <div
       class="container-fluid bg-dark footer mt-5 pt-5 wow fadeIn"
       data-wow-delay="0.1s"
-    >
+    
       <div class="container py-5">
         <div class="row g-5">
           <div class="col-lg-3 col-md-6">
             <h1 class="text-white mb-4">
-              <img
-                class="img-fluid me-3"
-                src="Assets/images/img/icon/icon-02-light.png"
-                alt=""
-              />Insure
-            </h1>
-            <p>
-              Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
-              ipsum et lorem et sit, sed stet lorem sit clita
-            </p>
-            <div class="d-flex pt-2">
-              <a class="btn btn-square me-1" href=""
-                ><i class="fab fa-twitter"></i
-              ></a>
-              <a class="btn btn-square me-1" href=""
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a class="btn btn-square me-1" href=""
-                ><i class="fab fa-youtube"></i
-              ></a>
-              <a class="btn btn-square me-0" href=""
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-light mb-4">Address</h5>
-            <p>
-              <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
-            </p>
-            <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-            <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-light mb-4">Quick Links</h5>
-            <a class="btn btn-link" href="">About Us</a>
-            <a class="btn btn-link" href="">Contact Us</a>
-            <a class="btn btn-link" href="">Our Services</a>
-            <a class="btn btn-link" href="">Terms & Condition</a>
-            <a class="btn btn-link" href="">Support</a>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <h5 class="text-light mb-4">Newsletter</h5>
-            <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-            <div class="position-relative mx-auto" style="max-width: 400px">
-              <input
-                class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-                type="text"
-                placeholder="Your email"
-              />
-              <button
-                type="button"
-                class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2"
-              >
-                SignUp
-              </button>
-            </div>
+          
           </div>
         </div>
       </div>
@@ -903,13 +756,7 @@ nav_bar($data);
         <div class="container">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a href="#">Your Site Name</a>, All Right Reserved.
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-              Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-              <br />Distributed By:
-              <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+              &copy; <a href="#">Paraíso Azul</a>, All Right Reserved.
             </div>
           </div>
         </div>
