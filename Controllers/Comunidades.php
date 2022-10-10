@@ -32,6 +32,44 @@ class Comunidades extends Controllers
 			$btnEdit = '';
 			$btnDelete = '';
 
+/////Provincia
+			if ($arrData[$i]['provincia'] == "Puntarenas") {
+
+				$arrData[$i]['provincia'] = '<span>Puntarenas</span>';
+
+			} elseif ($arrData[$i]['provincia'] == "Guanacaste") {
+
+				$arrData[$i]['provincia'] = '<span>Guanacaste</span>';
+			}
+/////Canton
+			if ($arrData[$i]['canton'] == 'Esparza') {
+                $arrData[$i]['canton'] = '<span>Esparza</span>';
+            } 
+			elseif ($arrData[$i]['canton'] == 'Buenos Aires') {
+                $arrData[$i]['canton'] = '<span>Buenos Aires</span>';
+            }
+			elseif ($arrData[$i]['canton'] == 'Monteverde') {
+                $arrData[$i]['canton'] = '<span>Monteverde</span>';
+            }
+///Distrito
+			if ($arrData[$i]['distrito'] == 'Chomes') {
+                $arrData[$i]['distrito'] = '<span>Chomes</span>';
+            } 
+			elseif ($arrData[$i]['distrito'] == 'Lepanto') {
+                $arrData[$i]['distrito'] = '<span>Lepanto</span>';
+            }
+			elseif ($arrData[$i]['distrito'] == 'Manzanillo') {
+                $arrData[$i]['distrito'] = '<span>Manzanillo</span>';
+            }
+
+
+
+
+
+
+
+
+
 			$arrData[$i]['options'] = '<div class="text-center">
 				
 				<button class="btn btn-primary btn-sm btnEditComunidad" onClick="fntEditComunidad(' . $arrData[$i]['id_comunidad'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>

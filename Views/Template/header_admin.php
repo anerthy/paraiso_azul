@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+<title>
+        Set checkbox size
+    </title>
+      
+    <!-- Style to set the size of checkbox -->
+    <style>
+        input.largerCheckbox {
+            width: 40px;
+            height: 30px;
+        }
+    </style>
+
   <meta charset="utf-8">
   <meta name="description" content="Paraiso Azul Golfo Nicoya">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

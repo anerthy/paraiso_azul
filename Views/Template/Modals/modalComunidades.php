@@ -23,33 +23,45 @@
             </div>
           </div>
           <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="txtProvincia">Provincia</label>
-            <input type="text" class="form-control valid validText" placeholder="Ingrese la provincia" id="txtProvincia" name="txtProvincia" required="">
-          </div>
-          </div>
-          <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="txtCanton">Canton</label>
-            <input type="text" class="form-control valid validText" placeholder="Ingrese el canton" id="txtCanton" name="txtCanton" required="">
-          </div>
-          </div>
-          <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="txtDistrito">Distrito </label>
-            <input type="text" class="form-control valid validText" placeholder="Ingrese el distrito" id="txtDistrito" name="txtDistrito" required="">
-          </div>
-          </div>
 
-          <div class="form-row">
-          
+            <div class="form-group col-md-6">
               <label for="txtDescripcion">Descripcion</label>
               <textarea type="text" class="form-control valid validText" placeholder="Ingrese la descripcion" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
-          
+            </div>
             </div>
 
-            <br>
-          
+            <div class="form-row">
+            <div class="form-group col-md-3">
+                <label for="txtProvincia">Provincia</label>
+                <select class="form-control" id="txtProvincia" name="txtProvincia" required="">
+                  <option value="Puntarenas">Puntarenas</option>
+                  <option value="Guanacaste">Guanacaste</option>
+                </select>
+              </div>
+              
+              <div class="form-group col-md-3">
+                <label for="txtCanton">Canton</label>
+                <select class="form-control" id="txtCanton" name="txtCanton" required="">
+                  <option value="Esparza">Esparza</option>
+                  <option value="Buenos Aires">Buenos Aires</option>
+                  <option value="Monteverde">Monteverde</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-3">
+                <label for="txtDistrito">Distrito</label>
+                <select class="form-control" id="txtDistrito" name="txtDistrito" required="">
+                  <option value="Chomes">Chomes</option>
+                  <option value="Lepanto">Lepanto</option>
+                  <option value="Manzanillo">Manzanillo</option>
+                </select>
+              </div>
+
+          </div>
+         
+
+
+
           <div class="form-row">
             <div class="form-row">
 
