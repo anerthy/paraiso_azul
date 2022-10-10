@@ -149,3 +149,11 @@
 	width: 200px;
 	margin: auto;
 }
+
+#imgTour{
+	text-align:center;
+}
+#imgTour img{
+	width: 400px;
+	margin: auto;
+}
