@@ -10,12 +10,15 @@ class Hospedajes extends Controllers
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
-		// getPermisos(1);
+		getPermisos(8);
 	}
 
 	public function Hospedajes()
 	{
-		$data['page_id'] = 3;
+		if (empty($_SESSION['permisosMod']['ver'])) {
+			header("Location:" . base_url() . '/access_denied');
+		}
+		$data['page_id'] = 8;
 		$data['page_tag'] = "Hospedaje";
 		$data['page_name'] = "hospedaje";
 		$data['page_title'] = "Hospedaje";
@@ -32,7 +35,24 @@ class Hospedajes extends Controllers
 			$btnEdit = '';
 			$btnDelete = '';
 
+			// boton de ver
+			if ($_SESSION['permisosMod']['ver']) {
+				$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_hospedaje'] . ')" title="Ver hospedaje"><i class="far fa-eye"></i></button>';
+			}
 
+			// boton de actualizar
+			if ($_SESSION['permisosMod']['actualizar']) {
+				$btnEdit = '<button class="btn btn-primary btn-sm btnEditHospedaje" onClick="fntEditHospedaje(' . $arrData[$i]['id_hospedaje'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+			}
+
+			// boton de eliminar
+			if ($_SESSION['permisosMod']['eliminar']) {
+				$btnDelete = '<button class="btn btn-danger btn-sm btnDelHospedaje" onClick="fntDelHospedaje(' . $arrData[$i]['id_hospedaje'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
+			}
+
+			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+
+			// Estado
 			if ($arrData[$i]['status'] == 1) {
 				$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
 			} else {
@@ -44,14 +64,6 @@ class Hospedajes extends Controllers
 			} else {
 				$arrData[$i]['tipo'] = '<span>Cabina</span>';
 			}
-
-
-			$arrData[$i]['options'] = '<div class="text-center">
-				
-				<button class="btn btn-primary btn-sm btnEditHospedaje" onClick="fntEditHospedaje(' . $arrData[$i]['id_hospedaje'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
-				<button class="btn btn-danger btn-sm btnDelHospedaje" onClick="fntDelHospedaje(' . $arrData[$i]['id_hospedaje'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-				<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_hospedaje'] . ')" title="Ver hospedaje"><i class="far fa-eye"></i></button>
-				</div>';
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		die();

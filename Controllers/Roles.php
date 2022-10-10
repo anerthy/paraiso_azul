@@ -16,9 +16,9 @@ class Roles extends Controllers
 	public function Roles()
 	{
 		if (empty($_SESSION['permisosMod']['ver'])) {
-			header("Location:" . base_url() . '/dashboard');
+			header("Location:" . base_url() . '/access_denied');
 		}
-		$data['page_id'] = 3;
+		$data['page_id'] = 2;
 		$data['page_tag'] = "Roles de Usuario";
 		$data['page_name'] = "rol_usuario";
 		$data['page_title'] = "Roles de Usuario";
@@ -28,23 +28,35 @@ class Roles extends Controllers
 
 	public function getRoles()
 	{
-		$arrData = $this->model->selectRoles();
+		if ($_SESSION['permisosMod']['ver']) {
+			$btnView = '';
+			$btnEdit = '';
+			$btnDelete = '';
+			$arrData = $this->model->selectRoles();
 
-		for ($i = 0; $i < count($arrData); $i++) {
+			for ($i = 0; $i < count($arrData); $i++) {
+				// boton de actualizar
+				if ($_SESSION['permisosMod']['actualizar']) {
+					$btnView = '<button class="btn btn-primary btn-sm btnEditRol" onClick="fntEditRol(' . $arrData[$i]['id_rol'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+					$btnEdit = '<button class="btn btn-secondary btn-sm btnPermisosRol" onClick="fntPermisos(' . $arrData[$i]['id_rol'] . ')" title="Permisos"><i class="fas fa-key"></i></button>';
+				}
 
-			if ($arrData[$i]['status'] == 1) {
-				$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
-			} else {
-				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+				// boton de eliminar
+				if ($_SESSION['permisosMod']['eliminar']) {
+					$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol(' . $arrData[$i]['id_rol'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
+				}
+
+				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+
+				// estado
+				if ($arrData[$i]['status'] == 1) {
+					$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+				} else {
+					$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+				}
 			}
-
-			$arrData[$i]['options'] = '<div class="text-center">
-				<button class="btn btn-secondary btn-sm btnPermisosRol" onClick="fntPermisos(' . $arrData[$i]['id_rol'] . ')" title="Permisos"><i class="fas fa-key"></i></button>
-				<button class="btn btn-primary btn-sm btnEditRol" onClick="fntEditRol(' . $arrData[$i]['id_rol'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
-				<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol(' . $arrData[$i]['id_rol'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-				</div>';
+			echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		}
-		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		die();
 	}
 

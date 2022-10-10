@@ -10,12 +10,15 @@ class Comunidades extends Controllers
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
-		// getPermisos(1);
+		getPermisos(5);
 	}
 
 	public function Comunidades()
 	{
-		$data['page_id'] = 3;
+		if (empty($_SESSION['permisosMod']['ver'])) {
+			header("Location:" . base_url() . '/access_denied');
+		}
+		$data['page_id'] = 5;
 		$data['page_tag'] = "Comunidades";
 		$data['page_name'] = "comunidad_usuario";
 		$data['page_title'] = "Comunidades";
@@ -28,54 +31,51 @@ class Comunidades extends Controllers
 		$arrData = $this->model->selectComunidades();
 
 		for ($i = 0; $i < count($arrData); $i++) {
-			//$btnView = '';
+			$btnView = '';
 			$btnEdit = '';
 			$btnDelete = '';
 
-/////Provincia
+			// boton de ver
+			if ($_SESSION['permisosMod']['ver']) {
+				$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_comunidad'] . ')" title="Ver comunidad"><i class="far fa-eye"></i></button>';
+			}
+
+			// boton de actualizar
+			if ($_SESSION['permisosMod']['actualizar']) {
+				$btnEdit = '<button class="btn btn-primary btn-sm btnEditComunidad" onClick="fntEditComunidad(' . $arrData[$i]['id_comunidad'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+			}
+
+			// boton de eliminar
+			if ($_SESSION['permisosMod']['eliminar']) {
+				$btnDelete = '<button class="btn btn-danger btn-sm btnDelComunidad" onClick="fntDelComunidad(' . $arrData[$i]['id_comunidad'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
+			}
+
+			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+
+			/////Provincia
 			if ($arrData[$i]['provincia'] == "Puntarenas") {
 
 				$arrData[$i]['provincia'] = '<span>Puntarenas</span>';
-
 			} elseif ($arrData[$i]['provincia'] == "Guanacaste") {
 
 				$arrData[$i]['provincia'] = '<span>Guanacaste</span>';
 			}
-/////Canton
+			/////Canton
 			if ($arrData[$i]['canton'] == 'Esparza') {
-                $arrData[$i]['canton'] = '<span>Esparza</span>';
-            } 
-			elseif ($arrData[$i]['canton'] == 'Buenos Aires') {
-                $arrData[$i]['canton'] = '<span>Buenos Aires</span>';
-            }
-			elseif ($arrData[$i]['canton'] == 'Monteverde') {
-                $arrData[$i]['canton'] = '<span>Monteverde</span>';
-            }
-///Distrito
+				$arrData[$i]['canton'] = '<span>Esparza</span>';
+			} elseif ($arrData[$i]['canton'] == 'Buenos Aires') {
+				$arrData[$i]['canton'] = '<span>Buenos Aires</span>';
+			} elseif ($arrData[$i]['canton'] == 'Monteverde') {
+				$arrData[$i]['canton'] = '<span>Monteverde</span>';
+			}
+			///Distrito
 			if ($arrData[$i]['distrito'] == 'Chomes') {
-                $arrData[$i]['distrito'] = '<span>Chomes</span>';
-            } 
-			elseif ($arrData[$i]['distrito'] == 'Lepanto') {
-                $arrData[$i]['distrito'] = '<span>Lepanto</span>';
-            }
-			elseif ($arrData[$i]['distrito'] == 'Manzanillo') {
-                $arrData[$i]['distrito'] = '<span>Manzanillo</span>';
-            }
-
-
-
-
-
-
-
-
-
-			$arrData[$i]['options'] = '<div class="text-center">
-				
-				<button class="btn btn-primary btn-sm btnEditComunidad" onClick="fntEditComunidad(' . $arrData[$i]['id_comunidad'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
-				<button class="btn btn-danger btn-sm btnDelComunidad" onClick="fntDelComunidad(' . $arrData[$i]['id_comunidad'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-				<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_comunidad'] . ')" title="Ver comunidad"><i class="far fa-eye"></i></button>
-				</div>';
+				$arrData[$i]['distrito'] = '<span>Chomes</span>';
+			} elseif ($arrData[$i]['distrito'] == 'Lepanto') {
+				$arrData[$i]['distrito'] = '<span>Lepanto</span>';
+			} elseif ($arrData[$i]['distrito'] == 'Manzanillo') {
+				$arrData[$i]['distrito'] = '<span>Manzanillo</span>';
+			}
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		die();

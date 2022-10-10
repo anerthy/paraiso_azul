@@ -17,9 +17,9 @@ class Alimentacion extends Controllers
     public function Alimentacion()
     {
         if (empty($_SESSION['permisosMod']['ver'])) {
-            header("Location:" . base_url() . '/error');
+            header("Location:" . base_url() . '/access_denied');
         }
-        $data['page_id'] = 3;
+        $data['page_id'] = 6;
         $data['page_tag'] = "Alimentacion";
         $data['page_name'] = "alimentacion";
         $data['page_title'] = "Alimentacion";
@@ -36,13 +36,6 @@ class Alimentacion extends Controllers
             $btnEdit = '';
             $btnDelete = '';
 
-            if ($arrData[$i]['status'] == 1) {
-                $arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
-            } else {
-                $arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
-            }
-
-
             // boton de ver
             if ($_SESSION['permisosMod']['ver']) {
                 $btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_alimentacion'] . ')" title="Ver alimentacion"><i class="far fa-eye"></i></button>';
@@ -51,18 +44,21 @@ class Alimentacion extends Controllers
             // boton de actualizar
             if ($_SESSION['permisosMod']['actualizar']) {
                 $btnEdit = '<button class="btn btn-primary btn-sm fntEditAlimentacion" onClick="fntEditAlimentacion(' . $arrData[$i]['id_alimentacion'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
-            } else {
-                $btnEdit = '<button class="btn btn-primary btn-sm" disabled><i class="fas fa-pencil-alt"></i></button>';
             }
 
             // boton de eliminar
             if ($_SESSION['permisosMod']['eliminar']) {
                 $btnDelete = '<button class="btn btn-danger btn-sm fntDelAlimentacion" onClick="fntDelAlimentacion(' . $arrData[$i]['id_alimentacion'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
-            } else {
-                $btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
             }
 
             $arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+
+            //Estado
+            if ($arrData[$i]['status'] == 1) {
+                $arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+            } else {
+                $arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+            }
         }
         echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
         die();

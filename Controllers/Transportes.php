@@ -11,12 +11,15 @@ class Transportes extends Controllers
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
-		// getPermisos(1);
+		getPermisos(7);
 	}
 
 	public function Transportes()
 	{
-		$data['page_id'] = 3;
+		if (empty($_SESSION['permisosMod']['ver'])) {
+			header("Location:" . base_url() . '/access_denied');
+		}
+		$data['page_id'] = 7;
 		$data['page_tag'] = "Transporte";
 		$data['page_name'] = "transporte";
 		$data['page_title'] = "Transporte";
@@ -33,32 +36,43 @@ class Transportes extends Controllers
 			$btnEdit = '';
 			$btnDelete = '';
 
+			// boton de ver
+			if ($_SESSION['permisosMod']['ver']) {
+				$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_transporte'] . ')" title="Ver transporte"><i class="far fa-eye"></i></button>';
+			}
 
+			// boton de actualizar
+			if ($_SESSION['permisosMod']['actualizar']) {
+				$btnEdit = '<button class="btn btn-primary btn-sm btnEditTransporte" onClick="fntEditTransporte(' . $arrData[$i]['id_transporte'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+			}
+
+			// boton de eliminar
+			if ($_SESSION['permisosMod']['eliminar']) {
+				$btnDelete = '<button class="btn btn-danger btn-sm btnDelTransporte" onClick="fntDelTransporte(' . $arrData[$i]['id_transporte'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
+			}
+
+			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
+
+			// estado
 			if ($arrData[$i]['status'] == 1) {
 				$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
 			} else {
 				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 			}
 
+			// clase
 			if ($arrData[$i]['clase'] == 'Privado') {
 				$arrData[$i]['clase'] = '<span>Privado</span>';
 			} else {
 				$arrData[$i]['clase'] = '<span>Publico</span>';
 			}
 
+			// tipo
 			if ($arrData[$i]['tipo'] == 'Maritimo') {
 				$arrData[$i]['tipo'] = '<span>Maritimo</span>';
 			} else {
 				$arrData[$i]['tipo'] = '<span>Terrestre</span>';
 			}
-
-
-			$arrData[$i]['options'] = '<div class="text-center">
-				
-				<button class="btn btn-primary btn-sm btnEditTransporte" onClick="fntEditTransporte(' . $arrData[$i]['id_transporte'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>
-				<button class="btn btn-danger btn-sm btnDelTransporte" onClick="fntDelTransporte(' . $arrData[$i]['id_transporte'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>
-				<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_transporte'] . ')" title="Ver transporte"><i class="far fa-eye"></i></button>
-				</div>';
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		die();
@@ -98,8 +112,6 @@ class Transportes extends Controllers
 	public function setTransporte()
 	{
 
-
-
 		$intId_transporte = intval($_POST['id_Transporte']);
 		$strTransporte =  strClean($_POST['txtNombre_trans']);
 		$strDescripcion = strClean($_POST['txtDescripcion']);
@@ -111,10 +123,6 @@ class Transportes extends Controllers
 		$intStatus = intval($_POST['listStatus']);
 		//$strImagen = strClean($_POST['txtImagen']);
 
-
-
-
-
 		$foto   	= $_FILES['foto'];
 		$nombre_foto 	= $foto['name'];
 		$type 		 	= $foto['type'];
@@ -125,15 +133,7 @@ class Transportes extends Controllers
 			$imgImagen = 'img_' . md5(date('d-m-Y H:m:s')) . '.jpg';
 		}
 
-
-
-
-
-
 		if ($intId_transporte == 0) {
-
-
-
 			//Crear
 			$request_transporte = $this->model->insertTransporte(
 				$strTransporte,
