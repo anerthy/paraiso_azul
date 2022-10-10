@@ -6,9 +6,9 @@ getModal('modalTbl_paginas', $data);
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fas fa-city"></i> <?= $data['page_title'] ?>
+      <?php if ($_SESSION['permisosMod']['agregar']) { ?>
         <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
-      </h1>
+      <?php } ?>
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
