@@ -6,7 +6,7 @@ getModal('modalTours', $data);
 <main class="app-content">
   <div class="app-title">
     <div>
-      <h1><i class="fas fa-building"></i> <?= $data['page_title'] ?>
+      <h1><i class="fas fa-walking"></i> <?= $data['page_title'] ?>
         <?php if ($_SESSION['permisosMod']['agregar']) { ?>
           <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
         <?php } ?>
