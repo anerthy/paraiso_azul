@@ -26,7 +26,7 @@
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="txtNombre_tour">Nombre del tour</label>
+              <label for="txtNombre_tour">Nombre</label>
               <input type="text" class="form-control valid validText" placeholder="Nombre del tour" id="txtNombre_tour" name="txtNombre_tour" required="" autofocus="on">
             </div>
             <div class="form-group col-md-6">
