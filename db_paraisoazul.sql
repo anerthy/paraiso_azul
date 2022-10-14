@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 10-10-2022 a las 02:15:03
+-- Tiempo de generación: 14-10-2022 a las 02:16:59
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -608,7 +608,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=426 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=462 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -659,30 +659,6 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (163, 1, 0, 0, 0, 24, 9),
 (164, 1, 0, 0, 0, 24, 10),
 (165, 1, 0, 0, 0, 24, 11),
-(222, 0, 0, 0, 0, 25, 1),
-(223, 0, 0, 0, 0, 25, 2),
-(224, 0, 0, 0, 0, 25, 3),
-(225, 0, 0, 0, 0, 25, 4),
-(226, 0, 0, 0, 0, 25, 5),
-(227, 1, 1, 1, 1, 25, 6),
-(228, 1, 1, 1, 1, 25, 7),
-(229, 1, 1, 1, 1, 25, 8),
-(230, 1, 1, 1, 1, 25, 9),
-(231, 0, 0, 0, 0, 25, 10),
-(232, 0, 0, 0, 0, 25, 11),
-(233, 0, 0, 0, 0, 25, 12),
-(402, 1, 1, 1, 0, 23, 1),
-(403, 1, 1, 1, 0, 23, 2),
-(404, 1, 1, 1, 0, 23, 3),
-(405, 1, 1, 1, 0, 23, 4),
-(406, 1, 1, 1, 0, 23, 5),
-(407, 0, 0, 0, 0, 23, 6),
-(408, 1, 1, 1, 0, 23, 7),
-(409, 1, 1, 1, 0, 23, 8),
-(410, 1, 1, 1, 0, 23, 9),
-(411, 1, 1, 1, 1, 23, 10),
-(412, 1, 1, 1, 0, 23, 11),
-(413, 0, 0, 0, 0, 23, 12),
 (414, 1, 1, 1, 1, 1, 1),
 (415, 1, 1, 1, 1, 1, 2),
 (416, 1, 1, 1, 1, 1, 3),
@@ -694,7 +670,31 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (422, 1, 1, 1, 1, 1, 9),
 (423, 1, 1, 1, 1, 1, 10),
 (424, 1, 1, 1, 1, 1, 11),
-(425, 1, 1, 1, 1, 1, 12);
+(425, 1, 1, 1, 1, 1, 12),
+(438, 0, 0, 1, 0, 25, 1),
+(439, 0, 0, 1, 0, 25, 2),
+(440, 0, 0, 1, 0, 25, 3),
+(441, 0, 1, 1, 0, 25, 4),
+(442, 0, 0, 1, 0, 25, 5),
+(443, 0, 1, 1, 1, 25, 6),
+(444, 0, 1, 1, 1, 25, 7),
+(445, 0, 1, 1, 1, 25, 8),
+(446, 0, 1, 1, 1, 25, 9),
+(447, 0, 0, 1, 0, 25, 10),
+(448, 0, 0, 1, 0, 25, 11),
+(449, 0, 0, 1, 0, 25, 12),
+(450, 1, 0, 1, 0, 23, 1),
+(451, 1, 0, 1, 0, 23, 2),
+(452, 1, 0, 1, 0, 23, 3),
+(453, 1, 0, 1, 0, 23, 4),
+(454, 1, 0, 1, 0, 23, 5),
+(455, 0, 0, 0, 0, 23, 6),
+(456, 1, 0, 1, 0, 23, 7),
+(457, 1, 0, 1, 0, 23, 8),
+(458, 1, 0, 1, 0, 23, 9),
+(459, 1, 0, 1, 1, 23, 10),
+(460, 1, 0, 1, 0, 23, 11),
+(461, 0, 0, 0, 0, 23, 12);
 
 -- --------------------------------------------------------
 
@@ -820,7 +820,6 @@ CREATE TABLE IF NOT EXISTS `tour` (
   `id_tour` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre_tour` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `servicio` set('Actividad','Alimentacion','Hospedaje','Transporte') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL DEFAULT 'Actividad',
   `actividad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `alimentacion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
   `hospedaje` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
@@ -835,18 +834,46 @@ CREATE TABLE IF NOT EXISTS `tour` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_tour`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `tour`
 --
 
-INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `servicio`, `actividad`, `alimentacion`, `hospedaje`, `transporte`, `lugar`, `disponibilidad`, `hora_inicio`, `duracion`, `cupo_minimo`, `telefono`, `precio`, `status`, `imagen`) VALUES
-(1, 'Tour loco', 'sddasd', 'Actividad,Alimentacion,Hospedaje,Transporte', 'Caminata a la montaña', 'Incluye fresquito', 'Habitacion individual', 'Lancha', 'Chira', 'todos los dias', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
-(2, 'FDSFSDF', 'sddasd', 'Actividad,Alimentacion', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'saddsdas', NULL, NULL, 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
-(4, 'ZZZZZ', 'sddasd', 'Actividad,Transporte', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sadsdadsad', 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
-(5, 'ACTU', 'dd', 'Alimentacion,Hospedaje', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'asddsd', 'dddsfs', NULL, 'sdd', 'sddad', '10:00:00', '00:50:00', 12, '12345678', '10500.00', 1, 'asdadad'),
-(6, 'Tour a playa Albina', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'Actividad', 'Reforestacion del manglar', 'Incluye cafe por la tarde', NULL, 'en panga', 'En playa albina', 'De lunes a viernes', '23:39:42', '01:08:58', 10, '34232414', '120000.00', 1, 'iLorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultri');
+INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `actividad`, `alimentacion`, `hospedaje`, `transporte`, `lugar`, `disponibilidad`, `hora_inicio`, `duracion`, `cupo_minimo`, `telefono`, `precio`, `status`, `imagen`) VALUES
+(1, 'Tour loco', 'sddasd', 'Caminata a la montaña', 'Incluye fresquito', 'Habitacion individual', 'Lancha', 'Chira', 'todos los dias', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(2, 'FDSFSDF', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'saddsdas', NULL, NULL, 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(4, 'ZZZZZ', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sadsdadsad', 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(5, 'ACTU', 'dd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'asddsd', 'dddsfs', NULL, 'sdd', 'sddad', '10:00:00', '00:50:00', 12, '12345678', '10500.00', 1, 'asdadad'),
+(6, 'Tour a playa Albina', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'Reforestacion del manglar', 'Incluye cafe por la tarde', NULL, 'en panga', 'En playa albina', 'De lunes a viernes', '23:39:42', '01:08:58', 10, '34232414', '120000.00', 1, 'iLorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultri'),
+(10, 'Tour en panga', 'jfeskfjdfckshdwk rjhgkjd hjdgh ridj', 'panguita', 'cafe con apancito', 'a', 'a', 'Isla Chira', 'Los fines de semana', '19:25:00', '19:26:00', 20, '89898989', '32444.00', 2, 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg'),
+(12, 'sdsadas', 'asdd', 'assdadd', '', '', 'sdasdadad', 'Isla Chira', 'dasdsdda', '19:33:00', '19:34:00', 12, '89742984', '5565.00', 2, 'img_1d5be3fb440d1544539ded60811e0844.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `tours_activos`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `tours_activos`;
+CREATE TABLE IF NOT EXISTS `tours_activos` (
+`id_tour` smallint unsigned
+,`nombre_tour` varchar(100)
+,`descripcion` text
+,`actividad` text
+,`alimentacion` text
+,`hospedaje` text
+,`transporte` text
+,`lugar` text
+,`disponibilidad` text
+,`hora_inicio` time
+,`duracion` time
+,`cupo_minimo` tinyint
+,`telefono` varchar(8)
+,`precio` decimal(8,2)
+,`status` int
+,`imagen` varchar(100)
+);
 
 -- --------------------------------------------------------
 
@@ -877,7 +904,7 @@ INSERT INTO `transporte` (`id_transporte`, `nombre_trans`, `descripcion`, `clase
 (2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 0, 'SDASDDAD'),
 (3, 'Taxi alfredo', '.hbgf', '', '', 'jhgfd', '2500.00', '89742984', 0, 'img_18b2ab157b9609dcf2025e4e06188867.jpg'),
 (4, 'Bus', 'ijdkidjsadadj', 'Publico', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 2, 'img_2664a10b57c8059bd14e871ff8bf6add.jpg'),
-(5, 'Panga Don Lelo', 'FSDJFLSLF', 'Publico', 'Maritimo', 'QWERTYUIOLÑJHG', '2500.00', '24438433', 1, 'img_7b8946c196a2eb013f3e14d35d7b4ccb.jpg'),
+(5, 'Panga Don Lelo', 'FSDJFLSLF', 'Publico', 'Maritimo', 'lleguele nomas', '2500.00', '24438433', 1, 'img_7b8946c196a2eb013f3e14d35d7b4ccb.jpg'),
 (6, 'Taxi alfredo lopez', 'affdfdsdf', 'Publico', 'Terrestre', 'todos los dias', '5000.00', '89742984', 1, 'img_f39a962a6a8b91fccdbf195ecf2a9a72.jpg');
 
 -- --------------------------------------------------------
@@ -930,6 +957,22 @@ CREATE TABLE IF NOT EXISTS `usuario_grupo` (
 -- --------------------------------------------------------
 
 --
+-- Estructura Stand-in para la vista `usuario_rol`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `usuario_rol`;
+CREATE TABLE IF NOT EXISTS `usuario_rol` (
+`id_usuario` smallint unsigned
+,`nombre_usuario` varchar(50)
+,`correo` varchar(50)
+,`id_rol` smallint unsigned
+,`nombre_rol` varchar(50)
+,`status` int
+);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `voluntario`
 --
 
@@ -949,7 +992,7 @@ CREATE TABLE IF NOT EXISTS `voluntario` (
   PRIMARY KEY (`id_voluntario`),
   UNIQUE KEY `cedula` (`cedula`),
   UNIQUE KEY `correo` (`correo`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `voluntario`
@@ -957,7 +1000,27 @@ CREATE TABLE IF NOT EXISTS `voluntario` (
 
 INSERT INTO `voluntario` (`id_voluntario`, `nombre_vol`, `apellido1`, `apellido2`, `cedula`, `correo`, `telefono`, `fecha_nacimiento`, `genero`, `lugar_residencia`, `status`) VALUES
 (2, 'pepe', 'ape', 'llido', '512312386', 'SADSD@', '12345678', '0000-00-00', 'Masculino', 'AQUI', 1),
-(6, 'Sr Aa', 'Villegas', 'Mora', '504323233', 'aaronvimo@gmail.com', '89742984', '2000-10-14', 'Masculino', 'Nambi', 1);
+(6, 'Sr Aa', 'Villegas', 'Moras', '504323233', 'aaronvimo@gmail.com', '89742984', '2000-10-14', 'Masculino', 'Nambi', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `tours_activos`
+--
+DROP TABLE IF EXISTS `tours_activos`;
+
+DROP VIEW IF EXISTS `tours_activos`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `tours_activos`  AS SELECT `tour`.`id_tour` AS `id_tour`, `tour`.`nombre_tour` AS `nombre_tour`, `tour`.`descripcion` AS `descripcion`, `tour`.`actividad` AS `actividad`, `tour`.`alimentacion` AS `alimentacion`, `tour`.`hospedaje` AS `hospedaje`, `tour`.`transporte` AS `transporte`, `tour`.`lugar` AS `lugar`, `tour`.`disponibilidad` AS `disponibilidad`, `tour`.`hora_inicio` AS `hora_inicio`, `tour`.`duracion` AS `duracion`, `tour`.`cupo_minimo` AS `cupo_minimo`, `tour`.`telefono` AS `telefono`, `tour`.`precio` AS `precio`, `tour`.`status` AS `status`, `tour`.`imagen` AS `imagen` FROM `tour` WHERE (`tour`.`status` = 1) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `usuario_rol`
+--
+DROP TABLE IF EXISTS `usuario_rol`;
+
+DROP VIEW IF EXISTS `usuario_rol`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `usuario_rol`  AS SELECT `u`.`id_usuario` AS `id_usuario`, `u`.`nombre_usuario` AS `nombre_usuario`, `u`.`correo` AS `correo`, `r`.`id_rol` AS `id_rol`, `r`.`nombre_rol` AS `nombre_rol`, `u`.`status` AS `status` FROM (`usuario` `u` join `rol` `r` on((`u`.`rol_id` = `r`.`id_rol`))) ;
 
 --
 -- Restricciones para tablas volcadas
