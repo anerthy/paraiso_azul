@@ -58,17 +58,6 @@ class Tours extends Controllers
 			} else {
 				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
 			}
-
-
-			if ($arrData[$i]['servicio'] == "Actividad") {
-				$arrData[$i]['servicio'] = '<span >Actividad</span>';
-			} elseif ($arrData[$i]['servicio'] == "Alimentacion") {
-				$arrData[$i]['servicio'] = '<span>Alimentacion</span>';
-			} elseif ($arrData[$i]['servicio'] == "Hospedaje") {
-				$arrData[$i]['servicio'] = '<span >Hospedaje</span>';
-			} elseif ($arrData[$i]['servicio'] == "Transporte") {
-				$arrData[$i]['servicio'] = '<span >Transporte</span>';
-			}
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		die();
@@ -116,7 +105,6 @@ class Tours extends Controllers
 		$intId_tour = intval($_POST['id_Tour']);
 		$strNombre_tour = strClean($_POST['txtNombre_tour']);
 		$strDescripcion = strClean($_POST['txtDescripcion']);
-		$strServicio = strClean($_POST['txtServicio']);
 		$strActividad = strClean($_POST['txtActividad']);
 		$strAlimentacion = strClean($_POST['txtAlimentacion']);
 		$strHospedaje = strClean($_POST['txtHospedaje']);
@@ -156,7 +144,6 @@ class Tours extends Controllers
 			$request_tour = $this->model->insertTour(
 				$strNombre_tour,
 				$strDescripcion,
-				$strServicio,
 				$strActividad,
 				$strAlimentacion,
 				$strHospedaje,
@@ -183,7 +170,6 @@ class Tours extends Controllers
 				$intId_tour,
 				$strNombre_tour,
 				$strDescripcion,
-				$strServicio,
 				$strActividad,
 				$strAlimentacion,
 				$strHospedaje,
