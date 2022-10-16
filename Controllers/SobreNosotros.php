@@ -1,7 +1,8 @@
 <?php
-
+require_once("Models/TGrupo.php");
 class SobreNosotros extends Controllers
 {
+    use TGrupo;
     public function __construct()
     {
         parent::__construct();
@@ -19,11 +20,11 @@ class SobreNosotros extends Controllers
 
     public function grupos()
     {
-        $data['page_id'] = 2;
-        $data['page_tag'] = "grupos";
+        $data['page_tag'] = "Grupos Organizados";
         $data['page_title'] = "Grupos Organizados";
-        $data['page_name'] = "grupos";
-        $data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
+        $data['page_name'] = "viewgrupos";
+        $data['cardgrupos'] = $this->getGruposT();
+        // dep($data);
         $this->views->getView($this, "grupos", $data);
     }
 
