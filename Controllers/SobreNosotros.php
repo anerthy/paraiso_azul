@@ -1,5 +1,5 @@
 <?php
-require_once("Models/TGrupo.php");
+require_once("Models/Traits/TGrupo.php");
 class SobreNosotros extends Controllers
 {
     use TGrupo;
