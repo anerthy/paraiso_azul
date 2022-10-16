@@ -28,6 +28,7 @@ class Usuarios extends Controllers
 	public function setUsuario()
 	{
 		if ($_POST) {
+			if (empty($_SESSION['permisosMod']['ver'])) {
 
 			if (empty($_POST['txtNombre']) || empty($_POST['txtCorreo']) || empty($_POST['listRolid']) || empty($_POST['listStatus'])) {
 				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
@@ -75,11 +76,13 @@ class Usuarios extends Controllers
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 		}
+	}
 		die();
 	}
 
 	public function getUsuarios()
 	{
+		
 		$arrData = $this->model->selectUsuarios();
 		for ($i = 0; $i < count($arrData); $i++) {
 			$btnView = '';
