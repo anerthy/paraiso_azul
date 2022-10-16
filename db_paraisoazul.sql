@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 16-10-2022 a las 05:30:27
+-- Tiempo de generación: 16-10-2022 a las 18:06:20
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -464,7 +464,7 @@ CREATE TABLE IF NOT EXISTS `alimentacion` (
 
 INSERT INTO `alimentacion` (`id_alimentacion`, `nombre_alim`, `descripcion`, `direccion`, `hora_apertura`, `hora_cierre`, `telefono`, `status`, `imagen`) VALUES
 (7, 'Soda la playa', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', '07:00:00', '20:00:00', '89742984', 1, 'img_def626362da50491744b69cecc501a2b.jpg'),
-(8, 'Restaurante', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '13:00:00', '17:00:00', '22004591', 2, 'img_fed4e2a14d47f706cf8406b974c86260.jpg'),
+(8, 'Restaurante', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '13:00:00', '17:00:00', '22004591', 1, 'img_fed4e2a14d47f706cf8406b974c86260.jpg'),
 (9, 'HIUHI TETS', 'A', 'F', '23:05:00', '21:03:00', '89742984', 2, 'img_296bfc0586699a0b2c35eb3f66e7df60.jpg');
 
 -- --------------------------------------------------------
@@ -873,13 +873,13 @@ CREATE TABLE IF NOT EXISTS `tour` (
 --
 
 INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `actividad`, `alimentacion`, `hospedaje`, `transporte`, `lugar`, `disponibilidad`, `hora_inicio`, `duracion`, `cupo_minimo`, `telefono`, `precio`, `status`, `imagen`) VALUES
-(1, 'Tour loco', 'sddasd', 'Caminata a la montaña', 'Incluye fresquito', 'Habitacion individual', 'Lancha', 'Chira', 'todos los dias', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(1, 'Tour loco', 'sddasd', 'Caminata a la montaña', 'Incluye fresquito', 'Habitacion individual', 'Lancha', 'Chira', 'todos los dias', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg'),
 (2, 'FDSFSDF', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'saddsdas', NULL, NULL, 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
-(4, 'ZZZZZ', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sadsdadsad', 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(4, 'ZZZZZ', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sadsdadsad', 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 2, 'kjnhgbfdtyok,jmnhbgv'),
 (5, 'ACTU', 'dd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'asddsd', 'dddsfs', NULL, 'sdd', 'sddad', '10:00:00', '00:50:00', 12, '12345678', '10500.00', 1, 'asdadad'),
-(6, 'Tour a playa Albina', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'Reforestacion del manglar', 'Incluye cafe por la tarde', NULL, 'en panga', 'En playa albina', 'De lunes a viernes', '23:39:42', '01:08:58', 10, '34232414', '120000.00', 1, 'iLorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultri'),
-(10, 'Tour en panga', 'jfeskfjdfckshdwk rjhgkjd hjdgh ridj', 'panguita', 'cafe con apancito', 'a', 'a', 'Isla Chira', 'Los fines de semana', '19:25:00', '19:26:00', 20, '89898989', '32444.00', 2, 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg'),
-(12, 'sdsadas', 'asdd', 'assdadd', '', '', 'sdasdadad', 'Isla Chira', 'dasdsdda', '19:33:00', '19:34:00', 12, '89742984', '5565.00', 2, 'img_1d5be3fb440d1544539ded60811e0844.jpg');
+(6, 'Tour a playa Albina', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'Reforestacion del manglar', 'Incluye cafe por la tarde', NULL, 'en panga', 'En playa albina', 'De lunes a viernes', '23:39:42', '01:08:58', 10, '34232414', '120000.00', 2, 'iLorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultri'),
+(10, 'Tour en panga', 'jfeskfjdfckshdwk rjhgkjd hjdgh ridj', 'panguita', 'cafe con apancito', 'a', 'a', 'Isla Chira', 'Los fines de semana', '19:25:00', '19:26:00', 20, '89898989', '32444.00', 1, 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg'),
+(12, 'sdsadas', 'asdd', 'assdadd', 'cafe', NULL, 'sdasdadad', 'Isla Chira', 'dasdsdda', '19:33:00', '19:34:00', 12, '89742984', '5565.00', 1, 'img_1d5be3fb440d1544539ded60811e0844.jpg');
 
 -- --------------------------------------------------------
 
@@ -933,9 +933,9 @@ CREATE TABLE IF NOT EXISTS `transporte` (
 --
 
 INSERT INTO `transporte` (`id_transporte`, `nombre_trans`, `descripcion`, `clase`, `tipo`, `disponibilidad`, `precio`, `telefono`, `status`, `imagen`) VALUES
-(2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 0, 'SDASDDAD'),
-(3, 'Taxi alfredo', '.hbgf', '', '', 'jhgfd', '2500.00', '89742984', 0, 'img_18b2ab157b9609dcf2025e4e06188867.jpg'),
-(4, 'Bus', 'ijdkidjsadadj', 'Publico', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 2, 'img_2664a10b57c8059bd14e871ff8bf6add.jpg'),
+(2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 2, 'SDASDDAD'),
+(3, 'Taxi alfredo', '.hbgf', '', '', 'jhgfd', '2500.00', '89742984', 1, 'img_18b2ab157b9609dcf2025e4e06188867.jpg'),
+(4, 'Bus', 'ijdkidjsadadj', 'Publico', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 1, 'img_2664a10b57c8059bd14e871ff8bf6add.jpg'),
 (5, 'Panga Don Lelo', 'FSDJFLSLF', 'Publico', 'Maritimo', 'lleguele nomas', '2500.00', '24438433', 1, 'img_7b8946c196a2eb013f3e14d35d7b4ccb.jpg'),
 (6, 'Taxi alfredo lopez', 'affdfdsdf', 'Publico', 'Terrestre', 'todos los dias', '5000.00', '89742984', 1, 'img_f39a962a6a8b91fccdbf195ecf2a9a72.jpg');
 
@@ -1005,6 +1005,23 @@ CREATE TABLE IF NOT EXISTS `usuario_rol` (
 -- --------------------------------------------------------
 
 --
+-- Estructura Stand-in para la vista `view_alimentacion`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_alimentacion`;
+CREATE TABLE IF NOT EXISTS `view_alimentacion` (
+`descripcion` text
+,`direccion` text
+,`horario` varchar(22)
+,`id_alimentacion` smallint unsigned
+,`imagen` varchar(100)
+,`nombre_alim` varchar(100)
+,`telefono` varchar(8)
+);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura Stand-in para la vista `view_grupo_organizado_comunidad`
 -- (Véase abajo para la vista actual)
 --
@@ -1020,6 +1037,49 @@ CREATE TABLE IF NOT EXISTS `view_grupo_organizado_comunidad` (
 ,`representante` varchar(100)
 ,`telefono` varchar(8)
 ,`ubicacion` text
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_hospedaje`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_hospedaje`;
+CREATE TABLE IF NOT EXISTS `view_hospedaje` (
+`descripcion` text
+,`direccion` text
+,`id_hospedaje` smallint unsigned
+,`imagen` varchar(100)
+,`nombre_hosp` varchar(100)
+,`precio` decimal(8,2)
+,`telefono` varchar(8)
+,`tipo` enum('Cabina','Camping')
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_tour`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_tour`;
+CREATE TABLE IF NOT EXISTS `view_tour` (
+`actividad` text
+,`alimentacion` text
+,`cupo_minimo` tinyint
+,`descripcion` text
+,`disponibilidad` text
+,`duracion` varchar(12)
+,`hora_inicio` varchar(8)
+,`hospedaje` text
+,`id_tour` smallint unsigned
+,`imagen` varchar(100)
+,`lugar` text
+,`nombre_tour` varchar(100)
+,`precio` varchar(11)
+,`telefono` varchar(8)
+,`transporte` text
 );
 
 -- --------------------------------------------------------
@@ -1077,12 +1137,42 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- Estructura para la vista `view_alimentacion`
+--
+DROP TABLE IF EXISTS `view_alimentacion`;
+
+DROP VIEW IF EXISTS `view_alimentacion`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_alimentacion`  AS SELECT `alimentacion`.`id_alimentacion` AS `id_alimentacion`, `alimentacion`.`nombre_alim` AS `nombre_alim`, `alimentacion`.`descripcion` AS `descripcion`, `alimentacion`.`direccion` AS `direccion`, concat(date_format(`alimentacion`.`hora_apertura`,'De %h:%m %p '),date_format(`alimentacion`.`hora_cierre`,'a %h:%m %p')) AS `horario`, `alimentacion`.`telefono` AS `telefono`, `alimentacion`.`imagen` AS `imagen` FROM `alimentacion` WHERE (`alimentacion`.`status` = 1) ;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura para la vista `view_grupo_organizado_comunidad`
 --
 DROP TABLE IF EXISTS `view_grupo_organizado_comunidad`;
 
 DROP VIEW IF EXISTS `view_grupo_organizado_comunidad`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_grupo_organizado_comunidad`  AS SELECT `g`.`id_grupo` AS `id_grupo`, `g`.`nombre_grupo` AS `nombre_grupo`, `g`.`representante` AS `representante`, `g`.`descripcion` AS `descripcion`, `g`.`ubicacion` AS `ubicacion`, `g`.`correo` AS `correo`, `g`.`telefono` AS `telefono`, `g`.`numero_integrantes` AS `numero_integrantes`, `g`.`logo` AS `logo`, `c`.`nombre_com` AS `nombre_com` FROM (`grupo_organizado` `g` join `comunidad` `c` on((`g`.`comunidad_id` = `c`.`id_comunidad`))) WHERE (`g`.`status` = 1) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_hospedaje`
+--
+DROP TABLE IF EXISTS `view_hospedaje`;
+
+DROP VIEW IF EXISTS `view_hospedaje`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_hospedaje`  AS SELECT `hospedaje`.`id_hospedaje` AS `id_hospedaje`, `hospedaje`.`nombre_hosp` AS `nombre_hosp`, `hospedaje`.`descripcion` AS `descripcion`, `hospedaje`.`tipo` AS `tipo`, `hospedaje`.`direccion` AS `direccion`, `hospedaje`.`telefono` AS `telefono`, `hospedaje`.`precio` AS `precio`, `hospedaje`.`imagen` AS `imagen` FROM `hospedaje` WHERE (`hospedaje`.`status` = 1) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_tour`
+--
+DROP TABLE IF EXISTS `view_tour`;
+
+DROP VIEW IF EXISTS `view_tour`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_tour`  AS SELECT `tour`.`id_tour` AS `id_tour`, `tour`.`nombre_tour` AS `nombre_tour`, `tour`.`descripcion` AS `descripcion`, `tour`.`actividad` AS `actividad`, `tour`.`alimentacion` AS `alimentacion`, `tour`.`hospedaje` AS `hospedaje`, `tour`.`transporte` AS `transporte`, `tour`.`lugar` AS `lugar`, `tour`.`disponibilidad` AS `disponibilidad`, date_format(`tour`.`hora_inicio`,'%h:%m %p') AS `hora_inicio`, date_format(`tour`.`duracion`,'%h:%m aprox.') AS `duracion`, `tour`.`cupo_minimo` AS `cupo_minimo`, `tour`.`telefono` AS `telefono`, concat('₡',`tour`.`precio`) AS `precio`, `tour`.`imagen` AS `imagen` FROM `tour` WHERE (`tour`.`status` = 1) ;
 
 --
 -- Restricciones para tablas volcadas
