@@ -1,8 +1,9 @@
 <?php
 require_once("Models/Traits/THospedaje.php");
+require_once("Models/Traits/TAlimentacion.php");
 class Servicios extends Controllers
 {
-    use THospedaje;
+    use THospedaje,TAlimentacion;
     public function __construct()
     {
         parent::__construct();
@@ -10,11 +11,10 @@ class Servicios extends Controllers
 
     public function alimentacion()
     {
-        $data['page_id'] = 1;
-        $data['page_tag'] = "alimentacion";
-        $data['page_title'] = "Servicio de Alimentacion";
-        $data['page_name'] = "alimentacion";
-        $data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
+        $data['page_tag'] = "Alimentacion";
+        $data['page_title'] = "Alimentacion";
+        $data['page_name'] = "viewalimentacion";
+        $data['alimentacion'] = $this->getAlimentacionT();
         $this->views->getView($this, "alimentacion", $data);
     }
 
