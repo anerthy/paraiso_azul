@@ -1,6 +1,6 @@
 <?php
 _header($data);
-$arrGrupos =  $data['cardgrupos'];
+$arrGrupos =  $data['grupos'];
 ?>
 <div>
     <h1>¿Que son los Grupos Organizados?</h1><br>

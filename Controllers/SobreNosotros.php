@@ -23,7 +23,7 @@ class SobreNosotros extends Controllers
         $data['page_tag'] = "Grupos Organizados";
         $data['page_title'] = "Grupos Organizados";
         $data['page_name'] = "viewgrupos";
-        $data['cardgrupos'] = $this->getGruposT();
+        $data['grupos'] = $this->getGruposT();
         // dep($data);
         $this->views->getView($this, "grupos", $data);
     }
