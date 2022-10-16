@@ -389,48 +389,6 @@ function fntEditGrupo(id_grupo){
 
 }
 
-// function fntDelGrupo(id_grupo){
-//     var id_grupo = id_grupo;
-//     swal({
-//         title: "Eliminar Grupo",
-//         text: "¿Realmente quiere eliminar el Grupo?",
-//         type: "warning",
-//         showCancelButton: true,
-//         confirmButtonText: "Si, eliminar!",
-//         cancelButtonText: "No, cancelar!",
-//         closeOnConfirm: false,
-//         closeOnCancel: true
-//     }, function(isConfirm) {
-        
-//         if (isConfirm) 
-//         {
-//             var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-//             var ajaxUrl = base_url+'/Grupos/delGrupo/';
-//             var strData = "id_grupo="+id_grupo;
-//             request.open("POST",ajaxUrl,true);
-//             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//             request.send(strData);
-//             request.onreadystatechange = function(){
-//                 if(request.readyState == 4 && request.status == 200){
-//                     var objData = JSON.parse(request.responseText);
-//                     if(objData.status)
-//                     {
-//                         swal("Eliminar!", objData.msg , "success");
-//                         tableGrupos.api().ajax.reload(function(){
-//                             fntEditGrupo();
-//                             fntDelGrupo();
-//                             //fntPermisos();
-//                         });
-//                     }else{
-//                         swal("Atención!", objData.msg , "error");
-//                     }
-//                 }
-//             }
-//         }
-
-//     });
-// }
-
 function fntDelGrupo(id_grupo){
     swal({
         title: "Eliminar Grupo",
