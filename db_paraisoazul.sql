@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 15-10-2022 a las 21:58:06
+-- Tiempo de generación: 16-10-2022 a las 05:30:27
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -483,7 +483,7 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
   `distrito` enum('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_comunidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `comunidad`
@@ -515,16 +515,19 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
   `comunidad_id` tinyint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_grupo`),
   KEY `comunidad_id` (`comunidad_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `grupo_organizado`
 --
 
 INSERT INTO `grupo_organizado` (`id_grupo`, `nombre_grupo`, `representante`, `descripcion`, `ubicacion`, `correo`, `telefono`, `numero_integrantes`, `status`, `logo`, `comunidad_id`) VALUES
-(11, 'Asopecupachi', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 20, 1, 'portada_categoria.png', 24),
-(13, 'ASA', 'REPRE', 'SSAD', 'SDSD', 'SDASDD', '34324234', 127, 0, 'SADD', 1),
-(14, 'Asociación de desarrollo integral de Isla Caballo', 'ddsf', 'ddsfd', 'ddffdsf', 'dkgwf@dddgmail.com', '89742984', 32, 1, 'portada_categoria.png', 1);
+(11, 'Asopecupachi', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 20, 2, 'portada_categoria.png', 1),
+(14, 'Asociación de desarrollo integral de Isla Caballo', 'ddsf', 'Pellentesque id laoreet leo a consequat anteSed venenatis ornare dui eget luctus Vivamus non pulvinar mauris Integer quis faucibus sapien', 'en la isla', 'dkgwf@dddgmail.com', '89742984', 32, 1, 'img_ed375ab0d8fe6b3b0c7b067d9ac6adc0.jpg', 24),
+(16, 'Mudecop', 'Carlos Mendez', 'Lorem ipsum dolor sit amet consectetur adipisicing elit Culpa cupiditate eius possimus unde ex sapiente minima necessitatibus inventore quisquam quod sed adipisci qui minus aut doloremque tempora nemo excepturi voluptas', 'Al frente del salon comunal de Isla Chira', 'mudecop@gmail.com', '89742984', 25, 1, 'img_9efb1d40f36b267579353da2099131ea.jpg', 30),
+(17, 'LELA', 'Lela la mejor SM', 'lorem imkjd kdfdkjfdfjvhf ghdjdfhf jfdhvjdfvhfdvjdfvf', 'dxvdvndnjvndfbj njnhdjkdj', 'lela@gmail.com', '22222222', 10, 1, 'img_9e967e52aabbae642e89d228ab63e2ff.jpg', 24),
+(18, 'Coopeacuicultores Isla Venado', 'Sr pecupachi', 'kdasldj kajdask djsakdjs kdjsk djsds', 'sddasd dsdadadad', 'Asopecupachi@gmail.com', '33333333', 30, 1, 'img_c5e4729185fdfba8a33271ce328373a6.jpg', 24),
+(19, 'SR AA', 'Sr aa', 'sdfd gfdgdgdgddfffffffffffffffff', 'fsdfdsfdsfdff', 'sraa@gmail.com', '3141314', 1, 1, 'img_fc184cce8188aa78e7c0f9c127026cd6.jpg', 24);
 
 -- --------------------------------------------------------
 
@@ -544,7 +547,7 @@ CREATE TABLE IF NOT EXISTS `hospedaje` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_hospedaje`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `hospedaje`
@@ -555,7 +558,8 @@ INSERT INTO `hospedaje` (`id_hospedaje`, `nombre_hosp`, `descripcion`, `tipo`, `
 (3, 'Chira House', 'Se ofrece habitacion para dos personas', 'Cabina', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
 (6, 'Hotel la vida', 'jdskjssjdsaaaaaaaaaaaaaaaaaaaaaaadk', 'Cabina', '25m de la plaza', '89320012', '21000.00', 1, 'img_d44bacf25b82aa9de2d70aa8b8c8bf19.jpg'),
 (7, 'sdsfdfsdf', 'dfdsff', '', 'fsdfsdfsdf', '49284949', '2500.00', 0, 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg'),
-(9, 'SIRVE', 'kjhf', 'Camping', 'lkmjnhbgvf', '24438433', '90000.00', 0, 'img_703ec07accdeb8eba156715faf6bee80.jpg');
+(9, 'SIRVE', 'kjhf', 'Camping', 'lkmjnhbgvf', '24438433', '90000.00', 0, 'img_703ec07accdeb8eba156715faf6bee80.jpg'),
+(10, 'WSDDA', 'sads dsdsad .', 'Cabina', 'sadda d.', '24438433', '90000.00', 2, 'img_1bee7af8eb9c0e6a11ba4f6499f14ca0.jpg');
 
 -- --------------------------------------------------------
 
@@ -816,25 +820,25 @@ INSERT INTO `tbl_contenido_pagina` (`cont_id_contenido`, `cont_titulo`, `cont_co
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_imagen`
+-- Estructura de tabla para la tabla `tbl_galeria`
 --
 
-DROP TABLE IF EXISTS `tbl_imagen`;
-CREATE TABLE IF NOT EXISTS `tbl_imagen` (
-  `img_id_imagen` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  `img_descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `img_imagen` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
-  `img_ubicacion` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  PRIMARY KEY (`img_id_imagen`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+DROP TABLE IF EXISTS `tbl_galeria`;
+CREATE TABLE IF NOT EXISTS `tbl_galeria` (
+  `gal_id_galeria` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `gal_descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `gal_imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `gal_ubicacion` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  PRIMARY KEY (`gal_id_galeria`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
--- Volcado de datos para la tabla `tbl_imagen`
+-- Volcado de datos para la tabla `tbl_galeria`
 --
 
-INSERT INTO `tbl_imagen` (`img_id_imagen`, `img_descripcion`, `img_imagen`, `img_ubicacion`) VALUES
+INSERT INTO `tbl_galeria` (`gal_id_galeria`, `gal_descripcion`, `gal_imagen`, `gal_ubicacion`) VALUES
 (1, 'Logo de Paraizo Azul', 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg', 'pagina principal'),
-(2, 'Imagen del product owner del proyecto', 'img_2664a10b57c8059bd14e871ff8bf6add.jpg.jpg', 'integrantes'),
+(2, 'Imagen del product owner del proyecto', 'img_2664a10b57c8059bd14e871ff8bf6add.jpg', 'integrantes'),
 (3, 'Imagen de la Isla Chira', 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg', 'carrusel');
 
 -- --------------------------------------------------------
@@ -1001,6 +1005,26 @@ CREATE TABLE IF NOT EXISTS `usuario_rol` (
 -- --------------------------------------------------------
 
 --
+-- Estructura Stand-in para la vista `view_grupo_organizado_comunidad`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_grupo_organizado_comunidad`;
+CREATE TABLE IF NOT EXISTS `view_grupo_organizado_comunidad` (
+`correo` varchar(50)
+,`descripcion` text
+,`id_grupo` tinyint unsigned
+,`logo` varchar(100)
+,`nombre_com` varchar(50)
+,`nombre_grupo` varchar(100)
+,`numero_integrantes` tinyint
+,`representante` varchar(100)
+,`telefono` varchar(8)
+,`ubicacion` text
+);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `voluntario`
 --
 
@@ -1049,6 +1073,16 @@ DROP TABLE IF EXISTS `usuario_rol`;
 
 DROP VIEW IF EXISTS `usuario_rol`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `usuario_rol`  AS SELECT `u`.`id_usuario` AS `id_usuario`, `u`.`nombre_usuario` AS `nombre_usuario`, `u`.`correo` AS `correo`, `r`.`id_rol` AS `id_rol`, `r`.`nombre_rol` AS `nombre_rol`, `u`.`status` AS `status` FROM (`usuario` `u` join `rol` `r` on((`u`.`rol_id` = `r`.`id_rol`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_grupo_organizado_comunidad`
+--
+DROP TABLE IF EXISTS `view_grupo_organizado_comunidad`;
+
+DROP VIEW IF EXISTS `view_grupo_organizado_comunidad`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_grupo_organizado_comunidad`  AS SELECT `g`.`id_grupo` AS `id_grupo`, `g`.`nombre_grupo` AS `nombre_grupo`, `g`.`representante` AS `representante`, `g`.`descripcion` AS `descripcion`, `g`.`ubicacion` AS `ubicacion`, `g`.`correo` AS `correo`, `g`.`telefono` AS `telefono`, `g`.`numero_integrantes` AS `numero_integrantes`, `g`.`logo` AS `logo`, `c`.`nombre_com` AS `nombre_com` FROM (`grupo_organizado` `g` join `comunidad` `c` on((`g`.`comunidad_id` = `c`.`id_comunidad`))) WHERE (`g`.`status` = 1) ;
 
 --
 -- Restricciones para tablas volcadas
