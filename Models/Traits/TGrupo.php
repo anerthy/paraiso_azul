@@ -7,7 +7,7 @@ trait TGrupo
     public function getGruposT()
     {
         $this->con = new Mysql();
-        $sql = "SELECT * FROM view_grupo_organizado_comunidad;"; //cambiar el * por los campos
+        $sql = "SELECT id_grupo,nombre_grupo,representante,descripcion,ubicacion,correo,telefono,numero_integrantes,logo,nombre_com FROM view_grupo_organizado_comunidad;";
         $request = $this->con->select_all($sql);
         if (count($request) > 0) {
             for ($i = 0; $i < count($request); $i++) {
