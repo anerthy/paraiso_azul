@@ -18,6 +18,7 @@ $arrHospedaje =  $data['hospedaje'];
             <div>
                 <h4 class="nombre"><?= $arrHospedaje[$i]['nombre_hosp'] ?></h4>
                 <p id="descripcion" class="card-text"><?= $arrHospedaje[$i]['descripcion'] ?></p>
+                <p id="precio" class="card-text">Precio: <?= $arrHospedaje[$i]['precio'] ?></p>
                 <center><a href="#" class="btn btn-info">Ver más informacion</a></center>
             </div>
         </div>
