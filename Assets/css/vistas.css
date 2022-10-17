@@ -1,0 +1,31 @@
+#cardgrupos{
+    /* margin: 5px; */
+    width: 30%;
+    padding: 10px;
+    margin: 40px;
+}
+#descripcion{
+    text-align: justify;
+    width:300px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#logo{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.nombre{
+    text-align: center;
+}
+
+.form-row{
+    justify-content: center;
+}
+.info{
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+}

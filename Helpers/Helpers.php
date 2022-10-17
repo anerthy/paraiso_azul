@@ -142,6 +142,20 @@ function sessionUser(int $idusuario)
     return $request;
 }
 
+function sessionStart()
+{
+    session_start();
+    $inactive = 300; //tiempo de sesion 5mins (60s)
+    if (isset($_SESSION['timeout'])) {
+        $session_in = time() - $_SESSION['inicio'];
+        if ($session_in > $inactive) {
+            header("Location: " . BASE_URL . "/logout");
+        }
+    } else {
+        header("Location: " . BASE_URL . "/logout");
+    }
+}
+
 function uploadImage(array $data, string $name)
 {
     $url_temp = $data['tmp_name'];
