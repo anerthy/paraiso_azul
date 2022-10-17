@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 17-10-2022 a las 03:52:30
+-- Tiempo de generación: 17-10-2022 a las 06:15:16
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -492,7 +492,7 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
 INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia`, `canton`, `distrito`, `imagen`) VALUES
 (1, 'Isla Caballo', 'lorem ipsum', 'Guanacaste', 'Buenos Aires', 'Manzanillo', 'img_a1d92727950d9ea0e9e308828d2449c8.jpg'),
 (24, 'Isla Bejuco', 'ASDASDASD', 'Puntarenas', 'Corredores', 'Pitahaya', 'img_e253a0afc3f038cb66ffd42876a00955.jpg'),
-(30, 'Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Monteverde', 'Lepanto', 'img_c9f27d8e1cdbb2b36ca511b64060c23b.jpg');
+(30, 'Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Buenos Aires', 'Lepanto', 'img_c9f27d8e1cdbb2b36ca511b64060c23b.jpg');
 
 -- --------------------------------------------------------
 
@@ -612,7 +612,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=522 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=678 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -630,17 +630,6 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (97, 0, 0, 0, 0, 20, 9),
 (98, 0, 0, 0, 0, 20, 10),
 (99, 0, 0, 0, 0, 20, 11),
-(100, 1, 1, 1, 1, 19, 1),
-(101, 0, 1, 0, 0, 19, 2),
-(102, 0, 0, 1, 0, 19, 3),
-(103, 1, 0, 0, 1, 19, 4),
-(104, 0, 1, 0, 0, 19, 5),
-(105, 0, 0, 1, 1, 19, 6),
-(106, 0, 0, 0, 0, 19, 7),
-(107, 0, 0, 0, 0, 19, 8),
-(108, 0, 0, 0, 0, 19, 9),
-(109, 0, 0, 0, 0, 19, 10),
-(110, 0, 0, 0, 0, 19, 11),
 (111, 1, 1, 1, 1, 9, 1),
 (112, 0, 0, 0, 0, 9, 2),
 (113, 0, 0, 0, 0, 9, 3),
@@ -652,30 +641,6 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (119, 0, 0, 0, 0, 9, 9),
 (120, 0, 0, 0, 0, 9, 10),
 (121, 0, 0, 0, 0, 9, 11),
-(438, 0, 0, 1, 0, 25, 1),
-(439, 0, 0, 1, 0, 25, 2),
-(440, 0, 0, 1, 0, 25, 3),
-(441, 0, 1, 1, 0, 25, 4),
-(442, 0, 0, 1, 0, 25, 5),
-(443, 0, 1, 1, 1, 25, 6),
-(444, 0, 1, 1, 1, 25, 7),
-(445, 0, 1, 1, 1, 25, 8),
-(446, 0, 1, 1, 1, 25, 9),
-(447, 0, 0, 1, 0, 25, 10),
-(448, 0, 0, 1, 0, 25, 11),
-(449, 0, 0, 1, 0, 25, 12),
-(450, 1, 0, 1, 0, 23, 1),
-(451, 1, 0, 1, 0, 23, 2),
-(452, 1, 0, 1, 0, 23, 3),
-(453, 1, 0, 1, 0, 23, 4),
-(454, 1, 0, 1, 0, 23, 5),
-(455, 0, 0, 0, 0, 23, 6),
-(456, 1, 0, 1, 0, 23, 7),
-(457, 1, 0, 1, 0, 23, 8),
-(458, 1, 0, 1, 0, 23, 9),
-(459, 1, 0, 1, 1, 23, 10),
-(460, 1, 0, 1, 0, 23, 11),
-(461, 0, 0, 0, 0, 23, 12),
 (474, 1, 1, 1, 1, 1, 1),
 (475, 1, 1, 1, 1, 1, 2),
 (476, 1, 1, 1, 1, 1, 3),
@@ -688,18 +653,54 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (483, 1, 1, 1, 1, 1, 10),
 (484, 1, 1, 1, 1, 1, 11),
 (485, 1, 1, 1, 1, 1, 12),
-(510, 1, 0, 0, 0, 24, 1),
-(511, 1, 0, 0, 0, 24, 2),
-(512, 1, 0, 0, 0, 24, 3),
-(513, 1, 0, 0, 0, 24, 4),
-(514, 1, 0, 0, 0, 24, 5),
-(515, 1, 0, 0, 0, 24, 6),
-(516, 1, 0, 0, 0, 24, 7),
-(517, 1, 0, 0, 0, 24, 8),
-(518, 1, 0, 0, 0, 24, 9),
-(519, 1, 0, 0, 0, 24, 10),
-(520, 1, 0, 0, 0, 24, 11),
-(521, 1, 0, 0, 0, 24, 12);
+(546, 1, 0, 0, 0, 24, 1),
+(547, 1, 0, 0, 0, 24, 2),
+(548, 1, 0, 0, 0, 24, 3),
+(549, 1, 0, 0, 0, 24, 4),
+(550, 1, 0, 0, 0, 24, 5),
+(551, 1, 0, 0, 0, 24, 6),
+(552, 1, 0, 0, 0, 24, 7),
+(553, 1, 0, 0, 0, 24, 8),
+(554, 1, 0, 0, 0, 24, 9),
+(555, 1, 0, 0, 0, 24, 10),
+(556, 1, 0, 0, 0, 24, 11),
+(557, 1, 0, 0, 0, 24, 12),
+(558, 1, 1, 1, 0, 23, 1),
+(559, 1, 1, 1, 0, 23, 2),
+(560, 1, 1, 1, 0, 23, 3),
+(561, 1, 1, 1, 0, 23, 4),
+(562, 1, 1, 1, 0, 23, 5),
+(563, 1, 1, 1, 0, 23, 6),
+(564, 1, 1, 1, 0, 23, 7),
+(565, 1, 1, 1, 0, 23, 8),
+(566, 1, 1, 1, 0, 23, 9),
+(567, 1, 1, 1, 0, 23, 10),
+(568, 1, 1, 1, 0, 23, 11),
+(569, 1, 1, 1, 0, 23, 12),
+(570, 1, 1, 1, 1, 25, 1),
+(571, 0, 0, 0, 0, 25, 2),
+(572, 0, 0, 0, 0, 25, 3),
+(573, 0, 0, 0, 0, 25, 4),
+(574, 0, 0, 0, 0, 25, 5),
+(575, 1, 1, 1, 1, 25, 6),
+(576, 1, 1, 1, 1, 25, 7),
+(577, 1, 1, 1, 1, 25, 8),
+(578, 1, 1, 1, 1, 25, 9),
+(579, 0, 0, 0, 0, 25, 10),
+(580, 0, 0, 0, 0, 25, 11),
+(581, 0, 0, 0, 0, 25, 12),
+(582, 1, 1, 1, 1, 19, 1),
+(583, 0, 0, 0, 0, 19, 2),
+(584, 0, 0, 0, 0, 19, 3),
+(585, 1, 1, 1, 1, 19, 4),
+(586, 0, 0, 0, 0, 19, 5),
+(587, 0, 0, 0, 0, 19, 6),
+(588, 0, 0, 0, 0, 19, 7),
+(589, 0, 0, 0, 0, 19, 8),
+(590, 0, 0, 0, 0, 19, 9),
+(591, 0, 0, 0, 0, 19, 10),
+(592, 0, 0, 0, 0, 19, 11),
+(593, 0, 0, 0, 0, 19, 12);
 
 -- --------------------------------------------------------
 
@@ -778,20 +779,31 @@ CREATE TABLE IF NOT EXISTS `rol` (
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `status` int NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
 --
 
 INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
-(1, 'Administrador', 'Tiene acceso a todo los modulos', 1),
+(1, 'Administrador', 'Es el rol del super usuario, brinda acceso a todo los modulos', 1),
 (9, 'Asopecupachi', 'lorem ipsum', 1),
 (19, 'Mariposas Golfo de Nicoya', 'mraio', 1),
 (20, 'Coopeacuicultores Isla Venado', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 2),
-(23, 'registrador', 'el que agrega y edita', 1),
-(24, 'Chismoso', 'puede ver todo', 1),
-(25, 'servicios', 'servicios', 1);
+(23, 'Registrador', 'permisos para agregar y actualizar registros', 1),
+(24, 'Consultor', 'puede ver todos los registros', 1),
+(25, 'Servicios', 'servicios', 1);
+
+--
+-- Disparadores `rol`
+--
+DROP TRIGGER IF EXISTS `sp_delete_permisos_rol`;
+DELIMITER $$
+CREATE TRIGGER `sp_delete_permisos_rol` BEFORE DELETE ON `rol` FOR EACH ROW BEGIN
+    DELETE FROM permisos WHERE rol_id = (SELECT id_rol from rol where id_rol = old.id_rol);
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -967,10 +979,10 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, `token`, `status`, `rol_id`) VALUES
-(1, 'SA', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '7cf40813aa9242aad538-4f5a53943a0b171dfb00-37eedf317106ae60efbc-31ec7154239d5de84', 1, 1),
+(1, 'Sa', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '7cf40813aa9242aad538-4f5a53943a0b171dfb00-37eedf317106ae60efbc-31ec7154239d5de84', 1, 1),
 (5, 'Andres', 'andmejigo12@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', '', 1, 1),
 (25, 'Sr AA', 'aaron1314@gmail.com', '91014162f34e902a9c10de1f6c7726af9ec2d8c5d961db39be98d96f75ced71a', NULL, 1, 1),
-(26, 'Carlosa', 'carlos@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', NULL, 1, 24);
+(26, 'Carlos', 'carlos@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', NULL, 1, 24);
 
 -- --------------------------------------------------------
 
