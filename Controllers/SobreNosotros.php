@@ -1,8 +1,9 @@
 <?php
 require_once("Models/Traits/TGrupo.php");
+require_once("Models/Traits/TComunidad.php");
 class SobreNosotros extends Controllers
 {
-    use TGrupo;
+    use TGrupo, TComunidad;
     public function __construct()
     {
         parent::__construct();
@@ -29,11 +30,10 @@ class SobreNosotros extends Controllers
 
     public function comunidades()
     {
-        $data['page_id'] = 3;
-        $data['page_tag'] = "comunidades";
-        $data['page_title'] = "Comunidades";
-        $data['page_name'] = "comunidades";
-        $data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
+        $data['page_tag'] = "Comunidades Organizados";
+        $data['page_title'] = "Comunidades Organizados";
+        $data['page_name'] = "viewcomunidades";
+        $data['comunidades'] = $this->getComunidadesT();
         $this->views->getView($this, "comunidades", $data);
     }
 }
