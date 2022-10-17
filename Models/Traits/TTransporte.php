@@ -4,14 +4,14 @@ trait TTransporte
 {
     public $con;
 
-    public function getTransporteT()
+    public function getTransportesT()
     {
         $this->con = new Mysql();
-        $sql ="SELECT id_transporte,nombre_trans,descripcion,clase,tipo,disponibilidad,precio,telefono,imagen FROM view_transporte" ;
+        $sql = "SELECT id_transporte,nombre_trans,descripcion,clase,tipo,disponibilidad,precio,telefono,imagen FROM view_transporte";
         $request = $this->con->select_all($sql);
         if (count($request) > 0) {
             for ($i = 0; $i < count($request); $i++) {
-                $request[$i]['logo'] = BASE_URL . '/Assets/images/uploads/' . $request[$i]['logo'];
+                $request[$i]['logo'] = BASE_URL . '/Assets/images/uploads/' . $request[$i]['imagen'];
             }
         }
         return $request;
