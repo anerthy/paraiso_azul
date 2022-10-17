@@ -142,19 +142,18 @@ function sessionUser(int $idusuario)
     return $request;
 }
 
-function sessionStart(){
+function sessionStart()
+{
     session_start();
-    $inactive = 60; //tiempo de sesion
-    if(isset($_SESSION['timeout'])){
+    $inactive = 300; //tiempo de sesion 5mins (60s)
+    if (isset($_SESSION['timeout'])) {
         $session_in = time() - $_SESSION['inicio'];
-        if($session_in > $inactive){
-            header("Location: ".BASE_URL."/logout");
+        if ($session_in > $inactive) {
+            header("Location: " . BASE_URL . "/logout");
         }
-
-    }else{
-        header("Location: ".BASE_URL."/logout");
+    } else {
+        header("Location: " . BASE_URL . "/logout");
     }
-
 }
 
 function uploadImage(array $data, string $name)
