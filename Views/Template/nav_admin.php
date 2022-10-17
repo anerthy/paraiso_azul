@@ -150,9 +150,9 @@
                     <ul class="treeview-menu">
                         <?php if (!empty($_SESSION['permisos'][11]['ver'])) { ?>
                             <li>
-                                <a class="app-menu__item" href="<?= base_url(); ?>/tbl_paginas">
+                                <a class="app-menu__item" href="<?= base_url(); ?>/contenido">
 
-                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAAAXNSR0IArs4c6QAAAYNJREFUWEftmOtRAzEMhLWVwFUCqSSkEqASQiWESkgnYjYj32gu4+fZMweJ/9wfPz6vtZbOkA02bJBJ/h6Uqj6KyIeI8FvTPgG81QzwfaNKGdBP48RnEWkGS0FRoZdGKA5rBktBfYnIs0G9i8gpAxiO2ndrAiuFOgA4pqBUlRvgRpatGmwkFGGCQarARkERYmfKVYMNgwIwmYN5pFVgQ6EYXC1g1VAW0MGV52CARaBfYshF/MPieknGWAsUb+pXW/AI4GCKxNwXMy3B6Oqrq6YnFOOmNgPsekFRkb1t/9vfX6rKDPCUuWR9lugDtSLtXIaqKtUMbvzHUGbxqlLGx80QpVTVu6/oNAHMhro5qOC+UqWm0HGIUkUUiU53qFIFhyh1d99SflX1Pw5zjb5JpVzhVhpGAoBlyo3lvmJ5Ih17uo/yz0ewEiyU0pxm8kcb5k1VnizG+Os+qrG+n9OPXyT3wEGwUI/3hIvW51wk+z5l9ZOXfC0cFUq+S2Sh1hK0jN8k1C/2tmo1JX3xYAAAAABJRU5ErkJggg==" height="30" width="30" /> <span class="app-menu__label">Paginas</span>
+                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAAAXNSR0IArs4c6QAAAYNJREFUWEftmOtRAzEMhLWVwFUCqSSkEqASQiWESkgnYjYj32gu4+fZMweJ/9wfPz6vtZbOkA02bJBJ/h6Uqj6KyIeI8FvTPgG81QzwfaNKGdBP48RnEWkGS0FRoZdGKA5rBktBfYnIs0G9i8gpAxiO2ndrAiuFOgA4pqBUlRvgRpatGmwkFGGCQarARkERYmfKVYMNgwIwmYN5pFVgQ6EYXC1g1VAW0MGV52CARaBfYshF/MPieknGWAsUb+pXW/AI4GCKxNwXMy3B6Oqrq6YnFOOmNgPsekFRkb1t/9vfX6rKDPCUuWR9lugDtSLtXIaqKtUMbvzHUGbxqlLGx80QpVTVu6/oNAHMhro5qOC+UqWm0HGIUkUUiU53qFIFhyh1d99SflX1Pw5zjb5JpVzhVhpGAoBlyo3lvmJ5Ih17uo/yz0ewEiyU0pxm8kcb5k1VnizG+Os+qrG+n9OPXyT3wEGwUI/3hIvW51wk+z5l9ZOXfC0cFUq+S2Sh1hK0jN8k1C/2tmo1JX3xYAAAAABJRU5ErkJggg==" height="30" width="30" /> <span class="app-menu__label">Contenido</span>
                                 </a>
                             </li>
                         <?php } ?>

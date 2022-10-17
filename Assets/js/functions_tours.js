@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"id_tour"},
             {"data":"nombre_tour"},
             {"data":"descripcion"},
-            {"data":"servicio"},
             // {"data":"actividad"},
             // {"data":"alimentacion"},
             // {"data":"hospedaje"},
@@ -118,8 +117,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
         var intId_Tour = document.querySelector('#id_Tour').value;
         var strNombre_tour = document.querySelector('#txtNombre_tour').value;
-        var strDescripcion = document.querySelector('#txtDescripcion').value;  
-        var strServicio = document.querySelector('#txtServicio').value; 
+        var strDescripcion = document.querySelector('#txtDescripcion').value;
         var strActividad = document.querySelector('#txtActividad').value;
         var strAlimentacion = document.querySelector('#txtAlimentacion').value;
         var strHospedaje = document.querySelector('#txtHospedaje').value;
@@ -135,10 +133,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-        if(strNombre_tour == '' || strDescripcion == '' || strServicio == '' || strActividad == '' 
-        || strAlimentacion == '' || strHospedaje == '' || strTransporte == ''|| strLugar == '' 
-        || strDisponibilidad == '' || strHora_inicio == '' || strDuracion == '' || strDuracion == '' 
-        || strCupo_minimo == '' || strTelefono == '' || intPrecio == '' || intStatus == ''  )
+        if(strNombre_tour == '' || strDescripcion == '' || strActividad == '' || strLugar == '' || strDisponibilidad == '' || strHora_inicio == '' || strDuracion == '' || strDuracion == '' || strCupo_minimo == '' || strTelefono == '' || intPrecio == '' || intStatus == ''  )
         {
             
             swal("Atención", "Todos los campos son obligatorios." , "error");
@@ -176,19 +171,18 @@ document.addEventListener('DOMContentLoaded', function(){
                             '<span class="badge badge-danger">Inactivo</span>';
                         rowTable.cells[1].textContent = strNombre_tour;
                         rowTable.cells[2].textContent = strDescripcion;
-                        rowTable.cells[3].textContent = strServicio;
-                        rowTable.cells[4].innerHTML = strActividad;
-                        rowTable.cells[5].innerHTML = strAlimentacion;
-                        rowTable.cells[6].textContent = strHospedaje;
-                        rowTable.cells[7].textContent = strTransporte;
-                        rowTable.cells[8].textContent = strLugar;
-                        rowTable.cells[9].innerHTML = strDisponibilidad;
-                        rowTable.cells[10].innerHTML = strHora_inicio;
-                        rowTable.cells[11].innerHTML = strDuracion;
-                        rowTable.cells[12].innerHTML = strCupo_minimo;
-                        rowTable.cells[13].innerHTML = strTelefono;
-                        rowTable.cells[14].innerHTML = intPrecio;
-                        rowTable.cells[15].innerHTML = htmlStatus;
+                        rowTable.cells[3].innerHTML = strActividad;
+                        rowTable.cells[4].innerHTML = strAlimentacion;
+                        rowTable.cells[5].textContent = strHospedaje;
+                        rowTable.cells[6].textContent = strTransporte;
+                        rowTable.cells[7].textContent = strLugar;
+                        rowTable.cells[8].innerHTML = strDisponibilidad;
+                        rowTable.cells[9].innerHTML = strHora_inicio;
+                        rowTable.cells[10].innerHTML = strDuracion;
+                        rowTable.cells[11].innerHTML = strCupo_minimo;
+                        rowTable.cells[12].innerHTML = strTelefono;
+                        rowTable.cells[13].innerHTML = intPrecio;
+                        rowTable.cells[14].innerHTML = htmlStatus;
                         rowTable = "";
                
 
@@ -220,25 +214,6 @@ window.addEventListener('load', function() {
     fntDelUsuario();*/
 }, false);
 
-
-////LLAMA DATOS DE OTRAS TABLAS
-// function fntComunidadesTour(){
-//     var ajaxUrl = base_url+'/Comunidades/getSelectComunidades';
-//     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-//     request.open("GET",ajaxUrl,true);
-//     request.send();
-
-//     request.onreadystatechange = function(){
-//         if(request.readyState == 4 && request.status == 200){
-//             document.querySelector('#listComunidad_id').innerHTML = request.responseText;
-//             document.querySelector('#listComunidad_id').value = 1;
-//             $('#listComunidad_id').selectpicker('render');
-//         }
-//     }
-    
-// }
-//$('#tableTours').DataTable();
-
 function openModal(){
     
     rowTable = "";
@@ -251,15 +226,6 @@ function openModal(){
     $('#modalFormTour').modal('show');
     removePhoto();
 }
-
-// window.addEventListener('load', function() {
-//     /*fntEditTour();
-//     fntDelTour();
-//     fntPermisos();*/
-// }, false);
-
-
-
 
 function fntViewInfo(id_tour){
     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -276,8 +242,7 @@ function fntViewInfo(id_tour){
                 '<span class="badge badge-danger">Inactivo</span>';
                 document.querySelector("#celId_tour").innerHTML = objData.data.id_tour;
                 document.querySelector("#celNombre_tour").innerHTML = objData.data.nombre_tour;
-                document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;               
-                document.querySelector("#celServicio").innerHTML =  objData.data.servicio;
+                document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
                 document.querySelector("#celActividad").innerHTML = objData.data.actividad;
                 document.querySelector("#celAlimentacion").innerHTML = objData.data.alimentacion;
                 document.querySelector("#celHospedaje").innerHTML = objData.data.hospedaje;
@@ -325,7 +290,6 @@ function fntEditTour(id_tour){
                 document.querySelector("#id_Tour").value = objData.data.id_tour;
                 document.querySelector("#txtNombre_tour").value = objData.data.nombre_tour;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-               // document.querySelector("#txtServicio").value = objData.data.servicio;
                 document.querySelector("#txtActividad").value = objData.data.actividad;
                 document.querySelector("#txtAlimentacion").value = objData.data.alimentacion;
                 document.querySelector("#txtHospedaje").value = objData.data.hospedaje;
@@ -356,32 +320,32 @@ function fntEditTour(id_tour){
                 document.querySelector("#listStatus").innerHTML = htmlSelect;
 //////////////////////////////////////////////////////////////////////////
 
-                if(objData.data.servicio == "Actividad")
-                {
-                    var optionSelect = '<option value="1" selected class="notBlock">Actividad</option>';
-                } 
-                 else if(objData.data.servicio == "Alimentacion")
-                {
-                    var optionSelect = '<option value="2" selected class="notBlock">Alimentacion</option>';
-                } 
-                else if(objData.data.servicio == "Hospedaje")
-                {
-                    var optionSelect = '<option value="3" selected class="notBlock">Hospedaje</option>';
-                }
-                else if(objData.data.servicio == "Transporte")
-                {
-                    var optionSelect = '<option value="4" selected class="notBlock">Transporte</option>';
-                }
+                // if(objData.data.servicio == "Actividad")
+                // {
+                //     var optionSelect = '<option value="1" selected class="notBlock">Actividad</option>';
+                // } 
+                //  else if(objData.data.servicio == "Alimentacion")
+                // {
+                //     var optionSelect = '<option value="2" selected class="notBlock">Alimentacion</option>';
+                // } 
+                // else if(objData.data.servicio == "Hospedaje")
+                // {
+                //     var optionSelect = '<option value="3" selected class="notBlock">Hospedaje</option>';
+                // }
+                // else if(objData.data.servicio == "Transporte")
+                // {
+                //     var optionSelect = '<option value="4" selected class="notBlock">Transporte</option>';
+                // }
 
 
                 
-                var htmlservicio = `${optionSelect}
-                                  <option value="Actividad">Actividad</option>
-                                  <option value="Alimentacion">Alimentacion</option>
-                                  <option value="Hospedaje">Hospedaje</option>
-                                  <option value="Transporte">Transporte</option>
-                                `;
-                document.querySelector("#txtServicio").innerHTML = htmlservicio;
+                // var htmlservicio = `${optionSelect}
+                //                   <option value="Actividad">Actividad</option>
+                //                   <option value="Alimentacion">Alimentacion</option>
+                //                   <option value="Hospedaje">Hospedaje</option>
+                //                   <option value="Transporte">Transporte</option>
+                //                 `;
+                // document.querySelector("#txtServicio").innerHTML = htmlservicio;
 
                 
                 
@@ -467,5 +431,4 @@ function removePhoto(){
         document.querySelector('#img').remove();
     }
 }
-
 

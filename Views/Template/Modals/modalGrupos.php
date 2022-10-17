@@ -9,108 +9,91 @@
         </button>
       </div>
       <div class="modal-body">
-            <form id="formGrupo" name="formGrupo" class="form-horizontal">
-              <input type="hidden" id="id_Grupo" name="id_Grupo" value="">
-              <input type="hidden" id="foto_actual" name="foto_actual" value="">
-              <input type="hidden" id="foto_remove" name="foto_remove" value="0">
+        <form id="formGrupo" name="formGrupo" class="form-horizontal">
+          <input type="hidden" id="id_Grupo" name="id_Grupo" value="">
+          <input type="hidden" id="foto_actual" name="foto_actual" value="">
+          <input type="hidden" id="foto_remove" name="foto_remove" value="0">
 
 
-              <p class="text-primary">Todos los campos son obligatorios.</p>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="txtNombre_grupo">Nombre</label>
-                  <input type="text" class="form-control valid validText"  placeholder="Nombre del grupo" id="txtNombre_grupo" name="txtNombre_grupo" required="">
-                </div>
-            
-                <div class="form-group col-md-3">
-                  <label for="txtNumero_integrantes">Integrantes</label>
-                  <input type="text" class="form-control valid validNumber" placeholder="Cantidad" id="txtNumero_integrantes" name="txtNumero_integrantes" required="" onkeypress="return controlTag(event);">
+          <p class="text-primary">Todos los campos son obligatorios.</p>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="txtNombre_grupo">Nombre</label>
+              <input type="text" class="form-control valid validText" placeholder="Nombre del grupo" id="txtNombre_grupo" name="txtNombre_grupo" required="">
             </div>
 
+            <div class="form-group col-md-6">
+              <label for="txtRepresentante">Representante</label>
+              <input type="text" class="form-control valid validText" placeholder="Nombre del representante del grupo" id="txtRepresentante" name="txtRepresentante" required="">
+            </div>
 
-              </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="txtTelefono">Teléfono</label>
-                  <input type="text" class="form-control valid validNumber" maxlength="8" placeholder="Número de contacto" id="txtTelefono" name="txtTelefono" required="" onkeypress="return controlTag(event);">
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="txtCorreo">Correo</label>
-                  <input type="email" class="form-control valid validCorreo" placeholder="Correo electronico" id="txtCorreo" name="txtCorreo" required="">
-                </div>
-              </div>
-              <div class="form-row">
-           
-                
-              <div class="form-group">
-                    <label for="listStatus">Estado</label>
-                    <select class="form-control" id="listStatus" name="listStatus" required="">
-                      <option value="1">Activo</option>
-                      <option value="2">Inactivo</option>
-                    </select>
-                </div>
-         
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="txtTelefono">Teléfono</label>
+              <input type="text" class="form-control valid validNumber" maxlength="8" placeholder="Número de contacto" id="txtTelefono" name="txtTelefono" required="" onkeypress="return controlTag(event);">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="txtCorreo">Correo</label>
+              <input type="email" class="form-control valid validCorreo" placeholder="Correo electronico" id="txtCorreo" name="txtCorreo" required="">
+            </div>
+          </div>
 
+          <div class="form-group">
+            <label for="txtDescripcion">Descripcion</label>
+            <textarea type="text" class="form-control valid validText" placeholder="Una pequeña descripcion de la organizacion" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
+          </div>
+          <div class="form-group">
+            <label for="txtUbicacion">Ubicacion</label>
+            <textarea type="text" class="form-control valid validText" placeholder="Ubicacion para la organizacion" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
+          </div>
 
-                <div class="form-group col-md-6">
-                
-                  <label for="txtRepresentante">Representante</label>
-                  <input type="text" class="form-control valid validText" placeholder="Un representante" id="txtRepresentante" name="txtRepresentante" required="">
-                </div>
+          <div class="form-group">
+            <label for="listComunidad_id">Comunidad</label>
+            <select class="form-control" data-live-search="true" id="listComunidad_id" name="listComunidad_id" required="">
+            </select>
+          </div>
 
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="txtNumero_integrantes">Integrantes</label>
+              <input type="number" min="0" class="form-control valid validNumber" placeholder="Cantidad" id="txtNumero_integrantes" name="txtNumero_integrantes" required="" onkeypress="return controlTag(event);">
+            </div>
 
+            <div class="form-group">
+              <label for="listStatus">Estado</label>
+              <select class="form-control" id="listStatus" name="listStatus" required="">
+                <option value="1">Activo</option>
+                <option value="2">Inactivo</option>
+              </select>
+            </div>
 
+          </div>
 
-              
+          <div class="form-row">
 
-
-
-              </div>
-              <div class="form-group">
-                  <label for="txtDescripcion">Descripcion</label>
-                  <textarea type="text" class="form-control valid validText" placeholder="Una pequeña descripcion de la organizacion" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
-                </div>
-              <div class="form-group">
-                  <label for="txtUbicacion">Ubicacion</label>
-                  <textarea type="text" class="form-control valid validText" placeholder="Ubicacion para la organizacion" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
-                </div>
-
-               
-
-
-
-
-                <div class="form-group">
-                    <label for="listComunidad_id">Comunidad</label>
-                    <select class="form-control" data-live-search="true" id="listComunidad_id" name="listComunidad_id" required="" >
-                    </select>
-                </div>
-
-
-              <div class="form-row">
- 
             <div class="col-md-6">
-                    <div class="photo">
-                        <label for="foto">Foto (570x380)</label>
-                        <div class="prevPhoto">
-                          <span class="delPhoto notBlock">X</span>
-                          <label for="foto"></label>
-                          <div>
-                            <img id="img" src="<?= media(); ?>/images/uploads/portada_categoria.png">
-                          </div>
-                        </div>
-                        <div class="upimg">
-                          <input type="file" name="foto" id="foto">
-                        </div>
-                        <div id="form_alert"></div>
-                    </div>
-                </div> 
-            </div>
-              <div class="tile-footer">
-                <button id="btnActionForm" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
+              <div class="photo">
+                <label for="foto">Foto (570x380)</label>
+                <div class="prevPhoto">
+                  <span class="delPhoto notBlock">X</span>
+                  <label for="foto"></label>
+                  <div>
+                    <img id="img" src="<?= media(); ?>/images/uploads/portada_categoria.png">
+                  </div>
+                </div>
+                <div class="upimg">
+                  <input type="file" name="foto" id="foto">
+                </div>
+                <div id="form_alert"></div>
               </div>
-            </form>
+            </div>
+          </div>
+          <div class="tile-footer">
+            <button id="btnActionForm" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -119,7 +102,7 @@
 
 Modal
 <div class="modal fade" id="modalViewGrupo" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog " >
+  <div class="modal-dialog ">
     <div class="modal-content  ">
       <div class="modal-header header-primary">
         <h5 class="modal-title" id="titleModal">Datos del grupo</h5>
@@ -127,7 +110,7 @@ Modal
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body " >
+      <div class="modal-body ">
         <table class="table table-bordered">
           <tbody>
             <tr>
@@ -170,7 +153,7 @@ Modal
               <td>Comunidad:</td>
               <td id="celTipoGrupo">Larry</td>
             </tr>
-            
+
             <tr>
               <td>Foto:</td>
               <td id="imgGrupo"></td>
@@ -185,5 +168,3 @@ Modal
     </div>
   </div>
 </div>
-
-
