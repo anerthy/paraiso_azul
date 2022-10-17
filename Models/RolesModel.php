@@ -81,9 +81,8 @@ class RolesModel extends Mysql
 		$sql = "SELECT * FROM usuario WHERE rol_id = $this->intIdrol";
 		$request = $this->select_all($sql);
 		if (empty($request)) {
-			$sql = "DELETE from rol WHERE id_rol = $this->intIdrol ";
-			$arrData = array($this->intIdrol);
-			$request = $this->delete($sql, $arrData);
+			$sql = "CALL sp_delete_rol($this->intIdrol);";
+			$request = $this->procedure($sql);
 			if ($request) {
 				$request = 'ok';
 			} else {
