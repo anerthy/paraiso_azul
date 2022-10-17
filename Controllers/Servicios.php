@@ -1,11 +1,10 @@
 <?php
-
-require_once("Models/Traits/THospedaje.php");
 require_once("Models/Traits/TAlimentacion.php");
+require_once("Models/Traits/THospedaje.php");
 require_once("Models/Traits/TTour.php");
 class Servicios extends Controllers
 {
-    use THospedaje,TAlimentacion,use TTour;
+    use TAlimentacion, THospedaje, TTour;
 
     public function __construct()
     {
@@ -29,7 +28,7 @@ class Servicios extends Controllers
         $data['hospedaje'] = $this->getHospedajesT();
         $this->views->getView($this, "hospedaje", $data);
     }
-  
+
 
     public function transporte()
     {
