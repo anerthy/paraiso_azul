@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 14-10-2022 a las 02:16:59
+-- Tiempo de generación: 17-10-2022 a las 03:52:30
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -456,7 +456,7 @@ CREATE TABLE IF NOT EXISTS `alimentacion` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_alimentacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `alimentacion`
@@ -464,7 +464,7 @@ CREATE TABLE IF NOT EXISTS `alimentacion` (
 
 INSERT INTO `alimentacion` (`id_alimentacion`, `nombre_alim`, `descripcion`, `direccion`, `hora_apertura`, `hora_cierre`, `telefono`, `status`, `imagen`) VALUES
 (7, 'Soda la playa', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', '07:00:00', '20:00:00', '89742984', 1, 'img_def626362da50491744b69cecc501a2b.jpg'),
-(8, 'Restaurante', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '13:00:00', '17:00:00', '22004591', 2, 'img_fed4e2a14d47f706cf8406b974c86260.jpg'),
+(8, 'Restaurante', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '13:00:00', '17:00:00', '22004591', 1, 'img_fed4e2a14d47f706cf8406b974c86260.jpg'),
 (9, 'HIUHI TETS', 'A', 'F', '23:05:00', '21:03:00', '89742984', 2, 'img_296bfc0586699a0b2c35eb3f66e7df60.jpg');
 
 -- --------------------------------------------------------
@@ -483,16 +483,16 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
   `distrito` enum('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_comunidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `comunidad`
 --
 
 INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia`, `canton`, `distrito`, `imagen`) VALUES
-(1, 'Isla Caballo', 'lorem ipsum', 'Guanacaste', 'Montes de Oro', 'Paquera', 'img_a1d92727950d9ea0e9e308828d2449c8.jpg'),
+(1, 'Isla Caballo', 'lorem ipsum', 'Guanacaste', 'Buenos Aires', 'Manzanillo', 'img_a1d92727950d9ea0e9e308828d2449c8.jpg'),
 (24, 'Isla Bejuco', 'ASDASDASD', 'Puntarenas', 'Corredores', 'Pitahaya', 'img_e253a0afc3f038cb66ffd42876a00955.jpg'),
-(30, 'Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Puntarenas', 'Lepanto', 'img_8d90ee11922419a003463c366f460a1e.jpg');
+(30, 'Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Monteverde', 'Lepanto', 'img_c9f27d8e1cdbb2b36ca511b64060c23b.jpg');
 
 -- --------------------------------------------------------
 
@@ -515,16 +515,19 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
   `comunidad_id` tinyint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_grupo`),
   KEY `comunidad_id` (`comunidad_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `grupo_organizado`
 --
 
 INSERT INTO `grupo_organizado` (`id_grupo`, `nombre_grupo`, `representante`, `descripcion`, `ubicacion`, `correo`, `telefono`, `numero_integrantes`, `status`, `logo`, `comunidad_id`) VALUES
-(11, 'Asopecupachi', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 20, 1, 'portada_categoria.png', 24),
-(13, 'ASA', 'REPRE', 'SSAD', 'SDSD', 'SDASDD', '34324234', 127, 0, 'SADD', 1),
-(14, 'Asociación de desarrollo integral de Isla Caballo', 'ddsf', 'ddsfd', 'ddffdsf', 'dkgwf@dddgmail.com', '89742984', 31, 1, 'portada_categoria.png', 1);
+(11, 'Asopecupachi', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 20, 2, 'portada_categoria.png', 1),
+(14, 'Asociación de desarrollo integral de Isla Caballo', 'ddsf', 'Pellentesque id laoreet leo a consequat anteSed venenatis ornare dui eget luctus Vivamus non pulvinar mauris Integer quis faucibus sapien', 'en la isla', 'dkgwf@dddgmail.com', '89742984', 32, 1, 'img_ed375ab0d8fe6b3b0c7b067d9ac6adc0.jpg', 24),
+(16, 'Mudecop', 'Carlos Mendez', 'Lorem ipsum dolor sit amet consectetur adipisicing elit Culpa cupiditate eius possimus unde ex sapiente minima necessitatibus inventore quisquam quod sed adipisci qui minus aut doloremque tempora nemo excepturi voluptas', 'Al frente del salon comunal de Isla Chira', 'mudecop@gmail.com', '89742984', 25, 1, 'img_9efb1d40f36b267579353da2099131ea.jpg', 30),
+(17, 'LELA', 'Lela la mejor SM', 'lorem imkjd kdfdkjfdfjvhf ghdjdfhf jfdhvjdfvhfdvjdfvf', 'dxvdvndnjvndfbj njnhdjkdj', 'lela@gmail.com', '22222222', 10, 1, 'img_9e967e52aabbae642e89d228ab63e2ff.jpg', 24),
+(18, 'Coopeacuicultores Isla Venado', 'Sr pecupachi', 'kdasldj kajdask djsakdjs kdjsk djsds', 'sddasd dsdadadad', 'Asopecupachi@gmail.com', '33333333', 30, 1, 'img_c5e4729185fdfba8a33271ce328373a6.jpg', 24),
+(19, 'SR AA', 'Sr aa', 'sdfd gfdgdgdgddfffffffffffffffff', 'fsdfdsfdsfdff', 'sraa@gmail.com', '3141314', 1, 1, 'img_fc184cce8188aa78e7c0f9c127026cd6.jpg', 24);
 
 -- --------------------------------------------------------
 
@@ -544,7 +547,7 @@ CREATE TABLE IF NOT EXISTS `hospedaje` (
   `status` int NOT NULL DEFAULT '1',
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_hospedaje`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `hospedaje`
@@ -555,7 +558,8 @@ INSERT INTO `hospedaje` (`id_hospedaje`, `nombre_hosp`, `descripcion`, `tipo`, `
 (3, 'Chira House', 'Se ofrece habitacion para dos personas', 'Cabina', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
 (6, 'Hotel la vida', 'jdskjssjdsaaaaaaaaaaaaaaaaaaaaaaadk', 'Cabina', '25m de la plaza', '89320012', '21000.00', 1, 'img_d44bacf25b82aa9de2d70aa8b8c8bf19.jpg'),
 (7, 'sdsfdfsdf', 'dfdsff', '', 'fsdfsdfsdf', '49284949', '2500.00', 0, 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg'),
-(9, 'SIRVE', 'kjhf', 'Camping', 'lkmjnhbgvf', '24438433', '90000.00', 0, 'img_703ec07accdeb8eba156715faf6bee80.jpg');
+(9, 'SIRVE', 'kjhf', 'Camping', 'lkmjnhbgvf', '24438433', '90000.00', 0, 'img_703ec07accdeb8eba156715faf6bee80.jpg'),
+(10, 'WSDDA', 'sads dsdsad .', 'Cabina', 'sadda d.', '24438433', '90000.00', 2, 'img_1bee7af8eb9c0e6a11ba4f6499f14ca0.jpg');
 
 -- --------------------------------------------------------
 
@@ -587,7 +591,7 @@ INSERT INTO `modulo` (`id_modulo`, `titulo`, `descripcion`, `status`) VALUES
 (8, 'Hospedaje', 'Modulo de Hospedaje', 1),
 (9, 'Transporte', 'Modulo de Transporte', 1),
 (10, 'Voluntario', 'Modulo de voluntarios', 1),
-(11, 'Paginas', 'Modulo de paginas', 1),
+(11, 'Contenido', 'Modulo de paginas', 1),
 (12, 'Imagenes', 'Modulo de imagenes', 1);
 
 -- --------------------------------------------------------
@@ -608,7 +612,7 @@ CREATE TABLE IF NOT EXISTS `permisos` (
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=462 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=522 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `permisos`
@@ -648,29 +652,6 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (119, 0, 0, 0, 0, 9, 9),
 (120, 0, 0, 0, 0, 9, 10),
 (121, 0, 0, 0, 0, 9, 11),
-(155, 1, 0, 0, 0, 24, 1),
-(156, 1, 0, 0, 0, 24, 2),
-(157, 1, 0, 0, 0, 24, 3),
-(158, 1, 0, 0, 0, 24, 4),
-(159, 1, 0, 0, 0, 24, 5),
-(160, 1, 0, 0, 0, 24, 6),
-(161, 1, 0, 0, 0, 24, 7),
-(162, 1, 0, 0, 0, 24, 8),
-(163, 1, 0, 0, 0, 24, 9),
-(164, 1, 0, 0, 0, 24, 10),
-(165, 1, 0, 0, 0, 24, 11),
-(414, 1, 1, 1, 1, 1, 1),
-(415, 1, 1, 1, 1, 1, 2),
-(416, 1, 1, 1, 1, 1, 3),
-(417, 1, 1, 1, 1, 1, 4),
-(418, 1, 1, 1, 1, 1, 5),
-(419, 1, 1, 1, 1, 1, 6),
-(420, 1, 1, 1, 1, 1, 7),
-(421, 1, 1, 1, 1, 1, 8),
-(422, 1, 1, 1, 1, 1, 9),
-(423, 1, 1, 1, 1, 1, 10),
-(424, 1, 1, 1, 1, 1, 11),
-(425, 1, 1, 1, 1, 1, 12),
 (438, 0, 0, 1, 0, 25, 1),
 (439, 0, 0, 1, 0, 25, 2),
 (440, 0, 0, 1, 0, 25, 3),
@@ -694,7 +675,31 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 (458, 1, 0, 1, 0, 23, 9),
 (459, 1, 0, 1, 1, 23, 10),
 (460, 1, 0, 1, 0, 23, 11),
-(461, 0, 0, 0, 0, 23, 12);
+(461, 0, 0, 0, 0, 23, 12),
+(474, 1, 1, 1, 1, 1, 1),
+(475, 1, 1, 1, 1, 1, 2),
+(476, 1, 1, 1, 1, 1, 3),
+(477, 1, 1, 1, 1, 1, 4),
+(478, 1, 1, 1, 1, 1, 5),
+(479, 1, 1, 1, 1, 1, 6),
+(480, 1, 1, 1, 1, 1, 7),
+(481, 1, 1, 1, 1, 1, 8),
+(482, 1, 1, 1, 1, 1, 9),
+(483, 1, 1, 1, 1, 1, 10),
+(484, 1, 1, 1, 1, 1, 11),
+(485, 1, 1, 1, 1, 1, 12),
+(510, 1, 0, 0, 0, 24, 1),
+(511, 1, 0, 0, 0, 24, 2),
+(512, 1, 0, 0, 0, 24, 3),
+(513, 1, 0, 0, 0, 24, 4),
+(514, 1, 0, 0, 0, 24, 5),
+(515, 1, 0, 0, 0, 24, 6),
+(516, 1, 0, 0, 0, 24, 7),
+(517, 1, 0, 0, 0, 24, 8),
+(518, 1, 0, 0, 0, 24, 9),
+(519, 1, 0, 0, 0, 24, 10),
+(520, 1, 0, 0, 0, 24, 11),
+(521, 1, 0, 0, 0, 24, 12);
 
 -- --------------------------------------------------------
 
@@ -791,23 +796,51 @@ INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tbl_pagina`
+-- Estructura de tabla para la tabla `tbl_contenido_pagina`
 --
 
-DROP TABLE IF EXISTS `tbl_pagina`;
-CREATE TABLE IF NOT EXISTS `tbl_pagina` (
-  `pag_id` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `pag_titulo` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `pag_contenido` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  PRIMARY KEY (`pag_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+DROP TABLE IF EXISTS `tbl_contenido_pagina`;
+CREATE TABLE IF NOT EXISTS `tbl_contenido_pagina` (
+  `cont_id_contenido` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `cont_titulo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cont_contenido` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cont_modulo` enum('Grupos Organizados','Comunidades','Alimentacion','Tours','Hospedaje','Transporte','Voluntario','Inicio','CEMEDE') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  PRIMARY KEY (`cont_id_contenido`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
--- Volcado de datos para la tabla `tbl_pagina`
+-- Volcado de datos para la tabla `tbl_contenido_pagina`
 --
 
-INSERT INTO `tbl_pagina` (`pag_id`, `pag_titulo`, `pag_contenido`) VALUES
-(2, 'Inicio', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis quibusdam, cupiditate minima perspiciatis provident ab animi pariatur consequatur accusantium voluptatum dolor, deserunt quasi harum qui, cumque inventore ex molestiae soluta.');
+INSERT INTO `tbl_contenido_pagina` (`cont_id_contenido`, `cont_titulo`, `cont_contenido`, `cont_modulo`) VALUES
+(1, '¿Qué actividades se pueden hacer?', 'Donec sit amet dolor at felis cursus feugiat in eget purus. Curabitur suscipit magna erat, a dapibus ipsum pulvinar a. Pellentesque ut lectus ipsum. Praesent aliquet neque lectus, ultrices lacinia dui facilisis sit amet. Phasellus dapibus vel risus vel sollicitudin. Donec ornare purus id nisi iaculis, at vehicula diam viverra. Sed ut ultricies dolor. Integer dictum volutpat sapien. Pellentesque hendrerit feugiat augue nec iaculis.', 'Voluntario'),
+(2, 'Que es Paraiso Azul?', 'Es un proyecto extensión de CEMEDE, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la universidad Nacional de Costa Rica, sede regional chorotega', 'Inicio'),
+(3, '¿Que es el voluntariado?', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum varius purus et congue. Phasellus neque enim, efficitur ut malesuada ut, pharetra in purus. Vivamus gravida consectetur quam, quis pharetra elit vehicula et. Sed fermentum metus scelerisque pulvinar convallis. Duis malesuada in magna non interdum.', 'Voluntario'),
+(4, 'Fases del proyecto', 'Fusce quis rutrum elit. In hendrerit risus ut quam auctor, nec laoreet urna hendrerit. Donec interdum venenatis tortor. In at erat ac sapien scelerisque tempus at sit amet enim. Etiam eget mi sed arcu pellentesque pharetra eget ut velit. Proin scelerisque fringilla fringilla. Morbi gravida velit quis mi luctus porttitor.', 'Inicio');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tbl_galeria`
+--
+
+DROP TABLE IF EXISTS `tbl_galeria`;
+CREATE TABLE IF NOT EXISTS `tbl_galeria` (
+  `gal_id_galeria` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `gal_descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `gal_imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `gal_ubicacion` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  PRIMARY KEY (`gal_id_galeria`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+
+--
+-- Volcado de datos para la tabla `tbl_galeria`
+--
+
+INSERT INTO `tbl_galeria` (`gal_id_galeria`, `gal_descripcion`, `gal_imagen`, `gal_ubicacion`) VALUES
+(1, 'Logo de Paraizo Azul', 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg', 'pagina principal'),
+(2, 'Imagen del product owner del proyecto', 'img_2664a10b57c8059bd14e871ff8bf6add.jpg', 'integrantes'),
+(3, 'Imagen de la Isla Chira', 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg', 'carrusel');
 
 -- --------------------------------------------------------
 
@@ -841,13 +874,13 @@ CREATE TABLE IF NOT EXISTS `tour` (
 --
 
 INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `actividad`, `alimentacion`, `hospedaje`, `transporte`, `lugar`, `disponibilidad`, `hora_inicio`, `duracion`, `cupo_minimo`, `telefono`, `precio`, `status`, `imagen`) VALUES
-(1, 'Tour loco', 'sddasd', 'Caminata a la montaña', 'Incluye fresquito', 'Habitacion individual', 'Lancha', 'Chira', 'todos los dias', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(1, 'Tour loco', 'sddasd', 'Caminata a la montaña', 'Incluye fresquito', 'Habitacion individual', 'Lancha', 'Chira', 'todos los dias', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'img_1bee7af8eb9c0e6a11ba4f6499f14ca0.jpg'),
 (2, 'FDSFSDF', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'saddsdas', NULL, NULL, 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
-(4, 'ZZZZZ', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sadsdadsad', 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
+(4, 'ZZZZZ', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sadsdadsad', 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 2, 'kjnhgbfdtyok,jmnhbgv'),
 (5, 'ACTU', 'dd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'asddsd', 'dddsfs', NULL, 'sdd', 'sddad', '10:00:00', '00:50:00', 12, '12345678', '10500.00', 1, 'asdadad'),
-(6, 'Tour a playa Albina', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'Reforestacion del manglar', 'Incluye cafe por la tarde', NULL, 'en panga', 'En playa albina', 'De lunes a viernes', '23:39:42', '01:08:58', 10, '34232414', '120000.00', 1, 'iLorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultri'),
-(10, 'Tour en panga', 'jfeskfjdfckshdwk rjhgkjd hjdgh ridj', 'panguita', 'cafe con apancito', 'a', 'a', 'Isla Chira', 'Los fines de semana', '19:25:00', '19:26:00', 20, '89898989', '32444.00', 2, 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg'),
-(12, 'sdsadas', 'asdd', 'assdadd', '', '', 'sdasdadad', 'Isla Chira', 'dasdsdda', '19:33:00', '19:34:00', 12, '89742984', '5565.00', 2, 'img_1d5be3fb440d1544539ded60811e0844.jpg');
+(6, 'Tour a playa Albina', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'Reforestacion del manglar', 'Incluye cafe por la tarde', NULL, 'en panga', 'En playa albina', 'De lunes a viernes', '23:39:42', '01:08:58', 10, '34232414', '120000.00', 2, 'iLorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultri'),
+(10, 'Tour en panga', 'jfeskfjdfckshdwk rjhgkjd hjdgh ridj', 'panguita', 'cafe con apancito', 'a', 'a', 'Isla Chira', 'Los fines de semana', '19:25:00', '19:26:00', 20, '89898989', '32444.00', 1, 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg'),
+(12, 'sdsadas', 'asdd', 'assdadd', 'cafe', NULL, 'sdasdadad', 'Isla Chira', 'dasdsdda', '19:33:00', '19:34:00', 12, '89742984', '5565.00', 1, 'img_1d5be3fb440d1544539ded60811e0844.jpg');
 
 -- --------------------------------------------------------
 
@@ -901,9 +934,9 @@ CREATE TABLE IF NOT EXISTS `transporte` (
 --
 
 INSERT INTO `transporte` (`id_transporte`, `nombre_trans`, `descripcion`, `clase`, `tipo`, `disponibilidad`, `precio`, `telefono`, `status`, `imagen`) VALUES
-(2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 0, 'SDASDDAD'),
-(3, 'Taxi alfredo', '.hbgf', '', '', 'jhgfd', '2500.00', '89742984', 0, 'img_18b2ab157b9609dcf2025e4e06188867.jpg'),
-(4, 'Bus', 'ijdkidjsadadj', 'Publico', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 2, 'img_2664a10b57c8059bd14e871ff8bf6add.jpg'),
+(2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 2, 'SDASDDAD'),
+(3, 'Taxi alfredo', '.hbgf', '', '', 'jhgfd', '2500.00', '89742984', 1, 'img_18b2ab157b9609dcf2025e4e06188867.jpg'),
+(4, 'Bus', 'ijdkidjsadadj', 'Publico', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 1, 'img_2664a10b57c8059bd14e871ff8bf6add.jpg'),
 (5, 'Panga Don Lelo', 'FSDJFLSLF', 'Publico', 'Maritimo', 'lleguele nomas', '2500.00', '24438433', 1, 'img_7b8946c196a2eb013f3e14d35d7b4ccb.jpg'),
 (6, 'Taxi alfredo lopez', 'affdfdsdf', 'Publico', 'Terrestre', 'todos los dias', '5000.00', '89742984', 1, 'img_f39a962a6a8b91fccdbf195ecf2a9a72.jpg');
 
@@ -937,7 +970,7 @@ INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, 
 (1, 'SA', 'admin_paraiso_azul@pa.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', '7cf40813aa9242aad538-4f5a53943a0b171dfb00-37eedf317106ae60efbc-31ec7154239d5de84', 1, 1),
 (5, 'Andres', 'andmejigo12@gmail.com', '65e84be33532fb784c48129675f9eff3a682b27168c0ea744b2cf58ee02337c5', '', 1, 1),
 (25, 'Sr AA', 'aaron1314@gmail.com', '91014162f34e902a9c10de1f6c7726af9ec2d8c5d961db39be98d96f75ced71a', NULL, 1, 1),
-(26, 'Carlos', 'carlos@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', NULL, 1, 23);
+(26, 'Carlosa', 'carlos@gmail.com', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', NULL, 1, 24);
 
 -- --------------------------------------------------------
 
@@ -968,6 +1001,105 @@ CREATE TABLE IF NOT EXISTS `usuario_rol` (
 ,`id_rol` smallint unsigned
 ,`nombre_rol` varchar(50)
 ,`status` int
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_alimentacion`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_alimentacion`;
+CREATE TABLE IF NOT EXISTS `view_alimentacion` (
+`id_alimentacion` smallint unsigned
+,`nombre_alim` varchar(100)
+,`descripcion` text
+,`direccion` text
+,`horario` varchar(22)
+,`telefono` varchar(8)
+,`imagen` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_grupo_organizado_comunidad`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_grupo_organizado_comunidad`;
+CREATE TABLE IF NOT EXISTS `view_grupo_organizado_comunidad` (
+`id_grupo` tinyint unsigned
+,`nombre_grupo` varchar(100)
+,`representante` varchar(100)
+,`descripcion` text
+,`ubicacion` text
+,`correo` varchar(50)
+,`telefono` varchar(8)
+,`numero_integrantes` tinyint
+,`logo` varchar(100)
+,`nombre_com` varchar(50)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_hospedaje`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_hospedaje`;
+CREATE TABLE IF NOT EXISTS `view_hospedaje` (
+`id_hospedaje` smallint unsigned
+,`nombre_hosp` varchar(100)
+,`descripcion` text
+,`tipo` enum('Cabina','Camping')
+,`direccion` text
+,`telefono` varchar(8)
+,`precio` varchar(11)
+,`imagen` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_tour`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_tour`;
+CREATE TABLE IF NOT EXISTS `view_tour` (
+`id_tour` smallint unsigned
+,`nombre_tour` varchar(100)
+,`descripcion` text
+,`actividad` text
+,`alimentacion` text
+,`hospedaje` text
+,`transporte` text
+,`lugar` text
+,`disponibilidad` text
+,`hora_inicio` varchar(8)
+,`duracion` varchar(12)
+,`cupo_minimo` tinyint
+,`telefono` varchar(8)
+,`precio` varchar(11)
+,`imagen` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `view_transporte`
+-- (Véase abajo para la vista actual)
+--
+DROP VIEW IF EXISTS `view_transporte`;
+CREATE TABLE IF NOT EXISTS `view_transporte` (
+`id_transporte` smallint unsigned
+,`nombre_trans` varchar(100)
+,`descripcion` text
+,`clase` enum('Publico','Privado')
+,`tipo` enum('Terrestre','Maritimo')
+,`disponibilidad` text
+,`precio` varchar(11)
+,`telefono` varchar(8)
+,`imagen` varchar(100)
 );
 
 -- --------------------------------------------------------
@@ -1021,6 +1153,56 @@ DROP TABLE IF EXISTS `usuario_rol`;
 
 DROP VIEW IF EXISTS `usuario_rol`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `usuario_rol`  AS SELECT `u`.`id_usuario` AS `id_usuario`, `u`.`nombre_usuario` AS `nombre_usuario`, `u`.`correo` AS `correo`, `r`.`id_rol` AS `id_rol`, `r`.`nombre_rol` AS `nombre_rol`, `u`.`status` AS `status` FROM (`usuario` `u` join `rol` `r` on((`u`.`rol_id` = `r`.`id_rol`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_alimentacion`
+--
+DROP TABLE IF EXISTS `view_alimentacion`;
+
+DROP VIEW IF EXISTS `view_alimentacion`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_alimentacion`  AS SELECT `alimentacion`.`id_alimentacion` AS `id_alimentacion`, `alimentacion`.`nombre_alim` AS `nombre_alim`, `alimentacion`.`descripcion` AS `descripcion`, `alimentacion`.`direccion` AS `direccion`, concat(date_format(`alimentacion`.`hora_apertura`,'De %h:%m %p '),date_format(`alimentacion`.`hora_cierre`,'a %h:%m %p')) AS `horario`, `alimentacion`.`telefono` AS `telefono`, `alimentacion`.`imagen` AS `imagen` FROM `alimentacion` WHERE (`alimentacion`.`status` = 1) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_grupo_organizado_comunidad`
+--
+DROP TABLE IF EXISTS `view_grupo_organizado_comunidad`;
+
+DROP VIEW IF EXISTS `view_grupo_organizado_comunidad`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_grupo_organizado_comunidad`  AS SELECT `g`.`id_grupo` AS `id_grupo`, `g`.`nombre_grupo` AS `nombre_grupo`, `g`.`representante` AS `representante`, `g`.`descripcion` AS `descripcion`, `g`.`ubicacion` AS `ubicacion`, `g`.`correo` AS `correo`, `g`.`telefono` AS `telefono`, `g`.`numero_integrantes` AS `numero_integrantes`, `g`.`logo` AS `logo`, `c`.`nombre_com` AS `nombre_com` FROM (`grupo_organizado` `g` join `comunidad` `c` on((`g`.`comunidad_id` = `c`.`id_comunidad`))) WHERE (`g`.`status` = 1) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_hospedaje`
+--
+DROP TABLE IF EXISTS `view_hospedaje`;
+
+DROP VIEW IF EXISTS `view_hospedaje`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_hospedaje`  AS SELECT `hospedaje`.`id_hospedaje` AS `id_hospedaje`, `hospedaje`.`nombre_hosp` AS `nombre_hosp`, `hospedaje`.`descripcion` AS `descripcion`, `hospedaje`.`tipo` AS `tipo`, `hospedaje`.`direccion` AS `direccion`, `hospedaje`.`telefono` AS `telefono`, concat('₡',`hospedaje`.`precio`) AS `precio`, `hospedaje`.`imagen` AS `imagen` FROM `hospedaje` WHERE (`hospedaje`.`status` = 1) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_tour`
+--
+DROP TABLE IF EXISTS `view_tour`;
+
+DROP VIEW IF EXISTS `view_tour`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_tour`  AS SELECT `tour`.`id_tour` AS `id_tour`, `tour`.`nombre_tour` AS `nombre_tour`, `tour`.`descripcion` AS `descripcion`, `tour`.`actividad` AS `actividad`, `tour`.`alimentacion` AS `alimentacion`, `tour`.`hospedaje` AS `hospedaje`, `tour`.`transporte` AS `transporte`, `tour`.`lugar` AS `lugar`, `tour`.`disponibilidad` AS `disponibilidad`, date_format(`tour`.`hora_inicio`,'%h:%m %p') AS `hora_inicio`, date_format(`tour`.`duracion`,'%h:%m aprox.') AS `duracion`, `tour`.`cupo_minimo` AS `cupo_minimo`, `tour`.`telefono` AS `telefono`, concat('₡',`tour`.`precio`) AS `precio`, `tour`.`imagen` AS `imagen` FROM `tour` WHERE (`tour`.`status` = 1) ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `view_transporte`
+--
+DROP TABLE IF EXISTS `view_transporte`;
+
+DROP VIEW IF EXISTS `view_transporte`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_transporte`  AS SELECT `transporte`.`id_transporte` AS `id_transporte`, `transporte`.`nombre_trans` AS `nombre_trans`, `transporte`.`descripcion` AS `descripcion`, `transporte`.`clase` AS `clase`, `transporte`.`tipo` AS `tipo`, `transporte`.`disponibilidad` AS `disponibilidad`, concat('₡',`transporte`.`precio`) AS `precio`, `transporte`.`telefono` AS `telefono`, `transporte`.`imagen` AS `imagen` FROM `transporte` WHERE (`transporte`.`status` = 1) ;
 
 --
 -- Restricciones para tablas volcadas
