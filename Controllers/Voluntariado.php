@@ -13,7 +13,9 @@ class Voluntariado extends Controllers
         $data['page_tag'] = "voluntariado";
         $data['page_title'] = "voluntariado";
         $data['page_name'] = "voluntariado";
+        $data['page_functions_js'] = "functions_voluntariado.js";
         $data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
         $this->views->getView($this, "voluntariado", $data);
     }
+
 }
