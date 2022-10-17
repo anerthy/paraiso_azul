@@ -1,10 +1,9 @@
 <?php
 require_once("Models/Traits/TGrupo.php");
-require_once("Models/Traits/TComunidades.php");
-require_once("Models/Traits/TTransporte.php");
+require_once("Models/Traits/TComunidad.php");
 class SobreNosotros extends Controllers
 {
-    use TGrupo,TComunidades,TTransporte;
+    use TGrupo, TComunidad;
     public function __construct()
     {
         parent::__construct();
@@ -33,17 +32,8 @@ class SobreNosotros extends Controllers
     {
         $data['page_tag'] = "Comunidades Organizados";
         $data['page_title'] = "Comunidades Organizados";
-        $data['page_name'] = "viewgrupos";
-        $data['Comunidades'] = $this->getComunidadesT();
-        $this->views->getView($this, "Comunidades", $data);
-    }
-
-    public function transporte()
-    {
-        $data['page_tag'] = "Transporte Organizados";
-        $data['page_title'] = "Transporte Organizados";
-        $data['page_name'] = "viewgrupos";
-        $data['Transporte'] = $this->getTransporteT();
-        $this->views->getView($this, "Transporte", $data);
+        $data['page_name'] = "viewcomunidades";
+        $data['comunidades'] = $this->getComunidadesT();
+        $this->views->getView($this, "comunidades", $data);
     }
 }
