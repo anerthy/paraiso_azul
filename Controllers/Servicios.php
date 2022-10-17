@@ -1,9 +1,12 @@
 <?php
+
 require_once("Models/Traits/THospedaje.php");
 require_once("Models/Traits/TAlimentacion.php");
+require_once("Models/Traits/TTour.php");
 class Servicios extends Controllers
 {
-    use THospedaje,TAlimentacion;
+    use THospedaje,TAlimentacion,use TTour;
+
     public function __construct()
     {
         parent::__construct();
@@ -40,11 +43,10 @@ class Servicios extends Controllers
 
     public function tours()
     {
-        $data['page_id'] = 3;
         $data['page_tag'] = "tours";
         $data['page_title'] = "Tours";
         $data['page_name'] = "tours";
-        $data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
+        $data['tours'] = $this->getToursT();
         $this->views->getView($this, "tours", $data);
     }
 }
