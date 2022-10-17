@@ -1,6 +1,6 @@
 <?php
 _header($data);
-$arrTransportes =  $data['transporte'];
+$arrTransportes =  $data['transportes'];
 ?>
 <div>
     <h1>Servicios de transporte</h1><br>
