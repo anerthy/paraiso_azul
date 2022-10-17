@@ -6,7 +6,6 @@ class Alimentacion extends Controllers
     {
         sessionStart();
         parent::__construct();
-
         //session_start();
         //session_regenerate_id(true);
         if (empty($_SESSION['login'])) {
