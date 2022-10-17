@@ -44,7 +44,11 @@ class Roles extends Controllers
 
 				// boton de eliminar
 				if ($_SESSION['permisosMod']['eliminar']) {
-					$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol(' . $arrData[$i]['id_rol'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
+					if ($arrData[$i]['id_rol'] == 1) {
+						$btnDelete = '<button class="btn btn-secondary btn-sm" disabled ><i class="far fa-trash-alt"></i></button>';
+					} else {
+						$btnDelete = '<button class="btn btn-danger btn-sm btnDelRol" onClick="fntDelRol(' . $arrData[$i]['id_rol'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
+					}
 				}
 
 				$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
@@ -76,7 +80,7 @@ class Roles extends Controllers
 		die();
 	}
 
-	public function getRol(int $idrol)
+	public function getRol($idrol)
 	{
 		$intIdrol = intval(strClean($idrol));
 		if ($intIdrol > 0) {
