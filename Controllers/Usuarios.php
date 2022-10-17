@@ -28,62 +28,61 @@ class Usuarios extends Controllers
 
 	public function setUsuario()
 	{
-		if ($_POST) {
-			if (empty($_SESSION['permisosMod']['ver'])) {
-
-			if (empty($_POST['txtNombre']) || empty($_POST['txtCorreo']) || empty($_POST['listRolid']) || empty($_POST['listStatus'])) {
-				$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
-			} else {
-				$idUsuario = intval($_POST['idUsuario']);
-				$strNombre = ucwords(strClean($_POST['txtNombre']));
-				$strCorreo = strtolower(strClean($_POST['txtCorreo']));
-				$intTipoId = intval(strClean($_POST['listRolid']));
-				$intStatus = intval(strClean($_POST['listStatus']));
-
-				if ($idUsuario == 0) {
-					$option = 1;
-					$strContraseña =  empty($_POST['txtContraseña']) ? hash("SHA256", passGenerator()) : hash("SHA256", $_POST['txtContraseña']);
-					$request_user = $this->model->insertUsuario(
-						$strNombre,
-						$strCorreo,
-						$strContraseña,
-						$intTipoId,
-						$intStatus
-					);
+		if ($_SESSION['permisosMod']['agregar']) {
+			if ($_POST) {
+				if (empty($_POST['txtNombre']) || empty($_POST['txtCorreo']) || empty($_POST['listRolid']) || empty($_POST['listStatus'])) {
+					$arrResponse = array("status" => false, "msg" => 'Datos incorrectos.');
 				} else {
-					$option = 2;
-					$strContraseña =  empty($_POST['txtContraseña']) ? "" : hash("SHA256", $_POST['txtContraseña']);
-					$request_user = $this->model->updateUsuario(
-						$idUsuario,
-						$strNombre,
-						$strCorreo,
-						$strContraseña,
-						$intTipoId,
-						$intStatus
-					);
-				}
+					$idUsuario = intval($_POST['idUsuario']);
+					$strNombre = ucwords(strClean($_POST['txtNombre']));
+					$strCorreo = strtolower(strClean($_POST['txtCorreo']));
+					$intTipoId = intval(strClean($_POST['listRolid']));
+					$intStatus = intval(strClean($_POST['listStatus']));
 
-				if ($request_user > 0) {
-					if ($option == 1) {
-						$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+					if ($idUsuario == 0) {
+						$option = 1;
+						$strContraseña =  empty($_POST['txtContraseña']) ? hash("SHA256", passGenerator()) : hash("SHA256", $_POST['txtContraseña']);
+						$request_user = $this->model->insertUsuario(
+							$strNombre,
+							$strCorreo,
+							$strContraseña,
+							$intTipoId,
+							$intStatus
+						);
 					} else {
-						$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+						$option = 2;
+						$strContraseña =  empty($_POST['txtContraseña']) ? "" : hash("SHA256", $_POST['txtContraseña']);
+						$request_user = $this->model->updateUsuario(
+							$idUsuario,
+							$strNombre,
+							$strCorreo,
+							$strContraseña,
+							$intTipoId,
+							$intStatus
+						);
 					}
-				} else if ($request_user == 'exist') {
-					$arrResponse = array('status' => false, 'msg' => '¡Atención! el email o el nombre de usuairo ya existe, ingrese otro.');
-				} else {
-					$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+
+					if ($request_user > 0) {
+						if ($option == 1) {
+							$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
+						} else {
+							$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
+						}
+					} else if ($request_user == 'exist') {
+						$arrResponse = array('status' => false, 'msg' => '¡Atención! el email o el nombre de usuairo ya existe, ingrese otro.');
+					} else {
+						$arrResponse = array("status" => false, "msg" => 'No es posible almacenar los datos.');
+					}
 				}
+				echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 			}
-			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
 		}
-	}
 		die();
 	}
 
 	public function getUsuarios()
 	{
-		
+
 		$arrData = $this->model->selectUsuarios();
 		for ($i = 0; $i < count($arrData); $i++) {
 			$btnView = '';
