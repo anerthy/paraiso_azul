@@ -8,14 +8,15 @@ $arrComunidades = $data['comunidades'];
 <div class="form-row">
     <?php
     // dep($arrTransporte);
-    for ($i = 0; $i < count($arrTransporte); $i++) {
-        $arrTransporte[$i]['Imagen'];
+    for ($i = 0; $i < count($arrComunidades); $i++) {
+        $arrComunidades[$i]['imagen'];
     ?>
         <div id="cardtransporte" class="card col-md-3 justify-content-center">
-            <img id="imagen" src="<?= $arrTransporte[$i]['imagen'] ?>" alt="imagen de la comunidad" class="card-img-top" alt="imagen del comunidad" style="width: 300px; height:300px;">
+            <img id="imagen" src="<?= $arrComunidades[$i]['imagen'] ?>" alt="imagen de la comunidad" class="card-img-top" alt="imagen del comunidad" style="width: 300px; height:300px;">
             <div>
-                <h4 class="nombre"><?= $arrTransporte[$i]['nombre_transporte'] ?></h4>
-                <p id="descripcion" class="card-text"><?= $arrTransporte[$i]['descripcion'] ?></p>
+                <h4 class="nombre"><?= $arrComunidades[$i]['nombre_com'] ?></h4>
+                <h4 class="nombre">Ubicacion: <?= $arrComunidades[$i]['provincia'] ?>, <?= $arrComunidades[$i]['canton'] ?>, <?= $arrComunidades[$i]['distrito'] ?></h4>
+                <p id="descripcion" class="card-text"><?= $arrComunidades[$i]['descripcion'] ?></p>
                 <center><a href="#" class="btn btn-info">Ver más informacion</a></center>
             </div>
         </div>
@@ -24,6 +25,6 @@ $arrComunidades = $data['comunidades'];
     ?>
 </div>
 <?php
-dep($arrComunidades);
+// dep($arrComunidades);
 footer($data);
 ?>
