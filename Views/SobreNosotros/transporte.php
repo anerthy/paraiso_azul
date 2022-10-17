@@ -11,10 +11,10 @@ $arrTransporte =  $data['transporte'];
     <?php
     // dep($arrTransporte);
     for ($i = 0; $i < count($arrTransporte); $i++) {
-        $arrTransporte[$i]['logo'];
+        $arrTransporte[$i]['Imagen'];
     ?>
         <div id="cardtransporte" class="card col-md-3 justify-content-center">
-            <img id="logo" src="<?= $arrTransporte[$i]['logo'] ?>" alt="logo del transporte" class="card-img-top" alt="logo del transporte" style="width: 300px; height:300px;">
+            <img id="imagen" src="<?= $arrTransporte[$i]['imagen'] ?>" alt="imagen del transporte" class="card-img-top" alt="imagen del transporte" style="width: 300px; height:300px;">
             <div>
                 <h4 class="nombre"><?= $arrTransporte[$i]['nombre_transporte'] ?></h4>
                 <p id="descripcion" class="card-text"><?= $arrTransporte[$i]['descripcion'] ?></p>
