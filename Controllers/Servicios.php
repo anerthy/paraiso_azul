@@ -32,7 +32,7 @@ class Servicios extends Controllers
     {
         $data['page_tag'] = "transporte";
         $data['page_title'] = "Servicio de transporte";
-        $data['page_name'] = "transporte";
+        $data['page_name'] = "viewtransporte";
         $data['transportes'] = $this->getTransportesT();
         $this->views->getView($this, "transporte", $data);
     }
