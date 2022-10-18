@@ -432,3 +432,57 @@ function removePhoto(){
     }
 }
 
+function CambiarPagina(p) {
+    // mostrar primer pagina
+    if (p.id == "1") {
+      $("#pag1").show();
+    } else {
+      $("#pag1").hide();
+    }
+    // mostrar segunda pagina
+    if (p.id == "2") {
+      $("#pag2").show();
+    } else {
+      $("#pag2").hide();
+    }
+    // mostrar tercsiguienteer pagina
+    if (p.id == "3") {
+      $("#pag3").show();
+    } else {
+      $("#pag3").hide();
+    }
+  }
+
+  function MostrarServicios() {
+    //mostrar input de alimentacion
+    if (document.getElementById('alim').checked) {
+      $("#formAlim").show();
+    } else {
+      $("#formAlim").hide();
+    }
+    //mostrar input de hospedaje
+    if (document.getElementById('hosp').checked) {
+      $("#formHosp").show();
+    } else {
+      $("#formHosp").hide();
+    }
+    //mostrar input de transporte
+    if (document.getElementById('trans').checked) {
+      $("#formTrans").show();
+    } else {
+      $("#formTrans").hide();
+    }
+  }
+
+  function verificarServicios(){
+    if(document.getElementsByClassName("txtAlimentacion")[0].value != ""){
+        // $("#formAlim").show();
+        document.getElementById(formAlim).show();
+    }
+    if(document.getElementsByClassName("txtHospedaje")[0].value != ""){
+        $("#formHosp").show();
+    }
+    if(document.getElementsByClassName("txtTransporte")[0].value != ""){
+        $("#formTrans").show();
+    }
+  }
