@@ -67,7 +67,7 @@
             </div>
 
             <div class="form-row">
-              <input type="button" value="Siguiente" id="2" class="btn btn-info" onclick="CambiarPagina(this);">
+              <input type="button" value="Siguiente" id="2" class="btn btn-info" onclick="CambiarPagina(this);verificarServicios();">
             </div>
 
           </div>
@@ -210,7 +210,7 @@
             </div>
 
             <div class="form-row">
-              <input type="button" value="Anterior" id="2" class="btn btn-info" onclick="CambiarPagina(this);">
+              <input type="button" value="Anterior" id="2" class="btn btn-info" onclick="CambiarPagina(this);verificarServicios();">
             </div>
 
           </div>
