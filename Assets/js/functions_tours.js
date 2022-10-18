@@ -475,14 +475,26 @@ function CambiarPagina(p) {
   }
 
   function verificarServicios(){
-    if(document.getElementsByClassName("txtAlimentacion")[0].value != ""){
-        // $("#formAlim").show();
-        document.getElementById(formAlim).show();
+    verificarAlim();
+    verificarHosp();
+    verificarTrans();
+  }
+
+  function verificarAlim(){
+    txt = document.getElementById("txtAlimentacion").value;
+    if(!(txt.length == 0 || /^\s+$/.test(txt))){
+        $("#formAlim").show();
     }
-    if(document.getElementsByClassName("txtHospedaje")[0].value != ""){
+  }
+  function verificarHosp(){
+    txt = document.getElementById("txtHospedaje").value;
+    if(!(txt.length == 0 || /^\s+$/.test(txt))){
         $("#formHosp").show();
     }
-    if(document.getElementsByClassName("txtTransporte")[0].value != ""){
+  }
+  function verificarTrans(){
+    txt = document.getElementById("txtTransporte").value;
+    if(!(txt.length == 0 || /^\s+$/.test(txt))){
         $("#formTrans").show();
     }
   }
