@@ -166,7 +166,7 @@ $('#tableGalerias').DataTable();
 
 function openModal(){
     rowTable = "";
-    document.querySelector('#id_Galeria').value ="";
+    document.querySelector('#Gal_id_Galeria').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
@@ -201,7 +201,7 @@ function fntViewInfo(gal_id_galeria){
                 document.querySelector("#celId").innerHTML = objData.data.gal_id_galeria;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.gal_descripcion;
                 document.querySelector("#celUbicacion").innerHTML = objData.data.gal_ubicacion;
-                document.querySelector("#imgGaleria").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
+                document.querySelector("#imgGaleria").innerHTML = '<img src="'+objData.data.url_gal_imagen+'"></img>';
                 $('#modalViewGaleria').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
@@ -234,7 +234,7 @@ function fntEditGaleria(gal_id_galeria){
                 document.querySelector("#Gal_id_Galeria").value = objData.data.gal_id_galeria;
                 document.querySelector("#txtGal_Descripcion").value = objData.data.gal_descripcion;
                 document.querySelector("#txtGal_Ubicacion").value = objData.data.gal_ubicacion;
-                document.querySelector('#foto_actual').value = objData.data.imagen;
+                document.querySelector('#foto_actual').value = objData.data.gal_imagen;
                 document.querySelector("#foto_remove").value= 0;
 
 
@@ -259,12 +259,12 @@ function fntEditGaleria(gal_id_galeria){
            // $('#listStatus').selectpicker('render');
 
             if(document.querySelector('#img')){
-                document.querySelector('#img').src = objData.data.url_imagen;
+                document.querySelector('#img').src = objData.data.url_gal_imagen;
             }else{
-                document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objData.data.url_imagen+">";
+                document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objData.data.url_gal_imagen+">";
             }
 
-            if(objData.data.imagen == 'portada_categoria.png'){
+            if(objData.data.gal_imagen == 'portada_categoria.png'){
                 document.querySelector('.delPhoto').classList.add("notBlock");
             }else{
                 document.querySelector('.delPhoto').classList.remove("notBlock");
