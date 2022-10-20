@@ -159,7 +159,7 @@
 
                         <?php if (!empty($_SESSION['permisos'][12]['ver'])) { ?>
                             <li>
-                                <a class="app-menu__item" href="<?= base_url(); ?>/imagenes">
+                                <a class="app-menu__item" href="<?= base_url(); ?>/galerias">
 
                                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAAAXNSR0IArs4c6QAAAaJJREFUWEftWMFtwzAM5E3SbtJmkjaTtJ2k6ST1Jk0mYXGCZDCKZFOGbfghAkGARGZOR/JIBnJAwwExSQfljUqRKVV9FpFXrxPnuauIXAHwfdIeQKnq7waALIgvAJ9TqO5AqSoPf8zdZIXvzwAuNT85KMtSoHsFAMkFU4Iv2gXA2Qvqzzx4AjCsBSqLQgdVJbYz5c25zlRiSlW/RYTCWJSR3ZlSVbYkatwA4FQK6a6gYp+kviUrqvWmoFT13baIQq9k+Ci8d2HcDFR0/CYiZGOYaN4PYeRlRITP0n5ael+1zZi8Cb2LjmMe1VRhsum2TAlFUIW8YWhSc635L4bRo2v5lFADtXTGGsMYLxYwzQ16s6BWmLFCGFdN9JigHtarYYxFYQfIPrpsPrqw7G8NceOmMs7dMYfs4y9mIWFlUlKsMaRBcPNEZ1OlyC2xvNJs6/H4G3UtB0XtYfnPaVDpR7YBxV+KekK2njzXM2duaZ+LPvJVzS64DFO+lLD1hM92+y9hsU41MtN0vIPy0nVUpjgyp6qmplW3790S3cvortXXAuoflnZHNXuWvEEAAAAASUVORK5CYII=" height="30" width="30" /> <span class="app-menu__label">Imagenes</span>
                                 </a>
