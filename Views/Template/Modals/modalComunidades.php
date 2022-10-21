@@ -1,4 +1,6 @@
 <!-- Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <div class="modal fade" id="modalFormComunidad" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -34,31 +36,85 @@
             <div class="form-group col-md-3">
                 <label for="txtProvincia">Provincia</label>
                 <select class="form-control" id="txtProvincia" name="txtProvincia" required="">
+                <option value="">Seleccione una provincia</option>
                   <option value="Puntarenas">Puntarenas</option>
                   <option value="Guanacaste">Guanacaste</option>
                 </select>
               </div>
               
+      
+      
+
               <div class="form-group col-md-3">
                 <label for="txtCanton">Canton</label>
                 <select class="form-control" id="txtCanton" name="txtCanton" required="">
-                  <option value="Esparza">Esparza</option>
+                <option value="">Seleccione una provincia</option>
+                  <!-- <option value="Nicoya">Nicoya</option> 
+                  <option value="Santa Cruz">Santa Cruz</option>
+                  <option value="Bagases">Bagases</option>
+                  <option value="Cañas">Cañas</option> -->
+ 
+
+<!--PUNTARENAS-->
+
+                    <!-- <option value="Esparza">Esparza</option>
                   <option value="Buenos Aires">Buenos Aires</option>
                   <option value="Monteverde">Monteverde</option>
+                  <option value="Manzanillo">Manzanillo </option>
+                  <option value="Lepanto">Lepanto</option>
+               
+                  
+                   -->
+              
+
+
+
                 </select>
               </div>
 
               <div class="form-group col-md-3">
                 <label for="txtDistrito">Distrito</label>
                 <select class="form-control" id="txtDistrito" name="txtDistrito" required="">
-                  <option value="Chomes">Chomes</option>
-                  <option value="Lepanto">Lepanto</option>
-                  <option value="Manzanillo">Manzanillo</option>
+                <option value="">Seleccione una provincia</option>
+                <!--PUNTARENAS-->
+                  <!-- <option value="Chomes">Chomes</option> -->
+                  <!-- <option value="Lepanto">Lepanto</option> -->
+                  <!-- <option value="Manzanillo">Manzanillo</option> -->
+                  <!-- <option value="San Antonio">San Antonio</option> NICOYA -->
+                  <!-- <option value="Quebrada Honda">Quebrada Honda</option> NICOYA -->
+                  <!-- <option value="Bebedero">Bebedero</option>CANNAS -->
+                  <!-- <option value="Porozal">Porozal</option>CANNAS -->
+                  <!-- <option value="Santa Cruz">Santa Cruz</option>santa cruz -->
+                  <!-- <option value="Bagases">Bagases</option>BAGASES -->
+                  <!-- <option value="Esparza">Esparza</option> -->
+           
+    
                 </select>
               </div>
 
           </div>
          
+          
+<!-- <div>
+  <b>Sección</b>
+  <select name="txtProvincia" id="txtProvincia">
+      <option value="">Seleccione una provincia</option>
+      <option value="Puntarenas">Puntarenas</option>
+      <option value="Guanacaste">Guanacaste</option>
+  </select>
+<div>
+</div>
+  <b>Canton</b>
+  <select name="txtCanton" id="txtCanton">
+      <option value="">Seleccione primero una provincia</option>
+  </select>
+</div>
+<div>
+  <b>Distrito</b>
+  <select name="txtDistrito" id="txtDistrito">
+      <option value="">Seleccione primero un canton</option>
+  </select>
+</div> -->
 
 
 
