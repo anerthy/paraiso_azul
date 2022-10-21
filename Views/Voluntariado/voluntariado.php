@@ -83,7 +83,7 @@ nav_bar($data);
             <section class="py-5" id="features">
                 <div class="container px-5 my-5">
                     <div class="row gx-5">
-                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">El voluntariado tiene como fin</h2>
+                        <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">Actividades del voluntariado</h2>
                         <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-voluntarios rounded-5 my-1" src="Assets/images/UNA.jpg" alt="..." /></div>
                     </div>
                         <div class="col-lg-8">
@@ -124,31 +124,32 @@ nav_bar($data);
         		<div id="carousel-example" class="carousel slide" data-ride="carousel">
         			<div class="carousel-inner row w-100 mx-auto" role="listbox">
             			
-						<div class="cat">
+						<div class="tam-carousel">
 						<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-							<img src="Assets/images/img/carousel-voluntatiado/backgrounds/santa.jpg" class="img-fluid mx-auto d-block" alt="img3">
+							<img class="redimension" src="Assets/images/img/carousel-voluntatiado/backgrounds/santa.jpg" class="img-fluid mx-auto d-block" alt="img3">
 						</div>
                         </div>
+                 
 
 						<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-							<img src="Assets/images/img/carousel-voluntatiado/backgrounds/4.jpg" class="img-fluid mx-auto d-block" alt="img4">
+							<img class="redimension"  src="Assets/images/img/carousel-voluntatiado/backgrounds/manzanillo.jpg" class="img-fluid mx-auto d-block" alt="img4">
 						</div>
 						<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-							<img src="Assets/images/img/carousel-voluntatiado/backgrounds/5.jpg" class="img-fluid mx-auto d-block" alt="img5">
+							<img class="redimension"  src="Assets/images/img/carousel-voluntatiado/backgrounds/mar.jpg" class="img-fluid mx-auto d-block" alt="img5">
 						</div>
 						<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3 active">
-							<img src="Assets/images/img/carousel-voluntatiado/backgrounds/6.jpg" class="img-fluid mx-auto d-block" alt="img6">
+							<img class="redimension"  src="Assets/images/img/carousel-voluntatiado/backgrounds/Nicoya.jpg" class="img-fluid mx-auto d-block" alt="img6">
 						</div>
 						<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-							<img src="Assets/images/img/carousel-voluntatiado/backgrounds/7.jpg" class="img-fluid mx-auto d-block" alt="img7">
+							<img class="redimension"  src="Assets/images/img/carousel-voluntatiado/backgrounds/piedra2.jpg" class="img-fluid mx-auto d-block" alt="img7">
 						</div>
 						<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-							<img src="Assets/images/img/carousel-voluntatiado/backgrounds/8.jpg" class="img-fluid mx-auto d-block" alt="img8">
+							<img class="redimension" src="Assets/images/img/carousel-voluntatiado/backgrounds/playa.jpg" class="img-fluid mx-auto d-block" alt="img8">
 						</div>
         			<div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-							<img src="Assets/images/img/carousel-voluntatiado/backgrounds/1.jpg" class="img-fluid mx-auto d-block" alt="img1">
+							<img class="redimension" src="Assets/images/img/carousel-voluntatiado/backgrounds/playaaa.jpg" class="img-fluid mx-auto d-block" alt="img1">
 						</div><div class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
-							<img src="Assets/images/img/carousel-voluntatiado/backgrounds/2.jpg" class="img-fluid mx-auto d-block" alt="img2">
+							<img class="redimension" src="Assets/images/img/carousel-voluntatiado/backgrounds/piedra.jpeg" class="img-fluid mx-auto d-block" alt="img2">
 						</div></div>
         			<a class="carousel-control-prev" href="#carousel-example" role="button" data-slide="prev">
 						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -171,20 +172,82 @@ nav_bar($data);
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
                             <div class="text-center">
-                                <h2 class="fw-bolder">informacion de interes</h2>
-                                <p class="lead fw-normal text-muted mb-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                                <h2 class="fw-bolder">Recuerdos de voluntariados</h2>
+                                <p class="lead fw-normal text-muted mb-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum voluptatem eveniet quae praesentium atque ducimus, repellat excepturi illum quia esse, porro ipsa provident non magnam expedita aliquid animi saepe est!</p>
                             </div>
                         </div>
                     </div>
-                    <div class="row gx-5">
+                    
                         
-                   
+                    <div class="row gx-5">
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <img class="voluntariadocard" src="Assets/images/img/cards-voluntariado/mudecop.jpeg" alt="..." />
+                                <div class="card-body p-4">
+                               
+                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Mudecop</h5></a>
+                                    <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                         
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <img class="voluntariadocard" src="Assets/images/img/cards-voluntariado/mariposas.jpg" alt="..." />
+                                <div class="card-body p-4">
+                                    
+                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Mariposas del Golfo</h5></a>
+                                    <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                       
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mb-5">
+                            <div class="card h-100 shadow border-0">
+                                <img class="voluntariadocard" src="Assets/images/img/cards-voluntariado/cope.jpg" alt="..." />
+                                <div class="card-body p-4">
+                               
+                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Coopeacuicultores Isla Venado</h5></a>
+                                    <p class="card-text mb-0">Some more quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                    <div class="d-flex align-items-end justify-content-between">
+                                        <div class="d-flex align-items-center">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
 
 
                     </div>
+
+                    
+           
                     <!-- Call to action-->
-                
-                </div>
+
+                    
+
+
+
+
+              
+           
             </section>
         </main>
         <!-- Footer-->
