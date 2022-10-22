@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 17-10-2022 a las 06:15:16
--- Versión del servidor: 8.0.27
+-- Tiempo de generación: 22-10-2022 a las 02:45:25
+-- Versión del servidor: 5.7.36
 -- Versión de PHP: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -446,26 +446,27 @@ DELIMITER ;
 
 DROP TABLE IF EXISTS `alimentacion`;
 CREATE TABLE IF NOT EXISTS `alimentacion` (
-  `id_alimentacion` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre_alim` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `direccion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `id_alimentacion` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre_alim` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `direccion` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `hora_apertura` time NOT NULL,
   `hora_cierre` time NOT NULL,
-  `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
-  `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `telefono` varchar(8) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `imagen` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_alimentacion`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `alimentacion`
 --
 
 INSERT INTO `alimentacion` (`id_alimentacion`, `nombre_alim`, `descripcion`, `direccion`, `hora_apertura`, `hora_cierre`, `telefono`, `status`, `imagen`) VALUES
-(7, 'Soda la playa', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', '07:00:00', '20:00:00', '89742984', 1, 'img_def626362da50491744b69cecc501a2b.jpg'),
-(8, 'Restaurante', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '13:00:00', '17:00:00', '22004591', 1, 'img_fed4e2a14d47f706cf8406b974c86260.jpg'),
-(9, 'HIUHI TETS', 'A', 'F', '23:05:00', '21:03:00', '89742984', 2, 'img_296bfc0586699a0b2c35eb3f66e7df60.jpg');
+(7, 'Soda la playa', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet, velit sed efficitur tempus, nisl ligula ultricies nisi, et imperdiet velit est vitae ipsum.', '07:00:00', '20:00:00', '89742984', 1, 'imageUnavailable.png'),
+(8, 'Restaurante', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', '13:00:00', '17:00:00', '22004591', 1, 'imageUnavailable.png'),
+(9, 'HIUHI TETS', 'A', 'F', '23:05:00', '21:03:00', '89742984', 2, 'imageUnavailable.png'),
+(13, 'Restaurantes', 'aa', 'aaaaaaa', '19:44:00', '19:44:00', '89742984', 1, 'imageUnavailable.png');
 
 -- --------------------------------------------------------
 
@@ -475,13 +476,13 @@ INSERT INTO `alimentacion` (`id_alimentacion`, `nombre_alim`, `descripcion`, `di
 
 DROP TABLE IF EXISTS `comunidad`;
 CREATE TABLE IF NOT EXISTS `comunidad` (
-  `id_comunidad` tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre_com` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `provincia` enum('Puntarenas','Guanacaste') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
-  `canton` enum('Puntarenas','Esparza','Buenos Aires','Montes de Oro','Osa','Quepos','Golfito','Coto Brus','Parrita','Corredores','Garabito','Monteverde','Puerto Jiménez') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
-  `distrito` enum('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `id_comunidad` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre_com` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `provincia` enum('Puntarenas','Guanacaste') COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `canton` enum('Puntarenas','Esparza','Buenos Aires','Montes de Oro','Osa','Quepos','Golfito','Coto Brus','Parrita','Corredores','Garabito','Monteverde','Puerto Jiménez') COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `distrito` enum('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia') COLLATE utf8mb4_swedish_ci NOT NULL,
+  `imagen` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_comunidad`)
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -490,9 +491,9 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
 --
 
 INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia`, `canton`, `distrito`, `imagen`) VALUES
-(1, 'Isla Caballo', 'lorem ipsum', 'Guanacaste', 'Buenos Aires', 'Manzanillo', 'img_a1d92727950d9ea0e9e308828d2449c8.jpg'),
-(24, 'Isla Bejuco', 'ASDASDASD', 'Puntarenas', 'Corredores', 'Pitahaya', 'img_e253a0afc3f038cb66ffd42876a00955.jpg'),
-(30, 'Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Buenos Aires', 'Lepanto', 'img_c9f27d8e1cdbb2b36ca511b64060c23b.jpg');
+(1, 'Isla Caballo', 'lorem ipsum', 'Guanacaste', 'Buenos Aires', 'Manzanillo', 'imageUnavailable.png'),
+(24, 'Isla Bejuco', 'ASDASDASD', 'Puntarenas', 'Corredores', 'Pitahaya', 'imageUnavailable.png'),
+(30, 'Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Buenos Aires', 'Lepanto', 'imageUnavailable.png');
 
 -- --------------------------------------------------------
 
@@ -502,32 +503,32 @@ INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia
 
 DROP TABLE IF EXISTS `grupo_organizado`;
 CREATE TABLE IF NOT EXISTS `grupo_organizado` (
-  `id_grupo` tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre_grupo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `representante` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `ubicacion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `numero_integrantes` tinyint NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
-  `logo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `comunidad_id` tinyint UNSIGNED NOT NULL,
+  `id_grupo` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre_grupo` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `representante` varchar(100) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `ubicacion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `correo` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `telefono` varchar(8) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `numero_integrantes` tinyint(4) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `logo` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `comunidad_id` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`id_grupo`),
   KEY `comunidad_id` (`comunidad_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `grupo_organizado`
 --
 
 INSERT INTO `grupo_organizado` (`id_grupo`, `nombre_grupo`, `representante`, `descripcion`, `ubicacion`, `correo`, `telefono`, `numero_integrantes`, `status`, `logo`, `comunidad_id`) VALUES
-(11, 'Asopecupachi', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 20, 2, 'portada_categoria.png', 1),
-(14, 'Asociación de desarrollo integral de Isla Caballo', 'ddsf', 'Pellentesque id laoreet leo a consequat anteSed venenatis ornare dui eget luctus Vivamus non pulvinar mauris Integer quis faucibus sapien', 'en la isla', 'dkgwf@dddgmail.com', '89742984', 32, 1, 'img_ed375ab0d8fe6b3b0c7b067d9ac6adc0.jpg', 24),
-(16, 'Mudecop', 'Carlos Mendez', 'Lorem ipsum dolor sit amet consectetur adipisicing elit Culpa cupiditate eius possimus unde ex sapiente minima necessitatibus inventore quisquam quod sed adipisci qui minus aut doloremque tempora nemo excepturi voluptas', 'Al frente del salon comunal de Isla Chira', 'mudecop@gmail.com', '89742984', 25, 1, 'img_9efb1d40f36b267579353da2099131ea.jpg', 30),
-(17, 'LELA', 'Lela la mejor SM', 'lorem imkjd kdfdkjfdfjvhf ghdjdfhf jfdhvjdfvhfdvjdfvf', 'dxvdvndnjvndfbj njnhdjkdj', 'lela@gmail.com', '22222222', 10, 1, 'img_9e967e52aabbae642e89d228ab63e2ff.jpg', 24),
-(18, 'Coopeacuicultores Isla Venado', 'Sr pecupachi', 'kdasldj kajdask djsakdjs kdjsk djsds', 'sddasd dsdadadad', 'Asopecupachi@gmail.com', '33333333', 30, 1, 'img_c5e4729185fdfba8a33271ce328373a6.jpg', 24),
-(19, 'SR AA', 'Sr aa', 'sdfd gfdgdgdgddfffffffffffffffff', 'fsdfdsfdsfdff', 'sraa@gmail.com', '3141314', 1, 1, 'img_fc184cce8188aa78e7c0f9c127026cd6.jpg', 24);
+(11, 'Asopecupachi', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 20, 2, 'imageUnavailable.png', 1),
+(14, 'Asociación de desarrollo integral de Isla Caballo', 'ddsf', 'Pellentesque id laoreet leo a consequat anteSed venenatis ornare dui eget luctus Vivamus non pulvinar mauris Integer quis faucibus sapien', 'en la isla', 'dkgwf@dddgmail.com', '89742984', 32, 1, 'imageUnavailable.png', 24),
+(16, 'Mudecoop', 'Carlos Mendez', 'Lorem ipsum dolor sit amet consectetur adipisicing elit Culpa cupiditate eius possimus unde ex sapiente minima necessitatibus inventore quisquam quod sed adipisci qui minus aut doloremque tempora nemo excepturi voluptas', 'Al frente del salon comunal de Isla Chira', 'mudecop@gmail.com', '89742984', 25, 1, 'imageUnavailable.png', 1),
+(17, 'LELA', 'Lela la mejor SM', 'lorem imkjd kdfdkjfdfjvhf ghdjdfhf jfdhvjdfvhfdvjdfvf', 'dxvdvndnjvndfbj njnhdjkdj', 'lela@gmail.com', '22222222', 10, 1, 'imageUnavailable.png', 24),
+(18, 'Coopeacuicultores Isla Venado', 'Sr pecupachi', 'kdasldj kajdask djsakdjs kdjsk djsds', 'sddasd dsdadadad', 'Asopecupachi@gmail.com', '33333333', 30, 1, 'imageUnavailable.png', 24),
+(19, 'SR AA', 'Sr aa', 'sdfd gfdgdgdgddfffffffffffffffff', 'fsdfdsfdsfdff', 'sraa@gmail.com', '3141314', 1, 1, 'imageUnavailable.png', 24);
 
 -- --------------------------------------------------------
 
@@ -537,29 +538,30 @@ INSERT INTO `grupo_organizado` (`id_grupo`, `nombre_grupo`, `representante`, `de
 
 DROP TABLE IF EXISTS `hospedaje`;
 CREATE TABLE IF NOT EXISTS `hospedaje` (
-  `id_hospedaje` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre_hosp` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `tipo` enum('Cabina','Camping') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `direccion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `id_hospedaje` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre_hosp` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `tipo` enum('Cabina','Camping') COLLATE utf8mb4_swedish_ci NOT NULL,
+  `direccion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `telefono` varchar(8) COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(8,2) NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
-  `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `imagen` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_hospedaje`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `hospedaje`
 --
 
 INSERT INTO `hospedaje` (`id_hospedaje`, `nombre_hosp`, `descripcion`, `tipo`, `direccion`, `telefono`, `precio`, `status`, `imagen`) VALUES
-(1, 'Mariposas', 'Se ofrece habitacion para dos personas', 'Camping', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
-(3, 'Chira House', 'Se ofrece habitacion para dos personas', 'Cabina', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'eijkdjdk'),
-(6, 'Hotel la vida', 'jdskjssjdsaaaaaaaaaaaaaaaaaaaaaaadk', 'Cabina', '25m de la plaza', '89320012', '21000.00', 1, 'img_d44bacf25b82aa9de2d70aa8b8c8bf19.jpg'),
-(7, 'sdsfdfsdf', 'dfdsff', '', 'fsdfsdfsdf', '49284949', '2500.00', 0, 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg'),
-(9, 'SIRVE', 'kjhf', 'Camping', 'lkmjnhbgvf', '24438433', '90000.00', 0, 'img_703ec07accdeb8eba156715faf6bee80.jpg'),
-(10, 'WSDDA', 'sads dsdsad .', 'Cabina', 'sadda d.', '24438433', '90000.00', 2, 'img_1bee7af8eb9c0e6a11ba4f6499f14ca0.jpg');
+(1, 'Mariposas', 'Se ofrece habitacion para dos personas', 'Camping', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'imageUnavailable.png'),
+(3, 'Chira House', 'Se ofrece habitacion para dos personas', 'Cabina', 'Golfo de Nicoya', '98982818', '20000.00', 1, 'imageUnavailable.png'),
+(6, 'Hotel la vida', 'jdskjssjdsaaaaaaaaaaaaaaaaaaaaaaadk', 'Cabina', '25m de la plaza', '89320012', '21000.00', 1, 'imageUnavailable.png'),
+(7, 'sdsfdfsdf', 'dfdsff', '', 'fsdfsdfsdf', '49284949', '2500.00', 0, 'imageUnavailable.png'),
+(9, 'SIRVE', 'kjhf', 'Camping', 'lkmjnhbgvf', '24438433', '90000.00', 0, 'imageUnavailable.png'),
+(10, 'WSDDA', 'sads dsdsad .', 'Cabina', 'sadda d.', '24438433', '90000.00', 2, 'imageUnavailable.png'),
+(11, 'kjhgfd', 'ddddddddddd', 'Camping', 'ddddd', '43525252', '2213.00', 1, 'imageUnavailable.png');
 
 -- --------------------------------------------------------
 
@@ -569,10 +571,10 @@ INSERT INTO `hospedaje` (`id_hospedaje`, `nombre_hosp`, `descripcion`, `tipo`, `
 
 DROP TABLE IF EXISTS `modulo`;
 CREATE TABLE IF NOT EXISTS `modulo` (
-  `id_modulo` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
+  `id_modulo` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_modulo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -602,13 +604,13 @@ INSERT INTO `modulo` (`id_modulo`, `titulo`, `descripcion`, `status`) VALUES
 
 DROP TABLE IF EXISTS `permisos`;
 CREATE TABLE IF NOT EXISTS `permisos` (
-  `id_permiso` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `ver` int NOT NULL DEFAULT '0',
-  `agregar` int NOT NULL DEFAULT '0',
-  `actualizar` int NOT NULL DEFAULT '0',
-  `eliminar` int NOT NULL DEFAULT '0',
-  `rol_id` smallint UNSIGNED NOT NULL,
-  `modulo_id` smallint UNSIGNED NOT NULL,
+  `id_permiso` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `ver` int(11) NOT NULL DEFAULT '0',
+  `agregar` int(11) NOT NULL DEFAULT '0',
+  `actualizar` int(11) NOT NULL DEFAULT '0',
+  `eliminar` int(11) NOT NULL DEFAULT '0',
+  `rol_id` smallint(5) UNSIGNED NOT NULL,
+  `modulo_id` smallint(5) UNSIGNED NOT NULL,
   PRIMARY KEY (`id_permiso`),
   KEY `rol_id` (`rol_id`),
   KEY `modulo_id` (`modulo_id`)
@@ -710,9 +712,9 @@ INSERT INTO `permisos` (`id_permiso`, `ver`, `agregar`, `actualizar`, `eliminar`
 
 DROP TABLE IF EXISTS `registro_alimentacion`;
 CREATE TABLE IF NOT EXISTS `registro_alimentacion` (
-  `alimentacion_id` smallint UNSIGNED NOT NULL,
+  `alimentacion_id` smallint(5) UNSIGNED NOT NULL,
   `fecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_id` smallint UNSIGNED NOT NULL,
+  `usuario_id` smallint(5) UNSIGNED NOT NULL,
   PRIMARY KEY (`alimentacion_id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `alimentacion_id` (`alimentacion_id`)
@@ -726,9 +728,9 @@ CREATE TABLE IF NOT EXISTS `registro_alimentacion` (
 
 DROP TABLE IF EXISTS `registro_hospedaje`;
 CREATE TABLE IF NOT EXISTS `registro_hospedaje` (
-  `hospedaje_id` smallint UNSIGNED NOT NULL,
+  `hospedaje_id` smallint(5) UNSIGNED NOT NULL,
   `fecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_id` smallint UNSIGNED NOT NULL,
+  `usuario_id` smallint(5) UNSIGNED NOT NULL,
   PRIMARY KEY (`hospedaje_id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `hospedaje_id` (`hospedaje_id`)
@@ -742,9 +744,9 @@ CREATE TABLE IF NOT EXISTS `registro_hospedaje` (
 
 DROP TABLE IF EXISTS `registro_tour`;
 CREATE TABLE IF NOT EXISTS `registro_tour` (
-  `tour_id` smallint UNSIGNED NOT NULL,
+  `tour_id` smallint(5) UNSIGNED NOT NULL,
   `fecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_id` smallint UNSIGNED NOT NULL,
+  `usuario_id` smallint(5) UNSIGNED NOT NULL,
   PRIMARY KEY (`tour_id`),
   KEY `tour_id` (`tour_id`),
   KEY `usuario_id` (`usuario_id`)
@@ -758,9 +760,9 @@ CREATE TABLE IF NOT EXISTS `registro_tour` (
 
 DROP TABLE IF EXISTS `registro_transporte`;
 CREATE TABLE IF NOT EXISTS `registro_transporte` (
-  `transporte_id` smallint UNSIGNED NOT NULL,
+  `transporte_id` smallint(5) UNSIGNED NOT NULL,
   `fecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `usuario_id` smallint UNSIGNED NOT NULL,
+  `usuario_id` smallint(5) UNSIGNED NOT NULL,
   PRIMARY KEY (`transporte_id`),
   KEY `transporte_id` (`transporte_id`),
   KEY `usuario_id` (`usuario_id`)
@@ -774,10 +776,10 @@ CREATE TABLE IF NOT EXISTS `registro_transporte` (
 
 DROP TABLE IF EXISTS `rol`;
 CREATE TABLE IF NOT EXISTS `rol` (
-  `id_rol` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre_rol` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
+  `id_rol` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre_rol` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_rol`)
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -813,10 +815,10 @@ DELIMITER ;
 
 DROP TABLE IF EXISTS `tbl_contenido_pagina`;
 CREATE TABLE IF NOT EXISTS `tbl_contenido_pagina` (
-  `cont_id_contenido` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `cont_titulo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `cont_contenido` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `cont_modulo` enum('Grupos Organizados','Comunidades','Alimentacion','Tours','Hospedaje','Transporte','Voluntario','Inicio','CEMEDE') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cont_id_contenido` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `cont_titulo` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cont_contenido` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cont_modulo` enum('Grupos Organizados','Comunidades','Alimentacion','Tours','Hospedaje','Transporte','Voluntario','Inicio','CEMEDE') COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`cont_id_contenido`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -838,21 +840,23 @@ INSERT INTO `tbl_contenido_pagina` (`cont_id_contenido`, `cont_titulo`, `cont_co
 
 DROP TABLE IF EXISTS `tbl_galeria`;
 CREATE TABLE IF NOT EXISTS `tbl_galeria` (
-  `gal_id_galeria` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `gal_descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `gal_imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `gal_ubicacion` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `gal_id_galeria` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `gal_descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `gal_imagen` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `gal_ubicacion` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`gal_id_galeria`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `tbl_galeria`
 --
 
 INSERT INTO `tbl_galeria` (`gal_id_galeria`, `gal_descripcion`, `gal_imagen`, `gal_ubicacion`) VALUES
-(1, 'Logo de Paraizo Azul', 'img_99113e4e6a9feabef38336f4f0ab6bf0.jpg', 'pagina principal'),
-(2, 'Imagen del product owner del proyecto', 'img_2664a10b57c8059bd14e871ff8bf6add.jpg', 'integrantes'),
-(3, 'Imagen de la Isla Chira', 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg', 'carrusel');
+(1, 'Logo de Paraizo Azul', 'imageUnavailable.png', 'pagina principal'),
+(2, 'Imagen del product owner del proyecto', 'imageUnavailable.png', 'integrantes'),
+(3, 'Imagen de la Isla Chira', 'imageUnavailable.png', 'carrusel'),
+(4, 'aaaaaaaaaaaa', 'imageUnavailable.png', 'jhgfd'),
+(6, 'vdfgm', 'imageUnavailable.png', 'ddddddd');
 
 -- --------------------------------------------------------
 
@@ -862,37 +866,31 @@ INSERT INTO `tbl_galeria` (`gal_id_galeria`, `gal_descripcion`, `gal_imagen`, `g
 
 DROP TABLE IF EXISTS `tour`;
 CREATE TABLE IF NOT EXISTS `tour` (
-  `id_tour` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre_tour` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `actividad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `alimentacion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
-  `hospedaje` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
-  `transporte` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci,
-  `lugar` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `disponibilidad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `id_tour` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre_tour` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `actividad` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `alimentacion` text COLLATE utf8mb4_swedish_ci,
+  `hospedaje` text COLLATE utf8mb4_swedish_ci,
+  `transporte` text COLLATE utf8mb4_swedish_ci,
+  `lugar` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `disponibilidad` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `hora_inicio` time NOT NULL,
   `duracion` time NOT NULL,
-  `cupo_minimo` tinyint NOT NULL,
-  `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cupo_minimo` tinyint(4) NOT NULL,
+  `telefono` varchar(8) COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(8,2) NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
-  `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `imagen` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_tour`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `tour`
 --
 
 INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `actividad`, `alimentacion`, `hospedaje`, `transporte`, `lugar`, `disponibilidad`, `hora_inicio`, `duracion`, `cupo_minimo`, `telefono`, `precio`, `status`, `imagen`) VALUES
-(1, 'Tour loco', 'sddasd', 'Caminata a la montaña', 'Incluye fresquito', 'Habitacion individual', 'Lancha', 'Chira', 'todos los dias', '08:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'img_1bee7af8eb9c0e6a11ba4f6499f14ca0.jpg'),
-(2, 'FDSFSDF', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'saddsdas', NULL, NULL, 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 1, 'kjnhgbfdtyok,jmnhbgv'),
-(4, 'ZZZZZ', 'sddasd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', NULL, NULL, 'sadsdadsad', 'sddasd', 'sdadsdd', '10:00:00', '01:08:58', 23, '34232414', '12000.00', 2, 'kjnhgbfdtyok,jmnhbgv'),
-(5, 'ACTU', 'dd', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'asddsd', 'dddsfs', NULL, 'sdd', 'sddad', '10:00:00', '00:50:00', 12, '12345678', '10500.00', 1, 'asdadad'),
-(6, 'Tour a playa Albina', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultricies. Praesent porta arcu eu nibh pharetra sollicitudin eget non erat. Mauris rutrum eget mi sit amet eleifend.', 'Reforestacion del manglar', 'Incluye cafe por la tarde', NULL, 'en panga', 'En playa albina', 'De lunes a viernes', '23:39:42', '01:08:58', 10, '34232414', '120000.00', 2, 'iLorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus ante vitae nunc fermentum ultri'),
-(10, 'Tour en panga', 'jfeskfjdfckshdwk rjhgkjd hjdgh ridj', 'panguita', 'cafe con apancito', 'a', 'a', 'Isla Chira', 'Los fines de semana', '19:25:00', '19:26:00', 20, '89898989', '32444.00', 1, 'img_ee73404c5b12365d580e367d0bfb4ed1.jpg'),
-(12, 'sdsadas', 'asdd', 'assdadd', 'cafe', NULL, 'sdasdadad', 'Isla Chira', 'dasdsdda', '19:33:00', '19:34:00', 12, '89742984', '5565.00', 1, 'img_1d5be3fb440d1544539ded60811e0844.jpg');
+(13, 'sdsadassss', 'kjhg', 'khjk', 'sw', 's', 's', 'fffff', 'ffffffff', '19:59:00', '19:58:00', 12, '22222222', '2500.00', 1, 'imageUnavailable.png');
 
 -- --------------------------------------------------------
 
@@ -902,7 +900,7 @@ INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `actividad`, `alime
 --
 DROP VIEW IF EXISTS `tours_activos`;
 CREATE TABLE IF NOT EXISTS `tours_activos` (
-`id_tour` smallint unsigned
+`id_tour` smallint(5) unsigned
 ,`nombre_tour` varchar(100)
 ,`descripcion` text
 ,`actividad` text
@@ -913,10 +911,10 @@ CREATE TABLE IF NOT EXISTS `tours_activos` (
 ,`disponibilidad` text
 ,`hora_inicio` time
 ,`duracion` time
-,`cupo_minimo` tinyint
+,`cupo_minimo` tinyint(4)
 ,`telefono` varchar(8)
 ,`precio` decimal(8,2)
-,`status` int
+,`status` int(11)
 ,`imagen` varchar(100)
 );
 
@@ -928,16 +926,16 @@ CREATE TABLE IF NOT EXISTS `tours_activos` (
 
 DROP TABLE IF EXISTS `transporte`;
 CREATE TABLE IF NOT EXISTS `transporte` (
-  `id_transporte` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre_trans` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `clase` enum('Publico','Privado') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `tipo` enum('Terrestre','Maritimo') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `disponibilidad` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `id_transporte` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre_trans` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `clase` enum('Publico','Privado') COLLATE utf8mb4_swedish_ci NOT NULL,
+  `tipo` enum('Terrestre','Maritimo') COLLATE utf8mb4_swedish_ci NOT NULL,
+  `disponibilidad` text COLLATE utf8mb4_swedish_ci NOT NULL,
   `precio` decimal(8,2) DEFAULT NULL,
-  `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
-  `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `telefono` varchar(8) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `imagen` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_transporte`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
@@ -946,11 +944,11 @@ CREATE TABLE IF NOT EXISTS `transporte` (
 --
 
 INSERT INTO `transporte` (`id_transporte`, `nombre_trans`, `descripcion`, `clase`, `tipo`, `disponibilidad`, `precio`, `telefono`, `status`, `imagen`) VALUES
-(2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 2, 'SDASDDAD'),
-(3, 'Taxi alfredo', '.hbgf', '', '', 'jhgfd', '2500.00', '89742984', 1, 'img_18b2ab157b9609dcf2025e4e06188867.jpg'),
-(4, 'Bus', 'ijdkidjsadadj', 'Publico', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 1, 'img_2664a10b57c8059bd14e871ff8bf6add.jpg'),
-(5, 'Panga Don Lelo', 'FSDJFLSLF', 'Publico', 'Maritimo', 'lleguele nomas', '2500.00', '24438433', 1, 'img_7b8946c196a2eb013f3e14d35d7b4ccb.jpg'),
-(6, 'Taxi alfredo lopez', 'affdfdsdf', 'Publico', 'Terrestre', 'todos los dias', '5000.00', '89742984', 1, 'img_f39a962a6a8b91fccdbf195ecf2a9a72.jpg');
+(2, 'test', 'dsffsfdfsdf', 'Publico', 'Terrestre', 'ff', '10500.00', '12345678', 2, 'imageUnavailable.png'),
+(3, 'Taxi alfredo', '.hbgf', '', '', 'jhgfd', '2500.00', '89742984', 1, 'imageUnavailable.png'),
+(4, 'Bus', 'ijdkidjsadadj', 'Publico', 'Terrestre', 'hoy ayer y siempre', '10000.00', '89742984', 1, 'imageUnavailable.png'),
+(5, 'Panga Don Lelo', 'FSDJFLSLF', 'Publico', 'Maritimo', 'lleguele nomas', '2500.00', '24438433', 1, 'imageUnavailable.png'),
+(6, 'Taxi alfredo lopez', 'affdfdsdf', 'Publico', 'Terrestre', 'todos los dias', '5000.00', '89742984', 1, 'imageUnavailable.png');
 
 -- --------------------------------------------------------
 
@@ -960,13 +958,13 @@ INSERT INTO `transporte` (`id_transporte`, `nombre_trans`, `descripcion`, `clase
 
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id_usuario` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre_usuario` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `contraseña` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
-  `status` int NOT NULL DEFAULT '1',
-  `rol_id` smallint UNSIGNED NOT NULL,
+  `id_usuario` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre_usuario` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `correo` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `contraseña` varchar(100) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `token` varchar(100) COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
+  `rol_id` smallint(5) UNSIGNED NOT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `nombre` (`nombre_usuario`),
   UNIQUE KEY `nombre_2` (`nombre_usuario`),
@@ -992,8 +990,8 @@ INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `correo`, `contraseña`, 
 
 DROP TABLE IF EXISTS `usuario_grupo`;
 CREATE TABLE IF NOT EXISTS `usuario_grupo` (
-  `usuario_id` smallint UNSIGNED NOT NULL,
-  `grupo_id` tinyint UNSIGNED NOT NULL,
+  `usuario_id` smallint(5) UNSIGNED NOT NULL,
+  `grupo_id` tinyint(3) UNSIGNED NOT NULL,
   PRIMARY KEY (`usuario_id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `grupo_id` (`grupo_id`)
@@ -1007,12 +1005,12 @@ CREATE TABLE IF NOT EXISTS `usuario_grupo` (
 --
 DROP VIEW IF EXISTS `usuario_rol`;
 CREATE TABLE IF NOT EXISTS `usuario_rol` (
-`id_usuario` smallint unsigned
+`id_usuario` smallint(5) unsigned
 ,`nombre_usuario` varchar(50)
 ,`correo` varchar(50)
-,`id_rol` smallint unsigned
+,`id_rol` smallint(5) unsigned
 ,`nombre_rol` varchar(50)
-,`status` int
+,`status` int(11)
 );
 
 -- --------------------------------------------------------
@@ -1023,7 +1021,7 @@ CREATE TABLE IF NOT EXISTS `usuario_rol` (
 --
 DROP VIEW IF EXISTS `view_alimentacion`;
 CREATE TABLE IF NOT EXISTS `view_alimentacion` (
-`id_alimentacion` smallint unsigned
+`id_alimentacion` smallint(5) unsigned
 ,`nombre_alim` varchar(100)
 ,`descripcion` text
 ,`direccion` text
@@ -1040,14 +1038,14 @@ CREATE TABLE IF NOT EXISTS `view_alimentacion` (
 --
 DROP VIEW IF EXISTS `view_grupo_organizado_comunidad`;
 CREATE TABLE IF NOT EXISTS `view_grupo_organizado_comunidad` (
-`id_grupo` tinyint unsigned
+`id_grupo` tinyint(3) unsigned
 ,`nombre_grupo` varchar(100)
 ,`representante` varchar(100)
 ,`descripcion` text
 ,`ubicacion` text
 ,`correo` varchar(50)
 ,`telefono` varchar(8)
-,`numero_integrantes` tinyint
+,`numero_integrantes` tinyint(4)
 ,`logo` varchar(100)
 ,`nombre_com` varchar(50)
 );
@@ -1060,7 +1058,7 @@ CREATE TABLE IF NOT EXISTS `view_grupo_organizado_comunidad` (
 --
 DROP VIEW IF EXISTS `view_hospedaje`;
 CREATE TABLE IF NOT EXISTS `view_hospedaje` (
-`id_hospedaje` smallint unsigned
+`id_hospedaje` smallint(5) unsigned
 ,`nombre_hosp` varchar(100)
 ,`descripcion` text
 ,`tipo` enum('Cabina','Camping')
@@ -1078,7 +1076,7 @@ CREATE TABLE IF NOT EXISTS `view_hospedaje` (
 --
 DROP VIEW IF EXISTS `view_tour`;
 CREATE TABLE IF NOT EXISTS `view_tour` (
-`id_tour` smallint unsigned
+`id_tour` smallint(5) unsigned
 ,`nombre_tour` varchar(100)
 ,`descripcion` text
 ,`actividad` text
@@ -1089,7 +1087,7 @@ CREATE TABLE IF NOT EXISTS `view_tour` (
 ,`disponibilidad` text
 ,`hora_inicio` varchar(8)
 ,`duracion` varchar(12)
-,`cupo_minimo` tinyint
+,`cupo_minimo` tinyint(4)
 ,`telefono` varchar(8)
 ,`precio` varchar(11)
 ,`imagen` varchar(100)
@@ -1103,7 +1101,7 @@ CREATE TABLE IF NOT EXISTS `view_tour` (
 --
 DROP VIEW IF EXISTS `view_transporte`;
 CREATE TABLE IF NOT EXISTS `view_transporte` (
-`id_transporte` smallint unsigned
+`id_transporte` smallint(5) unsigned
 ,`nombre_trans` varchar(100)
 ,`descripcion` text
 ,`clase` enum('Publico','Privado')
@@ -1122,17 +1120,17 @@ CREATE TABLE IF NOT EXISTS `view_transporte` (
 
 DROP TABLE IF EXISTS `voluntario`;
 CREATE TABLE IF NOT EXISTS `voluntario` (
-  `id_voluntario` smallint UNSIGNED NOT NULL AUTO_INCREMENT,
-  `nombre_vol` varchar(35) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `apellido1` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `apellido2` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `cedula` varchar(9) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `correo` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `telefono` varchar(8) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `id_voluntario` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `nombre_vol` varchar(35) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `apellido1` varchar(40) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `apellido2` varchar(40) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `cedula` varchar(9) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `correo` varchar(50) COLLATE utf8mb4_swedish_ci NOT NULL,
+  `telefono` varchar(8) COLLATE utf8mb4_swedish_ci NOT NULL,
   `fecha_nacimiento` date NOT NULL,
-  `genero` enum('Masculino','Femenino') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `lugar_residencia` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `status` int NOT NULL DEFAULT '1',
+  `genero` enum('Masculino','Femenino') COLLATE utf8mb4_swedish_ci NOT NULL,
+  `lugar_residencia` text COLLATE utf8mb4_swedish_ci NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id_voluntario`),
   UNIQUE KEY `cedula` (`cedula`),
   UNIQUE KEY `correo` (`correo`)
