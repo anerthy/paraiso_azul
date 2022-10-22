@@ -156,17 +156,17 @@ function sessionStart()
     }
 }
 
-function uploadImage(array $data, string $name)
+function uploadImage(string $modulo, array $data, string $name)
 {
     $url_temp = $data['tmp_name'];
-    $destino    = 'Assets/images/uploads/' . $name;
+    $destino    = 'Assets/images/uploads/' . $modulo . '/' . $name;
     $move = move_uploaded_file($url_temp, $destino);
     return $move;
 }
 
-function deleteFile(string $name)
+function deleteFile(string $modulo, string $name)
 {
-    unlink('Assets/images/uploads/' . $name);
+    unlink('Assets/images/uploads/' . $modulo . '/' . $name);
 }
 
 //Elimina exceso de espacios entre palabras
