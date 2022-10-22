@@ -32,7 +32,7 @@ class Comunidades extends Controllers
 		$arrData = $this->model->selectComunidades();
 
 		for ($i = 0; $i < count($arrData); $i++) {
-			
+
 			$btnView = '';
 			$btnEdit = '';
 			$btnDelete = '';
@@ -67,16 +67,16 @@ class Comunidades extends Controllers
 
 
 
-					if ($arrData[$i]['canton'] == 'Nicoya') {
-						$arrData[$i]['canton'] = '<span>Nicoya</span>';
-					}elseif ($arrData[$i]['canton'] == 'Santa Cruz') {
-						$arrData[$i]['canton'] = '<span>Santa Cruz</span>';
-					}elseif ($arrData[$i]['canton'] == 'Bagases') {
-						$arrData[$i]['canton'] = '<span>Bagases</span>';
-					}elseif ($arrData[$i]['canton'] == 'Cañas') {
-						$arrData[$i]['canton'] = '<span>Cañas</span>';
-					}
-        
+			if ($arrData[$i]['canton'] == 'Nicoya') {
+				$arrData[$i]['canton'] = '<span>Nicoya</span>';
+			} elseif ($arrData[$i]['canton'] == 'Santa Cruz') {
+				$arrData[$i]['canton'] = '<span>Santa Cruz</span>';
+			} elseif ($arrData[$i]['canton'] == 'Bagases') {
+				$arrData[$i]['canton'] = '<span>Bagases</span>';
+			} elseif ($arrData[$i]['canton'] == 'Cañas') {
+				$arrData[$i]['canton'] = '<span>Cañas</span>';
+			}
+
 
 			if ($arrData[$i]['canton'] == 'Esparza') {
 				$arrData[$i]['canton'] = '<span>Esparza</span>';
@@ -86,10 +86,10 @@ class Comunidades extends Controllers
 				$arrData[$i]['canton'] = '<span>Monteverde</span>';
 			} elseif ($arrData[$i]['canton'] == 'Manzanillo') {
 				$arrData[$i]['canton'] = '<span>Manzanillo</span>';
-			}elseif ($arrData[$i]['canton'] == 'Lepanto') {
+			} elseif ($arrData[$i]['canton'] == 'Lepanto') {
 				$arrData[$i]['canton'] = '<span>Lepanto</span>';
 			}
-	
+
 
 			///Distrito
 			if ($arrData[$i]['distrito'] == 'Chomes') {
@@ -98,18 +98,15 @@ class Comunidades extends Controllers
 				$arrData[$i]['distrito'] = '<span>Lepanto</span>';
 			} elseif ($arrData[$i]['distrito'] == 'Manzanillo') {
 				$arrData[$i]['distrito'] = '<span>Manzanillo</span>';
-			}elseif ($arrData[$i]['distrito'] == 'San Antonio') {
+			} elseif ($arrData[$i]['distrito'] == 'San Antonio') {
 				$arrData[$i]['distrito'] = '<span>San Antonio</span>';
-			}elseif ($arrData[$i]['distrito'] == 'Quebrada Honda') {
+			} elseif ($arrData[$i]['distrito'] == 'Quebrada Honda') {
 				$arrData[$i]['distrito'] = '<span>Quebrada Honda</span>';
-			}elseif ($arrData[$i]['distrito'] == 'Bebedero') {
+			} elseif ($arrData[$i]['distrito'] == 'Bebedero') {
 				$arrData[$i]['distrito'] = '<span>Bebedero</span>';
-			}elseif ($arrData[$i]['distrito'] == 'Porozal') {
+			} elseif ($arrData[$i]['distrito'] == 'Porozal') {
 				$arrData[$i]['distrito'] = '<span>Porozal</span>';
 			}
-
-
-
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		die();
@@ -138,7 +135,7 @@ class Comunidades extends Controllers
 			if (empty($arrData)) {
 				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 			} else {
-				$arrData['url_imagen'] = media() . '/images/uploads/' . $arrData['imagen'];
+				$arrData['url_imagen'] = media() . '/images/uploads/comunidades/' . $arrData['imagen'];
 				$arrResponse = array('status' => true, 'data' => $arrData);
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
@@ -187,18 +184,18 @@ class Comunidades extends Controllers
 			if ($option == 1) {
 				$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
 				if ($nombre_foto != '') {
-					uploadImage($foto, $imgImagen);
+					uploadImage('comunidades', $foto, $imgImagen);
 				}
 			} else {
 				$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 				if ($nombre_foto != '') {
-					uploadImage($foto, $imgImagen);
+					uploadImage('comunidades', $foto, $imgImagen);
 				}
 
 				if (($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
 					|| ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')
 				) {
-					deleteFile($_POST['foto_actual']);
+					deleteFile('comunidades', $_POST['foto_actual']);
 				}
 			}
 		} else if ($request_comunidad == 'exist') {

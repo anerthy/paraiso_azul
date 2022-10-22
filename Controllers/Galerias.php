@@ -20,9 +20,9 @@ class Galerias extends Controllers
 			header("Location:" . base_url() . '/access_denied');
 		}
 		$data['page_id'] = 12;
-		$data['page_tag'] = "Galerias";
+		$data['page_tag'] = "Galeria";
 		$data['page_name'] = "galeria";
-		$data['page_title'] = "Galerias";
+		$data['page_title'] = "Galeria";
 		$data['page_functions_js'] = "functions_galerias.js";
 		$this->views->getView($this, "galerias", $data);
 	}
@@ -52,8 +52,6 @@ class Galerias extends Controllers
 			}
 
 			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
-
-		
 		}
 		echo json_encode($arrData, JSON_UNESCAPED_UNICODE);
 		die();
@@ -82,7 +80,7 @@ class Galerias extends Controllers
 			if (empty($arrData)) {
 				$arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
 			} else {
-				$arrData['url_gal_imagen'] = media() . '/images/uploads/' . $arrData['gal_imagen'];
+				$arrData['url_gal_imagen'] = media() . '/images/uploads/galeria/' . $arrData['gal_imagen'];
 				$arrResponse = array('status' => true, 'data' => $arrData);
 			}
 			echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
@@ -96,7 +94,7 @@ class Galerias extends Controllers
 		$intGal_Id_galeria = intval($_POST['Gal_id_Galeria']);
 		$strGal_Descripcion =  strClean($_POST['txtGal_Descripcion']);
 		$strGal_Ubicacion = strClean($_POST['txtGal_Ubicacion']);
-	
+
 
 		$foto   	= $_FILES['foto'];
 		$nombre_foto 	= $foto['name'];
@@ -121,7 +119,7 @@ class Galerias extends Controllers
 					$imgImagen = $_POST['foto_actual'];
 				}
 			}
-			$request_galeria = $this->model->updateGaleria($intGal_Id_galeria,$strGal_Descripcion, $strGal_Ubicacion, $gal_imagen);
+			$request_galeria = $this->model->updateGaleria($intGal_Id_galeria, $strGal_Descripcion, $strGal_Ubicacion, $gal_imagen);
 			$option = 2;
 		}
 
@@ -129,18 +127,18 @@ class Galerias extends Controllers
 			if ($option == 1) {
 				$arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
 				if ($nombre_foto != '') {
-					uploadImage($foto, $gal_imagen);
+					uploadImage('galeria', $foto, $gal_imagen);
 				}
 			} else {
 				$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 				if ($nombre_foto != '') {
-					uploadImage($foto, $gal_imagen);
+					uploadImage('galeria', $foto, $gal_imagen);
 				}
 
 				if (($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
 					|| ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')
 				) {
-					deleteFile($_POST['foto_actual']);
+					deleteFile('galeria', $_POST['foto_actual']);
 				}
 			}
 		} else if ($request_galeria == 'exist') {
