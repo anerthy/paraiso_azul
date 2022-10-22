@@ -63,7 +63,7 @@ class ContenidoModel extends Mysql
         $request = $this->select_all($sql);
 
         if (empty($request)) {
-            $sql = "UPDATE tbl_contenido_pagina SET cont_titulo = ?, cont_contenido = ? WHERE cont_id_contenido = $this->intid_contenido, cont_modulo=?";
+            $sql = "UPDATE tbl_contenido_pagina SET cont_titulo = ?, cont_contenido = ?,cont_modulo = ? WHERE cont_id_contenido = $this->intid_contenido ";
             $arrData = array($this->strTitulo, $this->strContenido, $this->strModulo);
             $request = $this->update($sql, $arrData);
         } else {
