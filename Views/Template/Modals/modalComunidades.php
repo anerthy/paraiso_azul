@@ -28,7 +28,7 @@
 
             <div class="form-group col-md-6">
               <label for="txtDescripcion">Descripcion</label>
-              <textarea type="text" class="form-control valid validText" placeholder="Ingrese la descripcion" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
+              <textarea type="text" class="form-control" placeholder="Ingrese la descripcion" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
             </div>
             </div>
 
