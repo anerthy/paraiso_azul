@@ -158,3 +158,11 @@
 	margin: auto;
 }
 
+#imgGaleria{
+	text-align:center;
+}
+#imgGaleria img{
+	width: 300px;
+	margin: auto;
+}
+
