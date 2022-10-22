@@ -41,11 +41,11 @@
 
           <div class="form-group">
             <label for="txtDescripcion">Descripcion</label>
-            <textarea type="text" class="form-control valid validText" placeholder="Una pequeña descripcion de la organizacion" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
+            <textarea type="text" class="form-control" placeholder="Una pequeña descripcion de la organizacion" id="txtDescripcion" name="txtDescripcion" required=""></textarea>
           </div>
           <div class="form-group">
             <label for="txtUbicacion">Ubicacion</label>
-            <textarea type="text" class="form-control valid validText" placeholder="Ubicacion para la organizacion" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
+            <textarea type="text" class="form-control " placeholder="Ubicacion para la organizacion" id="txtUbicacion" name="txtUbicacion" required=""></textarea>
           </div>
 
           <div class="form-group">

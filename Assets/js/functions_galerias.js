@@ -1,26 +1,23 @@
 
-var tableComunidades;
+var tableGalerias;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
 
-	tableComunidades = $('#tableComunidades').dataTable( {
+	tableGalerias = $('#tableGalerias').dataTable( {
 		"aProcessing":true,
 		"aServerSide":true,
         "language": {
         	"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-            "url": " "+base_url+"/Comunidades/getComunidades",
+            "url": " "+base_url+"/Galerias/getGalerias",
             "dataSrc":""
         },
         "columns":[
-            {"data":"id_comunidad"},
-            {"data":"nombre_com"},
-            {"data":"descripcion"},
-            {"data":"provincia"},
-            {"data":"canton"},
-            {"data":"distrito"},
+            {"data":"gal_id_galeria"},
+            {"data":"gal_descripcion"},
+            {"data":"gal_ubicacion"},
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -104,30 +101,26 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-    
-
 
 
 
     //NUEVO ROL
-    var formComunidad = document.querySelector("#formComunidad");
-    formComunidad.onsubmit = function(e) {
+    var formGaleria = document.querySelector("#formGaleria");
+    formGaleria.onsubmit = function(e) {
         e.preventDefault();
 
-        var intId_Comunidad = document.querySelector('#id_Comunidad').value;
-        var strNombre_com = document.querySelector('#txtNombre_com').value;
-        var strDescripcion = document.querySelector('#txtDescripcion').value;
-        var strProvincia = document.querySelector('#txtProvincia').value;      
-        var strCanton = document.querySelector('#txtCanton').value;
-        var strDistrito = document.querySelector('#txtDistrito').value; 
-        if(strNombre_com == '' || strDescripcion == '' ||   strProvincia== '' ||    strCanton== '' || strDistrito== '')
+        var intGal_Id_Galeria = document.querySelector('#Gal_id_Galeria').value;
+        var strGal_Descripcion = document.querySelector('#txtGal_Descripcion').value;
+        var strGal_Ubicacion = document.querySelector('#txtGal_Ubicacion').value;
+     
+        if(strGal_Descripcion == '' || strGal_Ubicacion == '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = base_url+'/Comunidades/setComunidad'; 
-        var formData = new FormData(formComunidad);
+        var ajaxUrl = base_url+'/Galerias/setGaleria'; 
+        var formData = new FormData(formGaleria);
         request.open("POST",ajaxUrl,true);
         request.send(formData);             
         request.onreadystatechange = function(){
@@ -138,16 +131,13 @@ document.addEventListener('DOMContentLoaded', function(){
                 {
 
                     if(rowTable == ""){
-                        tableComunidades.api().ajax.reload();
+                        tableGalerias.api().ajax.reload();
                     }else{
                         // htmlStatus = intStatus == 1 ? 
                         //     '<span class="badge badge-success">Activo</span>' : 
                         //     '<span class="badge badge-danger">Inactivo</span>';
-                        rowTable.cells[1].textContent = strNombre_com;
-                        rowTable.cells[2].textContent = strDescripcion;
-                        rowTable.cells[3].textContent = strProvincia;
-                        rowTable.cells[4].textContent = strCanton;
-                        rowTable.cells[5].textContent = strDistrito;
+                        rowTable.cells[1].textContent = strGal_Descripcion;
+                        rowTable.cells[2].textContent = strGal_Ubicacion;
                        // rowTable.cells[4].innerHTML = htmlStatus;
                         
                         rowTable = "";
@@ -155,11 +145,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
                     }
 
-                    $('#modalFormComunidad').modal("hide");
-                    formComunidad.reset();
-                    swal("Comunidades", objData.msg ,"success");
+                    $('#modalFormGaleria').modal("hide");
+                    formGaleria.reset();
+                    swal("Galerias", objData.msg ,"success");
                     removePhoto();
-                    tableComunidades.api().ajax.reload();
+                    tableGalerias.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
                 }              
@@ -172,68 +162,31 @@ document.addEventListener('DOMContentLoaded', function(){
 
 },false);
 
-
-
-
-$('#txtProvincia').on('change',function(){
-    var seccionID = $('#txtProvincia').val();  
-    if(seccionID == "Guanacaste"){
-      $('#txtCanton').html('<option value="">Seleccione primero una provincia</option><option value="Nicoya">Nicoya</option><option value="Santa Cruz">Santa Cruz</option><option value="Bagases">Bagases</option><option value="Cañas">Cañas</option>');
-      $('#txtDistrito').html('<option value="">Seleccione primero un canton</option>');
-    }else if(seccionID == "Puntarenas"){
-      $('#txtCanton').html('<option value="">Seleccione primero una sección</option><option value="Esparza">Esparza</option> <option value="Buenos Aires">Buenos Aires</option> <option value="Monteverde">Monteverde</option> <option value="Manzanillo">Manzanillo</option> <option value="Lepanto">Lepanto</option>');
-      $('#txtDistrito').html('<option value="">Seleccione primero una categoría</option>');
-    }else{
-      $('#txtCanton').html('<option value="">Seleccione primero una sección</option>');
-      $('#txtDistrito').html('<option value="">Seleccione primero una categoría</option>');
-    }
-    
-    $('#txtCanton').on('change',function(){
-      var categoriaID = $('#txtCanton').val();
-      if(categoriaID == "Nicoya"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="San Antonio">San Antonio</option><option value="Quebrada Honda">Quebrada Honda</option>');
-      }else if(categoriaID == "Santa Cruz"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Santa Cruz">Santa Cruz</option>');
-      }else if(categoriaID == "Bagases"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Bagases">Bagases</option>');
-      }else if(categoriaID == "Cañas"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Bebedero">Bebedero</option><option value="Porozal">Porozal</option>');
-      }else if(categoriaID == "Esparza"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Esparza">Esparza</option>');
-      }else if(categoriaID == "Manzanillo"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option>');
-      }else{
-        $('#txtDistrito').html('<option value="">Seleccione primero una provincia</option>');
-      }
-    });
-  });
-
-
-$('#tableComunidades').DataTable();
+$('#tableGalerias').DataTable();
 
 function openModal(){
     rowTable = "";
-    document.querySelector('#id_Comunidad').value ="";
+    document.querySelector('#Gal_id_Galeria').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
-    document.querySelector('#titleModal').innerHTML = "Nueva Comunidad";
-    document.querySelector("#formComunidad").reset();
-	$('#modalFormComunidad').modal('show');
+    document.querySelector('#titleModal').innerHTML = "Nueva Galeria";
+    document.querySelector("#formGaleria").reset();
+	$('#modalFormGaleria').modal('show');
     removePhoto();
 }
 
 // window.addEventListener('load', function() {
-//     /*fntEditComunidad();
-//     fntDelComunidad();
+//     /*fntEditGaleria();
+//     fntDelGaleria();
 //     fntPermisos();*/
 // }, false);
 
 
 
-function fntViewInfo(id_comunidad){
+function fntViewInfo(gal_id_galeria){
     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/Comunidades/getComunidad/'+id_comunidad;
+    let ajaxUrl = base_url+'/Galerias/getGaleria/'+gal_id_galeria;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -244,14 +197,12 @@ function fntViewInfo(id_comunidad){
                 // let estado = objData.data.status == 1 ? 
                 // '<span class="badge badge-success">Activo</span>' : 
                 // '<span class="badge badge-danger">Inactivo</span>';
-                document.querySelector("#celId").innerHTML = objData.data.id_comunidad;
-                document.querySelector("#celNombre_com").innerHTML = objData.data.nombre_com;
-                document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
-                document.querySelector("#celProvincia").innerHTML = objData.data.provincia;
-                document.querySelector("#celCanton").innerHTML = objData.data.canton;
-                document.querySelector("#celDistrito").innerHTML = objData.data.distrito;
-                document.querySelector("#imgComunidad").innerHTML = '<img src="'+objData.data.url_imagen+'"></img>';
-                $('#modalViewComunidad').modal('show');
+      
+                document.querySelector("#celId").innerHTML = objData.data.gal_id_galeria;
+                document.querySelector("#celDescripcion").innerHTML = objData.data.gal_descripcion;
+                document.querySelector("#celUbicacion").innerHTML = objData.data.gal_ubicacion;
+                document.querySelector("#imgGaleria").innerHTML = '<img src="'+objData.data.url_gal_imagen+'"></img>';
+                $('#modalViewGaleria').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -260,17 +211,19 @@ function fntViewInfo(id_comunidad){
 }
 
 
-function fntEditComunidad(id_comunidad){
-    document.querySelector('#titleModal').innerHTML ="Actualizar Comunidad";
+function fntEditGaleria(gal_id_galeria){
+    document.querySelector('#titleModal').innerHTML ="Actualizar Galeria";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var id_comunidad = id_comunidad;
+    var gal_id_galeria = gal_id_galeria;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl  = base_url+'/Comunidades/getComunidad/'+id_comunidad;
+    var ajaxUrl  = base_url+'/Galerias/getGaleria/'+gal_id_galeria;
     request.open("GET",ajaxUrl ,true);
     request.send();
+
+
 
     request.onreadystatechange = function(){
         if(request.readyState == 4 && request.status == 200){
@@ -278,13 +231,10 @@ function fntEditComunidad(id_comunidad){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#id_Comunidad").value = objData.data.id_comunidad;
-                document.querySelector("#txtNombre_com").value = objData.data.nombre_com;
-                document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-                document.querySelector("#txtProvincia").value = objData.data.provincia;
-                document.querySelector("#txtCanton").value = objData.data.canton;
-                document.querySelector("#txtDistrito").value = objData.data.distrito;
-                document.querySelector('#foto_actual').value = objData.data.imagen;
+                document.querySelector("#Gal_id_Galeria").value = objData.data.gal_id_galeria;
+                document.querySelector("#txtGal_Descripcion").value = objData.data.gal_descripcion;
+                document.querySelector("#txtGal_Ubicacion").value = objData.data.gal_ubicacion;
+                document.querySelector('#foto_actual').value = objData.data.gal_imagen;
                 document.querySelector("#foto_remove").value= 0;
 
 
@@ -309,12 +259,12 @@ function fntEditComunidad(id_comunidad){
            // $('#listStatus').selectpicker('render');
 
             if(document.querySelector('#img')){
-                document.querySelector('#img').src = objData.data.url_imagen;
+                document.querySelector('#img').src = objData.data.url_gal_imagen;
             }else{
-                document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objData.data.url_imagen+">";
+                document.querySelector('.prevPhoto div').innerHTML = "<img id='img' src="+objData.data.url_gal_imagen+">";
             }
 
-            if(objData.data.imagen == 'portada_categoria.png'){
+            if(objData.data.gal_imagen == 'portada_categoria.png'){
                 document.querySelector('.delPhoto').classList.add("notBlock");
             }else{
                 document.querySelector('.delPhoto').classList.remove("notBlock");
@@ -324,7 +274,7 @@ function fntEditComunidad(id_comunidad){
             ///////////
 
             
-             $('#modalFormComunidad').modal('show');
+             $('#modalFormGaleria').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -334,10 +284,10 @@ function fntEditComunidad(id_comunidad){
 }
 
 
-function fntDelComunidad(id_comunidad){
+function fntDelGaleria(gal_id_galeria){
     swal({
-        title: "Eliminar Comunidad",
-        text: "¿Realmente quiere eliminar el Comunidad?",
+        title: "Eliminar Galeria",
+        text: "¿Realmente quiere eliminar el Galeria?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
@@ -349,8 +299,8 @@ function fntDelComunidad(id_comunidad){
         if (isConfirm) 
         {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url+'/Comunidades/delComunidad/';
-            let strData = "id_comunidad="+id_comunidad;
+            let ajaxUrl = base_url+'/Galerias/delGaleria/';
+            let strData = "gal_id_galeria="+gal_id_galeria;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
@@ -361,7 +311,7 @@ function fntDelComunidad(id_comunidad){
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableComunidades.api().ajax.reload();
+                        tableGalerias.api().ajax.reload();
                         
                     }else{
                         swal("Atención!", objData.msg , "error");
