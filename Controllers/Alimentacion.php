@@ -87,7 +87,7 @@ class Alimentacion extends Controllers
             if (empty($arrData)) {
                 $arrResponse = array('status' => false, 'msg' => 'Datos no encontrados.');
             } else {
-                $arrData['url_imagen'] = media() . '/images/uploads/' . $arrData['imagen'];
+                $arrData['url_imagen'] = media() . '/images/uploads/alimentacion/' . $arrData['imagen'];
                 $arrResponse = array('status' => true, 'data' => $arrData);
             }
             echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
@@ -144,19 +144,19 @@ class Alimentacion extends Controllers
             if ($option == 1) {
                 $arrResponse = array('status' => true, 'msg' => 'Datos guardados correctamente.');
                 if ($nombre_foto != '') {
-                    uploadImage($foto, $imgImagen);
+                    uploadImage('alimentacion', $foto, $imgImagen);
                 }
             } else {
                 $arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
                 if ($nombre_foto != '') {
-                    uploadImage($foto, $imgImagen);
+                    uploadImage('alimentacion', $foto, $imgImagen);
                 }
 
 
                 if (($nombre_foto == '' && $_POST['foto_remove'] == 1 && $_POST['foto_actual'] != 'portada_categoria.png')
                     || ($nombre_foto != '' && $_POST['foto_actual'] != 'portada_categoria.png')
                 ) {
-                    deleteFile($_POST['foto_actual']);
+                    deleteFile('alimentacion', $_POST['foto_actual']);
                 }
             }
         } else if ($request_alimentacion == 'exist') {

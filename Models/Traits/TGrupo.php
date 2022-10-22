@@ -11,7 +11,7 @@ trait TGrupo
         $request = $this->con->select_all($sql);
         if (count($request) > 0) {
             for ($i = 0; $i < count($request); $i++) {
-                $request[$i]['logo'] = BASE_URL . '/Assets/images/uploads/' . $request[$i]['logo'];
+                $request[$i]['logo'] = BASE_URL . '/Assets/images/uploads/grupos/' . $request[$i]['logo'];
             }
         }
         return $request;
