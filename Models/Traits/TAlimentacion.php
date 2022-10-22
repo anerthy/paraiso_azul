@@ -11,7 +11,7 @@ trait TAlimentacion
         $request = $this->con->select_all($sql);
         if (count($request) > 0) {
             for ($i = 0; $i < count($request); $i++) {
-                $request[$i]['imagen'] = BASE_URL . '/Assets/images/uploads/' . $request[$i]['imagen'];
+                $request[$i]['imagen'] = BASE_URL . '/Assets/images/uploads/alimentacion/' . $request[$i]['imagen'];
             }
         }
         return $request;
