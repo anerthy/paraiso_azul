@@ -72,7 +72,7 @@
 
                 <div class="form-row">
                   <label for="txtLugar_residencia">Lugar de residencia</label>
-                  <input type="text" class="form-control valid validText" placeholder="Lugar donde vive" id="txtLugar_residencia" name="txtLugar_residencia" required="" >
+                  <input type="text" class="form-control" placeholder="Lugar donde vive" id="txtLugar_residencia" name="txtLugar_residencia" required="" >
                 </div>
 
               <div class="form-row">

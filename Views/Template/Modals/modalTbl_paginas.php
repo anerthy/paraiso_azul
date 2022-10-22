@@ -17,13 +17,13 @@
           <div class="form-row">
           <div class="form-group col-md-6">
             <label for="txtPag_Titulo">Titulo</label>
-            <input type="text" class="form-control valid validText" placeholder="Ingrese el titulo" id="txtPag_Titulo" name="txtPag_Titulo" required="">
+            <input type="text" class="form-control" placeholder="Ingrese el titulo" id="txtPag_Titulo" name="txtPag_Titulo" required="">
           </div>
           </div>
           <div class="form-row">
           <div class="form-group col-md-6">
             <label for="txtPag_Contenido">Contenido</label>
-            <input type="text" class="form-control valid validText" placeholder="Ingrese el contenido" id="txtPag_Contenido" name="txtPag_Contenido" required="">
+            <input type="text" class="form-control" placeholder="Ingrese el contenido" id="txtPag_Contenido" name="txtPag_Contenido" required="">
           </div>
           </div>
           
