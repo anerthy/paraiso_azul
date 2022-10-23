@@ -1,23 +1,24 @@
 
-var tableTbl_paginas;
+var tableContenido;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
 
-	tableTbl_paginas = $('#tableTbl_paginas').dataTable( {
+	tableContenido = $('#tableContenido').dataTable( {
 		"aProcessing":true,
 		"aServerSide":true,
         "language": {
         	"url": "//cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"
         },
         "ajax":{
-            "url": " "+base_url+"/Tbl_paginas/getTbl_paginas",
+            "url": " "+base_url+"/Contenido/getContenidos",
             "dataSrc":""
         },
         "columns":[
-            {"data":"pag_id"},
-            {"data":"pag_titulo"},
-            {"data":"pag_contenido"},
+            {"data":"cont_id_contenido"},
+            {"data":"cont_titulo"},
+            {"data":"cont_contenido"},
+            {"data":"cont_modulo"},
             {"data":"options"}
         ],
         'dom': 'lBfrtip',
@@ -50,38 +51,24 @@ document.addEventListener('DOMContentLoaded', function(){
         "order":[[0,"desc"]]  
     });
 
-
-
-
-
-    
-	
-
-
-
-
-
-
-    //NUEVO ROL
-    var formTbl_pagina = document.querySelector("#formTbl_pagina");
-    formTbl_pagina.onsubmit = function(e) {
+    //Nuevo Contenido
+    var formContenido = document.querySelector("#formContenido");
+    formContenido.onsubmit = function(e) {
         e.preventDefault();
 
-        var intPag_id = document.querySelector('#pag_id').value;
-        var strPag_Titulo = document.querySelector('#txtPag_Titulo').value;
-        var strPag_Contenido = document.querySelector('#txtPag_Contenido').value;      
-    
-        if(strPag_Titulo == '' ||   strPag_Contenido== '')
+        var intIdContenido = document.querySelector('#Cont_id_contenido').value;
+        var strTitulo = document.querySelector('#txtTitulo').value;
+        var strContenido = document.querySelector('#txtContenido').value;
+        var strModulo = document.querySelector('#txtModulo').value;
+     
+        if(strTitulo == '' || strContenido == '' || strModulo == '')
         {
-            
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
-        
-        
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        var ajaxUrl = base_url+'/Tbl_paginas/setTbl_pagina'; 
-        var formData = new FormData(formTbl_pagina);
+        var ajaxUrl = base_url+'/Contenido/setContenido'; 
+        var formData = new FormData(formContenido);
         request.open("POST",ajaxUrl,true);
         request.send(formData);             
         request.onreadystatechange = function(){
@@ -92,27 +79,19 @@ document.addEventListener('DOMContentLoaded', function(){
                 {
 
                     if(rowTable == ""){
-                        tableTbl_paginas.api().ajax.reload();
+                        tableContenido.api().ajax.reload();
                     }else{
-                        // htmlStatus = intStatus == 1 ? 
-                        //     '<span class="badge badge-success">Activo</span>' : 
-                        //     '<span class="badge badge-danger">Inactivo</span>';
-                   
-                        rowTable.cells[1].textContent = strPag_Titulo;
-                        rowTable.cells[2].textContent = strPag_Contenido;
-                        
-                       // rowTable.cells[4].innerHTML = htmlStatus;
-                        
+                        rowTable.cells[1].textContent = strTitulo;
+                        rowTable.cells[2].textContent = strContenido;
+                        rowTable.cells[3].textContent = strModulo;
                         rowTable = "";
                         
-
                     }
 
-                    $('#modalFormTbl_pagina').modal("hide");
-                    formTbl_pagina.reset();
-                    swal("Paginas", objData.msg ,"success");
-                    
-                    tableTbl_paginas.api().ajax.reload();
+                    $('#modalFormContenido').modal("hide");
+                    formContenido.reset();
+                    swal("Contenido", objData.msg ,"success");
+                    tableContenido.api().ajax.reload();
                 }else{
                     swal("Error", objData.msg , "error");
                 }              
@@ -125,31 +104,22 @@ document.addEventListener('DOMContentLoaded', function(){
 
 },false);
 
-$('#tableTbl_paginas').DataTable();
+ $('#tableContenido').DataTable();
 
 function openModal(){
     rowTable = "";
-    document.querySelector('#pag_id').value ="";
+    document.querySelector('#Cont_id_contenido').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
-    document.querySelector('#titleModal').innerHTML = "Nueva pagina";
-    document.querySelector("#formTbl_pagina").reset();
-	$('#modalFormTbl_pagina').modal('show');
-    
+    document.querySelector('#titleModal').innerHTML = "Nuevo Contenido";
+    document.querySelector("#formContenido").reset();
+	$('#modalFormContenido').modal('show');
 }
 
-// window.addEventListener('load', function() {
-//     /*fntEditComunidad();
-//     fntDelComunidad();
-//     fntPermisos();*/
-// }, false);
-
-
-
-function fntViewInfo(pag_id){
+function fntViewInfo(cont_id_contenido){
     let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    let ajaxUrl = base_url+'/Tbl_paginas/getTbl_pagina/'+pag_id;
+    let ajaxUrl = base_url+'/Contenido/getContenido/'+cont_id_contenido;
     request.open("GET",ajaxUrl,true);
     request.send();
     request.onreadystatechange = function(){
@@ -160,10 +130,12 @@ function fntViewInfo(pag_id){
                 // let estado = objData.data.status == 1 ? 
                 // '<span class="badge badge-success">Activo</span>' : 
                 // '<span class="badge badge-danger">Inactivo</span>';
-                document.querySelector("#celId").innerHTML = objData.data.pag_id;
-                document.querySelector("#celPag_Titulo").innerHTML = objData.data.pag_titulo;
-                document.querySelector("#celPag_Contenido").innerHTML = objData.data.pag_contenido;
-                $('#modalViewTbl_pagina').modal('show');
+      
+                document.querySelector("#celId").innerHTML = objData.data.cont_id_contenido;
+                document.querySelector("#celTitulo").innerHTML = objData.data.cont_titulo;
+                document.querySelector("#celContenido").innerHTML = objData.data.cont_contenido;
+                document.querySelector("#celModulo").innerHTML = objData.data.cont_modulo;
+                $('#modalViewContenido').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -172,17 +144,19 @@ function fntViewInfo(pag_id){
 }
 
 
-function fntEditTbl_pagina(pag_id){
-    document.querySelector('#titleModal').innerHTML ="Actualizar Comunidad";
+function fntEditContenido(cont_id_contenido){
+    document.querySelector('#titleModal').innerHTML ="Actualizar Contenido";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
     document.querySelector('#btnText').innerHTML ="Actualizar";
 
-    var pag_id = pag_id;
+    var cont_id_contenido = cont_id_contenido;
     var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    var ajaxUrl  = base_url+'/Tbl_paginas/getTbl_pagina/'+pag_id;
+    var ajaxUrl  = base_url+'/Contenido/getContenido/'+cont_id_contenido;
     request.open("GET",ajaxUrl ,true);
     request.send();
+
+
 
     request.onreadystatechange = function(){
         if(request.readyState == 4 && request.status == 200){
@@ -190,35 +164,12 @@ function fntEditTbl_pagina(pag_id){
             var objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                document.querySelector("#pag_id").value = objData.data.pag_id;
-                document.querySelector("#txtPag_Titulo").value = objData.data.pag_titulo;
-                document.querySelector("#txtPag_Contenido").value = objData.data.pag_contenido;
-                
-                // if(objData.data.status == 1)
-                // {
-                //     var optionSelect = '<option value="1" selected class="notBlock">Activo</option>';
-                // }else{
-                //     var optionSelect = '<option value="2" selected class="notBlock">Inactivo</option>';
-                // }
-                // var htmlSelect = `${optionSelect}
-                //                   <option value="1">Activo</option>
-                //                   <option value="2">Inactivo</option>
-                //                 `;
+                document.querySelector("#Cont_id_contenido").value = objData.data.cont_id_contenido;
+                document.querySelector("#txtTitulo").value = objData.data.cont_titulo;
+                document.querySelector("#txtContenido").value = objData.data.cont_contenido;
+                document.querySelector('#txtModulo').value = objData.data.cont_modulo;
 
-               
-             //document.querySelector("#listStatus").innerHTML = htmlSelect;
-            
-            /////////////
-
-           // $('#listStatus').selectpicker('render');
-
-          
-
-
-            ///////////
-
-            
-             $('#modalFormTbl_pagina').modal('show');
+             $('#modalFormContenido').modal('show');
             }else{
                 swal("Error", objData.msg , "error");
             }
@@ -227,11 +178,10 @@ function fntEditTbl_pagina(pag_id){
 
 }
 
-
-function fntDelTbl_pagina(pag_id){
+function fntDelContenido(cont_id_contenido){
     swal({
-        title: "Eliminar pagina",
-        text: "¿Realmente quiere eliminar el Comunidad?",
+        title: "Eliminar Contenido",
+        text: "¿Realmente quiere eliminar el contenido?",
         type: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
@@ -243,8 +193,8 @@ function fntDelTbl_pagina(pag_id){
         if (isConfirm) 
         {
             let request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-            let ajaxUrl = base_url+'/Tbl_paginas/delTbl_pagina/';
-            let strData = "pag_id="+pag_id;
+            let ajaxUrl = base_url+'/Contenido/delContenido/';
+            let strData = "cont_id_contenido="+cont_id_contenido;
             request.open("POST",ajaxUrl,true);
             request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             request.send(strData);
@@ -255,7 +205,7 @@ function fntDelTbl_pagina(pag_id){
                     if(objData.status)
                     {
                         swal("Eliminar!", objData.msg , "success");
-                        tableTbl_paginas.api().ajax.reload();
+                        tableContenido.api().ajax.reload();
                         
                     }else{
                         swal("Atención!", objData.msg , "error");
@@ -267,7 +217,4 @@ function fntDelTbl_pagina(pag_id){
     });
 
 }
-
-
-
 
