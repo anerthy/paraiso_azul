@@ -2,7 +2,11 @@
 _header($data);
 ?>
 
-<h1>CEMEDE</h1>
+<main>
+
+
+
+</main>
 
 <?php
 footer($data);
