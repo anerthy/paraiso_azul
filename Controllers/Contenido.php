@@ -19,7 +19,7 @@ class Contenido extends Controllers
         if (empty($_SESSION['permisosMod']['ver'])) {
             header("Location:" . base_url() . '/access_denied');
         }
-        $data['page_id'] = 5;
+        $data['page_id'] = 11;
         $data['page_tag'] = "Contenido de paginas";
         $data['page_name'] = "contenido de paginas";
         $data['page_title'] = "Contenido de paginas";
@@ -79,9 +79,25 @@ class Contenido extends Controllers
         die();
     }
 
-    public function getContenido(int $id_contenido)
+
+    public function getSelectContenidos()
+	{
+		$htmlOptions = "";
+		$arrData = $this->model->selectContenidos();
+		if (count($arrData) > 0) {
+			for ($i = 0; $i < count($arrData); $i++) {
+				//if($arrData[$i]['status'] == 1 ){
+				$htmlOptions .= '<option value="' . $arrData[$i]['cont_id_contenido'] . '">' . $arrData[$i]['cont_titulo'] . '</option>';
+				//}
+			}
+		}
+		echo $htmlOptions;
+		die();
+	}
+
+    public function getContenido(int $cont_id_contenido)
     {
-        $intId_contenido = intval(strClean($id_contenido));
+        $intId_contenido = intval(strClean($cont_id_contenido));
         if ($intId_contenido > 0) {
             $arrData = $this->model->selectContenido($intId_contenido);
             if (empty($arrData)) {
@@ -97,7 +113,7 @@ class Contenido extends Controllers
     public function setContenido()
     {
 
-        $intId_contenido = intval($_POST['id_Contenido']);
+        $intId_contenido = intval($_POST['Cont_id_contenido']);
         $strTitulo =  strClean($_POST['txtTitulo']);
         $strContenido = strClean($_POST['txtContenido']);
         $strModulo = strClean($_POST['txtModulo']);
