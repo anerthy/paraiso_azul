@@ -21,17 +21,11 @@ function footerAdmin($data = "")
     require_once($view_footer);
 }
 
-// NAVBAR Y FOOTER DE LAS VISTAS INFORMATICAS
+// NAVBAR Y FOOTER DE LAS VISTAS INFORMATIVAS
 function _header($data = "")
 {
     $view_header = "Views/Template/header.php";
     require_once($view_header);
-}
-
-function nav_bar($data = "")
-{
-    $view_nav_bar = "Views/Template/nav_bar.php";
-    require_once($view_nav_bar);
 }
 
 function footer($data = "")
