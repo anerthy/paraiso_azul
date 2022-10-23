@@ -44,7 +44,7 @@ img { max-width: 100%; }
 
 /***** Top menu *****/
 
-.navbar { background: #444; transition: all .6s; backface-visibility: hidden; }
+.navbar { background: #0f265c; transition: all .6s; backface-visibility: hidden; }
 
 .navbar-dark .navbar-nav { font-size: 15px; color: #fff; text-transform: uppercase; }
 .navbar-dark .navbar-nav .nav-link { color: #fff; color: rgba(255, 255, 255, 0.8); border: 0; }
