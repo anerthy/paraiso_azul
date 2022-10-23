@@ -104,11 +104,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
 },false);
 
-// $('#tableContenido').DataTable();
+ $('#tableContenido').DataTable();
 
 function openModal(){
     rowTable = "";
-    document.querySelector('#cont_id_contenido').value ="";
+    document.querySelector('#Cont_id_contenido').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
     document.querySelector('#btnActionForm').classList.replace("btn-info", "btn-primary");
     document.querySelector('#btnText').innerHTML ="Guardar";
