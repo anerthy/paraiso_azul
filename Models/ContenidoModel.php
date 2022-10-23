@@ -21,23 +21,23 @@ class ContenidoModel extends Mysql
         return $request;
     }
 
-    public function selectContenido(int $id_contenido)
+    public function selectContenido(int $cont_id_contenido)
     {
-        $this->intid_contenido = $id_contenido;
+        $this->intid_contenido = $cont_id_contenido;
         $sql = "SELECT * FROM tbl_contenido_pagina WHERE cont_id_contenido = $this->intid_contenido";
         $request = $this->select($sql);
         return $request;
     }
 
-    public function insertContenido(string $titulo, string $contenido, string $modulo)
+    public function insertContenido(string $cont_titulo, string $cont_contenido, string $cont_modulo)
     {
 
         $return = "";
-        $this->strTitulo = $titulo;
-        $this->strContenido = $contenido;
-        $this->strModulo = $modulo;
+        $this->strTitulo = $cont_titulo;
+        $this->strContenido = $cont_contenido;
+        $this->strModulo = $cont_modulo;
 
-        $sql = "SELECT * FROM tbl_contenido_pagina WHERE titulo = '{$this->strTitulo}' ";
+        $sql = "SELECT * FROM tbl_contenido_pagina WHERE cont_titulo = '{$this->strTitulo}' ";
         $request = $this->select_all($sql);
 
         if (empty($request)) {
@@ -51,12 +51,12 @@ class ContenidoModel extends Mysql
         return $return;
     }
 
-    public function updateContenido(int $id_contenido, string $titulo, string $contenido, string $modulo)
+    public function updateContenido(int $cont_id_contenido, string $cont_titulo, string $cont_contenido, string $cont_modulo)
     {
-        $this->intid_contenido = $id_contenido;
-        $this->strTitulo = $titulo;
-        $this->strContenido = $contenido;
-        $this->strModulo = $modulo;
+        $this->intid_contenido = $cont_id_contenido;
+        $this->strTitulo = $cont_titulo;
+        $this->strContenido = $cont_contenido;
+        $this->strModulo = $cont_modulo;
 
 
         $sql = "SELECT * FROM tbl_contenido_pagina WHERE cont_titulo = '$this->strTitulo' AND cont_id_contenido != $this->intid_contenido";
@@ -72,9 +72,9 @@ class ContenidoModel extends Mysql
         return $request;
     }
 
-    public function deleteContenido(int $id_contenido)
+    public function deleteContenido(int $cont_id_contenido)
     {
-        $this->intid_contenido = $id_contenido;
+        $this->intid_contenido = $cont_id_contenido;
         $sql = "DELETE from tbl_contenido_pagina WHERE cont_id_contenido = $this->intid_contenido";
         $arrData = array(0);
         $request = $this->delete($sql, $arrData);
