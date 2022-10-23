@@ -49,7 +49,7 @@
                             </li> -->
                             <li><a href="<?= base_url(); ?>/Servicios/alimentacion">Alimentacion</a></li>
                             <li><a href="<?= base_url(); ?>/Servicios/hospedaje">Hospedaje</a></li>
-                            <li><a href="<?= base_url(); ?>/Servicios/trasnporte">Transporte</a></li>
+                            <li><a href="<?= base_url(); ?>/Servicios/transporte">Transporte</a></li>
                             <li><a href="<?= base_url(); ?>/Servicios/tours">Tours</a></li>
                         </ul>
                     </li>
