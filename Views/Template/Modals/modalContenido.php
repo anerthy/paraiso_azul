@@ -16,14 +16,14 @@
           <p class="text-primary">Todos los campos son obligatorios.</p>
           <div class="form-row">
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label for="txtTitulo">Titulo</label>
-              <textarea type="text" class="form-control valid validText" placeholder="Ingrese el titulo" id="txtTitulo" name="txtTitulo" required=""></textarea>
+              <input type="text" class="form-control valid validText" placeholder="Ingrese el titulo" id="txtTitulo" name="txtTitulo" required=""></input>
             </div>
           </div>
 
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-12">
               <label for="txtContenido">Contenido</label>
               <textarea type="text" class="form-control valid validText" placeholder="Ingrese el contenido de la pagina" id="txtContenido" name="txtContenido" required=""></textarea>
             </div>
