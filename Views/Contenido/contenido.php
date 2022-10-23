@@ -1,6 +1,6 @@
 <?php
 headerAdmin($data);
-getModal('modalTbl_paginas', $data);
+getModal('modalContenido', $data);
 ?>
 <div id="contentAjax"></div>
 <main class="app-content">
