@@ -17,8 +17,8 @@
           <div class="form-row">
 
             <div class="form-group col-md-6">
-              <label for="txtTitutlo">Titulo</label>
-              <textarea type="text" class="form-control valid validText" placeholder="Ingrese el titulo" id="txtCont_Titutlo" name="txtCont_Titutlo" required=""></textarea>
+              <label for="txtTitulo">Titulo</label>
+              <textarea type="text" class="form-control valid validText" placeholder="Ingrese el titulo" id="txtTitulo" name="txtTitulo" required=""></textarea>
             </div>
           </div>
 
