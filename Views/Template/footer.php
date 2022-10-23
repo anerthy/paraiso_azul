@@ -75,6 +75,7 @@
       <script src="<?= media(); ?>/css/navbar/vendor/isotope-layout/isotope.pkgd.min.js"></script>
       <script src="<?= media(); ?>/css/navbar/vendor/php-email-form/validate.js"></script>
 
+      <script src="<?= media(); ?>/js/funtions_voluntariado.js"></script>
       <!-- Template Main JS File -->
       <script src="<?= media(); ?>/js/navbar/main.js"></script>
 
