@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 24-10-2022 a las 04:33:48
+-- Tiempo de generación: 24-10-2022 a las 16:29:43
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -480,8 +480,8 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
   `nombre_com` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `provincia` enum('Puntarenas','Guanacaste') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `canton` enum('Puntarenas','Esparza','Buenos Aires','Montes de Oro','Osa','Quepos','Golfito','Coto Brus','Parrita','Corredores','Garabito','Monteverde','Puerto Jiménez') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `distrito` enum('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `canton` enum('Nicoya','Santa Cruz','Bagases','Cañas','Manzanillo','Lepanto','Puntarenas') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `distrito` enum('Puntarenas','San Antonio','Quebrada Honda','Santa Cruz','Bolson','Bagases','Bebedero','Porozal','Manzanillo','Lepanto') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_comunidad`)
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
@@ -491,9 +491,9 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
 --
 
 INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia`, `canton`, `distrito`, `imagen`) VALUES
-(1, 'Isla Caballo', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Guanacaste', 'Buenos Aires', 'Manzanillo', 'islacaballo.jpg'),
-(24, 'Costa de Pajaros', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Puntarenas', 'Corredores', 'Pitahaya', 'Costadepájaros.jpg'),
-(30, 'Isla Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Quepos', 'Acapulco', 'IslaChira.jpg'),
+(1, 'Isla Caballo', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Guanacaste', 'Lepanto', 'Manzanillo', 'islacaballo.jpg'),
+(24, 'Costa de Pajaros', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'Costadepájaros.jpg'),
+(30, 'Isla Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'IslaChira.jpg'),
 (35, 'Isla Venado', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus itaque, dicta, quod odio doloremque illo praesentium odit animi perspiciatis repudiandae iure expedita a deleniti laudantium id voluptatem fugit voluptatum.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'IslaVenado.jpg');
 
 -- --------------------------------------------------------
