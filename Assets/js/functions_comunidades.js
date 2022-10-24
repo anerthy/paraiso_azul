@@ -181,7 +181,7 @@ $('#txtProvincia').on('change',function(){
       $('#txtCanton').html('<option value="">Seleccione primero una provincia</option><option value="Nicoya">Nicoya</option><option value="Santa Cruz">Santa Cruz</option><option value="Bagases">Bagases</option><option value="Cañas">Cañas</option>');
       $('#txtDistrito').html('<option value="">Seleccione primero un canton</option>');
     }else if(seccionID == "Puntarenas"){
-      $('#txtCanton').html('<option value="">Seleccione primero una sección</option><option value="Esparza">Esparza</option> <option value="Buenos Aires">Buenos Aires</option> <option value="Monteverde">Monteverde</option> <option value="Manzanillo">Manzanillo</option> <option value="Lepanto">Lepanto</option>');
+      $('#txtCanton').html('<option value="">Seleccione primero una sección</option><option value="Manzanillo">Manzanillo</option> <option value="Lepanto">Lepanto</option><option value="Puntarenas">Puntarenas</option>');
       $('#txtDistrito').html('<option value="">Seleccione primero una categoría</option>');
     }else{
       $('#txtCanton').html('<option value="">Seleccione primero una sección</option>');
@@ -193,15 +193,17 @@ $('#txtProvincia').on('change',function(){
       if(categoriaID == "Nicoya"){
         $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="San Antonio">San Antonio</option><option value="Quebrada Honda">Quebrada Honda</option>');
       }else if(categoriaID == "Santa Cruz"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Santa Cruz">Santa Cruz</option>');
+        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Santa Cruz">Santa Cruz</option><option value="Santa Cruz">Bolson</option>');
       }else if(categoriaID == "Bagases"){
         $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Bagases">Bagases</option>');
       }else if(categoriaID == "Cañas"){
         $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Bebedero">Bebedero</option><option value="Porozal">Porozal</option>');
-      }else if(categoriaID == "Esparza"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Esparza">Esparza</option>');
       }else if(categoriaID == "Manzanillo"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option>');
+        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Manzanillo">Manzanillo</option>');
+      }else if(categoriaID == "Lepanto"){
+        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Lepanto">Lepanto</option>');
+      }else if(categoriaID == "Puntarenas"){
+        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Puntarenas">Puntarenas</option>');
       }else{
         $('#txtDistrito').html('<option value="">Seleccione primero una provincia</option>');
       }
