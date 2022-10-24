@@ -193,7 +193,7 @@ $('#txtProvincia').on('change',function(){
       if(categoriaID == "Nicoya"){
         $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="San Antonio">San Antonio</option><option value="Quebrada Honda">Quebrada Honda</option>');
       }else if(categoriaID == "Santa Cruz"){
-        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Santa Cruz">Santa Cruz</option><option value="Santa Cruz">Bolson</option>');
+        $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Santa Cruz">Santa Cruz</option><option value="Bolson">Bolson</option>');
       }else if(categoriaID == "Bagases"){
         $('#txtDistrito').html('<option value="">Seleccione primero una distrito</option><option value="Bagases">Bagases</option>');
       }else if(categoriaID == "Cañas"){
