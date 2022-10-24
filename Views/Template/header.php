@@ -29,7 +29,7 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <a href="<?= base_url(); ?>" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="<?= base_url(); ?>/images/avatar (2).png" alt="logo de cemede">
+                <img src="<?= media(); ?>/images/imagen2.png" alt="logo de cemede">
                 <!-- <h1>Impact<span>.</span></h1> -->
             </a>
             <nav id="navbar" class="navbar">
