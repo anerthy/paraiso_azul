@@ -66,6 +66,9 @@
       </footer><!-- End Footer -->
       <!-- End Footer -->
 
+      <!-- boton para hacer scroll -->
+      <a href="#" class="scroll-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
+
       <!-- Vendor JS Files -->
       <script src="<?= media(); ?>/css/navbar/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
       <script src="<?= media(); ?>/css/navbar/vendor/aos/aos.js"></script>
