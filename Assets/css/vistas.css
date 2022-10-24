@@ -30,17 +30,20 @@
     margin-right: 20px;
 }
 img.vis-CEMEDE {
-    width:800px;
-    height:400px; 
+    width:706px;
+    height:300px; 
+    margin: 0px 0px 0px 0px;
+    /* margin-left: -10px; */
   }
   img.vis-CEMEDE  {
-    max-width:99%;
+    max-width:84%;
     max-height:300%;
   }
   #cardcemede{
     /* margin: 5px; */
     width: 30%;
     padding: 10px;
-    margin: 4px 8px 8px 0px;
+    margin: 4px 10px 8px 0px;
+    text-align: justify;
    
 }
