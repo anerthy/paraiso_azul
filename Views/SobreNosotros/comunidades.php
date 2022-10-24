@@ -9,9 +9,9 @@ $arrComunidades = $data['comunidades'];
     <?php
     // dep($arrTransporte);
     for ($i = 0; $i < count($arrComunidades); $i++) {
-        $arrComunidades[$i]['imagen'];
+        // $arrComunidades[$i]['imagen'];
     ?>
-        <div id="cardtransporte" class="card col-md-3 justify-content-center">
+        <div id="cardtransporte" class="card col-md-6 justify-content-center">
             <img id="imagen" src="<?= $arrComunidades[$i]['imagen'] ?>" alt="imagen de la comunidad" class="card-img-top" alt="imagen del comunidad" style="width: 300px; height:300px;">
             <div>
                 <h4 class="nombre"><?= $arrComunidades[$i]['nombre_com'] ?></h4>
