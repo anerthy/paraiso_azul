@@ -28,18 +28,30 @@ $arrCEMEDE = $data['cemede'];
        // $arrCEMEDE[$i]['imagen'];
     ?>
      
-        <div id="cardcemede" class="card col-md-5 justify-content-center">
+        <div id="cardcemede" class=" col-md-5 justify-content-center">
            
             <div>
+                <br>
+                <br>
                 <h4 class="titulo"><?= $arrCEMEDE[$i]['cont_titulo'] ?></h4>
                 <p id="contenido" class="card-text"><?= $arrCEMEDE[$i]['cont_contenido'] ?></p>
                 
-                <center><a href="#" class="btn btn-info">Ver más informacion</a></center>
+                <!-- <center><a href="#" class="btn btn-info">Ver más informacion</a></center> -->
             </div>
         </div>
     <?php
    }  }
     ?>
+    <main>
+
+
+<br>
+<br>
+<div>
+    <iframe width="1099" height="315" src="https://www.youtube.com/embed/idkL3KsEng0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+</main>
 </div>
 
 
