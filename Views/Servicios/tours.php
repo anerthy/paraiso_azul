@@ -5,7 +5,7 @@ $arrTours =  $data['tours'];
 
 <h1>Tours</h1>
 
-<div class="form-row">
+<div class="row">
     <?php
     // dep($arrTours);
     for ($i = 0; $i < count($arrTours); $i++) {
@@ -25,7 +25,7 @@ $arrTours =  $data['tours'];
                     Precio: <?= $arrTours[$i]['precio'] ?>
                 </h6>
                 <!-- <p id="descripcion" class="card-text"><?= $arrTours[$i]['descripcion'] ?></p> -->
-                <center><a href="#" class="btn btn-info">Ver más informacion</a></center>
+                <!-- <center><a href="#" class="btn btn-info">Ver más informacion</a></center> -->
             </div>
         </div>
     <?php
