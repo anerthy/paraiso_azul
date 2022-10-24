@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 23-10-2022 a las 02:29:31
+-- Tiempo de generación: 24-10-2022 a las 04:33:48
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -479,21 +479,22 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
   `id_comunidad` tinyint UNSIGNED NOT NULL AUTO_INCREMENT,
   `nombre_com` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `provincia` enum('Puntarenas','Guanacaste') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
-  `canton` enum('Puntarenas','Esparza','Buenos Aires','Montes de Oro','Osa','Quepos','Golfito','Coto Brus','Parrita','Corredores','Garabito','Monteverde','Puerto Jiménez') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci DEFAULT NULL,
+  `provincia` enum('Puntarenas','Guanacaste') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `canton` enum('Puntarenas','Esparza','Buenos Aires','Montes de Oro','Osa','Quepos','Golfito','Coto Brus','Parrita','Corredores','Garabito','Monteverde','Puerto Jiménez') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `distrito` enum('Puntarenas','Pitahaya','Chomes','Lepanto','Paquera','Manzanillo','Guacimal','Barranca','Isla del Coco','Cóbano','Chacarita','Chira','Acapulco','El Roble','Arancibia') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_comunidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `comunidad`
 --
 
 INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia`, `canton`, `distrito`, `imagen`) VALUES
-(1, 'Isla Caballo', 'lorem ipsum', 'Guanacaste', 'Buenos Aires', 'Manzanillo', 'imageUnavailable.png'),
-(24, 'Isla Bejuco', 'ASDASDASD', 'Puntarenas', 'Corredores', 'Pitahaya', 'imageUnavailable.png'),
-(30, 'Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Buenos Aires', 'Lepanto', 'imageUnavailable.png');
+(1, 'Isla Caballo', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Guanacaste', 'Buenos Aires', 'Manzanillo', 'islacaballo.jpg'),
+(24, 'Costa de Pajaros', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Puntarenas', 'Corredores', 'Pitahaya', 'Costadepájaros.jpg'),
+(30, 'Isla Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Quepos', 'Acapulco', 'IslaChira.jpg'),
+(35, 'Isla Venado', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus itaque, dicta, quod odio doloremque illo praesentium odit animi perspiciatis repudiandae iure expedita a deleniti laudantium id voluptatem fugit voluptatum.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'IslaVenado.jpg');
 
 -- --------------------------------------------------------
 
@@ -516,19 +517,19 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
   `comunidad_id` tinyint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_grupo`),
   KEY `comunidad_id` (`comunidad_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `grupo_organizado`
 --
 
 INSERT INTO `grupo_organizado` (`id_grupo`, `nombre_grupo`, `representante`, `descripcion`, `ubicacion`, `correo`, `telefono`, `numero_integrantes`, `status`, `logo`, `comunidad_id`) VALUES
-(11, 'Asopecupachi', 'dsadad', 'ioasasasajsñs', 'DSADADASD', 'dkgwf@gmail.com', '89742984', 20, 2, 'imageUnavailable.png', 1),
+(11, 'Asopecupachi', 'dsadad', 'Asociación Cuerderos Palito Isla Chira', 'Isla Chira, Puntarenas', 'dkgwf@gmail.com', '89742984', 1, 1, 'img_7263c2d82d26dd4ef6e9799dbbce08ee.jpg', 24),
 (14, 'Asociación de desarrollo integral de Isla Caballo', 'ddsf', 'Pellentesque id laoreet leo a consequat anteSed venenatis ornare dui eget luctus Vivamus non pulvinar mauris Integer quis faucibus sapien', 'en la isla', 'dkgwf@dddgmail.com', '89742984', 32, 1, 'imageUnavailable.png', 24),
-(16, 'Mudecoop', 'Carlos Mendez', 'Lorem ipsum dolor sit amet consectetur adipisicing elit Culpa cupiditate eius possimus unde ex sapiente minima necessitatibus inventore quisquam quod sed adipisci qui minus aut doloremque tempora nemo excepturi voluptas', 'Al frente del salon comunal de Isla Chira', 'mudecop@gmail.com', '89742984', 25, 1, 'imageUnavailable.png', 1),
-(17, 'LELA', 'Lela la mejor SM', 'lorem imkjd kdfdkjfdfjvhf ghdjdfhf jfdhvjdfvhfdvjdfvf', 'dxvdvndnjvndfbj njnhdjkdj', 'lela@gmail.com', '22222222', 10, 1, 'imageUnavailable.png', 24),
+(16, 'MUDECOOP', 'sin especificar', 'Cooperativa de Mujeres de Manzanillo en desarrollo con su cooperativa autogestionaria.', '900MTS OESTA DEL SALÓN COMUNAL DE MANZANILLO, PUNTARENAS', 'mudecop@gmail.com', '86095160', 25, 1, 'img_76d74fa6b9806ad2b5923a5b1e5f8ef3.jpg', 1),
 (18, 'Coopeacuicultores Isla Venado', 'Sr pecupachi', 'kdasldj kajdask djsakdjs kdjsk djsds', 'sddasd dsdadadad', 'Asopecupachi@gmail.com', '33333333', 30, 1, 'imageUnavailable.png', 24),
-(19, 'SR AA', 'Sr aa', 'sdfd gfdgdgdgddfffffffffffffffff', 'fsdfdsfdsfdff', 'sraa@gmail.com', '3141314', 1, 1, 'imageUnavailable.png', 24);
+(24, 'Asosiacion De Mujeres Unidas de la Montaña Coyolito', 'sin especificar', 'Asociación de mujeres unidas de la montaña de Coyolito', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus itaque, dicta, quod odio doloremque illo praesentium odit animi perspiciatis repudiandae iure expedita a deleniti laudantium id voluptatem fugit voluptatum.', 'mujeresunidas@pa.com', '8806794', 20, 1, 'img_5f9659cb14a6d203306c22e0c7f155cf.jpg', 1),
+(26, 'Mariposas delGolfo', 'sin especificar', 'Asociación de Mujeres Mariposas del Golfo', '50 este de la licoreca, Provincia de Puntarenas, Puntarenas, Costa Rica', 'caligodelgolfo@gmail.com', '84169920', 22, 1, 'img_16fb3ab84e8b16d8a53c424a0ccedde7.jpg', 30);
 
 -- --------------------------------------------------------
 
@@ -820,7 +821,7 @@ CREATE TABLE IF NOT EXISTS `tbl_contenido_pagina` (
   `cont_contenido` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `cont_modulo` enum('Grupos Organizados','Comunidades','Alimentacion','Tours','Hospedaje','Transporte','Voluntario','Inicio','CEMEDE') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`cont_id_contenido`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `tbl_contenido_pagina`
@@ -830,8 +831,15 @@ INSERT INTO `tbl_contenido_pagina` (`cont_id_contenido`, `cont_titulo`, `cont_co
 (1, '¿Qué actividades se pueden hacer?', 'Donec sit amet dolor at felis cursus feugiat in eget purus. Curabitur suscipit magna erat, a dapibus ipsum pulvinar a. Pellentesque ut lectus ipsum. Praesent aliquet neque lectus, ultrices lacinia dui facilisis sit amet. Phasellus dapibus vel risus vel sollicitudin. Donec ornare purus id nisi iaculis, at vehicula diam viverra. Sed ut ultricies dolor. Integer dictum volutpat sapien. Pellentesque hendrerit feugiat augue nec iaculis.', 'Voluntario'),
 (2, 'Que es Paraiso Azul?', 'Es un proyecto extensión de CEMEDE, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la universidad Nacional de Costa Rica, sede regional chorotega', 'Inicio'),
 (3, '¿Que es el voluntariado?', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum varius purus et congue. Phasellus neque enim, efficitur ut malesuada ut, pharetra in purus. Vivamus gravida consectetur quam, quis pharetra elit vehicula et. Sed fermentum metus scelerisque pulvinar convallis. Duis malesuada in magna non interdum.', 'Voluntario'),
-(4, 'Fases del proyecto', 'Fusce quis rutrum elit. In hendrerit risus ut quam auctor, nec laoreet urna hendrerit. Donec interdum venenatis tortor. In at erat ac sapien scelerisque tempus at sit amet enim. Etiam eget mi sed arcu pellentesque pharetra eget ut velit. Proin scelerisque fringilla fringilla. Morbi gravida velit quis mi luctus porttitor.', 'CEMEDE'),
-(6, 'asddasd', 'asdasdasddsdad', 'Hospedaje');
+(4, 'Fases del proyecto', 'Fusce quis rutrum elit. In hendrerit risus ut quam auctor, nec laoreet urna hendrerit. Donec interdum venenatis tortor. In at erat ac sapien scelerisque tempus at sit amet enim. Etiam eget mi sed arcu pellentesque pharetra eget ut velit. Proin scelerisque fringilla fringilla. Morbi gravida velit quis mi luctus porttitor.', 'Inicio'),
+(5, 'CEMEDE', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.\r\nNunc viverra imperdiet enim. Fusce est. Vivamus a tellus.\r\nPellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.\r\nAenean nec lorem. In porttitor. Donec laoreet nonummy augue.\r\nSuspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.\r\n', 'CEMEDE'),
+(6, 'asddasd', 'asdasdasddsdad', 'Hospedaje'),
+(7, 'VISIÓN  DEL CEMEDE', 'En el año 2020 el CEMEDE es una instancia con reconocimiento mesoamericano en la promoción del desarrollo sostenible mediante el establecimiento de relaciones interinstitucionales, generación de espacios de investigación, extensión, docencia y producción que contribuyan al conocimiento y formación especializada como respuesta a las problemática ambiental, económica, social, cultural y política mesoamericana.\r\n', 'CEMEDE'),
+(11, '¿Qué actividades se pueden hacer?', 'Donec sit amet dolor at felis cursus feugiat in eget purus. Curabitur suscipit magna erat, a dapibus ipsum pulvinar a. Pellentesque ut lectus ipsum. Praesent aliquet neque lectus, ultrices lacinia dui facilisis sit amet. Phasellus dapibus vel risus vel sollicitudin. Donec ornare purus id nisi iaculis, at vehicula diam viverra. Sed ut ultricies dolor. Integer dictum volutpat sapien. Pellentesque hendrerit feugiat augue nec iaculis.', 'Voluntario'),
+(12, 'Que es Paraiso Azul?', 'Es un proyecto extensión de CEMEDE, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la universidad Nacional de Costa Rica, sede regional chorotega', 'Inicio'),
+(14, 'Fases del proyecto', 'Fusce quis rutrum elit. In hendrerit risus ut quam auctor, nec laoreet urna hendrerit. Donec interdum venenatis tortor. In at erat ac sapien scelerisque tempus at sit amet enim. Etiam eget mi sed arcu pellentesque pharetra eget ut velit. Proin scelerisque fringilla fringilla. Morbi gravida velit quis mi luctus porttitor.', 'Inicio'),
+(33, '¿Que es el voluntariado?', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum condimentum varius purus et congue. Phasellus neque enim, efficitur ut malesuada ut, pharetra in purus. Vivamus gravida consectetur quam, quis pharetra elit vehicula et. Sed fermentum metus scelerisque pulvinar convallis. Duis malesuada in magna non interdum.', 'Voluntario'),
+(61, 'MISIÓN DEL CEMEDE ', 'Ser una instancia generadora de conocimiento para la puesta en práctica de alternativas que promuevan el mejoramiento integral de la calidad de vida de los habitantes y del ambiente en Mesoamérica y el Caribe.', 'CEMEDE');
 
 -- --------------------------------------------------------
 
