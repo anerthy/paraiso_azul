@@ -139,7 +139,7 @@ function sessionUser(int $idusuario)
 function sessionStart()
 {
     session_start();
-    $inactive = 300; //tiempo de sesion 5mins (60s)
+    $inactive = 600; //tiempo de sesion 5mins (60s)
     if (isset($_SESSION['timeout'])) {
         $session_in = time() - $_SESSION['inicio'];
         if ($session_in > $inactive) {
