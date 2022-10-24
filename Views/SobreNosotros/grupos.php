@@ -5,7 +5,7 @@ $arrGrupos =  $data['grupos'];
 
 <main>
 
-    <div>
+    <div class="grupos_titulo">
         <center>
             <br>
             <h1><?= $data['page_title'] ?></h1>

@@ -20,7 +20,10 @@
 .nombre{
     text-align: center;
 }
-
+.grupos_titulo{
+    margin-left: 30px;
+    margin-right: 30px;
+}
 .form-row{
     justify-content: center;
 }
