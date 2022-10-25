@@ -14,11 +14,11 @@
       <div class="tile">
         <div class="tile-body">Create a beautiful dashboard</div>
         <br>
-        <?php dep($_SESSION['userData']); ?>
+        <!-- <?php dep($_SESSION['userData']); ?> -->
         <br>
 
         <?php
-        dep($_SESSION['permisosMod']);
+        // dep($_SESSION['permisosMod']);
         ?>
 
       </div>
