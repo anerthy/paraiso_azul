@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 24-10-2022 a las 16:29:43
+-- Tiempo de generación: 26-10-2022 a las 03:49:40
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -480,11 +480,11 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
   `nombre_com` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `descripcion` text CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `provincia` enum('Puntarenas','Guanacaste') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `canton` enum('Nicoya','Santa Cruz','Bagases','Cañas','Manzanillo','Lepanto','Puntarenas') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
-  `distrito` enum('Puntarenas','San Antonio','Quebrada Honda','Santa Cruz','Bolson','Bagases','Bebedero','Porozal','Manzanillo','Lepanto') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `canton` enum('Nicoya','Santa Cruz','Bagases','Cañas','Manzanillo','Lepanto','Puntarenas','Esparza') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
+  `distrito` enum('Puntarenas','San Antonio','Quebrada Honda','Santa Cruz','Bolson','Bagases','Bebedero','Porozal','Manzanillo','Lepanto','Esparza') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_comunidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `comunidad`
@@ -494,7 +494,9 @@ INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia
 (1, 'Isla Caballo', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Guanacaste', 'Lepanto', 'Manzanillo', 'islacaballo.jpg'),
 (24, 'Costa de Pajaros', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'Costadepájaros.jpg'),
 (30, 'Isla Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'IslaChira.jpg'),
-(35, 'Isla Venado', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus itaque, dicta, quod odio doloremque illo praesentium odit animi perspiciatis repudiandae iure expedita a deleniti laudantium id voluptatem fugit voluptatum.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'IslaVenado.jpg');
+(35, 'Isla Venado', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus itaque, dicta, quod odio doloremque illo praesentium odit animi perspiciatis repudiandae iure expedita a deleniti laudantium id voluptatem fugit voluptatum.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'IslaVenado.jpg'),
+(38, 'Manzanillo', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem exercitationem, consequatur a dignissimos inventore asperiores quis amet ratione praesentium nulla ex tenetur culpa esse blanditiis numquam dolor obcaecati harum doloribus?', 'Puntarenas', 'Esparza', 'Esparza', 'img_3120b8043cfd3480fce7d686cd740c7e.jpg'),
+(39, 'Coyolito', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem exercitationem, consequatur a dignissimos inventore asperiores quis amet ratione praesentium nulla ex tenetur culpa esse blanditiis numquam dolor obcaecati harum doloribus?', 'Puntarenas', 'Manzanillo', 'Manzanillo', 'img_c40aeeb1aea29e165442ead3d2cbc827.jpg');
 
 -- --------------------------------------------------------
 
@@ -909,22 +911,22 @@ INSERT INTO `tour` (`id_tour`, `nombre_tour`, `descripcion`, `actividad`, `alime
 --
 DROP VIEW IF EXISTS `tours_activos`;
 CREATE TABLE IF NOT EXISTS `tours_activos` (
-`id_tour` smallint unsigned
-,`nombre_tour` varchar(100)
-,`descripcion` text
-,`actividad` text
+`actividad` text
 ,`alimentacion` text
-,`hospedaje` text
-,`transporte` text
-,`lugar` text
-,`disponibilidad` text
-,`hora_inicio` time
-,`duracion` time
 ,`cupo_minimo` tinyint
-,`telefono` varchar(8)
+,`descripcion` text
+,`disponibilidad` text
+,`duracion` time
+,`hora_inicio` time
+,`hospedaje` text
+,`id_tour` smallint unsigned
+,`imagen` varchar(100)
+,`lugar` text
+,`nombre_tour` varchar(100)
 ,`precio` decimal(8,2)
 ,`status` int
-,`imagen` varchar(100)
+,`telefono` varchar(8)
+,`transporte` text
 );
 
 -- --------------------------------------------------------
@@ -1014,11 +1016,11 @@ CREATE TABLE IF NOT EXISTS `usuario_grupo` (
 --
 DROP VIEW IF EXISTS `usuario_rol`;
 CREATE TABLE IF NOT EXISTS `usuario_rol` (
-`id_usuario` smallint unsigned
-,`nombre_usuario` varchar(50)
-,`correo` varchar(50)
+`correo` varchar(50)
 ,`id_rol` smallint unsigned
+,`id_usuario` smallint unsigned
 ,`nombre_rol` varchar(50)
+,`nombre_usuario` varchar(50)
 ,`status` int
 );
 
@@ -1030,13 +1032,13 @@ CREATE TABLE IF NOT EXISTS `usuario_rol` (
 --
 DROP VIEW IF EXISTS `view_alimentacion`;
 CREATE TABLE IF NOT EXISTS `view_alimentacion` (
-`id_alimentacion` smallint unsigned
-,`nombre_alim` varchar(100)
-,`descripcion` text
+`descripcion` text
 ,`direccion` text
 ,`horario` varchar(22)
-,`telefono` varchar(8)
+,`id_alimentacion` smallint unsigned
 ,`imagen` varchar(100)
+,`nombre_alim` varchar(100)
+,`telefono` varchar(8)
 );
 
 -- --------------------------------------------------------
@@ -1047,10 +1049,10 @@ CREATE TABLE IF NOT EXISTS `view_alimentacion` (
 --
 DROP VIEW IF EXISTS `view_contenido_cemede`;
 CREATE TABLE IF NOT EXISTS `view_contenido_cemede` (
-`cont_id_contenido` smallint unsigned
-,`cont_titulo` varchar(100)
-,`cont_contenido` text
+`cont_contenido` text
+,`cont_id_contenido` smallint unsigned
 ,`cont_modulo` enum('Grupos Organizados','Comunidades','Alimentacion','Tours','Hospedaje','Transporte','Voluntario','Inicio','CEMEDE')
+,`cont_titulo` varchar(100)
 );
 
 -- --------------------------------------------------------
@@ -1061,16 +1063,16 @@ CREATE TABLE IF NOT EXISTS `view_contenido_cemede` (
 --
 DROP VIEW IF EXISTS `view_grupo_organizado_comunidad`;
 CREATE TABLE IF NOT EXISTS `view_grupo_organizado_comunidad` (
-`id_grupo` tinyint unsigned
-,`nombre_grupo` varchar(100)
-,`representante` varchar(100)
+`correo` varchar(50)
 ,`descripcion` text
-,`ubicacion` text
-,`correo` varchar(50)
-,`telefono` varchar(8)
-,`numero_integrantes` tinyint
+,`id_grupo` tinyint unsigned
 ,`logo` varchar(100)
 ,`nombre_com` varchar(50)
+,`nombre_grupo` varchar(100)
+,`numero_integrantes` tinyint
+,`representante` varchar(100)
+,`telefono` varchar(8)
+,`ubicacion` text
 );
 
 -- --------------------------------------------------------
@@ -1081,14 +1083,14 @@ CREATE TABLE IF NOT EXISTS `view_grupo_organizado_comunidad` (
 --
 DROP VIEW IF EXISTS `view_hospedaje`;
 CREATE TABLE IF NOT EXISTS `view_hospedaje` (
-`id_hospedaje` smallint unsigned
-,`nombre_hosp` varchar(100)
-,`descripcion` text
-,`tipo` enum('Cabina','Camping')
+`descripcion` text
 ,`direccion` text
-,`telefono` varchar(8)
-,`precio` varchar(11)
+,`id_hospedaje` smallint unsigned
 ,`imagen` varchar(100)
+,`nombre_hosp` varchar(100)
+,`precio` varchar(11)
+,`telefono` varchar(8)
+,`tipo` enum('Cabina','Camping')
 );
 
 -- --------------------------------------------------------
@@ -1099,21 +1101,21 @@ CREATE TABLE IF NOT EXISTS `view_hospedaje` (
 --
 DROP VIEW IF EXISTS `view_tour`;
 CREATE TABLE IF NOT EXISTS `view_tour` (
-`id_tour` smallint unsigned
-,`nombre_tour` varchar(100)
-,`descripcion` text
-,`actividad` text
+`actividad` text
 ,`alimentacion` text
-,`hospedaje` text
-,`transporte` text
-,`lugar` text
-,`disponibilidad` text
-,`hora_inicio` varchar(8)
-,`duracion` varchar(12)
 ,`cupo_minimo` tinyint
-,`telefono` varchar(8)
-,`precio` varchar(11)
+,`descripcion` text
+,`disponibilidad` text
+,`duracion` varchar(12)
+,`hora_inicio` varchar(8)
+,`hospedaje` text
+,`id_tour` smallint unsigned
 ,`imagen` varchar(100)
+,`lugar` text
+,`nombre_tour` varchar(100)
+,`precio` varchar(11)
+,`telefono` varchar(8)
+,`transporte` text
 );
 
 -- --------------------------------------------------------
@@ -1124,15 +1126,15 @@ CREATE TABLE IF NOT EXISTS `view_tour` (
 --
 DROP VIEW IF EXISTS `view_transporte`;
 CREATE TABLE IF NOT EXISTS `view_transporte` (
-`id_transporte` smallint unsigned
-,`nombre_trans` varchar(100)
+`clase` enum('Publico','Privado')
 ,`descripcion` text
-,`clase` enum('Publico','Privado')
-,`tipo` enum('Terrestre','Maritimo')
 ,`disponibilidad` text
+,`id_transporte` smallint unsigned
+,`imagen` varchar(100)
+,`nombre_trans` varchar(100)
 ,`precio` varchar(11)
 ,`telefono` varchar(8)
-,`imagen` varchar(100)
+,`tipo` enum('Terrestre','Maritimo')
 );
 
 -- --------------------------------------------------------
