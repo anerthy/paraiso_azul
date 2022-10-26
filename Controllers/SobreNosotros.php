@@ -32,8 +32,8 @@ class SobreNosotros extends Controllers
 
     public function comunidades()
     {
-        $data['page_tag'] = "Comunidades Organizados";
-        $data['page_title'] = "Comunidades Organizados";
+        $data['page_tag'] = "Comunidades";
+        $data['page_title'] = "Comunidades";
         $data['page_name'] = "viewcomunidades";
         $data['comunidades'] = $this->getComunidadesT();
         $this->views->getView($this, "comunidades", $data);
