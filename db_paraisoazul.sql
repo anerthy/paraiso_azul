@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 26-10-2022 a las 03:49:40
+-- Tiempo de generación: 26-10-2022 a las 04:51:52
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -491,12 +491,12 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
 --
 
 INSERT INTO `comunidad` (`id_comunidad`, `nombre_com`, `descripcion`, `provincia`, `canton`, `distrito`, `imagen`) VALUES
-(1, 'Isla Caballo', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Guanacaste', 'Lepanto', 'Manzanillo', 'islacaballo.jpg'),
+(1, 'Isla Caballo', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'img_bd88e44a23bdaf66f9423ce72d8c1a58.jpg'),
 (24, 'Costa de Pajaros', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'Costadepájaros.jpg'),
 (30, 'Isla Chira', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'IslaChira.jpg'),
 (35, 'Isla Venado', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus itaque, dicta, quod odio doloremque illo praesentium odit animi perspiciatis repudiandae iure expedita a deleniti laudantium id voluptatem fugit voluptatum.', 'Puntarenas', 'Puntarenas', 'Puntarenas', 'IslaVenado.jpg'),
-(38, 'Manzanillo', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem exercitationem, consequatur a dignissimos inventore asperiores quis amet ratione praesentium nulla ex tenetur culpa esse blanditiis numquam dolor obcaecati harum doloribus?', 'Puntarenas', 'Esparza', 'Esparza', 'img_3120b8043cfd3480fce7d686cd740c7e.jpg'),
-(39, 'Coyolito', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem exercitationem, consequatur a dignissimos inventore asperiores quis amet ratione praesentium nulla ex tenetur culpa esse blanditiis numquam dolor obcaecati harum doloribus?', 'Puntarenas', 'Manzanillo', 'Manzanillo', 'img_c40aeeb1aea29e165442ead3d2cbc827.jpg');
+(38, 'Manzanillo', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem exercitationem, consequatur a dignissimos inventore asperiores quis amet ratione praesentium nulla ex tenetur culpa esse blanditiis numquam dolor obcaecati harum doloribus?', 'Puntarenas', 'Manzanillo', 'Manzanillo', 'IMG_3854.JPG'),
+(39, 'Coyolito', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem exercitationem, consequatur a dignissimos inventore asperiores quis amet ratione praesentium nulla ex tenetur culpa esse blanditiis numquam dolor obcaecati harum doloribus?', 'Puntarenas', 'Manzanillo', 'Manzanillo', 'IMG_3856.JPG');
 
 -- --------------------------------------------------------
 
@@ -519,19 +519,25 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
   `comunidad_id` tinyint UNSIGNED NOT NULL,
   PRIMARY KEY (`id_grupo`),
   KEY `comunidad_id` (`comunidad_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `grupo_organizado`
 --
 
 INSERT INTO `grupo_organizado` (`id_grupo`, `nombre_grupo`, `representante`, `descripcion`, `ubicacion`, `correo`, `telefono`, `numero_integrantes`, `status`, `logo`, `comunidad_id`) VALUES
-(11, 'Asopecupachi', 'dsadad', 'Asociación Cuerderos Palito Isla Chira', 'Isla Chira, Puntarenas', 'dkgwf@gmail.com', '89742984', 1, 1, 'img_7263c2d82d26dd4ef6e9799dbbce08ee.jpg', 24),
-(14, 'Asociación de desarrollo integral de Isla Caballo', 'ddsf', 'Pellentesque id laoreet leo a consequat anteSed venenatis ornare dui eget luctus Vivamus non pulvinar mauris Integer quis faucibus sapien', 'en la isla', 'dkgwf@dddgmail.com', '89742984', 32, 1, 'imageUnavailable.png', 24),
-(16, 'MUDECOOP', 'sin especificar', 'Cooperativa de Mujeres de Manzanillo en desarrollo con su cooperativa autogestionaria.', '900MTS OESTA DEL SALÓN COMUNAL DE MANZANILLO, PUNTARENAS', 'mudecop@gmail.com', '86095160', 25, 1, 'img_76d74fa6b9806ad2b5923a5b1e5f8ef3.jpg', 1),
-(18, 'Coopeacuicultores Isla Venado', 'Sr pecupachi', 'kdasldj kajdask djsakdjs kdjsk djsds', 'sddasd dsdadadad', 'Asopecupachi@gmail.com', '33333333', 30, 1, 'imageUnavailable.png', 24),
+(11, 'Asopecupachi', 'sin especificar', 'Asociación de Pescadores Cuerderos de Palito, Isla de Chira', 'Isla Chira, Puntarenas', 'grupo@info.com', '89742984', 1, 1, 'img_11b2dc23e716dd81485138bc9d89b85e.jpg', 30),
+(16, 'MUDECOOP', 'sin especificar', 'Cooperativa de Mujeres de Manzanillo en desarrollo con su cooperativa autogestionaria.', '900MTS OESTA DEL SALÓN COMUNAL DE MANZANILLO, PUNTARENAS', 'mudecop@gmail.com', '86095160', 25, 1, 'img_ee15cdd6dc19e38e705ec8864ac68749.jpg', 38),
 (24, 'Asosiacion De Mujeres Unidas de la Montaña Coyolito', 'sin especificar', 'Asociación de mujeres unidas de la montaña de Coyolito', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus itaque, dicta, quod odio doloremque illo praesentium odit animi perspiciatis repudiandae iure expedita a deleniti laudantium id voluptatem fugit voluptatum.', 'mujeresunidas@pa.com', '8806794', 20, 1, 'img_5f9659cb14a6d203306c22e0c7f155cf.jpg', 1),
-(26, 'Mariposas delGolfo', 'sin especificar', 'Asociación de Mujeres Mariposas del Golfo', '50 este de la licoreca, Provincia de Puntarenas, Puntarenas, Costa Rica', 'caligodelgolfo@gmail.com', '84169920', 22, 1, 'img_16fb3ab84e8b16d8a53c424a0ccedde7.jpg', 30);
+(26, 'Mariposas delGolfo', 'sin especificar', 'Asociación de Mujeres Mariposas del Golfo', '50 este de la licoreca, Provincia de Puntarenas, Puntarenas, Costa Rica', 'caligodelgolfo@gmail.com', '84169920', 22, 1, 'img_1aaf7f100ec2a035591a1661a5380a38.jpg', 24),
+(27, 'ASJUSDE', 'sin especificar', 'Asociación Jóvenes Uniendo Esfuerzo para el Desarrollo y la Ecología de Isla Venado', 'Isla Venado', 'grupo@info.com', '0', 1, 1, 'img_369af6438249fac8cb36e343095fbb14.jpg', 35),
+(28, 'Asociación para el desarrollo sustentable y su adaptación al cambio climático de Isla Venado', 'sin especificar', 'Asociación para el desarrollo sustentable y su adaptación al cambio climático de Isla Venado', 'Isla Venado', 'grupo@info.com', '0', 1, 1, 'img_d444ae8e92a3fc7f77208020e2ed43f6.jpg', 35),
+(29, 'COOPEACUICULTORES RL', 'sin especificar', 'Cooperativa Autogestionaria de servicios de Acuicultura, Pesca Y Turismo R.L.', 'Isla Venado', 'grupo@info.com', '0', 1, 1, 'img_15a7a5d55011b8bdc51b1daa6861e1cb.jpg', 35),
+(30, 'Cámara de turismo de Isla Chira', 'sin especificar', 'Cámara de turismo de Isla Chira.', 'Isla de Chira, Puntarenas - Costa Rica', 'camaraturismochira@gmail.com', '83265119', 1, 1, 'img_875439ee7b1c82bc13eb7beee0130b06.jpg', 30),
+(31, 'Asociación de Pescadores Mixta de Montero', 'sin especificar', 'Asociación de Pescadores Mixta de Montero', 'Isla Chira', 'grupo@info.com', '0', 1, 1, 'img_9371c080974099c85fb48d2a23ecc187.jpg', 30),
+(32, 'Asociación de Mejillones y Mariscos de Isla Chira', 'sin especificar', 'Asociación de Mejillones y Mariscos de Isla Chira', 'Isla Chira', 'grupo@info.com', '0', 1, 1, 'img_440f81a820edb969b4fc8d91057cf5d6.jpg', 30),
+(33, 'Ostras Palito', 'sin especificar', 'Asociacion de Pescadores Cuerderos de Palito de Isla Chira', 'Palito de Isla Chira', 'lasostraschira@gmail.com', '0', 1, 1, '305632976_413232640951931_5666490571462378344_n.jpg', 30),
+(34, 'Asociación de desarrollo integral de Isla Caballo', 'sin especificar', 'Asociación de desarrollo integral de Isla Caballo', 'Isla Caballo', 'grupo@info.com', '0', 1, 1, 'imageUnavailable.png', 1);
 
 -- --------------------------------------------------------
 
