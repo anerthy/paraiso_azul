@@ -1,24 +1,24 @@
 <?php
 require_once("Models/Traits/TGrupo.php");
 require_once("Models/Traits/TComunidad.php");
-require_once("Models/Traits/TProyecto.php");
+require_once("Models/Traits/TCEMEDE.php");
 
 class SobreNosotros extends Controllers
 {
-    use TGrupo, TComunidad, TProyecto;
+    use TGrupo, TComunidad, TCEMEDE;
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function proyecto()
+    public function cemede()
     {
         $data['page_id'] = 2;
-        $data['page_tag'] = "Proyecto";
-        $data['page_title'] = "Proyecto";
-        $data['page_name'] = "proyecto";
-        $data['proyecto'] = $this->getProyectoT();
-        $this->views->getView($this, "proyecto", $data);
+        $data['page_tag'] = "CEMEDE";
+        $data['page_title'] = "CEMEDE";
+        $data['page_name'] = "cemede";
+        $data['cemede'] = $this->getCEMEDET();
+        $this->views->getView($this, "cemede", $data);
     }
 
     public function grupos()

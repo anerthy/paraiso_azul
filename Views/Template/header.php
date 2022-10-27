@@ -21,17 +21,6 @@
     <link rel="stylesheet" href="<?= media(); ?>/css/vistas.css">
     <link rel="stylesheet" href="<?= media(); ?>/css/views_styles.css">
 
-
-    <link rel="stylesheet" href="<?= media(); ?>/css/Cards-Hospedaje/Estilos.css"> 
-    <link rel="stylesheet" href="<?= media(); ?>/css/bootstrap.min.css">
-
-      <!-- js -->
-
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
@@ -66,9 +55,9 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown"><a href="#"><span>Nosotros</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a href="#"><span>Proyecto</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="<?= base_url(); ?>/SobreNosotros/proyecto">Proyecto</a></li>
+                            <li><a href="<?= base_url(); ?>/SobreNosotros/cemede">CEMEDE</a></li>
                             <li><a href="<?= base_url(); ?>/SobreNosotros/grupos">Grupos Organizados</a></li>
                             <li><a href="<?= base_url(); ?>/SobreNosotros/comunidades">Comunidades</a></li>
                         </ul>

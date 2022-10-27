@@ -1,4 +1,5 @@
-.card {
+/* ESTILOS COMUNIDADES -> */
+.card-comunidades {
     background-color:#eeeeee;
     width: 80%;
     padding: 20px;
@@ -13,3 +14,8 @@
     width: 350px;
     height: 350px;
 }
+/* <- ESTILOS COMUNIDADES */
+
+/* ESTILOS GRUPOS -> */
+
+/* <- ESTILOS GRUPOS */

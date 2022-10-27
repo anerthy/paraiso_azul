@@ -16,7 +16,7 @@ $arrComunidades = $data['comunidades'];
         for ($i = 0; $i < count($arrComunidades); $i += 2) {
         ?>
 
-            <div class="card">
+            <div class="card card-comunidades">
                 <div class="row ">
                     <!-- Carousel start -->
                     <div class="col-md-5">
@@ -55,7 +55,7 @@ $arrComunidades = $data['comunidades'];
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card card-comunidades">
                 <div class="row ">
                     <div class="col-md-7 px-3">
                         <div class="card-block px-6">
