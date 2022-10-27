@@ -20,6 +20,8 @@
     <!-- Estilos CSS para las vistas -->
     <link rel="stylesheet" href="<?= media(); ?>/css/vistas.css">
 
+
+    <link rel="stylesheet" href="<?= media(); ?>/css/Cards-Hospedaje/Estilos.css"> 
     <link rel="stylesheet" href="<?= media(); ?>/css/bootstrap.min.css">
 
       <!-- js -->
