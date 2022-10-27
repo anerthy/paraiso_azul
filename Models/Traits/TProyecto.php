@@ -1,10 +1,10 @@
 <?php
 require_once("Libraries/Core/Mysql.php");
-trait TCEMEDE
+trait TProyecto
 {
     public $con;
 
-    public function getCEMEDET()
+    public function getProyectoT()
     {
         $this->con = new Mysql();
         $sql = "SELECT cont_id_contenido,cont_titulo,cont_contenido,cont_modulo FROM view_contenido_cemede;";
