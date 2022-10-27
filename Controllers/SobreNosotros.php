@@ -11,14 +11,14 @@ class SobreNosotros extends Controllers
         parent::__construct();
     }
 
-    public function cemede()
+    public function proyecto()
     {
         $data['page_id'] = 2;
-        $data['page_tag'] = "CEMEDE";
-        $data['page_title'] = "CEMEDE";
-        $data['page_name'] = "cemede";
-        $data['cemede'] = $this->getCEMEDET();
-        $this->views->getView($this, "cemede", $data);
+        $data['page_tag'] = "Proyecto";
+        $data['page_title'] = "Sobre el proyecto";
+        $data['page_name'] = "proyecto";
+        $data['proyecto'] = $this->getCEMEDET();
+        $this->views->getView($this, "proyecto", $data);
     }
 
     public function grupos()
