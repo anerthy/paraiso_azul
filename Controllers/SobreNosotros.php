@@ -35,6 +35,7 @@ class SobreNosotros extends Controllers
         $data['page_tag'] = "Comunidades";
         $data['page_title'] = "Comunidades";
         $data['page_name'] = "viewcomunidades";
+        $data['page_styles_css'] = "views_styles.css";
         $data['comunidades'] = $this->getComunidadesT();
         $this->views->getView($this, "comunidades", $data);
     }
