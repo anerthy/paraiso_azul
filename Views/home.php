@@ -46,8 +46,6 @@
     <!-- Navbar & Hero Start -->
     <div class="container-xxl position-relative p-0">
 
-
-
         <div class="container-xxl py-5 bg-portada-home  mb-5">
             <div class="container my-5 py-5">
                 <div class="row align-items-center g-5">
@@ -282,7 +280,7 @@
         <div class="container">
             <div class="text-center">
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">-----</h5>
-                <h1 class="mb-5">Comunidades</h1>
+                <h1 class="mb-5">Involucrados</h1>
             </div>
             <div class="owl-carousel testimonial-carousel">
                 <div class="testimonial-item bg-transparent border rounded p-4">
