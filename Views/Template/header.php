@@ -19,6 +19,7 @@
 
     <!-- Estilos CSS para las vistas -->
     <link rel="stylesheet" href="<?= media(); ?>/css/vistas.css">
+    <link rel="stylesheet" href="<?= media(); ?>/css/views_styles.css">
 
 
     <link rel="stylesheet" href="<?= media(); ?>/css/Cards-Hospedaje/Estilos.css"> 

@@ -4,67 +4,99 @@ $arrComunidades = $data['comunidades'];
 ?>
 
 <main>
-
-    <style>
-        .card {
-            width: 100;
-            margin: 30px;
-            /* align-items: center; */
-            align-self: center;
-            text-align: justify;
-        }
-
-        .info {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            background-color: #fff;
-        }
-    </style>
-
     <center>
         <br>
-        <h1>Comunidades</h1>
-        <br>
+        <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
+        <!-- <br> -->
     </center>
 
-    <div>
+    <center>
         <?php
         // dep($arrTransporte);
-        for ($i = 0; $i < count($arrComunidades); $i++) {
+        for ($i = 0; $i < count($arrComunidades); $i += 2) {
         ?>
 
-            <div class='card'>
-                <div class='info'>
-                    <div>
-                        <img src="<?= $arrComunidades[$i]['imagen'] ?>" alt="imagen de la comunidad" class="card-img-top" alt="imagen del comunidad" style="width: 300px; height:300px;">
+            <div class="card">
+                <div class="row ">
+                    <!-- Carousel start -->
+                    <div class="col-md-5">
+                        <div id="CarouselTest" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#CarouselTest" data-slide-to="0" class=""></li>
+                                <li data-target="#CarouselTest" data-slide-to="1" class=""></li>
+                                <li data-target="#CarouselTest" data-slide-to="2" class="active"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item">
+                                    <img class="d-block" src="<?= $arrComunidades[$i]['imagen'] ?>" alt="imagen de la comunidad">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block" src="<?= $arrComunidades[$i]['imagen'] ?>" alt="imagen de la comunidad">
+                                </div>
+                                <div class="carousel-item active">
+                                    <img class="d-block" src="<?= $arrComunidades[$i]['imagen'] ?>" alt="imagen de la comunidad">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h1 class='comunidad'><?= $arrComunidades[$i]['nombre_com'] ?></h1>
-                        <h2 class="ubicacion"><?= $arrComunidades[$i]['provincia'] ?>, <?= $arrComunidades[$i]['canton'] ?>, <?= $arrComunidades[$i]['distrito'] ?>.</h2>
-                        <p class='descripcion'><?= $arrComunidades[$i]['descripcion'] ?></p>
+                    <!-- End of carousel -->
+
+                    <div class="col-md-7 px-3">
+                        <div class="card-block px-6">
+                            <h3 class="card-title"><b><?= $arrComunidades[$i + 1]['nombre_com'] ?></b></h3>
+                            <h4 class="card-title"><?= $arrComunidades[$i + 1]['provincia'] ?>, <?= $arrComunidades[$i]['canton'] ?>, <?= $arrComunidades[$i + 1]['distrito'] ?>.</h4>
+                            <p class="card-text">
+                                <?= $arrComunidades[$i + 1]['descripcion'] ?>
+                            </p>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
+            <div class="card">
+                <div class="row ">
+                    <div class="col-md-7 px-3">
+                        <div class="card-block px-6">
+                            <h3 class="card-title"><b><?= $arrComunidades[$i + 1]['nombre_com'] ?></b></h3>
+                            <h4 class="card-title"><?= $arrComunidades[$i + 1]['provincia'] ?>, <?= $arrComunidades[$i]['canton'] ?>, <?= $arrComunidades[$i + 1]['distrito'] ?>.</h4>
+                            <p class="card-text">
+                                <?= $arrComunidades[$i + 1]['descripcion'] ?>
+                            </p>
+                            <!-- <p class="card-text"><?= $arrComunidades[$i + 1]['descripcion'] ?></p> -->
+                        </div>
+                    </div>
+                    <!-- Carousel start -->
+                    <div class="col-md-5">
+                        <div id="CarouselTest" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#CarouselTest" data-slide-to="0" class=""></li>
+                                <li data-target="#CarouselTest" data-slide-to="1" class=""></li>
+                                <li data-target="#CarouselTest" data-slide-to="2" class="active"></li>
+
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item">
+                                    <img class="d-block" src="<?= $arrComunidades[$i + 1]['imagen'] ?>" alt="imagen de la comunidad">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block" src="<?= $arrComunidades[$i + 1]['imagen'] ?>" alt="imagen de la comunidad">
+                                </div>
+                                <div class="carousel-item active">
+                                    <img class="d-block" src="<?= $arrComunidades[$i + 1]['imagen'] ?>" alt="imagen de la comunidad">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of carousel -->
+                </div>
+            </div>
         <?php
         }
         ?>
-
-    </div>
-
-    <!-- <div class='card'>
-            <div class='info'>
-                <img src="..." alt="imagen de la comunidad" class="card-img-top" alt="imagen del comunidad" style="width: 300px; height:300px;">
-                <h1 class='comunidad'>Nombre</h1>
-                <h2 class="ubicacion">Puntarenas, Lepanto, Lepanto.</h2>
-                <p class='descripcion'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius esse corporis, velit porro impedit laudantium accusamus! Id velit, illum magni rem mollitia blanditiis iste maiores optio ipsa, est dolorem fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius esse corporis, velit porro impedit laudantium accusamus! Id velit, illum magni rem mollitia blanditiis iste maiores optio ipsa, est dolorem fugit.</p>
-            </div>
-     </div> -->
-
-    <div class="flex-container">
-
-    </div>
+    </center>
+    </section>
 
 </main>
 
