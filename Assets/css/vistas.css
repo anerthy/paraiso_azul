@@ -44,9 +44,11 @@ img.vis-CEMEDE {
   }
   #cardcemede{
     /* margin: 5px; */
-    width: 30%;
+    width: 30;
     padding: 10px;
     margin: 4px 10px 8px 100px;
     text-align: justify;
+    display: flex;
+    justify-content: center;
    
 }

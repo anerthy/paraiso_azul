@@ -3,7 +3,11 @@ _header($data);
 $arrTours =  $data['tours'];
 ?>
 
-<h1>Tours</h1>
+<center>
+    <br>
+    <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
+    <br>
+</center>
 
 <div class="row">
     <?php

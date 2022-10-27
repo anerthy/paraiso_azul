@@ -2,21 +2,21 @@
 
 class Voluntariado extends Controllers
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
+	public function __construct()
+	{
+		parent::__construct();
+	}
 
-    public function voluntariado()
-    {
-        $data['page_id'] = 10;
-        $data['page_tag'] = "voluntariado";
-        $data['page_title'] = "voluntariado";
-        $data['page_name'] = "voluntariado";
-        $data['page_functions_js'] = "functions_voluntariado.js";
-        $data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
-        $this->views->getView($this, "voluntariado", $data);
-    }
+	public function voluntariado()
+	{
+		$data['page_id'] = 10;
+		$data['page_tag'] = "Voluntariado";
+		$data['page_title'] = "Voluntariado";
+		$data['page_name'] = "Voluntariado";
+		$data['page_functions_js'] = "functions_voluntariado.js";
+		$data['page_content'] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, quis. Perspiciatis repellat perferendis accusamus, ea natus id omnis, ratione alias quo dolore tempore dicta cum aliquid corrupti enim deserunt voluptas.";
+		$this->views->getView($this, "voluntariado", $data);
+	}
 
 	public function getVoluntarios()
 	{
@@ -28,19 +28,19 @@ class Voluntariado extends Controllers
 			$btnDelete = '';
 
 			// boton de ver
-			
-				$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_voluntario'] . ')" title="Ver voluntario"><i class="far fa-eye"></i></button>';
-		
+
+			$btnView = '<button class="btn btn-info btn-sm" onClick="fntViewInfo(' . $arrData[$i]['id_voluntario'] . ')" title="Ver voluntario"><i class="far fa-eye"></i></button>';
+
 
 			// boton de actualizar
-		
-				$btnEdit = '<button class="btn btn-primary btn-sm btnEditVoluntario" onClick="fntEditVoluntario(' . $arrData[$i]['id_voluntario'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
-		
+
+			$btnEdit = '<button class="btn btn-primary btn-sm btnEditVoluntario" onClick="fntEditVoluntario(' . $arrData[$i]['id_voluntario'] . ')" title="Editar"><i class="fas fa-pencil-alt"></i></button>';
+
 
 			// boton de eliminar
-		
-				$btnDelete = '<button class="btn btn-danger btn-sm btnDelVoluntario" onClick="fntDelVoluntario(' . $arrData[$i]['id_voluntario'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
-		
+
+			$btnDelete = '<button class="btn btn-danger btn-sm btnDelVoluntario" onClick="fntDelVoluntario(' . $arrData[$i]['id_voluntario'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
+
 
 			// <button class="btn btn-warning btn-sm" onClick="fntViewInfo('.$arrData[$i]['id_voluntario'].')" title="Ver voluntario"><i class="fa fa-paper-plane"></i></button>
 
@@ -161,7 +161,7 @@ class Voluntariado extends Controllers
 				$intStatus
 			);
 			$option = 1;
-		} 
+		}
 		// else {
 		// 	//Actualizar
 
@@ -188,7 +188,7 @@ class Voluntariado extends Controllers
 				$arrResponse = array('status' => true, 'msg' => 'Datos Actualizados correctamente.');
 			}
 		} else if ($request_voluntario == 'exist') {
-			
+
 
 			$arrResponse = array('status' => false, 'msg' => '¡Atención! El Voluntario ya existe.');
 		} else {

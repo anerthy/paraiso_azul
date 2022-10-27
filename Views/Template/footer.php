@@ -19,7 +19,7 @@
               <h4>Enlaces útiles</h4>
               <ul>
                 <li><a href="<?= base_url(); ?>">Inicio</a></li>
-                <li><a href="<?= base_url(); ?>">Sobre el proyecto</a></li>
+                <li><a href="<?= base_url(); ?>/SobreNosotros/proyecto">Sobre el proyecto</a></li>
                 <li><a href="<?= base_url(); ?>/voluntariado">Voluntariado</a></li>
                 <li><a href="<?= base_url(); ?>/login">Login</a></li>
               </ul>
@@ -30,7 +30,7 @@
               <ul>
                 <li><a href="<?= base_url(); ?>/Servicios/alimentacion">Alimentacion</a></li>
                 <li><a href="<?= base_url(); ?>/Servicios/hospedaje">Hospedaje</a></li>
-                <li><a href="<?= base_url(); ?>/Servicios/trasnporte">Transporte</a></li>
+                <li><a href="<?= base_url(); ?>/Servicios/transporte">Transporte</a></li>
                 <li><a href="<?= base_url(); ?>/Servicios/tours">Tours</a></li>
               </ul>
             </div>

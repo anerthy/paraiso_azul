@@ -12,7 +12,7 @@ getModal('modalVoluntariado', $data);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Paraíso Azul</title>
+    <title>Voluntariado</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap icons-->
@@ -56,7 +56,7 @@ getModal('modalVoluntariado', $data);
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-8 col-xl-7 col-xxl-6">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Voluntarios</h1>
+                            <h1 class="display-5 fw-bolder text-white mb-2">Voluntariado</h1>
                             <p class="lead fw-normal text-white-50 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra ante sed dui maximus, vel tristique libero laoreet. Curabitur nec venenatis augue. Maecenas feugiat mattis tellus, nec vulputate quam tristique at. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec quis porttitor odio. Nulla in mi erat. Nulla at porta mi. In hac habitasse platea dictumst. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas facilisis, eros ut finibus dapibus, velit nisi vestibulum sem, id aliquam leo ipsum quis velit. Nunc id tempus tellus.</p>
                             <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Leer mas</a>
@@ -189,7 +189,7 @@ getModal('modalVoluntariado', $data);
                             <div class="card-body p-4">
 
                                 <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <h5 class="card-title mb-3">Mudecop</h5>
+                                    <h5 class="card-title mb-3">MUDECOOP</h5>
                                 </a>
                                 <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             </div>
