@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #FEA116;
+    --primary: #2B80ED;
     --light: #F1F8FF;
     --dark: #0F172B;
 }
@@ -478,5 +478,14 @@
     border-right: none;
 }
 .bg-portada-home{
-    background-color: #1E5BA0;
+    background-color: #2B80ED;
+}
+img.tam-personal {
+  width:200px;
+  height:250px;
+}
+
+img.tam-personal {
+  max-width:500%;
+  max-height:500%;
 }
