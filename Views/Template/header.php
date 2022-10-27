@@ -63,9 +63,9 @@
                         </ul>
                     </li>
 
-                    <li class="dropdown"><a href="#"><span>Proyecto</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown"><a href="#"><span>Nosotros</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a href="<?= base_url(); ?>/SobreNosotros/cemede">CEMEDE</a></li>
+                            <li><a href="<?= base_url(); ?>/SobreNosotros/proyecto">Proyecto</a></li>
                             <li><a href="<?= base_url(); ?>/SobreNosotros/grupos">Grupos Organizados</a></li>
                             <li><a href="<?= base_url(); ?>/SobreNosotros/comunidades">Comunidades</a></li>
                         </ul>
