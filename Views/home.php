@@ -74,7 +74,7 @@
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
-                                <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
+                                <i class="fa fa-3x bi bi-1-circle text-primary mb-4"></i>
                                 <h5>Fase I</h5>
                                 <p>Diagnóstico de los productos turísticos</p>
                             </div>
@@ -83,7 +83,7 @@
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
-                                <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
+                                <i class="fa fa-3x bi bi-2-circle text-primary mb-4"></i>
                                 <h5>Fase II</h5>
                                 <p>Mejora de la gestión y capacitación</p>
                             </div>
@@ -92,7 +92,7 @@
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
-                                <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
+                                <i class="fa fa-3x bi bi-3-circle text-primary mb-4"></i>
                                 <h5>Fase III</h5>
                                 <p>Mejora de las prácticas de Gestión ambiental</p>
                             </div>
@@ -101,7 +101,7 @@
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
-                                <i class="fa fa-3x fa-headset text-primary mb-4"></i>
+                                <i class="fa fa-3x bi bi-4-circle text-primary mb-4"></i>
                                 <h5>Fase IV</h5>
                                 <p>Desarrollo de estrategias de promoción</p>
                             </div>
@@ -214,10 +214,10 @@
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="Assets/images/img/Home/Aaron.jpeg" alt="">
+                            <div  class="overflow-hidden m-4 rounded-4">
+                                <img class="img-fluid tam-personal" src="Assets/images/img/Home/Aaron.jpeg" alt="">
                             </div>
-                            <h5 class="mb-0">Full Name</h5>
+                            <h5 class="mb-0">Aaron Villegas Mora</h5>
                             <small>Designation</small>
                             <div class="d-flex justify-content-center mt-3">
                                 <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -228,8 +228,8 @@
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                         <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="Assets/images/img/Home/Andrés.jpeg" alt="">
+                            <div class="overflow-hidden m-4 rounded-4">
+                                <img class="img-fluid tam-personal" src="Assets/images/img/Home/Andrés.jpeg" alt="">
                             </div>
                             <h5 class="mb-0">Full Name</h5>
                             <small>Designation</small>
@@ -242,8 +242,8 @@
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="Assets/images/img/Home/Fiorella.jpeg" alt="">
+                            <div class="overflow-hidden m-4 rounded-4">
+                                <img class="img-fluid tam-personal" src="Assets/images/img/Home/Fiorella.jpg" alt="">
                             </div>
                             <h5 class="mb-0">Full Name</h5>
                             <small>Designation</small>
@@ -256,8 +256,8 @@
                     </div>
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="team-item text-center rounded overflow-hidden">
-                            <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="Assets/images/img/Home/Sofia.jpeg" alt="">
+                            <div class="overflow-hidden m-4 rounded-4">
+                                <img class="img-fluid tam-personal" src="Assets/images/img/Home/Sofia.jpeg" alt="">
                             </div>
                             <h5 class="mb-0">Full Name</h5>
                             <small>Designation</small>
