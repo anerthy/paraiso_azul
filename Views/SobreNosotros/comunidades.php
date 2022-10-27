@@ -6,7 +6,7 @@ $arrComunidades = $data['comunidades'];
 <main>
     <center>
         <br>
-        <h1 class="titulo"><?= $data['page_title'] ?></h1>
+        <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
         <!-- <br> -->
     </center>
 
@@ -44,7 +44,7 @@ $arrComunidades = $data['comunidades'];
 
                     <div class="col-md-7 px-3">
                         <div class="card-block px-6">
-                            <h3 class="card-title"><?= $arrComunidades[$i + 1]['nombre_com'] ?></h3>
+                            <h3 class="card-title"><b><?= $arrComunidades[$i + 1]['nombre_com'] ?></b></h3>
                             <h4 class="card-title"><?= $arrComunidades[$i + 1]['provincia'] ?>, <?= $arrComunidades[$i]['canton'] ?>, <?= $arrComunidades[$i + 1]['distrito'] ?>.</h4>
                             <p class="card-text">
                                 <?= $arrComunidades[$i + 1]['descripcion'] ?>
@@ -59,7 +59,7 @@ $arrComunidades = $data['comunidades'];
                 <div class="row ">
                     <div class="col-md-7 px-3">
                         <div class="card-block px-6">
-                            <h3 class="card-title"><?= $arrComunidades[$i + 1]['nombre_com'] ?></h3>
+                            <h3 class="card-title"><b><?= $arrComunidades[$i + 1]['nombre_com'] ?></b></h3>
                             <h4 class="card-title"><?= $arrComunidades[$i + 1]['provincia'] ?>, <?= $arrComunidades[$i]['canton'] ?>, <?= $arrComunidades[$i + 1]['distrito'] ?>.</h4>
                             <p class="card-text">
                                 <?= $arrComunidades[$i + 1]['descripcion'] ?>
