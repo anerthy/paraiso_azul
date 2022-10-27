@@ -50,14 +50,16 @@
             <div class="container my-5 py-5">
                 <div class="row align-items-center g-5">
                     <div class="col-lg-6 text-center text-lg-start">
-                        <h1 class="display-3 text-white animated slideInLeft">RED<br>COSTERA</h1>
-                        <p style="font-size: 20px" class="text-white animated slideInLeft mb-4 pb-2"> ¿Dé que se trata el proyecto Paraíso Azul, Golfo de Nicoya? </p>
-                        <p class="text-white animated slideInLeft mb-4 pb-2"> Es un proyecto extensión de CEMEDE, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la universidad Nacional de Costa Rica, sede regional chorotega</p>
+                        <h1 class="display-3 text-white animated slideInLeft"><b>Paraiso Azul<br>Golfo de Nicoya</b></h1>
+                        <!-- <p style="font-size: 20px" class="text-white animated slideInLeft mb-4 pb-2"> ¿Dé que se trata el proyecto Paraíso Azul, Golfo de Nicoya? </p> -->
+                        <h4 class="text-white animated slideInLeft mb-4 pb-2">
+                            Es un proyecto extensión de CEMEDE, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la Universidad Nacional de Costa Rica, Sede Regional Chorotega.
+                        </h4>
                         <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Leer mas</a> -->
 
                     </div>
                     <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                        <img class="img-fluid" src="Assets/images/img/Home/collage.jpeg" alt="">
+                        <img class="img-fluid" style="border-radius: 30px;" src="Assets/images/img/Home/IMG_3860.JPG" alt="">
                     </div>
                 </div>
             </div>
