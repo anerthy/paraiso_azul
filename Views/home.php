@@ -38,17 +38,17 @@
 
 
         <!-- Navbar & Hero Start -->
-        <div class="container-xxl position-relative p-0">
+        <div class=" position-relative p-0">
         <?php
   _header($data);
         ?>
 
 
-            <div class="container-xxl py-5 bg-portada-home  mb-5">
+            <div class=" py-5 bg-portada-home  mb-5">
                 <div class="container my-5 py-5">
                     <div class="row align-items-center g-5">
                         <div class="col-lg-6 text-center text-lg-start">
-                            <h1 class="display-3 text-white animated slideInLeft">RED<br>COSTERA</h1>
+                            <h1 class="display-3 text-white animated slideInLeft">PARAISO AZUL<br>GOLFO NICOYA</h1>
                             <p style="font-size: 20px" class="text-white animated slideInLeft mb-4 pb-2"> ¿Dé que se trata el proyecto Paraíso Azul, Golfo de Nicoya? </p>
                             <p class="text-white animated slideInLeft mb-4 pb-2"> Es un proyecto extensión de CEMEDE, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la universidad Nacional de Costa Rica, sede regional chorotega</p>
                             <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Leer mas</a> -->
@@ -85,7 +85,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x bi bi-2-circle text-primary mb-4"></i>
                                 <h5>Fase II</h5>
-                                <p>Mejora de la gestión y capacitación</p>
+                                <p>Mejora de la gestión y tambien capacitación</p>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
 
 
         <!-- About Start -->
- 
+    
         <!-- About End -->
 
 
@@ -131,56 +131,10 @@
                         <!-- <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/watch?v=LXb3EKWsInQ" data-bs-target="#videoModal">
                             <span></span>
                         </button> -->
-                        <iframe width="660" height="600" src="https://www.youtube.com/embed/LXb3EKWsInQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="1300" height="600" src="https://www.youtube.com/embed/LXb3EKWsInQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="col-md-6 bg-dark d-flex align-items-center">
-                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Informacion de interes</h5>
-                        <h1 class="text-white mb-4">Book A Table Online</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <select class="form-select" id="select1">
-                                          <option value="1">People 1</option>
-                                          <option value="2">People 2</option>
-                                          <option value="3">People 3</option>
-                                        </select>
-                                        <label for="select1">No Of People</label>
-                                      </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Special Request</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+               
             </div>
         </div>
 
@@ -356,6 +310,12 @@
 
     <!-- Template Javascript -->
     <script src="Assets/js/Js-home/js/main.js"></script>
+
+    
+    <!-- Template Javascript CASOUSEL -->
+    <!-- <script src="Assets/js/carousel-home/carousel-home.js"></script> -->
+
+
 </body>
 
 </html>
