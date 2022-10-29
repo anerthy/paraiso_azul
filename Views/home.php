@@ -54,7 +54,7 @@
                         <h1 class="display-3 text-white animated slideInLeft"><b>Paraiso Azul<br>Golfo de Nicoya</b></h1>
                         <!-- <p style="font-size: 20px" class="text-white animated slideInLeft mb-4 pb-2"> ¿Dé que se trata el proyecto Paraíso Azul, Golfo de Nicoya? </p> -->
                         <h4 class="text-white animated slideInLeft mb-4 pb-2">
-                            Es un proyecto extensión de CEMEDE, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la Universidad Nacional de Costa Rica, Sede Regional Chorotega.
+                            Es un proyecto extensión de CEMEDE y la Escuela de Ciencias Biologicas, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la Universidad Nacional de Costa Rica, Sede Regional Chorotega para las comunidades costeras e isleñas del Golfo de Nicoya.
                         </h4>
                         <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Leer mas</a> -->
 
