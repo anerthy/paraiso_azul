@@ -519,6 +519,7 @@ body > p {
 .card-container {
   display: flex;
   background-color: #F1F8FF;
+  
 }
 .card-container .card {
   margin: 20px;
