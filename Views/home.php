@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Restoran - Bootstrap Restaurant Template</title>
+
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -50,11 +50,11 @@
 
 
     <!-- Navbar & Hero Start -->
-    <div class=" position-relative p-0">
+   
         <?php
   _header($data);
         ?>
-
+ <div class=" position-relative p-0">
 
         <div class=" py-5 bg-portada-home  mb-5">
             <div class="container my-5 py-5">
@@ -131,78 +131,55 @@
     <!-- CASOUSEL -->
 
     <!-- Carousel -->
-    <center>
-        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<div style='text-align:center;'>
+<h3 style='text-align: center;margin: 55px 0px;border-bottom: 2px solid #666; display:inline-block;padding-bottom:10px'>Pequeña galeria de fotos</h3>
+</div>
+<div style='height: 75%;'>
+    <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
 
-            <!-- Indicators/dots -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-            </div>
-
-            <!-- The slideshow/carousel -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="carousel-tam" src="Assets/images/img/Home/carousel1.JPG" alt=" " class="d-block"
-                        style="width:100%">
-                </div>
-                <div class="carousel-item">
-                    <img class="carousel-tam" src="Assets/images/img/Home/carousel5.JPG" alt=" " class="d-block"
-                        style="width:100%">
-                </div>
-                <div class="carousel-item">
-                    <img class="carousel-tam" src="Assets/images/img/Home/carousel2.JPG" alt=" " class="d-block"
-                        style="width:100%">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">  
+                <div class="carousel-caption">
+                  <h3>Titulo</h3>
+                  <p>Un pequeño dato sobre la imagen o en relacion a.</p>
                 </div>
             </div>
-
-            <!-- Left and right controls/icons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+            <div class="item"> 
+                <div class="carousel-caption">
+                <h3>Titulo</h3>
+                <p>Un pequeño dato sobre la imagen o en relacion a.</p>
+                </div>
+            </div>
+            <div class="item"> 
+                <div class="carousel-caption">
+                  <h3>Titulo</h3>
+                  <p>Un pequeño dato sobre la imagen o en relacion a.</p>
+                </div>
+            </div>
         </div>
 
-    </center>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carouselFade" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carouselFade" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- CAROUSEL -->
 
-    <!-- Reservation Start -->
-    <!-- <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="row g-0">
-            <div class="col-md-6">
-                <div class="video">
-                   
-                    <iframe width="1300" height="600" src="https://www.youtube.com/embed/LXb3EKWsInQ"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-              
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
-                            allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+ 
     <!-- Reservation Start -->
 
 
@@ -454,7 +431,7 @@
 
 
     <!-- Template Javascript CASOUSEL -->
-    <!-- <script src="Assets/js/carousel-home/carousel-home.js"></script> -->
+    <script src="Assets/js/carousel-home/carousel-home.js"></script>
 
 
 </body>
