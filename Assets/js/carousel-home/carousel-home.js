@@ -1,3 +1,1 @@
-$('#myCarousel').carousel({
-	interval: 4000
-})
+$('#carouselFade').carousel();
