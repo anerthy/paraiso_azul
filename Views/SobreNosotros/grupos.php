@@ -24,7 +24,6 @@ $arrGrupos =  $data['grupos'];
                     <img class="logo" src="<?= $arrGrupos[$i]['logo'] ?>" alt="logo del grupo">
                 </div>
 
-
                 <div>
                     <span>
                         <p><b><?= $arrGrupos[$i]['nombre_grupo'] ?></b></p>
@@ -56,8 +55,6 @@ $arrGrupos =  $data['grupos'];
         }
         ?>
     </div>
-    </div>
-
 </main>
 
 <?php
