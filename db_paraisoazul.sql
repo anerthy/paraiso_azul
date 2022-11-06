@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 27-10-2022 a las 10:12:46
+-- Tiempo de generación: 06-11-2022 a las 01:00:37
 -- Versión del servidor: 8.0.27
 -- Versión de PHP: 7.4.26
 
@@ -484,7 +484,7 @@ CREATE TABLE IF NOT EXISTS `comunidad` (
   `distrito` enum('Puntarenas','San Antonio','Quebrada Honda','Santa Cruz','Bolson','Bagases','Bebedero','Porozal','Manzanillo','Lepanto','Esparza') CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   `imagen` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_swedish_ci NOT NULL,
   PRIMARY KEY (`id_comunidad`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `comunidad`
@@ -528,7 +528,7 @@ CREATE TABLE IF NOT EXISTS `grupo_organizado` (
 INSERT INTO `grupo_organizado` (`id_grupo`, `nombre_grupo`, `representante`, `descripcion`, `ubicacion`, `correo`, `telefono`, `numero_integrantes`, `status`, `logo`, `comunidad_id`) VALUES
 (11, 'Asopecupachi', 'sin especificar', 'Asociación de Pescadores Cuerderos de Palito, Isla de Chira', 'Isla Chira, Puntarenas', 'grupo@info.com', '89742984', 1, 1, 'img_11b2dc23e716dd81485138bc9d89b85e.jpg', 30),
 (16, 'MUDECOOP', 'sin especificar', 'Cooperativa de Mujeres de Manzanillo en desarrollo con su cooperativa autogestionaria.', '900MTS OESTA DEL SALÓN COMUNAL DE MANZANILLO, PUNTARENAS', 'mudecop@gmail.com', '86095160', 25, 1, 'img_ee15cdd6dc19e38e705ec8864ac68749.jpg', 38),
-(24, 'Asosiacion De Mujeres Unidas de la Montaña Coyolito', 'sin especificar', 'Asosiacion De Mujeres Unidas de la Montaña Coyolito', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus itaque, dicta, quod odio doloremque illo praesentium odit animi perspiciatis repudiandae iure expedita a deleniti laudantium id voluptatem fugit voluptatum.', 'mujeresunidas@pa.com', '8806794', 20, 1, 'img_5f9659cb14a6d203306c22e0c7f155cf.jpg', 1),
+(24, 'Asociación De Mujeres Unidas de la Montaña Coyolito', 'sin especificar', 'Asociación De Mujeres Unidas de la Montaña Coyolito', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem possimus itaque, dicta, quod odio doloremque illo praesentium odit animi perspiciatis repudiandae iure expedita a deleniti laudantium id voluptatem fugit voluptatum.', 'mujeresunidas@pa.com', '8806794', 20, 1, 'img_5f9659cb14a6d203306c22e0c7f155cf.jpg', 1),
 (26, 'Mariposas delGolfo', 'sin especificar', 'Asociación de Mujeres Mariposas del Golfo', '50 este de la licoreca, Provincia de Puntarenas, Puntarenas, Costa Rica', 'caligodelgolfo@gmail.com', '84169920', 22, 1, 'img_1aaf7f100ec2a035591a1661a5380a38.jpg', 24),
 (27, 'ASJUSDE', 'sin especificar', 'Asociación Jóvenes Uniendo Esfuerzo para el Desarrollo y la Ecología de Isla Venado', 'Isla Venado', 'grupo@info.com', '0', 1, 1, 'img_369af6438249fac8cb36e343095fbb14.jpg', 35),
 (28, 'Asociación para el desarrollo sustentable y su adaptación al cambio climático de Isla Venado', 'sin especificar', 'Asociación para el desarrollo sustentable y su adaptación al cambio climático de Isla Venado', 'Isla Venado', 'grupo@info.com', '0', 1, 1, 'img_d444ae8e92a3fc7f77208020e2ed43f6.jpg', 35),
