@@ -1,94 +1,33 @@
-
-
-
 <?php
 _header($data);
 $arrAlimentacion =  $data['alimentacion'];
 ?>
+<center>
+    <br>
+    <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
+    <br>
+</center>
 
-<main>
-
-    <center>
-        <br>
-        <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
-        <br>
-        <p id="info" style="font-size: 20px; text-align: justify; margin:20px">
-           
-        </p>
-
-    </center>
-
-    <div class="container-grupos">
-        <?php
-   for ($i = 0; $i < count($arrAlimentacion); $i++) {
-    $arrAlimentacion[$i]['imagen'];
-        ?>
-            <div class="card-grupos">
-                <div>
-                <img id="imagen" src="<?= $arrAlimentacion[$i]['imagen'] ?>" alt="Imagen de la alimentacion" class="card-img-top" alt="Imagen del hospedaje" style="width: 300px; height:300px;">
-                </div>
-
-                <div>
-                    <span>
-                    <h4 class="nombre"><?= $arrAlimentacion[$i]['nombre_alim'] ?></h4>
-                    </span>
-                    <span id="hideText" class="hideText">
-                        <p>
-                 
+<div class="row">
+    <?php
+    // dep($arrGrupos);
+    for ($i = 0; $i < count($arrAlimentacion); $i++) {
+        $arrAlimentacion[$i]['imagen'];
+    ?>
+        <div id="cardalimentacion" class="card col-md-3 justify-content-center">
+            <img id="imagen" src="<?= $arrAlimentacion[$i]['imagen'] ?>" alt="Imagen del hospedaje" class="card-img-top" alt="Imagen del hospedaje" style="width: 300px; height:300px;">
+            <div>
+                <h4 class="nombre"><?= $arrAlimentacion[$i]['nombre_alim'] ?></h4>
                 <p id="descripcion" class="card-text"><?= $arrAlimentacion[$i]['descripcion'] ?></p>
                 <p id="telefono" class="card-text">Telefono: <?= $arrAlimentacion[$i]['telefono'] ?></p>
-                    </span>
-
-                    <center>
-                        <button class="readMore_btn" id="readMore_btn" onclick="toggleText()">Ver más</button>
-                    </center>
-
-                </div>
-
+                <!-- <center><a href="#" class="btn btn-info">Ver más informacion</a></center> -->
             </div>
-
-        <?php
-        }
-        ?>
-    </div>
-</main>
+        </div>
+    <?php
+    }
+    ?>
+</div>
 
 <?php
 footer($data);
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
