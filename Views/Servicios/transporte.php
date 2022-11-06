@@ -8,26 +8,47 @@ $arrTransportes =  $data['transportes'];
     <br>
 </center>
 
-<div class="row">
-    <?php
+<div class="container-grupos">
+<?php
     // dep($arrTransporte);
     for ($i = 0; $i < count($arrTransportes); $i++) {
 
         $arrTransportes[$i]['imagen'];
     ?>
-        <div id="cardtransporte" class="card col-md-3 justify-content-center">
-            <img id="imagen" src="<?= $arrTransportes[$i]['imagen'] ?>" alt="logo del transporte" class="card-img-top" alt="logo del transporte" style="width: 300px; height:300px;">
+            <div class="card-grupos">
+                <div>
+                <img id="imagen" src="<?= $arrTransportes[$i]['imagen'] ?>" alt="logo del transporte" class="card-img-top" alt="logo del transporte" style="width: 300px; height:300px;">
+                </div>
 
-            <div>
-                <h4 class="nombre"><?= $arrTransportes[$i]['nombre_trans'] ?></h4>
-                <p id="descripcion" class="card-text"><?= $arrTransportes[$i]['descripcion'] ?></p>
-                <!-- <center><a href="#" class="btn btn-info">Ver más informacion</a></center> -->
+                <div>
+                    <span>
+                    <h4 class="nombre"><?= $arrTransportes[$i]['nombre_trans'] ?></h4>
+                    </span>
+                    <span id="hideText" class="hideText">
+                        <p>
+                        <p id="descripcion" class="card-text"><?= $arrTransportes[$i]['descripcion'] ?></p>
+                        </p>
+                        <p>
+                           
+                        </p>
+                        <p>
+                          
+                        </p>
+                    </span>
+
+                    <center>
+                        <button class="readMore_btn" id="readMore_btn" onclick="toggleText()">Ver más</button>
+                    </center>
+
+                </div>
+
             </div>
-        </div>
-    <?php
-    }
-    ?>
-</div>
+
+        <?php
+        }
+        ?>
+    </div>
+</main>
 
 <?php
 footer($data);
