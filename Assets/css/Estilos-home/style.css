@@ -586,3 +586,12 @@ body > p {
     flex-wrap: wrap;
   }
 }
+
+
+img {
+    border-radius: 10%;
+    
+  } 
+  img.rounded-corners {
+    border-radius: 10px;
+  }
