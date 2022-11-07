@@ -196,72 +196,8 @@
             <h1 class="mb-5">Involucrados</h1>
         </div>
 
-    <div class="card-container">
+  
 
-        <div class="card">
-            <div class="card-count-container">
-                <div class="card-count"><img class="img-fluid tam-personal" src="Assets/images/fondo9.jpeg" alt=""></div>
-            </div>
-
-            <div class="card-content">
-                <h2>Title</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste vel accusamus sequi laboriosam
-              
-            </div>
-
-            <div class="card-footer">
-              Contacto:2332-9023
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-count-container">
-            <div class="card-count"><img class="img-fluid tam-personal" src="Assets/images/fondo9.jpeg" alt=""></div>
-            </div>
-            <div class="card-content">
-                <h2>Title</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste vel accusamus sequi laboriosam
-           
-            </div>
-
-            <div class="card-footer">
-            Contacto:2332-9023
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-count-container">
-            <div class="card-count"><img class="img-fluid tam-personal" src="Assets/images/fondo9.jpeg" alt=""></div>
-            </div>
-            <div class="card-content">
-                <h2>Title</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste vel accusamus sequi laboriosam
-          
-            </div>
-
-            <div class="card-footer">
-            Contacto:2332-9023
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-count-container">
-            <div class="card-count"><img class="img-fluid tam-personal" src="Assets/images/fondo9.jpeg" alt=""></div>
-            </div>
-            <div class="card-content">
-                <h2>Title</h2>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iste vel accusamus sequi laboriosam
-                
-            </div>
-
-            <div class="card-footer">
-            Contacto:2332-9023
-            </div>
-        </div>
-
-    </div>
-    <!-- /////////////// SEGUNDA FILA -->
     <div class="card-container">
 
 <div class="card">
