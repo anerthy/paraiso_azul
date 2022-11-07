@@ -16,9 +16,9 @@ $arrTransportes =  $data['transportes'];
         $arrTransportes[$i]['imagen'];
     ?>
             <div class="card-grupos">
-                <div>
+            <center>
                 <img id="imagen" src="<?= $arrTransportes[$i]['imagen'] ?>" alt="logo del transporte" class="card-img-top" alt="logo del transporte" style="width: 300px; height:300px;">
-                </div>
+                </center>
 
                 <div>
                     <span>
