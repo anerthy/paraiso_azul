@@ -16,9 +16,9 @@ $arrAlimentacion =  $data['alimentacion'];
         $arrAlimentacion[$i]['imagen'];
     ?>
             <div class="card-grupos">
-                <div>
+            <center>
                 <img id="imagen" src="<?= $arrAlimentacion[$i]['imagen'] ?>" alt="logo del alimentacion" class="card-img-top" alt="logo del alimentacion" style="width: 300px; height:300px;">
-                </div>
+                </center>
 
                 <div>
                     <span>
