@@ -79,6 +79,10 @@
       <script src="<?= media(); ?>/css/navbar/vendor/php-email-form/validate.js"></script>
 
       <script src="<?= media(); ?>/js/funtions_voluntariado.js"></script>
+
+      <!-- js de grupos -->
+      <script src="<?= media(); ?>/js/views/functions_view_grupos.js"></script>
+
       <!-- Template Main JS File -->
       <script src="<?= media(); ?>/js/navbar/main.js"></script>
 
