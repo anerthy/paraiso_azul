@@ -10,7 +10,6 @@ $arrTours =  $data['tours'];
         <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
         <br>
         <p id="info" style="font-size: 20px; text-align: justify; margin:20px">
-            Turismo rural como estrategia para la reactivación económica y promoción del desarrollo local sostenible en comunidades del Golfo de Nicoya, tiene como fin el fortalecimiento de la gestión del turismo a través de la vinculación de las organizaciones locales , como actores protagónicos, en este proyecto participan las siguientes organizaciones.
         </p>
 
     </center>
