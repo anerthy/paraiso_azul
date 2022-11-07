@@ -197,7 +197,7 @@
 
             <div class="container-grupos">
                 <div class="card-grupos">
-                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis reiciendis autem ex, nihil eos earum voluptatum beatae rerum maiores reprehenderit quas aut qui eius asperiores fugit, rem magni molestiae maxime.</h6>
+                    <h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, molestias ipsum. Distinctio eveniet nisi fuga ipsum explicabo architecto repellendus eum maiores qui cum modi nobis aspernatur repellat dolorum, reprehenderit ipsam?</h6>
                 </div>
                 <div class="card-grupos">
                     <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, nulla voluptatum facilis aperiam quibusdam soluta rem non pariatur obcaecati architecto, saepe ipsa maiores. In blanditiis, odit corporis rem eius accusantium!</h6>
@@ -257,15 +257,6 @@
     </div>
     <!-- Testimonial End -->
 
-
-    <!-- Footer Start -->
-    <?php
-    footer($data);
-    ?>
-    <!-- Footer End -->
-
-
-
     </div>
 
     <!-- JavaScript Libraries -->
@@ -285,3 +276,9 @@
 </body>
 
 </html>
+
+<!-- Footer Start -->
+<?php
+footer($data);
+?>
+<!-- Footer End -->
