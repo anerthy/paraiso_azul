@@ -54,7 +54,7 @@
                         <h1 class="display-3 text-white animated slideInLeft"><b>Paraiso Azul<br>Golfo de Nicoya</b></h1>
                         <!-- <p style="font-size: 20px" class="text-white animated slideInLeft mb-4 pb-2"> ¿Dé que se trata el proyecto Paraíso Azul, Golfo de Nicoya? </p> -->
                         <h4 class="text-white animated slideInLeft mb-4 pb-2">
-                            Es un proyecto extensión de CEMEDE y la Escuela de Ciencias Biologicas, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la Universidad Nacional de Costa Rica, Sede Regional Chorotega para las comunidades costeras e isleñas del Golfo de Nicoya.
+                            Es un proyecto extensión de CEMEDE y la Escuela de Ciencias Biológicas, en conjunto con los estudiantes de la carrera de ingeniería en sistemas de la Universidad Nacional de Costa Rica, Sede Regional Chorotega para las comunidades costeras e isleñas del Golfo de Nicoya.
                         </h4>
                         <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Leer mas</a> -->
 
@@ -116,97 +116,6 @@
         </div>
     </div>
     <!-- Service End -->
-
-
-    <!-- About Start -->
-
-    <!-- About End -->
-
-
-    <!-- Menu Start -->
-
-    <!-- Menu End -->
-
-
-    <!-- Reservation Start -->
-    <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="row g-0">
-            <div class="col-md-6">
-                <div class="video">
-                    <!-- <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/watch?v=LXb3EKWsInQ" data-bs-target="#videoModal">
-                            <span></span>
-                        </button> -->
-                    <iframe width="660" height="600" src="https://www.youtube.com/embed/LXb3EKWsInQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col-md-6 bg-dark d-flex align-items-center">
-                <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                    <h5 class="section-title ff-secondary text-start text-primary fw-normal">Informacion de interes</h5>
-                    <h1 class="text-white mb-4">Book A Table Online</h1>
-                    <form>
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
-                                    <label for="datetime">Date & Time</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select" id="select1">
-                                        <option value="1">People 1</option>
-                                        <option value="2">People 2</option>
-                                        <option value="3">People 3</option>
-                                    </select>
-                                    <label for="select1">No Of People</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Special Request</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always" allow="autoplay"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Reservation Start -->
-
 
     <!-- Team Start -->
     <div class="container-xxl pt-5 pb-3">
@@ -285,6 +194,19 @@
                 <h5 class="section-title ff-secondary text-center text-primary fw-normal">-----</h5>
                 <h1 class="mb-5">Involucrados</h1>
             </div>
+
+            <div class="container-grupos">
+                <div class="card-grupos">
+                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis reiciendis autem ex, nihil eos earum voluptatum beatae rerum maiores reprehenderit quas aut qui eius asperiores fugit, rem magni molestiae maxime.</h6>
+                </div>
+                <div class="card-grupos">
+                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, nulla voluptatum facilis aperiam quibusdam soluta rem non pariatur obcaecati architecto, saepe ipsa maiores. In blanditiis, odit corporis rem eius accusantium!</h6>
+                </div>
+                <div class="card-grupos">
+                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi vitae nemo doloribus animi! Sunt assumenda quos dolores? Itaque nisi expedita blanditiis dolore alias harum laborum maiores. Dicta, amet perferendis!</h6>
+                </div>
+            </div>
+
             <div class="owl-carousel testimonial-carousel">
                 <div class="testimonial-item bg-transparent border rounded p-4">
                     <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
