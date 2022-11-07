@@ -36,6 +36,7 @@
 
     <!-- Template carousel -->
     <link href="Assets/css/carousel-home/carousel-home.css" rel="stylesheet">
+   
 
     <!-- Template Stylesheet -->
     <meta charset="utf-8">
@@ -69,8 +70,9 @@
                         <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Leer mas</a> -->
 
                     </div>
-                    <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                        <img class="img-fluid" src="Assets/images/img/Home/collage.jpeg" alt="">
+                  
+                    <div class="col-lg-6 text-center text-lg-end overflow-hidden">                      
+                        <img class="rounded-corners img-fluid" src="Assets/images/img/Home/Headers.JPG" alt="">                   
                     </div>
                 </div>
             </div>
@@ -129,19 +131,19 @@
 
 
     <!-- CASOUSEL -->
-
+    <
     <!-- Carousel -->
     
-<!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <div style='text-align:center;'>
 <h3 style='text-align: center;margin: 55px 0px;border-bottom: 2px solid #666; display:inline-block;padding-bottom:10px'>Pequeña galeria de fotos</h3>
 </div>
 <div style='height: 75%;'>
-    <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel"> -->
+    <div id="carouselFade" class="carousel slide carousel-fade" data-ride="carousel">
 
         <!--NO Wrapper for slides -->
-        <!-- <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner" role="listbox">
             <div class="item active">  
                 <div class="carousel-caption">
                   <h3>Titulo</h3>
@@ -160,10 +162,10 @@
                   <p>Un pequeño dato sobre la imagen o en relacion a.</p>
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <!--NO Controls -->
-        <!-- <a class="left carousel-control" href="#carouselFade" role="button" data-slide="prev">
+        <a class="left carousel-control" href="#carouselFade" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
@@ -172,11 +174,11 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-</div> -->
+</div>
     <!--NO jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!--NO Include all compiled plugins (below), or include individual files as needed -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
     <!-- CAROUSEL -->
 
