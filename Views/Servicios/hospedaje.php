@@ -21,9 +21,9 @@ $arrHospedaje =  $data['hospedaje'];
             $arrHospedaje[$i]['imagen']; 
         ?>
             <div class="card-grupos">
-                <div>
+            <center>
                 <img id="imagen" src="<?= $arrHospedaje[$i]['imagen'] ?>" alt="Imagen del hospedaje" class="card-img-top" alt="Imagen del hospedaje" style="width: 300px; height:300px;">
-                </div>
+                </center>
 
                 <div>
                     <span>
@@ -34,11 +34,18 @@ $arrHospedaje =  $data['hospedaje'];
                     
                         </p>
                         <p>
-                            <b>Dirección:</b> <?= $arrHospedaje[$i]['direccion'] ?>
+                        <b>Información del hospedaje</b><br>
+                        <br>
+                        <b>Tipo de hospedaje:</b> <?= $arrHospedaje[$i]['tipo'] ?>
+                        <br>
+                        <b>Precio:</b> <?= $arrHospedaje[$i]['precio'] ?>
+                        
                         </p>
                         <p>
-                            <b>Informacion de contacto</b><br>
-                            Telefono: <?= $arrHospedaje[$i]['telefono'] ?>
+                            <b>Información de contacto</b><br>
+                            <b>Teléfono:</b> <?= $arrHospedaje[$i]['telefono'] ?>
+                            <br>
+                            <b>Dirección:</b> <?= $arrHospedaje[$i]['direccion'] ?>
                         </p>
                     </span>
 
