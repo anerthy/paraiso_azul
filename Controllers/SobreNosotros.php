@@ -1,11 +1,11 @@
 <?php
 require_once("Models/Traits/TGrupo.php");
 require_once("Models/Traits/TComunidad.php");
-require_once("Models/Traits/TCEMEDE.php");
+require_once("Models/Traits/TProyecto.php");
 
 class SobreNosotros extends Controllers
 {
-    use TGrupo, TComunidad, TCEMEDE;
+    use TGrupo, TComunidad, TProyecto;
     public function __construct()
     {
         parent::__construct();
@@ -17,7 +17,7 @@ class SobreNosotros extends Controllers
         $data['page_tag'] = "Proyecto";
         $data['page_title'] = "Sobre el proyecto";
         $data['page_name'] = "proyecto";
-        $data['proyecto'] = $this->getCEMEDET();
+        $data['proyecto'] = $this->getProyectoT();
         $this->views->getView($this, "proyecto", $data);
     }
 
