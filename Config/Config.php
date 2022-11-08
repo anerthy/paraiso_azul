@@ -1,6 +1,6 @@
 <?php
 
-//define("BASE_URL", "http://localhost/paraiso_azul/");
+//define("BASE_URL", "http://localhost/paraiso_azul");
 const BASE_URL = "http://localhost/paraiso_azul";
 
 //Zona horaria
