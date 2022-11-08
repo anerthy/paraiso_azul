@@ -34,16 +34,7 @@ $arrProyecto = $data['proyecto'];
         }
         ?>
 
-        <center>
-            <br>
-            <br>
-            <div>
-                <iframe width="1000" height="500" src="https://www.youtube.com/embed/idkL3KsEng0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <br>
-            <br>
-        </center>
-
+    
 </main>
 </div>
 

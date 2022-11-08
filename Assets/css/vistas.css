@@ -50,5 +50,6 @@ img.vis-CEMEDE {
     text-align: justify;
     display: flex;
     justify-content: center;
-   
+    background-color: #efefef;
+   border-radius: 10px;
 }
