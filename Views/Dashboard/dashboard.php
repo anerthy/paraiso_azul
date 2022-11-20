@@ -1,4 +1,8 @@
-<?php headerAdmin($data); ?>
+<?php
+headerAdmin($data);
+$arrModulos =  $data['modulos'];
+?>
+
 <main class="app-content">
   <div class="app-title">
     <div>
@@ -17,7 +21,7 @@
 
         <div class="info">
           <h4><a href="<?= base_url(); ?>/usuarios">Usuarios</a></h4>
-          <p><b>6</b></p>
+          <p><b> <?= $arrModulos[10]['Registros'] ?></b></p>
         </div>
 
       </div>
@@ -27,7 +31,7 @@
       <div class="widget-small info coloured-icon"><i class="icon fa fa-gear fa-3x"></i>
         <div class="info">
           <h4><a href="<?= base_url(); ?>/roles">Roles</a></h4>
-          <p><b>9</b></p>
+          <p><b> <?= $arrModulos[5]['Registros'] ?></b></p>
         </div>
       </div>
     </div>
@@ -35,7 +39,7 @@
       <div class="widget-small warning coloured-icon"><i class="icon fa fa-building fa-3x"></i>
         <div class="info">
           <h4><a href="<?= base_url(); ?>/grupos">Grupos</a></h4>
-          <p><b>12</b></p>
+          <p><b> <?= $arrModulos[3]['Registros'] ?></b></p>
         </div>
       </div>
     </div>
@@ -43,7 +47,7 @@
       <div class="widget-small danger coloured-icon"><i class="icon fa fa-city fa-3x"></i>
         <div class="info">
           <h4><a href="<?= base_url(); ?>/comunidades">Comunidades</a></h4>
-          <p><b>6</b></p>
+          <p><b> <?= $arrModulos[2]['Registros'] ?></b></p>
         </div>
       </div>
     </div>
@@ -54,7 +58,7 @@
       <div class="widget-small info coloured-icon"><i class="icon fa fa-utensils fa-3x"></i>
         <div class="info">
           <h4><a href="<?= base_url(); ?>/alimentacion">Alimentaciones</a></h4>
-          <p><b>3</b></p>
+          <p><b> <?= $arrModulos[1]['Registros'] ?></b></p>
         </div>
       </div>
     </div>
@@ -62,7 +66,7 @@
       <div class="widget-small warning coloured-icon"><i class="icon fa fa-home fa-3x"></i>
         <div class="info">
           <h4><a href="<?= base_url(); ?>/hospedajes">Hospedajes</a></h4>
-          <p><b>3</b></p>
+          <p><b> <?= $arrModulos[4]['Registros'] ?></b></p>
         </div>
       </div>
     </div>
@@ -70,7 +74,7 @@
       <div class="widget-small danger coloured-icon"><i class="icon fa fa-car fa-3x"></i>
         <div class="info">
           <h4><a href="<?= base_url(); ?>/transportes">Transportes</a></h4>
-          <p><b>3</b></p>
+          <p><b> <?= $arrModulos[9]['Registros'] ?></b></p>
         </div>
       </div>
     </div>
@@ -78,7 +82,7 @@
       <div class="widget-small primary coloured-icon"><i class="icon fa fa-walking fa-3x"></i>
         <div class="info">
           <h4><a href="<?= base_url(); ?>/tours">Tours</a></h4>
-          <p><b>3</b></p>
+          <p><b> <?= $arrModulos[8]['Registros'] ?></b></p>
         </div>
       </div>
     </div>
@@ -91,7 +95,7 @@
 
         <div class="info">
           <h4><a href="<?= base_url(); ?>/voluntarios">Voluntarios</a></h4>
-          <p><b>2</b></p>
+          <p><b> <?= $arrModulos[11]['Registros'] ?></b></p>
         </div>
 
       </div>
@@ -101,15 +105,15 @@
       <div class="widget-small danger coloured-icon"><i class="icon fa fa-file fa-3x"></i>
         <div class="info">
           <h4><a href="<?= base_url(); ?>/contenido">Contenidos</a></h4>
-          <p><b>12</b></p>
+          <p><b> <?= $arrModulos[6]['Registros'] ?></b></p>
         </div>
       </div>
     </div>
     <div class="col-md-6 col-lg-3">
       <div class="widget-small primary coloured-icon"><i class="icon fa fa-image fa-3x"></i>
         <div class="info">
-          <h4><a href="<?= base_url(); ?>/galeria">Galeria</a></h4>
-          <p><b>5</b></p>
+          <h4><a href="<?= base_url(); ?>/galerias">Galeria</a></h4>
+          <p><b> <?= $arrModulos[7]['Registros'] ?></b></p>
         </div>
       </div>
     </div>

@@ -1,7 +1,8 @@
 <?php
-
+require_once("Models/Traits/TCount.php");
 class Dashboard extends Controllers
 {
+	use TCount;
 	public function __construct()
 	{
 		sessionStart();
@@ -23,6 +24,7 @@ class Dashboard extends Controllers
 		$data['page_tag'] = "Dashboard - Paraiso Azul";
 		$data['page_title'] = "Dashboard";
 		$data['page_name'] = "dashboard";
+		$data['modulos'] = $this->countRegistrosT();
 		$this->views->getView($this, "dashboard", $data);
 	}
 }
