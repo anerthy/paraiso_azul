@@ -21,7 +21,7 @@ class Dashboard extends Controllers
 			header("Location:" . base_url() . '/access_denied');
 		}
 		$data['page_id'] = 1;
-		$data['page_tag'] = "Dashboard - Paraiso Azul";
+		$data['page_tag'] = "Dashboard";
 		$data['page_title'] = "Dashboard";
 		$data['page_name'] = "dashboard";
 		$data['modulos'] = $this->countRegistrosT();
