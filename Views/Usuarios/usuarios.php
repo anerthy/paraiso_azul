@@ -14,7 +14,7 @@ getModal('modalUsuarios', $data);
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item"><a href="<?= base_url(); ?>/usuarios"><?= $data['page_title'] ?></a></li>
+      <li class="breadcrumb-item">Usuarios / <a href="<?= base_url(); ?>/usuarios"><?= $data['page_title'] ?></a></li>
     </ul>
   </div>
   <div class="row">

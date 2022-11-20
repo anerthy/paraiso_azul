@@ -21,7 +21,7 @@ class Transportes extends Controllers
 			header("Location:" . base_url() . '/access_denied');
 		}
 		$data['page_id'] = 7;
-		$data['page_tag'] = "Transporte";
+		$data['page_tag'] = "Servicios de Transporte";
 		$data['page_name'] = "transporte";
 		$data['page_title'] = "Transporte";
 		$data['page_functions_js'] = "functions_transportes.js";

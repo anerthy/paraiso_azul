@@ -20,7 +20,7 @@ class Alimentacion extends Controllers
             header("Location:" . base_url() . '/access_denied');
         }
         $data['page_id'] = 6;
-        $data['page_tag'] = "Alimentacion";
+        $data['page_tag'] = "Servicios de Alimentacion";
         $data['page_name'] = "alimentacion";
         $data['page_title'] = "Alimentacion";
         $data['page_functions_js'] = "functions_alimentacion.js";

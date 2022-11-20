@@ -9,12 +9,12 @@ getModal('modalGalerias', $data);
       <h1><i class="fas fa-city"></i> <?= $data['page_title'] ?>
         <?php if ($_SESSION['permisosMod']['agregar']) { ?>
           <button class="btn btn-primary" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i> Nuevo</button>
-        <?php } ?> 
+        <?php } ?>
       </h1>
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item"><a href="<?= base_url(); ?>/galerias"><?= $data['page_title'] ?></a></li>
+      <li class="breadcrumb-item">Información / <a href="<?= base_url(); ?>/galerias"><?= $data['page_title'] ?></a></li>
     </ul>
   </div>
   <div class="row">
@@ -25,7 +25,7 @@ getModal('modalGalerias', $data);
             <table class="table table-hover table-bordered" id="tableGalerias">
               <thead>
                 <tr>
-                  <th>ID</th> 
+                  <th>ID</th>
                   <th>Descripcion</th>
                   <th>Ubicacion</th>
                   <th>Acciones</th>
