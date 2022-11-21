@@ -14993,7 +14993,7 @@ be a descendant of the grid when it is being dragged.
 
 .app-sidebar__toggle:focus, .app-sidebar__toggle:hover {
   color: #fff;
-  background-color: #222c89;
+  background-color: #071840;
   text-decoration: none;
 }
 
@@ -15160,7 +15160,7 @@ be a descendant of the grid when it is being dragged.
   width: 230px;
   overflow: auto;
   z-index: 10;
-  background-color: #000000;
+  background-color: #0f265c;
   -webkit-box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 8px 17px rgba(0, 0, 0, 0.2);
   -webkit-transition: left 0.3s ease,
@@ -15255,7 +15255,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .app-menu__item.active, .app-menu__item:hover, .app-menu__item:focus {
-  background: #0d1214;
+  background: #071840;
   border-left-color: #009688;
   text-decoration: none;
   color: #fff;
@@ -15277,7 +15277,7 @@ be a descendant of the grid when it is being dragged.
 
 .treeview.is-expanded [data-toggle='treeview'] {
   border-left-color: #009688;
-  background: #0d1214;
+  background: #071840;
 }
 
 .treeview.is-expanded .treeview-menu {
