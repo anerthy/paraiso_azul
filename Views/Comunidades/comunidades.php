@@ -14,7 +14,7 @@ getModal('modalComunidades', $data);
     </div>
     <ul class="app-breadcrumb breadcrumb">
       <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-      <li class="breadcrumb-item"><a href="<?= base_url(); ?>/comunidades"><?= $data['page_title'] ?></a></li>
+      <li class="breadcrumb-item">Proyecto / <a href="<?= base_url(); ?>/comunidades"><?= $data['page_title'] ?></a></li>
     </ul>
   </div>
   <div class="row">

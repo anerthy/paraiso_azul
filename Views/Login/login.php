@@ -41,7 +41,10 @@
         </div>
         <div class="form-group">
           <div class="utility">
-            <p class="semibold-text mb-2"><a href="#" data-toggle="flip">¿Olvidaste tu contraseña?</a></p>
+            <p class="semibold-text mb-2"> <a href="#" data-toggle="flip">¿Olvidaste tu contraseña?</a></p>
+          </div>
+          <div class="utility">
+            <p class="semibold-text mb-2"><a href="<?= base_url(); ?>/home">Volver a la página principal</a></p>
           </div>
         </div>
         <div id="alertLogin" class="text-center"></div>

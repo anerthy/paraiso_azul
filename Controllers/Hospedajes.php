@@ -20,7 +20,7 @@ class Hospedajes extends Controllers
 			header("Location:" . base_url() . '/access_denied');
 		}
 		$data['page_id'] = 8;
-		$data['page_tag'] = "Hospedaje";
+		$data['page_tag'] = "Servicios de Hospedaje";
 		$data['page_name'] = "hospedaje";
 		$data['page_title'] = "Hospedaje";
 		$data['page_functions_js'] = "functions_hospedajes.js";

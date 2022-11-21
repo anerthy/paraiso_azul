@@ -3,14 +3,14 @@
 
 <head>
 
-      
-    <!-- Style to set the size of checkbox -->
-    <style>
-        input.largerCheckbox {
-            width: 40px;
-            height: 30px;
-        }
-    </style>
+
+  <!-- Style to set the size of checkbox -->
+  <style>
+    input.largerCheckbox {
+      width: 40px;
+      height: 30px;
+    }
+  </style>
 
   <meta charset="utf-8">
   <meta name="description" content="Paraiso Azul Golfo Nicoya">
@@ -28,7 +28,7 @@
 
 <body class="app sidebar-mini">
   <!-- Navbar-->
-  <header class="app-header"><a class="app-header__logo" href="<?= base_url(); ?>/home">Paraiso Azul</a>
+  <header class="app-header"><a class="app-header__logo" href="<?= base_url(); ?>/dashboard">Paraiso Azul</a>
     <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"><i class="fas fa-bars"></i></a>
     <!-- Navbar Right Menu-->
     <ul class="app-nav">

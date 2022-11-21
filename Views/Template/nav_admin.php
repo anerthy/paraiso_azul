@@ -100,7 +100,7 @@
             ?>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview">
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAItJREFUSEvtlVEOgCAMQ+3NPJrejKNwk5qYzRD1p/twJI7PhdLw1gGWpIUk36WMPyNfqE/UJDdj3gC0W01uBwA/79K+oiZJ27G7aKhFjB8+cxnLVwoIKtWe6tXodQDdUu01GaxPxiicK1yZ45SDWm5iQFDj5OP0s7c67VsMhFSWVKplZFFBoY6Sk3UHNedaH3qWQJ0AAAAASUVORK5CYII=" />
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAAAXNSR0IArs4c6QAAAZBJREFUWEftmH1RAzEQxd9TQB0ACooDcAA4KA5wAFUADkACDmgVgAPAASjYzuukTAi55uPuoAPZfzrT21x+fZtNd5fYQWMfJjObADgGcFTxngXJZWxdNZSZHQB4BKDPWlsAOCf57r+gD9QDgNNaGm/dnOT1kFAKX4lJ1f1gwZLkySBQJSS+r5ldArjxvvt9KMGYmR/6eih3sEPpU4J9kHwOncxsBuDOfV8OZWZKd72gJu21rzLrgqTUWZuZ6Qwpc2VVUPql05QkGc8PSb72hnIhe8nYMMflM/V7KRUsztl4m0+DylWwKdWUCi+5XEW6/NqZylWwKdWU+nfZp9peZcxecT01VpXgaioVjU87BeXAVBbPirqZMZXySmNB3fspvLUZ/Qmo2H3yZ6E0pNBMQE2msin5h5y6bfso9SaQTevkmgydDU1hYvZtZtAFVws1B3AbTktcRp3pWWRmMBqUQqVsWfdvXebmVgrnleczONSXUKXOhJfumrJsQjoolFrsaKgK4BTSSXgfVZ2p3E2H9lsBeUE2NVb7uUUAAAAASUVORK5CYII=" height="30" width="30" />
                         <span class="app-menu__label">Proyecto</span>
                         <i class="treeview-indicator fa fa-angle-right"></i>
                     </a>
@@ -170,10 +170,18 @@
             <?php } ?>
 
             <li>
+                <a class="app-menu__item" href="<?= base_url(); ?>/home">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAAAXNSR0IArs4c6QAAAW5JREFUWEft1+FNwzAQBeD3NmADYAJgAmADNgAmKN0ANugGZQNWYIRuQEeACQ5dFSM3sR3b54ioin9WavzlfPW7EjNcnKEJp4sSkQcAWwCfAJ5JfltOwFwpEXnqQM6xA3BvgZlQAVATWDUqATLDqlAB0A+AOwAvAB69fqo6ymJUDERSARCRdyusCDUGchWywrJRuaAWsCxUKcgKG0XVgiywJMoKqoVFUa1ANbAgqjWoFDZARW7qN5KvlpD1YHqfXaUu2CNUl/Yfgc1bonSSuO3tsSN54z7ro74AXPwDSrfUyULBx0Ne4CZ2vqkrpftcktwPUF12abDq2nhnPxVqDUB7bO9AQZTXkP7ZT4X6OzK/ZVL31IJaKtW/XkTEb4ulp6KJtFQqN6xPvlKaSYdcarCuAZx1zyn+9Wn2rRogoo8gGUyUVMzo22hYnk8EW5PUFx+snH8zOjXojBWas2q8+qI61EXbYRRVs6v1O7NE/QLVgS814joqWQAAAABJRU5ErkJggg==" height="30" width="30" />
+                    <span class="app-menu__label">Página Principal</span>
+                </a>
+            </li>
+
+            <li>
                 <a class="app-menu__item" href="<?= base_url(); ?>/logout">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAASVJREFUSEvtltGNAjEMRGc6uVKgk6MSoBK4So5S6GTQSOslC3uneLMiQsLS/iBHDzvjcYhOwU5cvBdY0hcAf1VB8vKYmK5Y0gnAdxXxnnQF8EPyED+lwJIMNHhpbKP6LPgXwAaAK9gl6D7nOEbVS8EXkttasCR9wM2tHlTuu/O9z8YarbawHNcASbJwPNNW7Cy8GTxXzgAOpU9mNfKrwZKishrheq5LFxtHZgk45F8Dnstxy8fWZypuBU/mPAPOtHo/uFlUfiY5cbVqcKa/hbh8bEfy/Hi+GVyuwzD7YpwMfVp//hNrgGNJjHco6VCuuz9G7uPVuTdXIaR+a9FLPaH+5odAt6ePPdnenDGYaMzEw1P7uDD91z9vE/f6b+qiiteAdwPfAMXn3x8RFp1CAAAAAElFTkSuQmCC" />
                     <span class="app-menu__label"> Cerrar sesion</span>
                 </a>
             </li>
+
         </ul>
     </aside>
