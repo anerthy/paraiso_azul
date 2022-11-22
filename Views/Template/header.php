@@ -17,6 +17,9 @@
     <!-- Template Main CSS File -->
     <link href="<?= media(); ?>/css/navbar/main.css" rel="stylesheet">
 
+
+    
+
     <!-- Estilos CSS para las vistas -->
     <link rel="stylesheet" href="<?= media(); ?>/css/vistas.css">
     <link rel="stylesheet" href="<?= media(); ?>/css/views_styles.css">
