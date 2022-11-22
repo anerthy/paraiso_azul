@@ -2,53 +2,36 @@
 _header($data);
 $arrAlimentacion =  $data['alimentacion'];
 ?>
-<center>
-    <br>
-    <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
-    <br>
-</center>
+   <link href="<?= media(); ?>/css/cards-alimentacion/cards_alimentacion.css" rel="stylesheet">
 
-<div class="container-grupos">
-<?php
-    // dep($arrTransporte);
+<div>
+    <h1>Alimentación</h1><br>
+   
+</div>
+
+<div class="row">
+    <?php
+    // dep($arrGrupos);
     for ($i = 0; $i < count($arrAlimentacion); $i++) {
-
         $arrAlimentacion[$i]['imagen'];
     ?>
-            <div class="card-grupos">
-            <center>
-                <img id="imagen" src="<?= $arrAlimentacion[$i]['imagen'] ?>" alt="logo del alimentacion" class="card-img-top" alt="logo del alimentacion" style="width: 300px; height:300px;">
-                </center>
-
-                <div>
-                    <span>
-                    <h4 class="nombre"><?= $arrAlimentacion[$i]['nombre_alim'] ?></h4>
-                    </span>
-                    <span id="hideText" class="hideText">
-                        <p>
-                        <p id="descripcion" class="card-text"><?= $arrAlimentacion[$i]['descripcion'] ?></p>
-                        </p>
-                        <p>
-                           
-                        </p>
-                        <p>
-                        <p id="telefono" class="card-text">Telefono: <?= $arrAlimentacion[$i]['telefono'] ?></p>
-                        </p>
-                    </span>
-
-                    <center>
-                        <button class="readMore_btn" id="readMore_btn" onclick="toggleText()">Ver más</button>
-                    </center>
-
-                </div>
-
-            </div>
-
-        <?php
-        }
-        ?>
-    </div>
-</main>
+  <section class="programs">
+		<a href="#">
+			<div class="content">          
+                <p id="nombre" class="textTitulo"><?= $arrAlimentacion[$i]['nombre_alim'] ?></p>
+                <p id="descripcion" class="textDescrip"><?= $arrAlimentacion[$i]['descripcion'] ?></p>
+                <p id="telefono" class="textTel">Telefono: <?= $arrAlimentacion[$i]['telefono'] ?></p>
+            <ul>
+			
+				</ul>	
+			</div>
+		</a>
+        <img id="imagen" src="<?= $arrAlimentacion[$i]['imagen'] ?>" alt="Imagen del hospedaje" class="card-img-top" alt="Imagen del hospedaje" style="width: 300px; height:300px;">
+	</section>
+    <?php
+    }
+    ?>
+</div>
 
 <?php
 footer($data);
