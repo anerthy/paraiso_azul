@@ -2,6 +2,11 @@
 _header($data);
 $arrTours =  $data['tours'];
 ?>
+ <link href="<?= media(); ?>/css/cards-tour/cards_tours.css" rel="stylesheet">
+
+ <br>
+ <br>
+ <br>
 
 <main>
 
@@ -15,7 +20,7 @@ $arrTours =  $data['tours'];
     </center>
 
     
-    <div class="container-grupos">
+    <!-- <div class="container-grupos">
         <?php
         for ($i = 0; $i < count($arrTours); $i++) {
             $arrTours[$i]['imagen'];
@@ -52,7 +57,36 @@ $arrTours =  $data['tours'];
         <?php
         }
         ?>
-    </div>
+    </div> -->
+
+
+    <div class="row">
+    <?php
+    // dep($arrGrupos);
+    for ($i = 0; $i < count($arrTours); $i++) {
+        $arrTours[$i]['imagen'];
+    ?>
+  <section class="programs">
+		<a href="#">
+			<div class="content">          
+                <p id="" class="textTitulo"><?= $arrTours[$i]['nombre_tour'] ?></p>
+                <p id="" class="textDescrip">Alimentacion: <?= $arrTours[$i]['alimentacion'] ?></p>
+                <p id="" class="textDescrip">Hospedaje: <?= $arrTours[$i]['hospedaje'] ?></p>
+                <p id="" class="textDescrip">Transporte: <?= $arrTours[$i]['transporte'] ?></p>
+            <ul>
+			
+				</ul>	
+			</div>
+		</a>
+        <img id="imagen" src="<?= $arrTours[$i]['imagen'] ?>" alt="Imagen del Tour" class="card-img-top" alt="Imagen del Tour" style="width: 300px; height:300px;">
+	</section>
+    <?php
+    }
+    ?>
+</div>
+
+
+
 </main>
 
 <?php
