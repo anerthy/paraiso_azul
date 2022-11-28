@@ -7,7 +7,7 @@ trait TAlimentacion
     public function getAlimentacionT()
     {
         $this->con = new Mysql();
-        $sql = "SELECT id_alimentacion,nombre_alim,descripcion,direccion,horario,telefono,imagen FROM view_alimentacion;";
+        $sql = "SELECT id_alimentacion,nombre_alim,descripcion,direccion,concat(date_format(hora_apertura,'De %h:%m %p '),date_format(hora_cierre,'a %h:%m %p')) AS horario,telefono,imagen FROM alimentacion where status = 1;";
         $request = $this->con->select_all($sql);
         if (count($request) > 0) {
             for ($i = 0; $i < count($request); $i++) {
