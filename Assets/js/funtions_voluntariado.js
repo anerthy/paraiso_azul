@@ -5,13 +5,6 @@ let divLoading = document.querySelector("#divLoading");
 
     
 document.addEventListener('DOMContentLoaded', function(){
- 
-    
-
-
-    
-
-
 
     //NUEVO 
     var formVoluntario = document.querySelector("#formVoluntario");
@@ -69,9 +62,9 @@ document.addEventListener('DOMContentLoaded', function(){
                 //     }
 
                      $('#modalFormVoluntariado').modal("hide");
-                    //formVoluntario.reset();
+                    // formVoluntario.reset();
                     alert('El voluntario registrado')
-                    swal("Voluntarios", objData.msg ,"success");
+                    // swal("Voluntarios", objData.msg ,"success");
                 
                 //     tableVoluntarios.api().ajax.reload();
                  }

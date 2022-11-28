@@ -62,9 +62,6 @@ getModal('modalVoluntariado', $data);
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Leer mas</a>
                                 <!-- <a class="btn btn-outline-light btn-lg px-4" href="openModal();">Llenar formulario</a>  -->
 
-
-
-
                                 <button class="btn btn-outline-light btn-lg px-4" type="button" onclick="openModal();"><i class="fas fa-plus-circle"></i>Llenar formulario</button>
 
                                 </h1>
@@ -78,7 +75,6 @@ getModal('modalVoluntariado', $data);
         </header>
 
 
-
         <!-- Features section-->
         <section class="py-5" id="features">
             <div class="container px-5 my-5">
@@ -87,6 +83,7 @@ getModal('modalVoluntariado', $data);
                         <h2 class="fw-bolder mb-0">Actividades del voluntariado</h2>
                         <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-voluntarios rounded-5 my-1" src="Assets/images/UNA.jpg" alt="..." /></div>
                     </div>
+                
                     <div class="col-lg-8">
                         <div class="row gx-5 row-cols-1 row-cols-md-2">
                             <div class="col mb-5 h-100">
