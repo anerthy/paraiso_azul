@@ -181,7 +181,8 @@
     }
     
     section.programs {
-      width: 25%;
+      width: 400px;
+      height: 480px;
       float: left;
       display: flex;
       margin: 0px 20px;

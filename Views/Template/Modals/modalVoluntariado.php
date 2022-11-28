@@ -9,94 +9,85 @@
       </div>
       <div class="modal-body">
       <form id="formVoluntario" name="formVoluntario" class="form-horizontal">
+                        <input type="hidden" id="id_Voluntario" name="id_Voluntario" value="">
 
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="txtNombre_vol" name="txtNombre_vol" placeholder="Your Name">
+                                        <label for="txtNombre_vol">Nombre</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="txtApellido1" name="txtApellido1" placeholder="Your Email">
+                                        <label for="txtApellido1">Primer Apellido</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" id="txtApellido2" name="txtApellido2" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <label for="txtApellido2">Segundo Apellido</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" id="txtCedula" name="txtCedula" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <label for="txtCedula">Cedula</label>
+                                    </div>
+                                </div>
 
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="email" class="form-control datetimepicker-input" id="txtCorreo" name="txtCorreo" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <label for="txtCorreo">Correo electronico</label>
+                                    </div>
+                                </div>
 
-      <input type="hidden" id="id_Voluntario" name="id_Voluntario" value="">
-             
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" id="txtTelefono" name="txtTelefono" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <label for="txtTelefono">Telefono</label>
+                                    </div>
+                                </div>
 
+                                <div class="col-md-6">
+                                    <label for="txtFecha_nacimiento">Fecha de nacimiento</label>
+                                    <input type="date" class="form-control valid validText" placeholder="Fecha de nacimiento" id="txtFecha_nacimiento" name="txtFecha_nacimiento" required="">
+                                </div>
 
-             <p class="text-primary">Todos los campos son obligatorios.</p>
-             <div class="form-row">
-               <div class="form-group col-md-6">
-                 <label for="txtNombre_vol">Nombre</label>
-                 <input type="text" class="form-control valid validText"  placeholder="Nombre del voluntario" id="txtNombre_vol" name="txtNombre_vol" required="">
-               </div>
-           
-               <div class="form-group col-md-6">
-                 <label for="txtApellido1">Primer apellido</label>
-                 <input type="text" class="form-control valid validText" placeholder="Primer apellido completo" id="txtApellido1" name="txtApellido1" required="">
-           </div>
-             </div>
-
-             <div class="form-row">
-               <div class="form-group col-md-6">
-                 <label for="txtApellido2">Segundo apellido</label>
-                 <input type="text" class="form-control valid validText" placeholder="Segundo apellido completo" id="txtApellido2" name="txtApellido2" required="" >
-               </div>
-
-               <div class="form-group col-md-6">
-                 <label for="txtCedula">Cedula</label>
-                 <input type="text" maxlength="9" class="form-control  valid  validNumber " placeholder="Cedula" id="txtCedula" name="txtCedula" required="">
-               </div>
-             </div>
-
-             <div class="form-row">
-                 <label for="txtCorreo">Correo</label>
-                 <input type="email" class="form-control valid validCorreo" placeholder="Correo electronico" id="txtCorreo" name="txtCorreo" required="">
-               </div>
-               <div class="form-row">
-                 <label for="txtTelefono">Telefono</label>
-                 <input type="text" maxlength="8" class="form-control valid validNumber" placeholder="Número de contacto" id="txtTelefono" name="txtTelefono" required="" onkeypress="return controlTag(event);">
-               </div>
-               <div class="form-row">
-                 <label for="txtFecha_nacimiento">Fecha de nacimiento</label>
-                 <input type="date" class="form-control valid validText" placeholder="Fecha de nacimiento" id="txtFecha_nacimiento" name="txtFecha_nacimiento" required="">
-               </div>
-               <div class="form-row">
-
-                 <label for="txtGenero">Genero</label>
-               
-                <select class="form-control" id="txtGenero" name="txtGenero" required="">
-                 <option value="1">Masculino</option>
-                 <option value="2">Femenino</option>
-               </select>
-
-               </div>
-
-
-                  
-         
-
-
-
-
-
-               <div class="form-row">
-                 <label for="txtLugar_residencia">Lugar de residencia</label>
-                 <input type="text" class="form-control valid validText" placeholder="Lugar donde vive" id="txtLugar_residencia" name="txtLugar_residencia" required="" >
-               </div>
-
-             <div class="form-row">
-             <div class="form-group">
+                                <div class="col-md-6">
+                                 <label for="txtGenero">Genero</label>            
+                                   <select class="form-control" id="txtGenero" name="txtGenero" required="">
+                                      <option value="1">Masculino</option>
+                                      <option value="2">Femenino</option>
+                                    </select>
+                                     </div>                            
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Special Request" id="txtLugar_residencia" name="txtLugar_residencia" style="height: 100px"></textarea>
+                                        <label for="txtLugar_residencia">Lugar donde residencia</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                    <label for="listStatus">Estado</label>
                    <select class="form-control" id="listStatus" name="listStatus" required="">
                      <option value="1">Activo</option>
                      <option value="2">Inactivo</option>
                    </select>
                </div>      
-             </div>
-             <div class="tile-footer">
-               <button id="btnActionForm" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;
-               <button class="btn btn-danger" type="button" data-dismiss="modal"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cerrar</button>
-             </div>
 
-        </form>
 
+
+                                <div class="col-12">
+                                <button id="btnActionForm" class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i><span id="btnText">Guardar</span></button>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+
       </div>
     </div>
   </div>

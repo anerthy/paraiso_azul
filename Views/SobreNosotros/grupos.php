@@ -2,7 +2,7 @@
 _header($data);
 $arrGrupos =  $data['grupos'];
 ?>
-   <link href="<?= media(); ?>/css/cards-alimentacion/cards_alimentacion.css" rel="stylesheet">
+   <link href="<?= media(); ?>/css/cards-grupos/card-grupos.css" rel="stylesheet">
 
    <br>
  <br>
@@ -27,7 +27,7 @@ $arrGrupos =  $data['grupos'];
 		<a href="#">
 			<div class="content">          
                 <p id="" class="textNom"><?= $arrGrupos[$i]['nombre_grupo'] ?></p>
-                <p id="" class="textDescrip"><?= $arrGrupos[$i]['descripcion'] ?></p>
+                <!-- <p id="" class="textDescrip"><?= $arrGrupos[$i]['descripcion'] ?></p> -->
                 <p id="" class="textRe">Representante: <?= $arrGrupos[$i]['representante'] ?></p>
                 <p id="" class="textUbi">Ubicación: <?= $arrGrupos[$i]['ubicacion'] ?></p>
                 <p id="" class="textCorreo">Correo: <?= $arrGrupos[$i]['correo'] ?></p>
