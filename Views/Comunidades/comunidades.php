@@ -31,7 +31,6 @@ getModal('modalComunidades', $data);
                   <th>Provincia</th>
                   <th>Canton</th>
                   <th>Distrito</th>
-                  <!-- <th></th> -->
                   <th>Acciones</th>
                 </tr>
               </thead>
@@ -43,7 +42,6 @@ getModal('modalComunidades', $data);
                   <td>Al lado del bnc</td>
                   <td>Al lado del bnc</td>
                   <td>Al lado del bnc</td>
-                  <!-- <td></td> -->
                   <td></td>
                 </tr>
               </tbody>

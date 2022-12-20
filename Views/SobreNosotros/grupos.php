@@ -19,7 +19,7 @@ $arrGrupos =  $data['grupos'];
 
 <div class="row">
     <?php
-    // dep($arrGrupos);
+
     for ($i = 0; $i < count($arrGrupos); $i++) {
         $arrGrupos[$i]['logo'];
     ?>

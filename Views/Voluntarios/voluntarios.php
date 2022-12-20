@@ -30,10 +30,9 @@ getModal('modalVoluntarios', $data);
                   <th>Primer Apellido</th>
                   <th>Segundo Apellido</th>
                   <th>Cedula</th>
-                  <!-- <th>Correo</th> -->
+
                   <th>Telefono</th>
-                  <!-- <th>Fecha de nacimiento</th> -->
-                  <!-- <th>Genero</th> -->
+
                   <th>Residencia</th>
                   <th>Status</th>
                   <th>Acciones</th>
@@ -47,10 +46,9 @@ getModal('modalVoluntarios', $data);
                   <td>Apellido patito</td>
                   <td>Apellido patito</td>
                   <td>Cedula</td>
-                  <!-- <td>patitos@info.com</td> -->
+
                   <td>78542155</td>
-                  <!-- <td>2001</td> -->
-                  <!-- <td>M</td> -->
+
                   <td>Nicoya</td>
                   <td>Activo</td>
                   <td></td>
