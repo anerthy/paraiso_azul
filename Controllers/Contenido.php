@@ -6,8 +6,7 @@ class Contenido extends Controllers
     {
         sessionStart();
         parent::__construct();
-        //session_start();
-        //session_regenerate_id(true);
+      
         if (empty($_SESSION['login'])) {
             header('Location: ' . base_url() . '/login');
         }
@@ -86,9 +85,9 @@ class Contenido extends Controllers
 		$arrData = $this->model->selectContenidos();
 		if (count($arrData) > 0) {
 			for ($i = 0; $i < count($arrData); $i++) {
-				//if($arrData[$i]['status'] == 1 ){
+			
 				$htmlOptions .= '<option value="' . $arrData[$i]['cont_id_contenido'] . '">' . $arrData[$i]['cont_titulo'] . '</option>';
-				//}
+			
 			}
 		}
 		echo $htmlOptions;

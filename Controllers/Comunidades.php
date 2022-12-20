@@ -6,8 +6,7 @@ class Comunidades extends Controllers
 	{
 		sessionStart();
 		parent::__construct();
-		//session_start();
-		//session_regenerate_id(true);
+
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
@@ -118,9 +117,9 @@ class Comunidades extends Controllers
 		$arrData = $this->model->selectComunidades();
 		if (count($arrData) > 0) {
 			for ($i = 0; $i < count($arrData); $i++) {
-				//if($arrData[$i]['status'] == 1 ){
+				
 				$htmlOptions .= '<option value="' . $arrData[$i]['id_comunidad'] . '">' . $arrData[$i]['nombre_com'] . '</option>';
-				//}
+			
 			}
 		}
 		echo $htmlOptions;

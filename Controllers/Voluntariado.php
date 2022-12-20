@@ -42,8 +42,7 @@ class Voluntariado extends Controllers
 			$btnDelete = '<button class="btn btn-danger btn-sm btnDelVoluntario" onClick="fntDelVoluntario(' . $arrData[$i]['id_voluntario'] . ')" title="Eliminar"><i class="far fa-trash-alt"></i></button>';
 
 
-			// <button class="btn btn-warning btn-sm" onClick="fntViewInfo('.$arrData[$i]['id_voluntario'].')" title="Ver voluntario"><i class="fa fa-paper-plane"></i></button>
-
+			
 			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 
 			// estado
@@ -124,7 +123,7 @@ class Voluntariado extends Controllers
 		die();
 	}
 
-	/////  /////  /////  /////  /////  /////  /////  /////  /////  /////  /////  /////  ///// 
+ 
 
 
 
@@ -162,24 +161,7 @@ class Voluntariado extends Controllers
 			);
 			$option = 1;
 		}
-		// else {
-		// 	//Actualizar
-
-		// 	$request_voluntario = $this->model->updateVoluntario(
-		// 		$intId_voluntario,
-		// 		$strNombre_vol,
-		// 		$strApellido1,
-		// 		$strApellido2,
-		// 		$strCedula,
-		// 		$strCorreo,
-		// 		$strTelefono,
-		// 		$strFecha_nacimiento,
-		// 		$strGenero,
-		// 		$strLugar_residencia,
-		// 		$intStatus
-		// 	);
-		// 	$option = 2;
-		// }
+		
 
 		if ($request_voluntario > 0) {
 			if ($option == 1) {

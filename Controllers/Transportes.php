@@ -7,8 +7,7 @@ class Transportes extends Controllers
 	{
 		sessionStart();
 		parent::__construct();
-		//session_start();
-		//session_regenerate_id(true);
+	
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
@@ -122,7 +121,7 @@ class Transportes extends Controllers
 		$intPrecio = intval($_POST['txtPrecio']);
 		$strTelefono = strClean($_POST['txtTelefono']);
 		$intStatus = intval($_POST['listStatus']);
-		//$strImagen = strClean($_POST['txtImagen']);
+
 
 		$foto   	= $_FILES['foto'];
 		$nombre_foto 	= $foto['name'];
