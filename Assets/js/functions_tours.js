@@ -20,15 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"id_tour"},
             {"data":"nombre_tour"},
             {"data":"descripcion"},
-            // {"data":"actividad"},
-            // {"data":"alimentacion"},
-            // {"data":"hospedaje"},
-            // {"data":"transporte"},
-            // {"data":"lugar"},
-            // {"data":"disponibilidad"},
             {"data":"hora_inicio"},
-           // {"data":"duracion"},
-            //{"data":"cupo_minimo"},
             {"data":"telefono"},
             {"data":"precio"},
             {"data":"status"},    
@@ -150,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function(){
         } 
 
 
-       //  divLoading.style.display = "flex";
+    
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         var ajaxUrl = base_url+'/Tours/setTour'; 
         var formData = new FormData(formTour);
@@ -199,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     swal("Error", objData.msg , "error");
                 }
             }
-            //divLoading.style.display = "none";
+   
             return false;
         }
 
@@ -208,10 +200,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 window.addEventListener('load', function() {
-    //fntComunidadesTour();
-    /*fntViewUsuario();
-    fntEditUsuario();
-    fntDelUsuario();*/
+
 }, false);
 
 function openModal(){
@@ -318,38 +307,8 @@ function fntEditTour(id_tour){
                                   <option value="2">Inactivo</option>
                                 `;
                 document.querySelector("#listStatus").innerHTML = htmlSelect;
-//////////////////////////////////////////////////////////////////////////
 
-                // if(objData.data.servicio == "Actividad")
-                // {
-                //     var optionSelect = '<option value="1" selected class="notBlock">Actividad</option>';
-                // } 
-                //  else if(objData.data.servicio == "Alimentacion")
-                // {
-                //     var optionSelect = '<option value="2" selected class="notBlock">Alimentacion</option>';
-                // } 
-                // else if(objData.data.servicio == "Hospedaje")
-                // {
-                //     var optionSelect = '<option value="3" selected class="notBlock">Hospedaje</option>';
-                // }
-                // else if(objData.data.servicio == "Transporte")
-                // {
-                //     var optionSelect = '<option value="4" selected class="notBlock">Transporte</option>';
-                // }
-
-
-                
-                // var htmlservicio = `${optionSelect}
-                //                   <option value="Actividad">Actividad</option>
-                //                   <option value="Alimentacion">Alimentacion</option>
-                //                   <option value="Hospedaje">Hospedaje</option>
-                //                   <option value="Transporte">Transporte</option>
-                //                 `;
-                // document.querySelector("#txtServicio").innerHTML = htmlservicio;
-
-                
-                
-                /////////////
+        
 
                 $('#listStatus').selectpicker('render');
 
@@ -364,12 +323,6 @@ function fntEditTour(id_tour){
                 }else{
                     document.querySelector('.delPhoto').classList.remove("notBlock");
                 }
-
-
-                ///////////
-
-
-
 
                
                 $('#modalFormTour').modal('show');

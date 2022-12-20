@@ -3,7 +3,7 @@ var tableAlimentaciones;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
-//document.addEventListener('DOMContentLoaded', function(){
+
 
     tableAlimentaciones = $('#tableAlimentaciones').dataTable( {
         "aProcessing":true,
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function(){
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
-       //  divLoading.style.display = "flex";
+      
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         var ajaxUrl = base_url+'/Alimentacion/setAlimentacion'; 
         var formData = new FormData(formAlimentacion);
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     swal("Error", objData.msg , "error");
                 }              
             } 
-            //divLoading.style.display = "none";
+         
             return false;
 
         }
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 },false);
 
-//$('#tableGrupos').DataTable();
+
 
 function openModal(){
     
@@ -186,12 +186,6 @@ function openModal(){
     $('#modalFormAlimentacion').modal('show');
     removePhoto();
 }
-
-// window.addEventListener('load', function() {
-//     /*fntEditGrupo();
-//     fntDelGrupo();
-//     fntPermisos();*/
-// }, false);
 
 
 
@@ -228,7 +222,7 @@ function fntViewInfo(id_alimentacion){
 
 
 function fntEditAlimentacion(id_alimentacion){
-   // rowTable = element.parentNode.parentNode.parentNode;
+   
     document.querySelector('#titleModal').innerHTML ="Actualizar alimentacion";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
@@ -281,14 +275,7 @@ function fntEditAlimentacion(id_alimentacion){
                 }else{
                     document.querySelector('.delPhoto').classList.remove("notBlock");
                 }
-
-
-                ///////////
-
-
-
-
-             
+         
                 $('#modalFormAlimentacion').modal('show');
                 
             }else{

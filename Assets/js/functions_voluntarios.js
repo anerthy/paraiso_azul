@@ -20,10 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
             {"data":"apellido1"},
             {"data":"apellido2"},
             {"data":"cedula"},
-            // {"data":"correo"},
             {"data":"telefono"},
-            // {"data":"fecha_nacimiento"},
-            // {"data":"genero"},
             {"data":"lugar_residencia"},
             {"data":"status"},
             {"data":"options"}

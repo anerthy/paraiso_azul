@@ -133,12 +133,10 @@ document.addEventListener('DOMContentLoaded', function(){
                     if(rowTable == ""){
                         tableGalerias.api().ajax.reload();
                     }else{
-                        // htmlStatus = intStatus == 1 ? 
-                        //     '<span class="badge badge-success">Activo</span>' : 
-                        //     '<span class="badge badge-danger">Inactivo</span>';
+                        
                         rowTable.cells[1].textContent = strGal_Descripcion;
                         rowTable.cells[2].textContent = strGal_Ubicacion;
-                       // rowTable.cells[4].innerHTML = htmlStatus;
+             
                         
                         rowTable = "";
                         
@@ -176,11 +174,6 @@ function openModal(){
     removePhoto();
 }
 
-// window.addEventListener('load', function() {
-//     /*fntEditGaleria();
-//     fntDelGaleria();
-//     fntPermisos();*/
-// }, false);
 
 
 
@@ -194,9 +187,7 @@ function fntViewInfo(gal_id_galeria){
             let objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                // let estado = objData.data.status == 1 ? 
-                // '<span class="badge badge-success">Activo</span>' : 
-                // '<span class="badge badge-danger">Inactivo</span>';
+               
       
                 document.querySelector("#celId").innerHTML = objData.data.gal_id_galeria;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.gal_descripcion;
@@ -240,23 +231,6 @@ function fntEditGaleria(gal_id_galeria){
 
                 
 
-                // if(objData.data.status == 1)
-                // {
-                //     var optionSelect = '<option value="1" selected class="notBlock">Activo</option>';
-                // }else{
-                //     var optionSelect = '<option value="2" selected class="notBlock">Inactivo</option>';
-                // }
-                // var htmlSelect = `${optionSelect}
-                //                   <option value="1">Activo</option>
-                //                   <option value="2">Inactivo</option>
-                //                 `;
-
-               
-             //document.querySelector("#listStatus").innerHTML = htmlSelect;
-            
-            /////////////
-
-           // $('#listStatus').selectpicker('render');
 
             if(document.querySelector('#img')){
                 document.querySelector('#img').src = objData.data.url_gal_imagen;
@@ -271,7 +245,6 @@ function fntEditGaleria(gal_id_galeria){
             }
 
 
-            ///////////
 
             
              $('#modalFormGaleria').modal('show');
