@@ -204,7 +204,6 @@ window.addEventListener('load', function() {
 }, false);
 
 function openModal(){
-    
     rowTable = "";
     document.querySelector('#id_Tour').value ="";
     document.querySelector('.modal-header').classList.replace("headerUpdate", "headerRegister");
@@ -213,6 +212,10 @@ function openModal(){
     document.querySelector('#titleModal').innerHTML = "Nuevo Tour";
     document.querySelector("#formTour").reset();
     $('#modalFormTour').modal('show');
+    //reiniciar el modal
+    $("#pag1").show();
+    $("#pag2").hide();
+    $("#pag3").hide();
     removePhoto();
 }
 
@@ -326,6 +329,9 @@ function fntEditTour(id_tour){
 
                
                 $('#modalFormTour').modal('show');
+                $("#pag1").show();
+                $("#pag2").hide();
+                $("#pag3").hide();
             }else{
                 swal("Error", objData.msg , "error");
             }
