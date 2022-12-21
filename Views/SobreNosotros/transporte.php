@@ -9,7 +9,7 @@ $arrTransportes =  $data['transportes'];
 
 <div class="row">
     <?php
-    // dep($arrTransporte);
+
     for ($i = 0; $i < count($arrTransportes); $i++) {
 
         $arrTransportes[$i]['imagen'];
@@ -20,7 +20,7 @@ $arrTransportes =  $data['transportes'];
             <div>
                 <h4 class="nombre"><?= $arrTransportes[$i]['nombre_trans'] ?></h4>
                 <p id="descripcion" class="card-text"><?= $arrTransportes[$i]['descripcion'] ?></p>
-                <!-- <center><a href="#" class="btn btn-info">Ver más informacion</a></center> -->
+          
             </div>
         </div>
     <?php

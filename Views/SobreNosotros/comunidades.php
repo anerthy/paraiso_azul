@@ -7,13 +7,13 @@ $arrComunidades = $data['comunidades'];
     <center>
         <br>
         <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
-        <!-- <br> -->
+  
     </center>
 
     <section>
         <center>
             <?php
-            // dep($arrTransporte);
+       
             for ($i = 0; $i < count($arrComunidades); $i++) {
                 if (($i % 2) == 0) {
             ?>

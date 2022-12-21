@@ -2,7 +2,7 @@ var tableTransportes;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
-//document.addEventListener('DOMContentLoaded', function(){
+
 
     tableTransportes = $('#tableTransportes').dataTable( {
         "aProcessing":true,
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function(){
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
-       //  divLoading.style.display = "flex";
+   
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         var ajaxUrl = base_url+'/Transportes/setTransporte'; 
         var formData = new FormData(formTransporte);
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function(){
                         rowTable.cells[6].innerHTML = intPrecio;
                         rowTable.cells[7].innerHTML = strTelefono; 
                         rowTable.cells[8].innerHTML = htmlStatus;
-                        //rowTable.cells[8].innerHTML = strImagen;
+       
                      
                         rowTable = "";
                         
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     swal("Error", objData.msg , "error");
                 }              
             } 
-            //divLoading.style.display = "none";
+        
             return false;
 
         }
@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 },false);
 
-//$('#tableGrupos').DataTable();
+
 
 function openModal(){
     
@@ -189,12 +189,6 @@ function openModal(){
     $('#modalFormTransporte').modal('show');
     removePhoto();
 }
-
-// window.addEventListener('load', function() {
-//     /*fntEditGrupo();
-//     fntDelGrupo();
-//     fntPermisos();*/
-// }, false);
 
 
 
@@ -232,7 +226,7 @@ function fntViewInfo(id_transporte){
 
 
 function fntEditTransporte(id_transporte){
-   // rowTable = element.parentNode.parentNode.parentNode;
+
     document.querySelector('#titleModal').innerHTML ="Actualizar transporte";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
@@ -253,7 +247,7 @@ function fntEditTransporte(id_transporte){
                 document.querySelector("#id_Transporte").value = objData.data.id_transporte;
                 document.querySelector("#txtNombre_trans").value = objData.data.nombre_trans;
                 document.querySelector("#txtDescripcion").value = objData.data.descripcion;
-                //document.querySelector("#txtClase").value = objData.data.clase;
+            
 
 
                 if(objData.data.clase == 'Publico')
@@ -267,11 +261,6 @@ function fntEditTransporte(id_transporte){
                                   <option value="Privado">Privado</option>
                                 `;
                 document.querySelector("#txtClase").innerHTML = htmlClase;
-
-
-
-
-                //document.querySelector("#txtTipo").value = objData.data.tipo;
 
 
 
@@ -311,7 +300,7 @@ function fntEditTransporte(id_transporte){
                 document.querySelector("#listStatus").innerHTML = htmlSelect;
                 
                 
-                /////////////
+
 
                 $('#listStatus').selectpicker('render');
 
@@ -328,12 +317,7 @@ function fntEditTransporte(id_transporte){
                 }
 
 
-                ///////////
-
-
-
-
-               
+    
                 $('#modalFormTransporte').modal('show');
             }else{
                 swal("Error", objData.msg , "error");

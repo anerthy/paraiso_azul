@@ -22,9 +22,6 @@ document.addEventListener('DOMContentLoaded', function(){
             
             {"data":"correo"},
             {"data":"telefono"},
-            // {"data":"numero_integrantes"},
-            // {"data":"ubicacion"},
-            // {"data":"representante"},
             {"data":"status"},
             {"data":"nombre_com"},
             
@@ -139,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function(){
         } 
 
 
-       //  divLoading.style.display = "flex";
+
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         var ajaxUrl = base_url+'/Grupos/setGrupo'; 
         var formData = new FormData(formGrupo);
@@ -183,58 +180,18 @@ document.addEventListener('DOMContentLoaded', function(){
                     swal("Error", objData.msg , "error");
                 }
             }
-            //divLoading.style.display = "none";
+
             return false;
         }
 
     }
 }, false);
-//                     if(rowTable == ""){
-//                         tableGrupos.api().ajax.reload();
-//                     }else{
-//                         htmlStatus = intStatus == 1 ? 
-//                             '<span class="badge badge-success">Activo</span>' : 
-//                             '<span class="badge badge-danger">Inactivo</span>';
-//                         rowTable.cells[1].textContent = strNombre_grupo;
-//                         rowTable.cells[2].textContent = strDescripcion;
-//                         rowTable.cells[3].innerHTML = htmlStatus;
-//                         rowTable.cells[4].innerHTML = strCorreo;
-//                         rowTable.cells[5].innerHTML = intTelefono;
-//                         rowTable.cells[6].innerHTML = intNumero_integrantes;
-//                         rowTable.cells[7].textContent = strUbicacion;
-//                         rowTable.cells[8].textContent = strRepresentante;
-//                         rowTable.cells[9].innerHTML = intTipocomunidad
-//                         rowTable = "";
-                        
 
-//                     }
-
-//                     $('#modalFormGrupo').modal("hide");
-//                     formGrupo.reset();
-//                     swal("Grupos organiazos", objData.msg ,"success");
-//                     removePhoto();
-//                     tableGrupos.api().ajax.reload();
-//                 }else{
-//                     swal("Error", objData.msg , "error");
-//                 }              
-//             } 
-//             //divLoading.style.display = "none";
-//             return false;
-
-//         }
-      
-
-        
-//     }
-
-// },false);
 
 
 window.addEventListener('load', function() {
     fntComunidadesGrupo();
-    /*fntViewUsuario();
-    fntEditUsuario();
-    fntDelUsuario();*/
+
 }, false);
 
 function fntComunidadesGrupo(){
@@ -252,7 +209,7 @@ function fntComunidadesGrupo(){
     }
     
 }
-//$('#tableGrupos').DataTable();
+
 
 function openModal(){
     
@@ -267,11 +224,6 @@ function openModal(){
     removePhoto();
 }
 
-// window.addEventListener('load', function() {
-//     /*fntEditGrupo();
-//     fntDelGrupo();
-//     fntPermisos();*/
-// }, false);
 
 
 
@@ -310,7 +262,7 @@ function fntViewInfo(id_grupo){
 
 
 function fntEditGrupo(id_grupo){
-    //rowTable = element.parentNode.parentNode.parentNode;
+
     document.querySelector('#titleModal').innerHTML ="Actualizar Grupo";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
@@ -356,9 +308,7 @@ function fntEditGrupo(id_grupo){
                                 `;
                 document.querySelector("#listStatus").innerHTML = htmlSelect;
                 
-                
-                /////////////
-
+ 
                 $('#listStatus').selectpicker('render');
 
                 if(document.querySelector('#img')){
@@ -374,7 +324,7 @@ function fntEditGrupo(id_grupo){
                 }
 
 
-                ///////////
+ 
 
 
 

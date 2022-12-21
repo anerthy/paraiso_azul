@@ -140,15 +140,13 @@ document.addEventListener('DOMContentLoaded', function(){
                     if(rowTable == ""){
                         tableComunidades.api().ajax.reload();
                     }else{
-                        // htmlStatus = intStatus == 1 ? 
-                        //     '<span class="badge badge-success">Activo</span>' : 
-                        //     '<span class="badge badge-danger">Inactivo</span>';
+
                         rowTable.cells[1].textContent = strNombre_com;
                         rowTable.cells[2].textContent = strDescripcion;
                         rowTable.cells[3].textContent = strProvincia;
                         rowTable.cells[4].textContent = strCanton;
                         rowTable.cells[5].textContent = strDistrito;
-                       // rowTable.cells[4].innerHTML = htmlStatus;
+
                         
                         rowTable = "";
                         
@@ -225,11 +223,7 @@ function openModal(){
     removePhoto();
 }
 
-// window.addEventListener('load', function() {
-//     /*fntEditComunidad();
-//     fntDelComunidad();
-//     fntPermisos();*/
-// }, false);
+
 
 
 
@@ -243,9 +237,7 @@ function fntViewInfo(id_comunidad){
             let objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                // let estado = objData.data.status == 1 ? 
-                // '<span class="badge badge-success">Activo</span>' : 
-                // '<span class="badge badge-danger">Inactivo</span>';
+
                 document.querySelector("#celId").innerHTML = objData.data.id_comunidad;
                 document.querySelector("#celNombre_com").innerHTML = objData.data.nombre_com;
                 document.querySelector("#celDescripcion").innerHTML = objData.data.descripcion;
@@ -292,24 +284,7 @@ function fntEditComunidad(id_comunidad){
 
                 
 
-                // if(objData.data.status == 1)
-                // {
-                //     var optionSelect = '<option value="1" selected class="notBlock">Activo</option>';
-                // }else{
-                //     var optionSelect = '<option value="2" selected class="notBlock">Inactivo</option>';
-                // }
-                // var htmlSelect = `${optionSelect}
-                //                   <option value="1">Activo</option>
-                //                   <option value="2">Inactivo</option>
-                //                 `;
-
                
-             //document.querySelector("#listStatus").innerHTML = htmlSelect;
-            
-            /////////////
-
-           // $('#listStatus').selectpicker('render');
-
             if(document.querySelector('#img')){
                 document.querySelector('#img').src = objData.data.url_imagen;
             }else{
@@ -323,8 +298,7 @@ function fntEditComunidad(id_comunidad){
             }
 
 
-            ///////////
-
+ 
             
              $('#modalFormComunidad').modal('show');
             }else{

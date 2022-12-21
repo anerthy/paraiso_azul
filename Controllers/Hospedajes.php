@@ -6,8 +6,7 @@ class Hospedajes extends Controllers
 	{
 		sessionStart();
 		parent::__construct();
-		//session_start();
-		//session_regenerate_id(true);
+
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
@@ -114,7 +113,7 @@ class Hospedajes extends Controllers
 		$strTelefono = strClean($_POST['txtTelefono']);
 		$intPrecio = intval($_POST['txtPrecio']);
 		$intStatus = intval($_POST['listStatus']);
-		//$strImagen = strClean($_POST['txtImagen']);
+		
 
 
 

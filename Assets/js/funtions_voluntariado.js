@@ -5,13 +5,6 @@ let divLoading = document.querySelector("#divLoading");
 
     
 document.addEventListener('DOMContentLoaded', function(){
- 
-    
-
-
-    
-
-
 
     //NUEVO 
     var formVoluntario = document.querySelector("#formVoluntario");
@@ -47,33 +40,12 @@ document.addEventListener('DOMContentLoaded', function(){
                  if(objData.status)
                 {
 
-                //     if(rowTable == ""){
-                //         tableVoluntarios.api().ajax.reload();
-                //     }else{
-                    //     htmlStatus = intStatus == 1 ? 
-                    //         '<span class="badge badge-success">Activo</span>' : 
-                    //         '<span class="badge badge-danger">Inactivo</span>';
-                    //     rowTable.cells[1].textContent = strNombre_vol;
-                    //     rowTable.cells[2].textContent = strApellido1;
-                    //     rowTable.cells[3].textContent = strApellido2;
-                    //     rowTable.cells[4].textContent = strCedula;
-                    //     rowTable.cells[5].textContent = strCorreo;
-                    //     rowTable.cells[6].textContent = strTelefono;
-                    //     rowTable.cells[7].textContent = strFecha_nacimiento;
-                    //     rowTable.cells[8].textContent = strGenero;
-                    //     rowTable.cells[9].textContent = strLugar_residencia;
-                    //    rowTable.cells[10].innerHTML = htmlStatus;                        
-                    //     rowTable = "";
-                        
-
-                //     }
-
+            
                      $('#modalFormVoluntariado').modal("hide");
-                    //formVoluntario.reset();
+              
                     alert('El voluntario registrado')
-                    swal("Voluntarios", objData.msg ,"success");
+       
                 
-                //     tableVoluntarios.api().ajax.reload();
                  }
                 else{
                     alert('El voluntario ya esta registrado, revisar los datos')
@@ -87,8 +59,6 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
 },false);
-
-
 
 function openModal(){
     rowTable = "";

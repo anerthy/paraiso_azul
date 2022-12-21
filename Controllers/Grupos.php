@@ -6,8 +6,7 @@ class Grupos extends Controllers
 	{
 		sessionStart();
 		parent::__construct();
-		//session_start();
-		//session_regenerate_id(true);
+
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
@@ -98,7 +97,7 @@ class Grupos extends Controllers
 	public function setGrupo()
 	{
 		$intId_grupo = intval($_POST['id_Grupo']);
-		//$strGrupo =  strClean($_POST['txtNombre_grupo']);
+
 		$strNombre_grupo = strClean($_POST['txtNombre_grupo']);
 		$strDescripcion = strClean($_POST['txtDescripcion']);
 

@@ -7,7 +7,7 @@ trait THospedaje
     public function getHospedajesT()
     {
         $this->con = new Mysql();
-        $sql = "SELECT id_hospedaje,nombre_hosp,descripcion,tipo,direccion,telefono,precio,imagen FROM view_hospedaje;";
+        $sql = "SELECT id_hospedaje,nombre_hosp,descripcion,tipo,direccion,telefono,CONCAT('₡',ROUND(precio) ) AS precio,imagen FROM hospedaje where status = 1;";
         $request = $this->con->select_all($sql);
         if (count($request) > 0) {
             for ($i = 0; $i < count($request); $i++) {

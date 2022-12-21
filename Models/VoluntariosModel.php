@@ -79,27 +79,7 @@
 		}	
 
 
-        /////ESTO NO FUNCIONA TODAVIA   /////   /////   /////   /////
-		public function getVoluntarioEmail(string $strEmail){
-			$this->strVoluntario = $strEmail;
-			$sql = "SELECT id_voluntario,nombre_vol,apellido1,status FROM voluntario WHERE 
-					correo = '$this->strVoluntario' and  
-					status = 1 ";
-			$request = $this->select($sql);
-			return $request;
-		}
-
-
-		public function setTokenVoluntario(int $id_voluntario, string $token){
-			$this->intId_Voluntario = $id_voluntario;
-			$this->strToken = $token;
-			$sql = "UPDATE voluntario SET token = ? WHERE id_voluntario = $this->intId_Voluntario ";
-			$arrData = array($this->strToken);
-			$request = $this->update($sql,$arrData);
-			return $request;
-		}
-
-   /////   /////   /////   /////   /////   /////   /////   /////
+ 
 
 		
         
@@ -142,7 +122,7 @@
 		{					
 			$this->intId_Voluntario = $id_voluntario;
 			$sql = "DELETE from voluntario WHERE id_voluntario = $this->intId_Voluntario";
-			//$sql = "UPDATE voluntario_organizado SET status = ? WHERE id_voluntario = $this->intId_Voluntario";
+		
 			$arrData = array(0);
 			$request = $this->delete($sql,$arrData);
 			return $request;

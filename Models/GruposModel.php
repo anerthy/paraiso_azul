@@ -21,13 +21,7 @@
 			parent::__construct();
 		}
 
-		// public function selectGrupos()
-		// {
-		// 	//EXTRAE GRUPOS
-		// 	$sql = "SELECT * FROM grupo_organizado ";
-		// 	$request = $this->select_all($sql);
-		// 	return $request;
-		// }
+	
 
 		public function selectGrupos()
 	{
@@ -39,7 +33,7 @@
 		$request = $this->select_all($sql);
 		return $request;
 	}
-////// ????/
+
 		public function selectGrupo(int $id_grupo)
 		{
 
@@ -57,19 +51,14 @@
 
 
 
-			// //BUSCAR GRUPO
-			// $this->intId_grupo = $id_grupo;
-			// $sql = "SELECT * FROM grupo_organizado WHERE id_grupo = $this->intId_grupo";
-			// $request = $this->select($sql);
-			// return $request;
-
+			
 		}
 
 		public function insertGrupo( string $nombre_grupo, string $descripcion,  string $correo,
 		 int $telefono, int $numero_integrantes,string $ubicacion, string $representante,string $logo,int $status,int $tipoid){
 
 			$return = "";
-			//$this->strGrupo = $grupo;
+	
 			$this->strNombre_grupo = $nombre_grupo;
 			$this->strDescripcion = $descripcion;		
 			$this->strCorreo = $correo;

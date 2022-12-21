@@ -7,7 +7,7 @@ trait TTour
     public function getToursT()
     {
         $this->con = new Mysql();
-        $sql = "SELECT id_tour,nombre_tour,descripcion,actividad,alimentacion,hospedaje,transporte,lugar,disponibilidad,hora_inicio,duracion,cupo_minimo,telefono,precio,imagen FROM view_tour;";
+        $sql = "SELECT id_tour,nombre_tour,descripcion,actividad,alimentacion,hospedaje,transporte,lugar,disponibilidad,date_format(hora_inicio,'%h:%m %p') AS hora_inicio,date_format(duracion,'%h:%m aprox.') AS duracion,cupo_minimo,telefono,CONCAT('₡',ROUND(precio) ) AS precio,imagen FROM tour where status = 1";
         $request = $this->con->select_all($sql);
         if (count($request) > 0) {
             for ($i = 0; $i < count($request); $i++) {

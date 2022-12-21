@@ -127,9 +127,7 @@ function fntViewInfo(cont_id_contenido){
             let objData = JSON.parse(request.responseText);
             if(objData.status)
             {
-                // let estado = objData.data.status == 1 ? 
-                // '<span class="badge badge-success">Activo</span>' : 
-                // '<span class="badge badge-danger">Inactivo</span>';
+               
       
                 document.querySelector("#celId").innerHTML = objData.data.cont_id_contenido;
                 document.querySelector("#celTitulo").innerHTML = objData.data.cont_titulo;

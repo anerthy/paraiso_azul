@@ -6,8 +6,7 @@ class Galerias extends Controllers
 	{
 		sessionStart();
 		parent::__construct();
-		//session_start();
-		//session_regenerate_id(true);
+
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
@@ -63,9 +62,9 @@ class Galerias extends Controllers
 		$arrData = $this->model->selectGalerias();
 		if (count($arrData) > 0) {
 			for ($i = 0; $i < count($arrData); $i++) {
-				//if($arrData[$i]['status'] == 1 ){
+				
 				$htmlOptions .= '<option value="' . $arrData[$i]['gal_id_galeria'] . '">' . $arrData[$i]['gal_descripcion'] . '</option>';
-				//}
+				
 			}
 		}
 		echo $htmlOptions;

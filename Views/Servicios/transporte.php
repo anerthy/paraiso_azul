@@ -1,54 +1,45 @@
 <?php
 _header($data);
-$arrTransportes =  $data['transportes'];
+$arrTransporte =  $data['transportes'];
 ?>
-<center>
-    <br>
-    <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
-    <br>
-</center>
+   <link href="<?= media(); ?>/css/cards-transporte/cards_transporte.css" rel="stylesheet">
 
-<div class="container-grupos">
-<?php
-    // dep($arrTransporte);
-    for ($i = 0; $i < count($arrTransportes); $i++) {
+   <br>
+ <br>
+ <br>
+ <br>
+ <center>
+        <br>
+        <h1 class="titulo" style="color: #0f265c"><b><?= $data['page_title'] ?></b></h1>
+        <br>
+        <p id="info" style="font-size: 20px; text-align: justify; margin:20px">
+        </p>
 
-        $arrTransportes[$i]['imagen'];
+    </center>
+
+<div class="row">
+    <?php
+    // dep($arrGrupos);
+    for ($i = 0; $i < count($arrTransporte); $i++) {
+        $arrTransporte[$i]['imagen'];
     ?>
-            <div class="card-grupos">
-            <center>
-                <img id="imagen" src="<?= $arrTransportes[$i]['imagen'] ?>" alt="logo del transporte" class="card-img-top" alt="logo del transporte" style="width: 300px; height:300px;">
-                </center>
-
-                <div>
-                    <span>
-                    <h4 class="nombre"><?= $arrTransportes[$i]['nombre_trans'] ?></h4>
-                    </span>
-                    <span id="hideText" class="hideText">
-                        <p>
-                        <p id="descripcion" class="card-text"><?= $arrTransportes[$i]['descripcion'] ?></p>
-                        </p>
-                        <p>
-                           
-                        </p>
-                        <p>
-                          
-                        </p>
-                    </span>
-
-                    <center>
-                        <button class="readMore_btn" id="readMore_btn" onclick="toggleText()">Ver más</button>
-                    </center>
-
-                </div>
-
-            </div>
-
-        <?php
-        }
-        ?>
-    </div>
-</main>
+  <section class="programs">
+		<a href="#">
+			<div class="content">          
+                <p id="" class="textTitulo"><?= $arrTransporte[$i]['nombre_trans'] ?></p>
+                <p id="" class="textDescrip"><?= $arrTransporte[$i]['descripcion'] ?></p>
+                <p id="" class="textTel">Telefono: <?= $arrTransporte[$i]['telefono'] ?></p>
+            <ul>
+			
+				</ul>	
+			</div>
+		</a>
+        <img id="imagen" src="<?= $arrTransporte[$i]['imagen'] ?>" alt="Imagen del transporte" class="card-img-top" alt="Imagen del hospedaje" style="width: 300px; height:300px;">
+	</section>
+    <?php
+    }
+    ?>
+</div>
 
 <?php
 footer($data);

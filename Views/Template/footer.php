@@ -79,13 +79,15 @@
       <script src="<?= media(); ?>/css/navbar/vendor/php-email-form/validate.js"></script>
 
       <script src="<?= media(); ?>/js/funtions_voluntariado.js"></script>
-
+      <script>const base_url = "<?= base_url(); ?>";</script>
       <!-- js de grupos -->
       <script src="<?= media(); ?>/js/views/functions_view_grupos.js"></script>
 
       <!-- Template Main JS File -->
       <script src="<?= media(); ?>/js/navbar/main.js"></script>
-
+       <!-- Page specific javascripts-->
+       <script type="text/javascript" src="<?= media(); ?>/js/plugins/sweetalert.min.js"></script>
+  <script src="<?= media(); ?>/js/bootstrap.min.js"></script>
       </body>
 
       </html>

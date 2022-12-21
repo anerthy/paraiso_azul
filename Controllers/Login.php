@@ -24,7 +24,7 @@ class Login extends Controllers
 
 	public function loginUser()
 	{
-		//dep($_POST);
+		
 		if ($_POST) {
 			if (empty($_POST['txtEmail']) || empty($_POST['txtPassword'])) {
 				$arrResponse = array('status' => false, 'msg' => 'Error de datos');

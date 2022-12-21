@@ -32,9 +32,6 @@ getModal('modalGrupos', $data);
                   <th>Correo</th>
                   <th>Telefono</th>
                   <th>Status</th>
-                  <!-- <th>Integrantes</th> -->
-                  <!-- <th>Ubicacion</th> -->
-                  <!-- <th>Representante</th> -->
                   <th>Comunidad</th>
                   <th>Acciones</th>
 
@@ -48,9 +45,6 @@ getModal('modalGrupos', $data);
                   <td>Activo</td>
                   <td>patitos@info.com</td>
                   <td>78542155</td>
-                  <!-- <td>20</td>
-                          <td>Al lado del bnc</td>
-                          <td>PATO</td> -->
                   <td>Caballo</td>
                   <td></td>
                 </tr>

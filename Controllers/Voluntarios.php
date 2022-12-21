@@ -6,8 +6,7 @@ class Voluntarios extends Controllers
 	{
 		sessionStart();
 		parent::__construct();
-		//session_start();
-		//session_regenerate_id(true);
+
 		if (empty($_SESSION['login'])) {
 			header('Location: ' . base_url() . '/login');
 		}
@@ -105,62 +104,7 @@ class Voluntarios extends Controllers
 	}
 
 
-	/////  /////     /////ESTO NO FUNCIONA TODAVIA   /////   /////   /////   /////
-	// public function EnvioInfo()
-	// {
-	// 	if ($_POST) {
-	// 		error_reporting(0);
-
-	// 		if (empty($_POST['txtEmailReset'])) {
-	// 			$arrResponse = array('status' => false, 'msg' => 'Error de datos');
-	// 		} else {
-	// 			$token = token();
-	// 			$strEmail  =  strtolower(strClean($_POST['txtEmailReset']));
-	// 			$arrData = $this->model->getVoluntarioEmail($strEmail);
-
-	// 			if (empty($arrData)) {
-	// 				$arrResponse = array('status' => false, 'msg' => 'Usuario no existente.');
-	// 			} else {
-	// 				$id_voluntario = $arrData['id_voluntario'];
-	// 				$nombre_vol = $arrData['nombre_vol'] . ' ' . $arrData['apellido1'];
-
-	// 				$url_recovery = base_url() . '/voluntario/Informacion/' . $strEmail . '/' . $token;
-	// 				$requestUpdate = $this->model->setTokenUser($id_voluntario, $token);
-
-	// 				$dataVoluntario = array(
-	// 					'nombre_vol' => $nombre_vol,
-	// 					'correo' => $strCorreo,
-	// 					'asunto' => 'Recuperar cuenta - ' . NOMBRE_REMITENTE,
-	// 					'url_recovery' => $url_recovery
-	// 				);
-	// 				if ($requestUpdate) {
-	// 					$sendEmail = sendMailLocal($dataVoluntario, 'email_cambioPassword');
-
-	// 					if ($sendEmail) {
-	// 						$arrResponse = array(
-	// 							'status' => true,
-	// 							'msg' => 'Se ha enviado un email a tu cuenta de correo para cambiar tu contraseña.'
-	// 						);
-	// 					} else {
-	// 						$arrResponse = array(
-	// 							'status' => false,
-	// 							'msg' => 'No es posible realizar el proceso, intenta más tarde.'
-	// 						);
-	// 					}
-	// 				} else {
-	// 					$arrResponse = array(
-	// 						'status' => false,
-	// 						'msg' => 'No es posible realizar el proceso, intenta más tarde.'
-	// 					);
-	// 				}
-	// 			}
-	// 		}
-	// 		echo json_encode($arrResponse, JSON_UNESCAPED_UNICODE);
-	// 	}
-	// 	die();
-	// }
-
-
+	
 	public function Informacion(string $params)
 	{
 
@@ -187,7 +131,7 @@ class Voluntarios extends Controllers
 		die();
 	}
 
-	/////  /////  /////  /////  /////  /////  /////  /////  /////  /////  /////  /////  ///// 
+	
 
 
 

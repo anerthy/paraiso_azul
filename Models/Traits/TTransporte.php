@@ -7,7 +7,7 @@ trait TTransporte
     public function getTransportesT()
     {
         $this->con = new Mysql();
-        $sql = "SELECT id_transporte,nombre_trans,descripcion,clase,tipo,disponibilidad,precio,telefono,imagen FROM view_transporte";
+        $sql = "SELECT id_transporte,nombre_trans,descripcion,clase,tipo,disponibilidad,CONCAT('₡',ROUND(precio) ) AS precio,telefono,imagen FROM transporte where status = 1";
         $request = $this->con->select_all($sql);
         if (count($request) > 0) {
             for ($i = 0; $i < count($request); $i++) {

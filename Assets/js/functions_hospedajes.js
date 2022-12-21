@@ -3,7 +3,7 @@ var tableHospedajes;
 let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
-//document.addEventListener('DOMContentLoaded', function(){
+
 
     tableHospedajes = $('#tableHospedajes').dataTable( {
         "aProcessing":true,
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function(){
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
-       //  divLoading.style.display = "flex";
+
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         var ajaxUrl = base_url+'/Hospedajes/setHospedaje'; 
         var formData = new FormData(formHospedaje);
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     swal("Error", objData.msg , "error");
                 }              
             } 
-            //divLoading.style.display = "none";
+
             return false;
 
         }
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 },false);
 
-//$('#tableGrupos').DataTable();
+
 
 function openModal(){
     
@@ -187,11 +187,6 @@ function openModal(){
     removePhoto();
 }
 
-// window.addEventListener('load', function() {
-//     /*fntEditGrupo();
-//     fntDelGrupo();
-//     fntPermisos();*/
-// }, false);
 
 
 
@@ -228,7 +223,7 @@ function fntViewInfo(id_hospedaje){
 
 
 function fntEditHospedaje(id_hospedaje){
-   // rowTable = element.parentNode.parentNode.parentNode;
+
     document.querySelector('#titleModal').innerHTML ="Actualizar hospedaje";
     document.querySelector('.modal-header').classList.replace("headerRegister", "headerUpdate");
     document.querySelector('#btnActionForm').classList.replace("btn-primary", "btn-info");
@@ -268,7 +263,6 @@ function fntEditHospedaje(id_hospedaje){
 
 
 
-                //document.querySelector("#txtTipo").value = objData.data.tipo;
                 document.querySelector("#txtDireccion").value = objData.data.direccion;
                 document.querySelector("#txtTelefono").value = objData.data.telefono;
                 document.querySelector("#txtPrecio").value = objData.data.precio;
@@ -296,7 +290,7 @@ function fntEditHospedaje(id_hospedaje){
 
                 
                 
-                /////////////
+      
 
                 $('#listStatus').selectpicker('render');
 
@@ -311,9 +305,6 @@ function fntEditHospedaje(id_hospedaje){
                 }else{
                     document.querySelector('.delPhoto').classList.remove("notBlock");
                 }
-
-
-                ///////////
 
 
 
