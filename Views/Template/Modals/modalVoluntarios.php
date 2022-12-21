@@ -12,8 +12,6 @@
             <form id="formVoluntario" name="formVoluntario" class="form-horizontal">
               <input type="hidden" id="id_Voluntario" name="id_Voluntario" value="">
              
-
-
               <p class="text-primary">Todos los campos son obligatorios.</p>
               <div class="form-row">
                 <div class="form-group col-md-6">
