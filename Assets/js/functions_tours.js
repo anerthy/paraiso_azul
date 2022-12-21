@@ -4,8 +4,6 @@ let rowTable = "";
 let divLoading = document.querySelector("#divLoading");
 document.addEventListener('DOMContentLoaded', function(){
 
-
-    
     tableTours = $('#tableTours').dataTable( {
         "aProcessing":true,
         "aServerSide":true,
@@ -56,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function(){
         "order":[[0,"desc"]]  
     });
 
-    
 	if(document.querySelector("#foto")){
 	    let foto = document.querySelector("#foto");
 	    foto.onchange = function(e) {
@@ -101,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function(){
 	    }
 	}
 
-
     //NUEVO tour
     var formTour = document.querySelector("#formTour");
     formTour.onsubmit = function(e) {
@@ -123,15 +119,12 @@ document.addEventListener('DOMContentLoaded', function(){
         var intPrecio = document.querySelector('#txtPrecio').value;
         var intStatus = document.querySelector('#listStatus').value;
 
-
-
         if(strNombre_tour == '' || strDescripcion == '' || strActividad == '' || strLugar == '' || strDisponibilidad == '' || strHora_inicio == '' || strDuracion == '' || strDuracion == '' || strCupo_minimo == '' || strTelefono == '' || intPrecio == '' || intStatus == ''  )
         {
             
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
-
 
         let elementsValid = document.getElementsByClassName("valid");
         for (let i = 0; i < elementsValid.length; i++) { 
@@ -141,8 +134,6 @@ document.addEventListener('DOMContentLoaded', function(){
             } 
         } 
 
-
-    
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         var ajaxUrl = base_url+'/Tours/setTour'; 
         var formData = new FormData(formTour);
@@ -256,10 +247,6 @@ function fntViewInfo(id_tour){
     }
 }
 
-
-
-
-
 function fntEditTour(id_tour){
 
     document.querySelector('#titleModal').innerHTML ="Actualizar Tour";
@@ -296,9 +283,6 @@ function fntEditTour(id_tour){
                 document.querySelector('#foto_actual').value = objData.data.imagen;
                 document.querySelector("#foto_remove").value= 0;
           
-
-
-
                 if(objData.data.status == 1)
                 {
                     var optionSelect = '<option value="1" selected class="notBlock">Activo</option>';
@@ -310,8 +294,6 @@ function fntEditTour(id_tour){
                                   <option value="2">Inactivo</option>
                                 `;
                 document.querySelector("#listStatus").innerHTML = htmlSelect;
-
-        
 
                 $('#listStatus').selectpicker('render');
 
@@ -326,8 +308,7 @@ function fntEditTour(id_tour){
                 }else{
                     document.querySelector('.delPhoto').classList.remove("notBlock");
                 }
-
-               
+           
                 $('#modalFormTour').modal('show');
                 $("#pag1").show();
                 $("#pag2").hide();
@@ -339,8 +320,6 @@ function fntEditTour(id_tour){
     }
 
 }
-
-
 
 function fntDelTour(id_tour){
     swal({
@@ -381,7 +360,6 @@ function fntDelTour(id_tour){
     });
 
 }
-
 
 function removePhoto(){
     document.querySelector('#foto').value ="";
