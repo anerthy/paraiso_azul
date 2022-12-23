@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
         }
+        
         var request = (window.XMLHttpRequest) ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         var ajaxUrl = base_url +'/Voluntariado/setVoluntario'; 
         var formData = new FormData(formVoluntario);
@@ -39,19 +40,39 @@ document.addEventListener('DOMContentLoaded', function(){
                  var objData = JSON.parse(request.responseText);
                  if(objData.status)
                 {
+                    if(rowTable == ""){
+                        tableVoluntarios.api().ajax.reload();
+                    }else{
+                        htmlStatus = intStatus == 1 ? 
+                            '<span class="badge badge-success">Activo</span>' : 
+                            '<span class="badge badge-danger">Inactivo</span>';
+                        rowTable.cells[1].textContent = strNombre_vol;
+                        rowTable.cells[2].textContent = strApellido1;
+                        rowTable.cells[3].textContent = strApellido2;
+                        rowTable.cells[4].textContent = strCedula;
+                        rowTable.cells[5].textContent = strCorreo;
+                        rowTable.cells[6].textContent = strTelefono;
+                        rowTable.cells[7].textContent = strFecha_nacimiento;
+                        rowTable.cells[8].textContent = strGenero;
+                        rowTable.cells[9].textContent = strLugar_residencia;
+                        rowTable = "";
+                        
 
-            
-                     $('#modalFormVoluntariado').modal("hide");
-              
+                    }      
+                     $('#modalFormVoluntariado').modal("hide"); 
                     alert('El voluntario registrado')
-       
+                     formVoluntario.reset();
+                    swal("Voluntariado", objData.msg ,"success");
+                    tableVoluntarios.api().ajax.reload();
                 
                  }
                 else{
                     alert('El voluntario ya esta registrado, revisar los datos')
                      swal("El voluntario ya esta registrado");
-                 }              
+                 } 
+                       
             } 
+          
             return false;
         }
 
