@@ -45,12 +45,12 @@ class Voluntariado extends Controllers
 			
 			$arrData[$i]['options'] = '<div class="text-center">' . $btnView . ' ' . $btnEdit . ' ' . $btnDelete . '</div>';
 
-			// estado
-			if ($arrData[$i]['status'] == 1) {
-				$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
-			} else {
-				$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
-			}
+			// // estado
+			// if ($arrData[$i]['status'] == 1) {
+			// 	$arrData[$i]['status'] = '<span class="badge badge-success">Activo</span>';
+			// } else {
+			// 	$arrData[$i]['status'] = '<span class="badge badge-danger">Inactivo</span>';
+			// }
 
 			// genero
 			if ($arrData[$i]['genero'] == 'Masculino') {
@@ -142,7 +142,7 @@ class Voluntariado extends Controllers
 		$strFecha_nacimiento =  strClean($_POST['txtFecha_nacimiento']);
 		$strGenero = strClean($_POST['txtGenero']);
 		$strLugar_residencia = strClean($_POST['txtLugar_residencia']);
-		$intStatus = intval($_POST['listStatus']);
+		// $intStatus = intval($_POST['listStatus']);
 
 		if ($intId_voluntario == 0) {
 			//Crear
@@ -157,7 +157,7 @@ class Voluntariado extends Controllers
 				$strFecha_nacimiento,
 				$strGenero,
 				$strLugar_residencia,
-				$intStatus
+				// $intStatus
 			);
 			$option = 1;
 		}
