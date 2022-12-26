@@ -13,7 +13,7 @@
         public   $strFecha_nacimiento;
         public   $strGenero;
         public   $strLugar_residencia;
-        public   $intStatus;
+        // public   $intStatus;
 		
 
 		public function __construct()
@@ -43,7 +43,7 @@
 		}
 
 		public function insertVoluntario( string $nombre_vol, string $apellido1,  string $apellido2,
-		 string $cedula, string $correo ,string $telefono, string $fecha_nacimiento,string $genero,string $lugar_residencia ,int $status){
+		 string $cedula, string $correo ,string $telefono, string $fecha_nacimiento,string $genero,string $lugar_residencia ){
 
 			$return = "";
 		
@@ -56,7 +56,7 @@
 			$this->strFecha_nacimiento = $fecha_nacimiento;
 			$this->strGenero = $genero;
 			$this->strLugar_residencia = $lugar_residencia;
-			$this->intStatus = $status;
+			// $this->intStatus = $status;
 			$return = 0;
 			
 
@@ -66,8 +66,8 @@
 
 			if(empty($request))
 			{
-				$query_insert  = "INSERT INTO voluntario(nombre_vol,apellido1,apellido2,cedula,correo,telefono,fecha_nacimiento,genero,lugar_residencia,status) VALUES(?,?,?,?,?,?,?,?,?,?)";
-	        	$arrData = array($this->strNombre_vol, $this->strApellido1,$this->strApellido2,$this->strCedula,$this->strCorreo,$this->strTelefono,$this->strFecha_nacimiento,$this->strGenero, $this->strLugar_residencia,$this->intStatus);
+				$query_insert  = "INSERT INTO voluntario(nombre_vol,apellido1,apellido2,cedula,correo,telefono,fecha_nacimiento,genero,lugar_residencia) VALUES(?,?,?,?,?,?,?,?,?)";
+	        	$arrData = array($this->strNombre_vol, $this->strApellido1,$this->strApellido2,$this->strCedula,$this->strCorreo,$this->strTelefono,$this->strFecha_nacimiento,$this->strGenero, $this->strLugar_residencia);
 	        
 					$request_insert = $this->insert($query_insert,$arrData);
 
@@ -84,7 +84,7 @@
 
 
 		public function updateVoluntario(int $id_voluntario,string $nombre_vol,string $apellido1, string $apellido2,
-		 string $cedula, string $correo, string $telefono, string $fecha_nacimiento, string $genero, string $lugar_residencia, int $status ){
+		 string $cedula, string $correo, string $telefono, string $fecha_nacimiento, string $genero, string $lugar_residencia ){
 			
 			$this->intId_Voluntario = $id_voluntario;
 		    $this->strNombre_vol = $nombre_vol;
@@ -96,7 +96,7 @@
 			$this->strFecha_nacimiento = $fecha_nacimiento;
 			$this->strGenero = $genero;
 			$this->strLugar_residencia = $lugar_residencia;
-			$this->intStatus = $status;
+			// $this->intStatus = $status;
 
 
 			
@@ -107,8 +107,8 @@
 
 			if(empty($request))
 			{
-				$sql = "UPDATE voluntario SET nombre_vol = ?, apellido1 = ?, apellido2 = ?,cedula = ?,  correo = ?, telefono = ?, fecha_nacimiento= ?, genero= ?, lugar_residencia = ?,status = ?WHERE id_voluntario = $this->intId_Voluntario ";
-				$arrData = array($this->strNombre_vol,$this->strApellido1, $this->strApellido2,$this->strCedula, $this->strCorreo, $this->strTelefono,$this->strFecha_nacimiento,$this->strGenero, $this->strLugar_residencia,$this->intStatus);
+				$sql = "UPDATE voluntario SET nombre_vol = ?, apellido1 = ?, apellido2 = ?,cedula = ?,  correo = ?, telefono = ?, fecha_nacimiento= ?, genero= ?, lugar_residencia = ?WHERE id_voluntario = $this->intId_Voluntario ";
+				$arrData = array($this->strNombre_vol,$this->strApellido1, $this->strApellido2,$this->strCedula, $this->strCorreo, $this->strTelefono,$this->strFecha_nacimiento,$this->strGenero, $this->strLugar_residencia);
 				$request = $this->update($sql,$arrData);
 			}else{
 				$request = "exist";
