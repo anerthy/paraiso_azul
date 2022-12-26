@@ -76,6 +76,10 @@ _header($data);
         </header>
 
 
+
+
+
+
         <!-- Features section-->
         <section class="py-5" id="features">
             <div class="container px-5 my-5">
@@ -116,8 +120,17 @@ _header($data);
 
 
        <!-- Reservation Start -->
+
+
+
+
+
+
+
+       
        <div class="container-xxl py-5 px-0 wow fadeInUp" id="modalFormVoluntariado" data-wow-delay="0.1s">
-        
+
+                
             <div class="row g-0">
                 <div class="col-md-6">
                     <div class="video">
@@ -154,7 +167,7 @@ _header($data);
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="txtCedula" name="txtCedula" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <input type="text" maxlength="9"  class="form-control datetimepicker-input" id="txtCedula" name="txtCedula" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
                                         <label for="txtCedula">Cedula</label>
                                     </div>
                                 </div>
@@ -168,7 +181,7 @@ _header($data);
 
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="txtTelefono" name="txtTelefono" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <input type="text" maxlength="8" class="form-control datetimepicker-input" id="txtTelefono" name="txtTelefono" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
                                         <label for="txtTelefono">Telefono</label>
                                     </div>
                                 </div>
@@ -191,13 +204,13 @@ _header($data);
                                         <label for="txtLugar_residencia">Lugar donde residencia</label>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                            <!-- <div class="form-group">
                    <label for="listStatus">Estado</label>
                    <select class="form-control" id="listStatus" name="listStatus" required="">
                      <option value="1">Activo</option>
                      <option value="2">Inactivo</option>
                    </select>
-               </div>      
+               </div>       -->
 
 
 
@@ -207,32 +220,13 @@ _header($data);
                                 </div>
                             </div>
                         </form>
+                    
                     </div>
                 </div>
             </div>
         </div>
 
 
-
-
-
-        <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content rounded-0">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- 16:9 aspect ratio -->
-                        <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         <!-- <script>
