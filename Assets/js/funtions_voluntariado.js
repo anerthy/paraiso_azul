@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function(){
         var strFecha_nacimiento = document.querySelector('#txtFecha_nacimiento').value;
         var strGenero = document.querySelector('#txtGenero').value;
         var strLugar_residencia = document.querySelector('#txtLugar_residencia').value;
-        var intStatus = document.querySelector('#listStatus').value;
+        // var intStatus = document.querySelector('#listStatus').value;
        
-        if(strNombre_vol == '' || strApellido1 == '' ||   strApellido2== '' ||    strCedula== '' || strCorreo== '' || strTelefono== '' || strFecha_nacimiento== '' || strGenero== '' || strLugar_residencia == '' || intStatus == '')
+        if(strNombre_vol == '' || strApellido1 == '' ||   strApellido2== '' ||    strCedula== '' || strCorreo== '' || strTelefono== '' || strFecha_nacimiento== '' || strGenero== '' || strLugar_residencia == '')
         {
             swal("Atención", "Todos los campos son obligatorios." , "error");
             return false;
@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', function(){
                  if(objData.status)
                 {
                     if(rowTable == ""){
-                        tableVoluntarios.api().ajax.reload();
+                        
                     }else{
-                        htmlStatus = intStatus == 1 ? 
-                            '<span class="badge badge-success">Activo</span>' : 
-                            '<span class="badge badge-danger">Inactivo</span>';
+                        // htmlStatus = intStatus == 1 ? 
+                        //     '<span class="badge badge-success">Activo</span>' : 
+                        //     '<span class="badge badge-danger">Inactivo</span>';
                         rowTable.cells[1].textContent = strNombre_vol;
                         rowTable.cells[2].textContent = strApellido1;
                         rowTable.cells[3].textContent = strApellido2;
@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', function(){
                      $('#modalFormVoluntariado').modal("hide"); 
                     alert('El voluntario registrado')
                      formVoluntario.reset();
-                    swal("Voluntariado", objData.msg ,"success");
-                    tableVoluntarios.api().ajax.reload();
+                    // swal("Voluntariado", objData.msg ,"success");
+                    // tableVoluntarios.api().ajax.reload();
                 
                  }
                 else{
                     alert('El voluntario ya esta registrado, revisar los datos')
-                     swal("El voluntario ya esta registrado");
+                    //  swal("El voluntario ya esta registrado");
                  } 
                        
             } 
