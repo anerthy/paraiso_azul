@@ -129,7 +129,8 @@
 
 .fila {
     flex: 0 0 auto;
-    width: 23.33333333%;
+    width: auto;
+    margin: 0% 0% 5% 0% ;
 }
 
 img {
